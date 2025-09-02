@@ -1,4 +1,5 @@
-// +build !amd64,!arm64 go1.26 !go1.17 arm64,!go1.20
+//go:build go1.17 && !go1.26 && !amd64 && !arm64 && !riscv64
+// +build go1.17,!go1.26,!amd64,!arm64,!riscv64
 
 /*
  * Copyright 2021 ByteDance Inc.

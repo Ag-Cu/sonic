@@ -1,5 +1,5 @@
-//go:build (amd64 && go1.17 && !go1.26) || (arm64 && go1.20 && !go1.26)
-// +build amd64,go1.17,!go1.26 arm64,go1.20,!go1.26
+//go:build (amd64 && go1.17 && !go1.26) || (arm64 && go1.20 && !go1.26) || riscv64
+// +build amd64,go1.17,!go1.26 arm64,go1.20,!go1.26 riscv64
 
 /*
  * Copyright 2022 ByteDance Inc.
@@ -20,44 +20,45 @@
 package utf8
 
 import (
-    `testing`
-    `strings`
-    `github.com/stretchr/testify/assert`
-    `unicode/utf8`
+	"strings"
+	"testing"
+	"unicode/utf8"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCorrectWith_InvalidUtf8(t *testing.T) {
-    var tests = []struct {
-        name   string
-        input  string
-        expect string
-        errpos int
-    } {
-        {"basic", `abc`, "abc", -1},
-        {"long", strings.Repeat("helloα，景😊", 1000), strings.Repeat("helloα，景😊", 1000), -1},
+	var tests = []struct {
+		name   string
+		input  string
+		expect string
+		errpos int
+	}{
+		{"basic", `abc`, "abc", -1},
+		{"long", strings.Repeat("helloα，景😊", 1000), strings.Repeat("helloα，景😊", 1000), -1},
 
-        // invalid utf8 - single byte
-        {"single_Cont", _Cont, "\ufffd", 0},
-        {"single_Header_2Bytes", _Header_2Bytes, "\ufffd", 0},
-        {"single_Header_3Bytes", _Header_3Bytes, "\ufffd", 0},
-        {"single_Header_4Bytes", _Header_4Bytes, "\ufffd", 0},
+		// invalid utf8 - single byte
+		{"single_Cont", _Cont, "\ufffd", 0},
+		{"single_Header_2Bytes", _Header_2Bytes, "\ufffd", 0},
+		{"single_Header_3Bytes", _Header_3Bytes, "\ufffd", 0},
+		{"single_Header_4Bytes", _Header_4Bytes, "\ufffd", 0},
 
-        // invalid utf8 - two bytes
-        {"two_Header_2Bytes + _Cont", _Header_2Bytes + _Cont, "\ufffd\ufffd", 0},
-        {`two_Header_4Bytes + _Cont+ "xx"`, _Header_4Bytes + _Cont + "xx",  "\ufffd\ufffdxx", 0},
-        { `"xx" + three_Header_4Bytes + _Cont + _Cont`, "xx" + _Header_4Bytes + _Cont + _Cont, "xx\ufffd\ufffd\ufffd", 2},
+		// invalid utf8 - two bytes
+		{"two_Header_2Bytes + _Cont", _Header_2Bytes + _Cont, "\ufffd\ufffd", 0},
+		{`two_Header_4Bytes + _Cont+ "xx"`, _Header_4Bytes + _Cont + "xx", "\ufffd\ufffdxx", 0},
+		{`"xx" + three_Header_4Bytes + _Cont + _Cont`, "xx" + _Header_4Bytes + _Cont + _Cont, "xx\ufffd\ufffd\ufffd", 2},
 
-        // invalid utf8 - three bytes
-        {`three_Low_Surrogate`, _Low_Surrogate, "\ufffd\ufffd\ufffd", 0},
-        {`three__High_Surrogate`, _High_Surrogate, "\ufffd\ufffd\ufffd", 0},
+		// invalid utf8 - three bytes
+		{`three_Low_Surrogate`, _Low_Surrogate, "\ufffd\ufffd\ufffd", 0},
+		{`three__High_Surrogate`, _High_Surrogate, "\ufffd\ufffd\ufffd", 0},
 
-        // invalid utf8 - multi bytes
-        {`_High_Surrogate + _Low_Surrogate`, _High_Surrogate + _Low_Surrogate, "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd", 0},
-        {`"\x80\x80\x80\x80"`, "\x80\x80\x80\x80", "\ufffd\ufffd\ufffd\ufffd", 0},
-    }
-    for _, test := range tests {
-        got := CorrectWith(nil, []byte(test.input), "\ufffd")
-        assert.Equal(t, []byte(test.expect), got, test.name)
-        assert.Equal(t,test.errpos == -1, utf8.ValidString(test.input), test.name)
-    }
+		// invalid utf8 - multi bytes
+		{`_High_Surrogate + _Low_Surrogate`, _High_Surrogate + _Low_Surrogate, "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd", 0},
+		{`"\x80\x80\x80\x80"`, "\x80\x80\x80\x80", "\ufffd\ufffd\ufffd\ufffd", 0},
+	}
+	for _, test := range tests {
+		got := CorrectWith(nil, []byte(test.input), "\ufffd")
+		assert.Equal(t, []byte(test.expect), got, test.name)
+		assert.Equal(t, test.errpos == -1, utf8.ValidString(test.input), test.name)
+	}
 }

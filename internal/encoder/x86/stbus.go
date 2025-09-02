@@ -24,7 +24,7 @@ import (
 	"github.com/bytedance/sonic/internal/encoder/vars"
 	"github.com/bytedance/sonic/internal/rt"
 	"github.com/bytedance/sonic/loader"
-	_ "github.com/cloudwego/base64x"
+	_ "encoding/base64"
 )
 
 var compiler func(*rt.GoType, ... interface{}) (interface{}, error)

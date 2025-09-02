@@ -17,7 +17,7 @@
 #ifndef NATIVE_H
 #define NATIVE_H
 
-#ifdef __aarch64__
+#if defined(__aarch64__) || defined(__riscv_vector)
 #define SIMDE_ENABLE_NATIVE_ALIASES
 #include <x86/sse.h>
 #include <x86/sse2.h>
