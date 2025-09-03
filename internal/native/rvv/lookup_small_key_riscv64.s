@@ -280,9 +280,9 @@ TEXT ·__lookup_small_key(SB), NOSPLIT, $0-32
 	NO_LOCAL_POINTERS
 
 _entry___lookup_small_key:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-128, SP, X30
-	BLTU X30, X31, _stack_grow___lookup_small_key
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-128, SP, X16
+	BLTU X16, X17, _stack_grow___lookup_small_key
 
 ___lookup_small_key:
 	MOV key+0(FP), X10
@@ -293,6 +293,6 @@ ___lookup_small_key:
 	RET
 
 _stack_grow___lookup_small_key:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___lookup_small_key

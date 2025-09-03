@@ -1512,30 +1512,30 @@ class Assembler:
         self._declare_functions(protos)
         log.info("Declaration and code generation finished.")
 
-   # in Assembler._declare_body
     def _declare_body(self, asm_name: str, code_section: CodeSection):
-        # 1. 计算原生代码需要的栈大小 (不减16，因为这是它自己的事)
-        native_stack_size = code_section.stacksize(asm_name)
+        # size = code_section.stacksize(asm_name)
+
+        total_stack_size = code_section.stacksize(asm_name)
+        # RISC-V 保存 ra 和 fp 同样占用 16 字节
+        go_locals_size = 0 if total_stack_size < 16 else total_stack_size - 16
         
-        # 2. 确定入口点名称
         if asm_name in self.entry_points:
             go_entry_name = f"·__{asm_name}_riscv64_entry__(SB)"
-            # ... (地址获取的 TEXT 块保持不变)
+            go_addr_getter_name = f"·__{asm_name}_entry__(SB)" 
+            self.out.append(f"TEXT {go_addr_getter_name}, $0-8")
+            self.out.append(f"\tMOV ${go_entry_name}, A0")
+            self.out.append(f"\tMOV A0, ret+0(FP)")
+            self.out.append(f"\tRET\n")
+            
+            log.info(f"Generating public TEXT block for entry point: {go_entry_name}")
         else:
             prefixed_name = self._get_go_symbol_name(asm_name)
             go_entry_name = f"·{prefixed_name}(SB)"
+            log.info(f"Generating internal TEXT block for static function: {go_entry_name}")
 
-        # 3. 修改 TEXT 指令：
-        #    - 仍然使用 NOSPLIT，因为这段代码不是标准的 Go 函数，
-        #      我们不希望 Go 编译器在这里插入任何它自己的代码（比如栈检查）。
-        #    - 栈大小应该声明为原生代码的本地变量大小 (total_size - 16)。
-        #      这为 Go 的调试器和栈追溯提供了元数据。
-        go_locals_size = 0 if native_stack_size < 16 else native_stack_size - 16
-        
-        self.out.append(f"TEXT {go_entry_name}, NOSPLIT, ${go_locals_size}")
+        self.out.append(f"TEXT {go_entry_name}, ${go_locals_size}")
         self.out.append("\tNO_LOCAL_POINTERS")
         
-        # 4. 保持原生指令不变
         pc = 0
         for v in code_section.instrs:
             formatted_line = v.formatted(pc)
@@ -1544,67 +1544,62 @@ class Assembler:
             pc += v.size(pc)
         self.out.append("")
 
-    # in Assembler._declare_function
     def _declare_function(self, name: str, proto: Prototype):
         asm_name = name.lstrip("_")
         log.info(f"Generating wrapper for function '·{name}(SB)'.")
-
+        
         if asm_name not in self.functions:
             log.warning(f"Function '{asm_name}' not found in assembly, skipping wrapper.")
             return
 
         code_section = self.functions[asm_name]
+        
         self.subr[asm_name] = 0
         
-        # 1. 计算原生代码需要的栈空间
-        native_stack_size = code_section.stacksize(asm_name)
+        calculated_size = code_section.stacksize(asm_name)
+        wrapper_stack_size = calculated_size + 64
+
+        log.debug(f"  - Calculated stack size: {calculated_size}, Arg space: {proto.argspace}, Wrapper stack size: {wrapper_stack_size}")
         
-        # 2. 修改 TEXT 指令：
-        #    - 移除 NOSPLIT
-        #    - 将原生代码的栈大小作为本地变量大小 (locals) 声明
-        #    - Go 编译器会自动在函数序言中为我们分配这些空间
         self.out.append("")
-        self.out.append(f"// Wrapper for {asm_name}")
-        self.out.append(f"TEXT ·{name}(SB), $0-{proto.argspace}") # <-- 移除 NOSPLIT
+        self.out.append(f"TEXT ·{name}(SB), $0-{proto.argspace}")
         self.out.append("\tNO_LOCAL_POINTERS")
+        
+        self.out.append(f"")
+        self.out.append(f"_entry_{name}:")
+        # self.out.append("\tMOV 16(g), X31      // g.stack.hi")
+        
+        # if wrapper_stack_size < 2048:
+        #     self.out.append(f"\tADD $-{wrapper_stack_size}, SP, X30")
+        # else:
+        #     self.out.append(f"\tMOV $-{wrapper_stack_size}, X30")
+        #     self.out.append("\tADD SP, X30, X30")
+            
+        # self.out.append(f"\tBLTU X30, X31, _stack_grow_{name}")
 
-        # 3. 移除所有手动栈检查和 _stack_grow 逻辑
-        #    Go 编译器会在 TEXT 指令后自动插入栈检查代码
+        self.out.append(f"")
+        self.out.append(f"_{name}:")
 
-        # 4. 保存调用者 RA 和 FP
-        #    因为我们要调用一个不遵循 Go ABI 的原生函数，
-        #    最好手动保存 Go 的 RA 和 FP，以防原生代码破坏它们。
-        #    我们将它们保存在 Go 为我们分配的栈帧的顶部。
-        self.out.append("\tADD $-16, SP          // Make space to save RA and FP")
-        self.out.append("\tMOV RA, 8(SP)         // Save Go's return address")
-        self.out.append("\tMOV FP, 0(SP)         // Save Go's frame pointer")
-        self.out.append("\tMOV SP, FP            // Set up a new frame pointer for our wrapper")
-
-        # 5. 传递参数 (这部分逻辑不变)
         offs = 0
         for arg in proto.args:
             op, reg = REG_MAP[arg.creg.reg]
-            # 注意：现在 FP 指向我们自己的栈帧，所以参数偏移量需要相对于新的 FP
-            # Go 的参数从 FP+16 开始
-            self.out.append(f"\t{op} {arg.name}+{offs+16}(FP), {reg}")
+            self.out.append(f"\t{op} {arg.name}+{offs}(FP), {reg}")
             offs += arg.size
         
-        # 6. 调用原生函数 (这部分逻辑不变)
         go_entry_name = f"·__{asm_name}_riscv64_entry__(SB)"
         self.out.append(f"\tCALL {go_entry_name}")
         
-        # 7. 处理返回值 (这部分逻辑不变)
         if proto.retv is not None:
             op, reg = REG_MAP[proto.retv.creg.reg]
-            # 返回值偏移量也需要相对于新的 FP
-            self.out.append(f"\t{op} {reg}, {proto.retv.name}+{offs+16}(FP)")
-        
-        # 8. 恢复调用者 RA 和 FP，并清理栈
-        self.out.append("\tMOV 0(SP), FP         // Restore Go's frame pointer")
-        self.out.append("\tMOV 8(SP), RA         // Restore Go's return address")
-        self.out.append("\tADD $16, SP           // Clean up the space for RA/FP")
+            self.out.append(f"\t{op} {reg}, {proto.retv.name}+{offs}(FP)")
         
         self.out.append("\tRET")
+        
+        # self.out.append(f"")
+        # self.out.append(f"_stack_grow_{name}:")
+        # self.out.append("\tMOV X1, X3      // Save return address (RA)")
+        # self.out.append("\tCALL runtime·morestack_noctxt(SB)")
+        # self.out.append(f"\tJMP _entry_{name}")
 
     def _declare_functions(self, protos: PrototypeMap):
         log.info(f"Generating Go wrappers for {len(protos)} entry points.")

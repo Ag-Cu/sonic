@@ -32,7 +32,7 @@ i64toa:
 	WORD $0x3e800793  // li	a5, 1000
 	WORD $0x00161613  // slli	a2, a2, 1
 	BLTU X11, X15, LBB0_4  // bltu	a1, a5, .LBB0_4
-	MOV $·pf9f0f641d845caf_Digits(SB), X11  // lui	a1, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X11  // lui	a1, %hi(Digits)
 	// addi	a1, a1, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00d585b3  // add	a1, a1, a3
 	WORD $0x0005c583  // lbu	a1, 0(a1)
@@ -44,7 +44,7 @@ LBB0_4:
 	WORD $0x00000593  // li	a1, 0
 LBB0_6:
 	WORD $0x0016e693  // ori	a3, a3, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e686b3  // add	a3, a3, a4
 	WORD $0x0006c703  // lbu	a4, 0(a3)
@@ -54,7 +54,7 @@ LBB0_6:
 LBB0_7:
 	WORD $0x03061593  // slli	a1, a2, 48
 	WORD $0x0305d593  // srli	a1, a1, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e585b3  // add	a1, a1, a4
 	WORD $0x0005c583  // lbu	a1, 0(a1)
@@ -65,7 +65,7 @@ LBB0_8:
 	WORD $0x00166593  // ori	a1, a2, 1
 	WORD $0x03059593  // slli	a1, a1, 48
 	WORD $0x0305d593  // srli	a1, a1, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X12  // lui	a2, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X12  // lui	a2, %hi(Digits)
 	// addi	a2, a2, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00c585b3  // add	a1, a1, a2
 	WORD $0x0005c603  // lbu	a2, 0(a1)
@@ -102,7 +102,7 @@ LBB0_11:
 	WORD $0x3e800793  // li	a5, 1000
 	WORD $0x00151513  // slli	a0, a0, 1
 	BLTU X11, X15, LBB0_17  // bltu	a1, a5, .LBB0_17
-	MOV $·pf9f0f641d845caf_Digits(SB), X11  // lui	a1, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X11  // lui	a1, %hi(Digits)
 	// addi	a1, a1, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00d585b3  // add	a1, a1, a3
 	WORD $0x0005c583  // lbu	a1, 0(a1)
@@ -137,7 +137,7 @@ LBB0_14:
 	WORD $0x6806061b  // addiw	a2, a2, 1664
 	WORD $0x00169693  // slli	a3, a3, 1
 	BLTU X11, X12, LBB0_23  // bltu	a1, a2, .LBB0_23
-	MOV $·pf9f0f641d845caf_Digits(SB), X12  // lui	a2, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X12  // lui	a2, %hi(Digits)
 	// addi	a2, a2, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e60633  // add	a2, a2, a4
 	WORD $0x00064603  // lbu	a2, 0(a2)
@@ -149,7 +149,7 @@ LBB0_17:
 	WORD $0x00000593  // li	a1, 0
 LBB0_19:
 	WORD $0x0016e693  // ori	a3, a3, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e686b3  // add	a3, a3, a4
 	WORD $0x0006c703  // lbu	a4, 0(a3)
@@ -159,7 +159,7 @@ LBB0_19:
 LBB0_20:
 	WORD $0x03051593  // slli	a1, a0, 48
 	WORD $0x0305d593  // srli	a1, a1, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e585b3  // add	a1, a1, a4
 	WORD $0x0005c583  // lbu	a1, 0(a1)
@@ -170,7 +170,7 @@ LBB0_21:
 	WORD $0x00156513  // ori	a0, a0, 1
 	WORD $0x03051513  // slli	a0, a0, 48
 	WORD $0x03055513  // srli	a0, a0, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X11  // lui	a1, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X11  // lui	a1, %hi(Digits)
 	// addi	a1, a1, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -187,7 +187,7 @@ LBB0_23:
 	WORD $0x00000793  // li	a5, 0
 LBB0_25:
 	WORD $0x00176613  // ori	a2, a4, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e60633  // add	a2, a2, a4
 	WORD $0x00064603  // lbu	a2, 0(a2)
@@ -197,7 +197,7 @@ LBB0_25:
 LBB0_26:
 	WORD $0x03069613  // slli	a2, a3, 48
 	WORD $0x03065613  // srli	a2, a2, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X15  // lui	a5, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X15  // lui	a5, %hi(Digits)
 	// addi	a5, a5, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00f60633  // add	a2, a2, a5
 	WORD $0x00064603  // lbu	a2, 0(a2)
@@ -211,7 +211,7 @@ LBB0_27:
 	WORD $0x0016e693  // ori	a3, a3, 1
 	WORD $0x71060613  // addi	a2, a2, 1808
 	WORD $0x02c80633  // mul	a2, a6, a2
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x47b2879b  // addiw	a5, t0, 1147
 	WORD $0x03069693  // slli	a3, a3, 48
@@ -283,7 +283,7 @@ LBB0_30:
 	WORD $0x6805051b  // addiw	a0, a0, 1664
 	WORD $0x00169693  // slli	a3, a3, 1
 	BLTU X11, X10, LBB0_51  // bltu	a1, a0, .LBB0_51
-	MOV $·pf9f0f641d845caf_Digits(SB), X10  // lui	a0, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X10  // lui	a0, %hi(Digits)
 	// addi	a0, a0, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -291,12 +291,12 @@ LBB0_30:
 	WORD $0x00100793  // li	a5, 1
 	JMP LBB0_53  // j	.LBB0_53
 LBB0_33:
-	MOV $·pf9f0f641d845caf_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
+	MOV $·p302fa6fde3b70c62_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
 	MOV (X14), X14  // ld	a4, %lo(.LCPI0_0)(a4)
 	WORD $0x10068293  // addi	t0, a3, 256
 	BLTU X14, X11, LBB0_75  // bltu	a4, a1, .LBB0_75
 	WORD $0x00000613  // li	a2, 0
-	MOV $·pf9f0f641d845caf_LCPI0_4(SB), X15  // lui	a5, %hi(.LCPI0_4)
+	MOV $·p302fa6fde3b70c62_LCPI0_4(SB), X15  // lui	a5, %hi(.LCPI0_4)
 	WORD $0xfff00813  // li	a6, -1
 	WORD $0x000d26b7  // lui	a3, 210
 	WORD $0x02085713  // srli	a4, a6, 32
@@ -317,7 +317,7 @@ LBB0_33:
 	WORD $0x26940457  // vand.vv	v8, v9, v8
 	WORD $0xcd817057  // vsetivli	zero, 2, e64, m1, ta, ma
 	WORD $0x9686e457  // vmul.vx	v8, v8, a3
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_5)(a3)
 	WORD $0xa2874557  // vsrl.vx	v10, v8, a4
 	WORD $0x42006457  // vmv.s.x	v8, zero
@@ -425,7 +425,7 @@ LBB0_39:
 	WORD $0x96b6e5d7  // vmul.vx	v11, v11, a3
 	WORD $0x02d00693  // li	a3, 45
 	WORD $0xa2b6c657  // vsrl.vx	v12, v11, a3
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_5)(a3)
 	WORD $0x969834d7  // vsll.vi	v9, v9, 16
 	WORD $0x420065d7  // vmv.s.x	v11, zero
@@ -544,7 +544,7 @@ LBB0_47:
 	WORD $0x00d66633  // or	a2, a2, a3
 	WORD $0x40c006bb  // negw	a3, a2
 	WORD $0x00d67633  // and	a2, a2, a3
-	MOV $·pf9f0f641d845caf_LCPI0_6(SB), X13  // lui	a3, %hi(.LCPI0_6)
+	MOV $·p302fa6fde3b70c62_LCPI0_6(SB), X13  // lui	a3, %hi(.LCPI0_6)
 	// addi	a3, a3, %lo(.LCPI0_6) (skipped, covered by MOV address load)
 	WORD $0x53170713  // addi	a4, a4, 1329
 	WORD $0x02e60633  // mul	a2, a2, a4
@@ -552,7 +552,7 @@ LBB0_47:
 	WORD $0x00d60633  // add	a2, a2, a3
 	WORD $0x00064603  // lbu	a2, 0(a2)
 	WORD $0x00461693  // slli	a3, a2, 4
-	MOV $·pf9f0f641d845caf_VecShiftShuffles(SB), X14  // lui	a4, %hi(VecShiftShuffles)
+	MOV $·p302fa6fde3b70c62_VecShiftShuffles(SB), X14  // lui	a4, %hi(VecShiftShuffles)
 	// addi	a4, a4, %lo(VecShiftShuffles) (skipped, covered by MOV address load)
 	WORD $0x00e686b3  // add	a3, a3, a4
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
@@ -587,7 +587,7 @@ LBB0_51:
 	WORD $0x00000793  // li	a5, 0
 LBB0_53:
 	WORD $0x00176513  // ori	a0, a4, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -597,7 +597,7 @@ LBB0_53:
 LBB0_54:
 	WORD $0x03069513  // slli	a0, a3, 48
 	WORD $0x03055513  // srli	a0, a0, 48
-	MOV $·pf9f0f641d845caf_Digits(SB), X15  // lui	a5, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X15  // lui	a5, %hi(Digits)
 	// addi	a5, a5, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00f50533  // add	a0, a0, a5
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -611,7 +611,7 @@ LBB0_55:
 	WORD $0x0016e693  // ori	a3, a3, 1
 	WORD $0x71050513  // addi	a0, a0, 1808
 	WORD $0x02a80533  // mul	a0, a6, a0
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x47b2879b  // addiw	a5, t0, 1147
 	WORD $0x03069693  // slli	a3, a3, 48
@@ -650,11 +650,11 @@ LBB0_56:
 	BGEU X11, X10, LBB0_54  // bgeu	a1, a0, .LBB0_54
 	JMP LBB0_55  // j	.LBB0_55
 LBB0_57:
-	MOV $·pf9f0f641d845caf_LCPI0_0(SB), X13  // lui	a3, %hi(.LCPI0_0)
+	MOV $·p302fa6fde3b70c62_LCPI0_0(SB), X13  // lui	a3, %hi(.LCPI0_0)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_0)(a3)
 	BLTU X13, X11, LBB0_93  // bltu	a3, a1, .LBB0_93
 	WORD $0x00000513  // li	a0, 0
-	MOV $·pf9f0f641d845caf_LCPI0_4(SB), X14  // lui	a4, %hi(.LCPI0_4)
+	MOV $·p302fa6fde3b70c62_LCPI0_4(SB), X14  // lui	a4, %hi(.LCPI0_4)
 	WORD $0xfff00813  // li	a6, -1
 	WORD $0x000d27b7  // lui	a5, 210
 	WORD $0x02085693  // srli	a3, a6, 32
@@ -675,7 +675,7 @@ LBB0_57:
 	WORD $0x26940457  // vand.vv	v8, v9, v8
 	WORD $0xcd817057  // vsetivli	zero, 2, e64, m1, ta, ma
 	WORD $0x9687e457  // vmul.vx	v8, v8, a5
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X15  // lui	a5, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X15  // lui	a5, %hi(.LCPI0_5)
 	MOV (X15), X15  // ld	a5, %lo(.LCPI0_5)(a5)
 	WORD $0xa286c557  // vsrl.vx	v10, v8, a3
 	WORD $0x42006457  // vmv.s.x	v8, zero
@@ -785,7 +785,7 @@ LBB0_63:
 	WORD $0x96b6e5d7  // vmul.vx	v11, v11, a3
 	WORD $0x02d00693  // li	a3, 45
 	WORD $0xa2b6c657  // vsrl.vx	v12, v11, a3
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X13  // lui	a3, %hi(.LCPI0_5)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_5)(a3)
 	WORD $0x969834d7  // vsll.vi	v9, v9, 16
 	WORD $0x420065d7  // vmv.s.x	v11, zero
@@ -904,7 +904,7 @@ LBB0_71:
 	WORD $0x00d5e5b3  // or	a1, a1, a3
 	WORD $0x40b006bb  // negw	a3, a1
 	WORD $0x00d5f5b3  // and	a1, a1, a3
-	MOV $·pf9f0f641d845caf_LCPI0_6(SB), X13  // lui	a3, %hi(.LCPI0_6)
+	MOV $·p302fa6fde3b70c62_LCPI0_6(SB), X13  // lui	a3, %hi(.LCPI0_6)
 	// addi	a3, a3, %lo(.LCPI0_6) (skipped, covered by MOV address load)
 	WORD $0x53170713  // addi	a4, a4, 1329
 	WORD $0x02e585b3  // mul	a1, a1, a4
@@ -912,7 +912,7 @@ LBB0_71:
 	WORD $0x00d585b3  // add	a1, a1, a3
 	WORD $0x0005c583  // lbu	a1, 0(a1)
 	WORD $0x00459693  // slli	a3, a1, 4
-	MOV $·pf9f0f641d845caf_VecShiftShuffles(SB), X14  // lui	a4, %hi(VecShiftShuffles)
+	MOV $·p302fa6fde3b70c62_VecShiftShuffles(SB), X14  // lui	a4, %hi(VecShiftShuffles)
 	// addi	a4, a4, %lo(VecShiftShuffles) (skipped, covered by MOV address load)
 	WORD $0x00e686b3  // add	a3, a3, a4
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
@@ -941,9 +941,9 @@ LBB0_73:
 	WORD $0x40b505b3  // sub	a1, a0, a1
 	JMP LBB0_22  // j	.LBB0_22
 LBB0_75:
-	MOV $·pf9f0f641d845caf_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
+	MOV $·p302fa6fde3b70c62_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_1)(a3)
-	MOV $·pf9f0f641d845caf_LCPI0_2(SB), X14  // lui	a4, %hi(.LCPI0_2)
+	MOV $·p302fa6fde3b70c62_LCPI0_2(SB), X14  // lui	a4, %hi(.LCPI0_2)
 	MOV (X14), X15  // ld	a5, %lo(.LCPI0_2)(a4)
 	WORD $0x02d5b733  // mulhu	a4, a1, a3
 	WORD $0x03375713  // srli	a4, a4, 51
@@ -953,11 +953,11 @@ LBB0_75:
 	WORD $0x00100813  // li	a6, 1
 	JMP LBB0_80  // j	.LBB0_80
 LBB0_77:
-	MOV $·pf9f0f641d845caf_LCPI0_3(SB), X13  // lui	a3, %hi(.LCPI0_3)
+	MOV $·p302fa6fde3b70c62_LCPI0_3(SB), X13  // lui	a3, %hi(.LCPI0_3)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_3)(a3)
 	BLTU X13, X11, LBB0_79  // bltu	a3, a1, .LBB0_79
 	WORD $0x00171613  // slli	a2, a4, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X13  // lui	a3, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X13  // lui	a3, %hi(Digits)
 	// addi	a3, a3, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00d60633  // add	a2, a2, a3
 	WORD $0xcc517057  // vsetivli	zero, 2, e8, mf8, ta, ma
@@ -973,7 +973,7 @@ LBB0_79:
 	WORD $0x02f687b3  // mul	a5, a3, a5
 	WORD $0x0306e693  // ori	a3, a3, 48
 	WORD $0x00d50023  // sb	a3, 0(a0)
-	MOV $·pf9f0f641d845caf_Digits(SB), X13  // lui	a3, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X13  // lui	a3, %hi(Digits)
 	// addi	a3, a3, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x40f707bb  // subw	a5, a4, a5
 	WORD $0x03179793  // slli	a5, a5, 49
@@ -990,7 +990,7 @@ LBB0_80:
 	WORD $0x02035613  // srli	a2, t1, 32
 	WORD $0xcd827057  // vsetivli	zero, 4, e64, m1, ta, ma
 	WORD $0x5e064457  // vmv.v.x	v8, a2
-	MOV $·pf9f0f641d845caf_LCPI0_4(SB), X12  // lui	a2, %hi(.LCPI0_4)
+	MOV $·p302fa6fde3b70c62_LCPI0_4(SB), X12  // lui	a2, %hi(.LCPI0_4)
 	WORD $0xf276869b  // addiw	a3, a3, -217
 	WORD $0x00c69693  // slli	a3, a3, 12
 	WORD $0xfc168693  // addi	a3, a3, -63
@@ -1013,7 +1013,7 @@ LBB0_80:
 	WORD $0x26940457  // vand.vv	v8, v9, v8
 	WORD $0xcd817057  // vsetivli	zero, 2, e64, m1, ta, ma
 	WORD $0x9686e457  // vmul.vx	v8, v8, a3
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X12  // lui	a2, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X12  // lui	a2, %hi(.LCPI0_5)
 	MOV (X12), X12  // ld	a2, %lo(.LCPI0_5)(a2)
 	WORD $0xa285c557  // vsrl.vx	v10, v8, a1
 	WORD $0x42006457  // vmv.s.x	v8, zero
@@ -1121,7 +1121,7 @@ LBB0_85:
 	WORD $0x96b665d7  // vmul.vx	v11, v11, a2
 	WORD $0x02d00613  // li	a2, 45
 	WORD $0xa2b64657  // vsrl.vx	v12, v11, a2
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X12  // lui	a2, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X12  // lui	a2, %hi(.LCPI0_5)
 	MOV (X12), X12  // ld	a2, %lo(.LCPI0_5)(a2)
 	WORD $0x969834d7  // vsll.vi	v9, v9, 16
 	WORD $0x420065d7  // vmv.s.x	v11, zero
@@ -1225,9 +1225,9 @@ LBB0_91:
 	WORD $0x01080593  // addi	a1, a6, 16
 	JMP LBB0_9  // j	.LBB0_9
 LBB0_93:
-	MOV $·pf9f0f641d845caf_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
+	MOV $·p302fa6fde3b70c62_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_1)(a3)
-	MOV $·pf9f0f641d845caf_LCPI0_2(SB), X14  // lui	a4, %hi(.LCPI0_2)
+	MOV $·p302fa6fde3b70c62_LCPI0_2(SB), X14  // lui	a4, %hi(.LCPI0_2)
 	MOV (X14), X14  // ld	a4, %lo(.LCPI0_2)(a4)
 	WORD $0x02d5b6b3  // mulhu	a3, a1, a3
 	WORD $0x0336d693  // srli	a3, a3, 51
@@ -1237,11 +1237,11 @@ LBB0_93:
 	WORD $0x00100813  // li	a6, 1
 	JMP LBB0_98  // j	.LBB0_98
 LBB0_95:
-	MOV $·pf9f0f641d845caf_LCPI0_3(SB), X14  // lui	a4, %hi(.LCPI0_3)
+	MOV $·p302fa6fde3b70c62_LCPI0_3(SB), X14  // lui	a4, %hi(.LCPI0_3)
 	MOV (X14), X14  // ld	a4, %lo(.LCPI0_3)(a4)
 	BLTU X14, X11, LBB0_97  // bltu	a4, a1, .LBB0_97
 	WORD $0x00169513  // slli	a0, a3, 1
-	MOV $·pf9f0f641d845caf_Digits(SB), X14  // lui	a4, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X14  // lui	a4, %hi(Digits)
 	// addi	a4, a4, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0xcc517057  // vsetivli	zero, 2, e8, mf8, ta, ma
@@ -1256,7 +1256,7 @@ LBB0_97:
 	WORD $0x03076793  // ori	a5, a4, 48
 	WORD $0x00f500a3  // sb	a5, 1(a0)
 	WORD $0x06400513  // li	a0, 100
-	MOV $·pf9f0f641d845caf_Digits(SB), X15  // lui	a5, %hi(Digits)
+	MOV $·p302fa6fde3b70c62_Digits(SB), X15  // lui	a5, %hi(Digits)
 	// addi	a5, a5, %lo(Digits) (skipped, covered by MOV address load)
 	WORD $0x02a70533  // mul	a0, a4, a0
 	WORD $0x40a6853b  // subw	a0, a3, a0
@@ -1275,7 +1275,7 @@ LBB0_98:
 	WORD $0x0208d793  // srli	a5, a7, 32
 	WORD $0xcd827057  // vsetivli	zero, 4, e64, m1, ta, ma
 	WORD $0x5e07c457  // vmv.v.x	v8, a5
-	MOV $·pf9f0f641d845caf_LCPI0_4(SB), X15  // lui	a5, %hi(.LCPI0_4)
+	MOV $·p302fa6fde3b70c62_LCPI0_4(SB), X15  // lui	a5, %hi(.LCPI0_4)
 	WORD $0xf275051b  // addiw	a0, a0, -217
 	WORD $0x00c51513  // slli	a0, a0, 12
 	WORD $0xfc150513  // addi	a0, a0, -63
@@ -1298,7 +1298,7 @@ LBB0_98:
 	WORD $0x26940457  // vand.vv	v8, v9, v8
 	WORD $0xcd817057  // vsetivli	zero, 2, e64, m1, ta, ma
 	WORD $0x9685e457  // vmul.vx	v8, v8, a1
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X11  // lui	a1, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X11  // lui	a1, %hi(.LCPI0_5)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI0_5)(a1)
 	WORD $0xa2854557  // vsrl.vx	v10, v8, a0
 	WORD $0x42006457  // vmv.s.x	v8, zero
@@ -1407,7 +1407,7 @@ LBB0_103:
 	WORD $0x96a56557  // vmul.vx	v10, v10, a0
 	WORD $0x02d00513  // li	a0, 45
 	WORD $0xa2a54557  // vsrl.vx	v10, v10, a0
-	MOV $·pf9f0f641d845caf_LCPI0_5(SB), X10  // lui	a0, %hi(.LCPI0_5)
+	MOV $·p302fa6fde3b70c62_LCPI0_5(SB), X10  // lui	a0, %hi(.LCPI0_5)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI0_5)(a0)
 	WORD $0x969834d7  // vsll.vi	v9, v9, 16
 	WORD $0x420065d7  // vmv.s.x	v11, zero
@@ -1517,9 +1517,9 @@ TEXT ·__i64toa(SB), NOSPLIT, $0-24
 	NO_LOCAL_POINTERS
 
 _entry___i64toa:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-64, SP, X30
-	BLTU X30, X31, _stack_grow___i64toa
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-64, SP, X16
+	BLTU X16, X17, _stack_grow___i64toa
 
 ___i64toa:
 	MOV out+0(FP), X10
@@ -1529,70 +1529,70 @@ ___i64toa:
 	RET
 
 _stack_grow___i64toa:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___i64toa
 
 // Data section
-GLOBL ·pf9f0f641d845caf_LCPI0_0(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_0+0(SB)/8, $0x002386f26fc0ffff
-GLOBL ·pf9f0f641d845caf_LCPI0_1(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_1+0(SB)/8, $0x39a5652fb1137857
-GLOBL ·pf9f0f641d845caf_LCPI0_2(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_2+0(SB)/8, $0x016345785d89ffff
-GLOBL ·pf9f0f641d845caf_LCPI0_3(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_3+0(SB)/8, $0x0de0b6b3a763ffff
-GLOBL ·pf9f0f641d845caf_LCPI0_4(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_4+0(SB)/8, $0xabcc77118461cefd
-GLOBL ·pf9f0f641d845caf_LCPI0_5(SB), RODATA, $8
-DATA ·pf9f0f641d845caf_LCPI0_5+0(SB)/8, $0x80003334147b20c5
-GLOBL ·pf9f0f641d845caf_LCPI0_6(SB), RODATA, $32
-DATA ·pf9f0f641d845caf_LCPI0_6+0(SB)/8, $0x03180e1d021c0100
-DATA ·pf9f0f641d845caf_LCPI0_6+8(SB)/8, $0x080411190f14161e
-DATA ·pf9f0f641d845caf_LCPI0_6+16(SB)/8, $0x07101315170d1b1f
-DATA ·pf9f0f641d845caf_LCPI0_6+24(SB)/8, $0x090a050b06120c1a
-GLOBL ·pf9f0f641d845caf_Digits(SB), RODATA, $200
-DATA ·pf9f0f641d845caf_Digits+0(SB)/8, $0x3330323031303030
-DATA ·pf9f0f641d845caf_Digits+8(SB)/8, $0x3730363035303430
-DATA ·pf9f0f641d845caf_Digits+16(SB)/8, $0x3131303139303830
-DATA ·pf9f0f641d845caf_Digits+24(SB)/8, $0x3531343133313231
-DATA ·pf9f0f641d845caf_Digits+32(SB)/8, $0x3931383137313631
-DATA ·pf9f0f641d845caf_Digits+40(SB)/8, $0x3332323231323032
-DATA ·pf9f0f641d845caf_Digits+48(SB)/8, $0x3732363235323432
-DATA ·pf9f0f641d845caf_Digits+56(SB)/8, $0x3133303339323832
-DATA ·pf9f0f641d845caf_Digits+64(SB)/8, $0x3533343333333233
-DATA ·pf9f0f641d845caf_Digits+72(SB)/8, $0x3933383337333633
-DATA ·pf9f0f641d845caf_Digits+80(SB)/8, $0x3334323431343034
-DATA ·pf9f0f641d845caf_Digits+88(SB)/8, $0x3734363435343434
-DATA ·pf9f0f641d845caf_Digits+96(SB)/8, $0x3135303539343834
-DATA ·pf9f0f641d845caf_Digits+104(SB)/8, $0x3535343533353235
-DATA ·pf9f0f641d845caf_Digits+112(SB)/8, $0x3935383537353635
-DATA ·pf9f0f641d845caf_Digits+120(SB)/8, $0x3336323631363036
-DATA ·pf9f0f641d845caf_Digits+128(SB)/8, $0x3736363635363436
-DATA ·pf9f0f641d845caf_Digits+136(SB)/8, $0x3137303739363836
-DATA ·pf9f0f641d845caf_Digits+144(SB)/8, $0x3537343733373237
-DATA ·pf9f0f641d845caf_Digits+152(SB)/8, $0x3937383737373637
-DATA ·pf9f0f641d845caf_Digits+160(SB)/8, $0x3338323831383038
-DATA ·pf9f0f641d845caf_Digits+168(SB)/8, $0x3738363835383438
-DATA ·pf9f0f641d845caf_Digits+176(SB)/8, $0x3139303939383838
-DATA ·pf9f0f641d845caf_Digits+184(SB)/8, $0x3539343933393239
-DATA ·pf9f0f641d845caf_Digits+192(SB)/8, $0x3939383937393639
-GLOBL ·pf9f0f641d845caf_VecShiftShuffles(SB), RODATA, $144
-DATA ·pf9f0f641d845caf_VecShiftShuffles+0(SB)/8, $0x0706050403020100
-DATA ·pf9f0f641d845caf_VecShiftShuffles+8(SB)/8, $0x0f0e0d0c0b0a0908
-DATA ·pf9f0f641d845caf_VecShiftShuffles+16(SB)/8, $0x0807060504030201
-DATA ·pf9f0f641d845caf_VecShiftShuffles+24(SB)/8, $0xff0f0e0d0c0b0a09
-DATA ·pf9f0f641d845caf_VecShiftShuffles+32(SB)/8, $0x0908070605040302
-DATA ·pf9f0f641d845caf_VecShiftShuffles+40(SB)/8, $0xffff0f0e0d0c0b0a
-DATA ·pf9f0f641d845caf_VecShiftShuffles+48(SB)/8, $0x0a09080706050403
-DATA ·pf9f0f641d845caf_VecShiftShuffles+56(SB)/8, $0xffffff0f0e0d0c0b
-DATA ·pf9f0f641d845caf_VecShiftShuffles+64(SB)/8, $0x0b0a090807060504
-DATA ·pf9f0f641d845caf_VecShiftShuffles+72(SB)/8, $0xffffffff0f0e0d0c
-DATA ·pf9f0f641d845caf_VecShiftShuffles+80(SB)/8, $0x0c0b0a0908070605
-DATA ·pf9f0f641d845caf_VecShiftShuffles+88(SB)/8, $0xffffffffff0f0e0d
-DATA ·pf9f0f641d845caf_VecShiftShuffles+96(SB)/8, $0x0d0c0b0a09080706
-DATA ·pf9f0f641d845caf_VecShiftShuffles+104(SB)/8, $0xffffffffffff0f0e
-DATA ·pf9f0f641d845caf_VecShiftShuffles+112(SB)/8, $0x0e0d0c0b0a090807
-DATA ·pf9f0f641d845caf_VecShiftShuffles+120(SB)/8, $0xffffffffffffff0f
-DATA ·pf9f0f641d845caf_VecShiftShuffles+128(SB)/8, $0x0f0e0d0c0b0a0908
-DATA ·pf9f0f641d845caf_VecShiftShuffles+136(SB)/8, $0xffffffffffffffff
+GLOBL ·p302fa6fde3b70c62_LCPI0_0(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_0+0(SB)/8, $0x002386f26fc0ffff
+GLOBL ·p302fa6fde3b70c62_LCPI0_1(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_1+0(SB)/8, $0x39a5652fb1137857
+GLOBL ·p302fa6fde3b70c62_LCPI0_2(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_2+0(SB)/8, $0x016345785d89ffff
+GLOBL ·p302fa6fde3b70c62_LCPI0_3(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_3+0(SB)/8, $0x0de0b6b3a763ffff
+GLOBL ·p302fa6fde3b70c62_LCPI0_4(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_4+0(SB)/8, $0xabcc77118461cefd
+GLOBL ·p302fa6fde3b70c62_LCPI0_5(SB), RODATA, $8
+DATA ·p302fa6fde3b70c62_LCPI0_5+0(SB)/8, $0x80003334147b20c5
+GLOBL ·p302fa6fde3b70c62_LCPI0_6(SB), RODATA, $32
+DATA ·p302fa6fde3b70c62_LCPI0_6+0(SB)/8, $0x03180e1d021c0100
+DATA ·p302fa6fde3b70c62_LCPI0_6+8(SB)/8, $0x080411190f14161e
+DATA ·p302fa6fde3b70c62_LCPI0_6+16(SB)/8, $0x07101315170d1b1f
+DATA ·p302fa6fde3b70c62_LCPI0_6+24(SB)/8, $0x090a050b06120c1a
+GLOBL ·p302fa6fde3b70c62_Digits(SB), RODATA, $200
+DATA ·p302fa6fde3b70c62_Digits+0(SB)/8, $0x3330323031303030
+DATA ·p302fa6fde3b70c62_Digits+8(SB)/8, $0x3730363035303430
+DATA ·p302fa6fde3b70c62_Digits+16(SB)/8, $0x3131303139303830
+DATA ·p302fa6fde3b70c62_Digits+24(SB)/8, $0x3531343133313231
+DATA ·p302fa6fde3b70c62_Digits+32(SB)/8, $0x3931383137313631
+DATA ·p302fa6fde3b70c62_Digits+40(SB)/8, $0x3332323231323032
+DATA ·p302fa6fde3b70c62_Digits+48(SB)/8, $0x3732363235323432
+DATA ·p302fa6fde3b70c62_Digits+56(SB)/8, $0x3133303339323832
+DATA ·p302fa6fde3b70c62_Digits+64(SB)/8, $0x3533343333333233
+DATA ·p302fa6fde3b70c62_Digits+72(SB)/8, $0x3933383337333633
+DATA ·p302fa6fde3b70c62_Digits+80(SB)/8, $0x3334323431343034
+DATA ·p302fa6fde3b70c62_Digits+88(SB)/8, $0x3734363435343434
+DATA ·p302fa6fde3b70c62_Digits+96(SB)/8, $0x3135303539343834
+DATA ·p302fa6fde3b70c62_Digits+104(SB)/8, $0x3535343533353235
+DATA ·p302fa6fde3b70c62_Digits+112(SB)/8, $0x3935383537353635
+DATA ·p302fa6fde3b70c62_Digits+120(SB)/8, $0x3336323631363036
+DATA ·p302fa6fde3b70c62_Digits+128(SB)/8, $0x3736363635363436
+DATA ·p302fa6fde3b70c62_Digits+136(SB)/8, $0x3137303739363836
+DATA ·p302fa6fde3b70c62_Digits+144(SB)/8, $0x3537343733373237
+DATA ·p302fa6fde3b70c62_Digits+152(SB)/8, $0x3937383737373637
+DATA ·p302fa6fde3b70c62_Digits+160(SB)/8, $0x3338323831383038
+DATA ·p302fa6fde3b70c62_Digits+168(SB)/8, $0x3738363835383438
+DATA ·p302fa6fde3b70c62_Digits+176(SB)/8, $0x3139303939383838
+DATA ·p302fa6fde3b70c62_Digits+184(SB)/8, $0x3539343933393239
+DATA ·p302fa6fde3b70c62_Digits+192(SB)/8, $0x3939383937393639
+GLOBL ·p302fa6fde3b70c62_VecShiftShuffles(SB), RODATA, $144
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+0(SB)/8, $0x0706050403020100
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+8(SB)/8, $0x0f0e0d0c0b0a0908
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+16(SB)/8, $0x0807060504030201
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+24(SB)/8, $0xff0f0e0d0c0b0a09
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+32(SB)/8, $0x0908070605040302
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+40(SB)/8, $0xffff0f0e0d0c0b0a
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+48(SB)/8, $0x0a09080706050403
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+56(SB)/8, $0xffffff0f0e0d0c0b
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+64(SB)/8, $0x0b0a090807060504
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+72(SB)/8, $0xffffffff0f0e0d0c
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+80(SB)/8, $0x0c0b0a0908070605
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+88(SB)/8, $0xffffffffff0f0e0d
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+96(SB)/8, $0x0d0c0b0a09080706
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+104(SB)/8, $0xffffffffffff0f0e
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+112(SB)/8, $0x0e0d0c0b0a090807
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+120(SB)/8, $0xffffffffffffff0f
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+128(SB)/8, $0x0f0e0d0c0b0a0908
+DATA ·p302fa6fde3b70c62_VecShiftShuffles+136(SB)/8, $0xffffffffffffffff

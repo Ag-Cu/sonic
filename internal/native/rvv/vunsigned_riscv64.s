@@ -115,9 +115,9 @@ TEXT ·__vunsigned(SB), NOSPLIT, $0-24
 	NO_LOCAL_POINTERS
 
 _entry___vunsigned:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-64, SP, X30
-	BLTU X30, X31, _stack_grow___vunsigned
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-64, SP, X16
+	BLTU X16, X17, _stack_grow___vunsigned
 
 ___vunsigned:
 	MOV s+0(FP), X10
@@ -127,10 +127,10 @@ ___vunsigned:
 	RET
 
 _stack_grow___vunsigned:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___vunsigned
 
 // Data section
-GLOBL ·p1d87a2938411d642_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p1d87a2938411d642_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p55bde5ee81ffab6a_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p55bde5ee81ffab6a_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002

@@ -5,7 +5,7 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·p108347af5984e85_padding_reader_next(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_padding_reader_next(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 padding_reader_next:
 	WORD $0x00053583  // ld	a1, 0(a0)
@@ -15,20 +15,20 @@ padding_reader_next:
 	RET  // ret
 Lfunc_end0:
 
-TEXT ·p108347af5984e85_padding_reader_peek_n(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_padding_reader_peek_n(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 padding_reader_peek_n:
 	WORD $0x00053503  // ld	a0, 0(a0)
 	RET  // ret
 Lfunc_end1:
 
-TEXT ·p108347af5984e85_padding_reader_cur(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_padding_reader_cur(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 padding_reader_cur:
 	RET  // ret
 Lfunc_end2:
 
-TEXT ·p108347af5984e85_padding_reader_remain(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_padding_reader_remain(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 padding_reader_remain:
 	WORD $0x01053583  // ld	a1, 16(a0)
@@ -37,7 +37,7 @@ padding_reader_remain:
 	RET  // ret
 Lfunc_end3:
 
-TEXT ·p108347af5984e85_padding_reader_eat(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_padding_reader_eat(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 padding_reader_eat:
 	WORD $0x00053603  // ld	a2, 0(a0)
@@ -51,7 +51,7 @@ TEXT ·__parse_with_padding_entry__(SB), NOSPLIT, $0-8
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__parse_with_padding_riscv64_entry__(SB), NOSPLIT, $816
+TEXT ·__parse_with_padding_riscv64_entry__(SB), $816
 	NO_LOCAL_POINTERS
 parse_with_padding:
 	WORD $0xdc010113  // addi	sp, sp, -576
@@ -110,7 +110,7 @@ LBB5_1:
 	BNEZ X10, LBB5_27  // bnez	a0, .LBB5_27
 	WORD $0x04088b93  // addi	s7, a7, 64
 LBB5_8:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -268,13 +268,13 @@ LBB5_24:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_27:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -425,7 +425,7 @@ LBB5_54:
 	BNEZ X10, LBB5_76  // bnez	a0, .LBB5_76
 	WORD $0x04038913  // addi	s2, t2, 64
 LBB5_57:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -583,13 +583,13 @@ LBB5_73:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0870b823  // sd	t2, 144(ra)
 LBB5_76:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -762,7 +762,7 @@ LBB5_101:
 	BNEZ X10, LBB5_128  // bnez	a0, .LBB5_128
 	WORD $0x04038913  // addi	s2, t2, 64
 LBB5_109:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -920,13 +920,13 @@ LBB5_125:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0870b823  // sd	t2, 144(ra)
 LBB5_128:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -1118,7 +1118,7 @@ LBB5_158:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02080427  // vse8.v	v8, (a6)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050493  // mv	s1, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -1153,7 +1153,7 @@ LBB5_162:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02060427  // vse8.v	v8, (a2)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x29010593  // addi	a1, sp, 656
@@ -1188,9 +1188,9 @@ LBB5_166:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x27010593  // addi	a1, sp, 624
 	WORD $0x02858507  // vl1r.v	v10, (a1)
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -1209,7 +1209,7 @@ LBB5_168:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -1361,7 +1361,7 @@ LBB5_197:
 	BNE X12, X11, LBB5_197  // bne	a2, a1, .LBB5_197
 	WORD $0xfff00493  // li	s1, -1
 	WORD $0x077cb537  // lui	a0, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X29  // lui	t4, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X29  // lui	t4, %hi(.LCPI5_3)
 	// addi	t4, t4, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01000e13  // li	t3, 16
 	WORD $0x00f00393  // li	t2, 15
@@ -1782,7 +1782,7 @@ LBB5_290:
 	WORD $0x01700513  // li	a0, 23
 	BLTU X29, X10, LBB5_340  // bltu	t4, a0, .LBB5_340
 	WORD $0x003e9513  // slli	a0, t4, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0xf5053707  // fld	fa4, -176(a0)
@@ -1794,7 +1794,7 @@ LBB5_296:
 	BLTU X29, X10, LBB5_298  // bltu	t4, a0, .LBB5_298
 	WORD $0x41d0053b  // negw	a0, t4
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -1806,12 +1806,12 @@ LBB5_298:
 	BLTU X10, X11, LBB5_307  // bltu	a0, a1, .LBB5_307
 LBB5_299:
 	WORD $0x00165513  // srli	a0, a2, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X17  // lui	a7, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X6  // lui	t1, %hi(.LCPI5_6)
-	MOV $·p108347af5984e85_LCPI5_7(SB), X28  // lui	t3, %hi(.LCPI5_7)
-	MOV $·p108347af5984e85_LCPI5_8(SB), X30  // lui	t5, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X17  // lui	a7, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X6  // lui	t1, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X28  // lui	t3, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X30  // lui	t5, %hi(.LCPI5_8)
 	WORD $0x004e9493  // slli	s1, t4, 4
-	MOV $·p108347af5984e85_POW10_M128_TAB(SB), X31  // lui	t6, %hi(POW10_M128_TAB)
+	MOV $·p348d0202098f8f91_POW10_M128_TAB(SB), X31  // lui	t6, %hi(POW10_M128_TAB)
 	// addi	t6, t6, %lo(POW10_M128_TAB) (skipped, covered by MOV address load)
 	WORD $0x000015b7  // lui	a1, 1
 	WORD $0x00c56533  // or	a0, a0, a2
@@ -2025,8 +2025,8 @@ LBB5_337:
 	WORD $0x00160693  // addi	a3, a2, 1
 	BEQZ X13, LBB5_560  // beqz	a3, .LBB5_560
 	WORD $0x0016d513  // srli	a0, a3, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
 	WORD $0x00d56533  // or	a0, a0, a3
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_5)(a1)
 	MOV (X12), X12  // ld	a2, %lo(.LCPI5_6)(a2)
@@ -2043,12 +2043,12 @@ LBB5_337:
 	WORD $0xfff54513  // not	a0, a0
 	WORD $0x00155793  // srli	a5, a0, 1
 	WORD $0x00f5f5b3  // and	a1, a1, a5
-	MOV $·p108347af5984e85_LCPI5_7(SB), X15  // lui	a5, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X15  // lui	a5, %hi(.LCPI5_7)
 	WORD $0x40b50533  // sub	a0, a0, a1
 	WORD $0x00c575b3  // and	a1, a0, a2
 	WORD $0x00255513  // srli	a0, a0, 2
 	WORD $0x00c57533  // and	a0, a0, a2
-	MOV $·p108347af5984e85_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
 	MOV (X15), X15  // ld	a5, %lo(.LCPI5_7)(a5)
 	WORD $0x00b50533  // add	a0, a0, a1
 	MOV (X12), X11  // ld	a1, %lo(.LCPI5_8)(a2)
@@ -2061,13 +2061,13 @@ LBB5_337:
 LBB5_340:
 	WORD $0x000e8513  // mv	a0, t4
 LBB5_341:
-	MOV $·p108347af5984e85_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
+	MOV $·p348d0202098f8f91_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
 	MOVD (X11), F4  // fld	fa4, %lo(.LCPI5_4)(a1)
 	WORD $0x22f7a6d3  // fabs.d	fa3, fa5
 	WORD $0xa2d715d3  // flt.d	a1, fa4, fa3
 	BNEZ X11, LBB5_299  // bnez	a1, .LBB5_299
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -2249,9 +2249,9 @@ LBB5_377:
 	WORD $0x00a00693  // li	a3, 10
 	WORD $0x03000a93  // li	s5, 48
 	WORD $0x00100a13  // li	s4, 1
-	MOV $·p108347af5984e85_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
 	MOV (X11), X25  // ld	s9, %lo(.LCPI5_9)(a1)
-	MOV $·p108347af5984e85_POW_TAB(SB), g  // lui	s11, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), g  // lui	s11, %hi(POW_TAB)
 	// addi	s11, s11, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0xfc300c13  // li	s8, -61
 	WORD $0xf8800e13  // li	t3, -120
@@ -2472,13 +2472,13 @@ LBB5_432:
 	WORD $0x01d98ebb  // addw	t4, s3, t4
 LBB5_433:
 	WORD $0x0a113823  // sd	ra, 176(sp)
-	MOV $·p108347af5984e85_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
 	WORD $0xff600a13  // li	s4, -10
 	WORD $0x00100093  // li	ra, 1
 	WORD $0x00a00693  // li	a3, 10
 	WORD $0x00900993  // li	s3, 9
 	WORD $0x03000d13  // li	s10, 48
-	MOV $·p108347af5984e85_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
 	MOV (X11), X24  // ld	s8, %lo(.LCPI5_10)(a1)
 	MOV (X12), X28  // ld	t3, %lo(.LCPI5_9)(a2)
 	WORD $0xf8800c93  // li	s9, -120
@@ -2498,7 +2498,7 @@ LBB5_436:
 LBB5_438:
 	WORD $0x405005bb  // negw	a1, t0
 	WORD $0x00259593  // slli	a1, a1, 2
-	MOV $·p108347af5984e85_POW_TAB(SB), X12  // lui	a2, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), X12  // lui	a2, %hi(POW_TAB)
 	// addi	a2, a2, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0x00c585b3  // add	a1, a1, a2
 	WORD $0x0005a803  // lw	a6, 0(a1)
@@ -2506,7 +2506,7 @@ LBB5_438:
 LBB5_439:
 	WORD $0x06800593  // li	a1, 104
 	WORD $0x02b805b3  // mul	a1, a6, a1
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X12  // lui	a2, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X12  // lui	a2, %hi(LSHIFT_TAB)
 	// addi	a2, a2, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00c585b3  // add	a1, a1, a2
 	WORD $0x0005aa83  // lw	s5, 0(a1)
@@ -2829,7 +2829,7 @@ LBB5_522:
 	WORD $0x3fde841b  // addiw	s0, t4, 1021
 	BLTU X11, X29, LBB5_550  // bltu	a1, t4, .LBB5_550
 	WORD $0x00a00593  // li	a1, 10
-	MOV $·p108347af5984e85_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
 	MOV (X12), X17  // ld	a7, %lo(.LCPI5_9)(a2)
 	WORD $0xf8800a13  // li	s4, -120
 	WORD $0x03000993  // li	s3, 48
@@ -3076,7 +3076,7 @@ LBB5_575:
 	WORD $0x0be13423  // sd	t5, 168(sp)
 	WORD $0x4090053b  // negw	a0, s1
 	WORD $0x077cb3b7  // lui	t2, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
 	// addi	a6, a6, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x808088b7  // lui	a7, 526344
 	WORD $0x303032b7  // lui	t0, 197379
@@ -3120,7 +3120,7 @@ LBB5_575:
 	WORD $0x7ffe879b  // addiw	a5, t4, 2047
 	WORD $0x40050613  // addi	a2, a0, 1024
 	WORD $0x420a65d7  // vmv.s.x	v11, s4
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	WORD $0x00090993  // mv	s3, s2
 	WORD $0x00090a13  // mv	s4, s2
@@ -3348,7 +3348,7 @@ LBB5_599:
 	WORD $0x08013683  // ld	a3, 128(sp)
 	WORD $0x07813783  // ld	a5, 120(sp)
 	WORD $0x07013603  // ld	a2, 112(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_576  // beq	a0, a1, .LBB5_576
 	WORD $0x05513023  // sd	s5, 64(sp)
@@ -3502,7 +3502,7 @@ LBB5_605:
 	WORD $0x11010513  // addi	a0, sp, 272
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x10010513  // addi	a0, sp, 256
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x01000613  // li	a2, 16
 	WORD $0x0ca13023  // sd	a0, 192(sp)
 	WORD $0x00000513  // li	a0, 0
@@ -3538,7 +3538,7 @@ LBB5_609:
 	WORD $0x0f010513  // addi	a0, sp, 240
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x0e010513  // addi	a0, sp, 224
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x0ca13423  // sd	a0, 200(sp)
 	WORD $0x00000513  // li	a0, 0
 LBB5_611:
@@ -3666,7 +3666,7 @@ LBB5_618:
 	WORD $0x1b010513  // addi	a0, sp, 432
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x0ca13023  // sd	a0, 192(sp)
 	WORD $0x00000513  // li	a0, 0
 LBB5_620:
@@ -3705,7 +3705,7 @@ LBB5_622:
 	WORD $0x19010513  // addi	a0, sp, 400
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x0ca13423  // sd	a0, 200(sp)
 	WORD $0x00000513  // li	a0, 0
 LBB5_624:
@@ -3740,9 +3740,9 @@ LBB5_626:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	JMP LBB5_611  // j	.LBB5_611
 LBB5_628:
 	WORD $0x0ffd7513  // andi	a0, s10, 255
@@ -3756,7 +3756,7 @@ LBB5_628:
 	WORD $0x21010593  // addi	a1, sp, 528
 	WORD $0x02858587  // vl1r.v	v11, (a1)
 	WORD $0x0b013083  // ld	ra, 176(sp)
-	MOV $·p108347af5984e85_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
 	// addi	a6, a6, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x05c00593  // li	a1, 92
 	WORD $0x06813883  // ld	a7, 104(sp)
@@ -3770,7 +3770,7 @@ LBB5_628:
 	WORD $0x08013683  // ld	a3, 128(sp)
 	WORD $0x07813783  // ld	a5, 120(sp)
 	WORD $0x07013603  // ld	a2, 112(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_576  // beq	a0, a1, .LBB5_576
 LBB5_629:
@@ -3865,7 +3865,7 @@ LBB5_645:
 	WORD $0x21010513  // addi	a0, sp, 528
 	WORD $0x02850587  // vl1r.v	v11, (a0)
 	WORD $0x0b013083  // ld	ra, 176(sp)
-	MOV $·p108347af5984e85_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X16  // lui	a6, %hi(.LCPI5_3)
 	// addi	a6, a6, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x06813883  // ld	a7, 104(sp)
 	WORD $0x06013283  // ld	t0, 96(sp)
@@ -3878,7 +3878,7 @@ LBB5_645:
 	WORD $0x08013683  // ld	a3, 128(sp)
 	WORD $0x07813783  // ld	a5, 120(sp)
 	WORD $0x07013603  // ld	a2, 112(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	JMP LBB5_576  // j	.LBB5_576
 LBB5_646:
@@ -3985,7 +3985,7 @@ LBB5_667:
 	WORD $0x00038593  // mv	a1, t2
 	WORD $0x58c6061b  // addiw	a2, a2, 1420
 	WORD $0x0204d493  // srli	s1, s1, 32
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
 	// addi	a3, a3, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00d60633  // add	a2, a2, a3
 	WORD $0x02600693  // li	a3, 38
@@ -4000,7 +4000,7 @@ LBB5_668:
 	WORD $0x00d48733  // add	a4, s1, a3
 	WORD $0x00160613  // addi	a2, a2, 1
 	BNE X14, X10, LBB5_668  // bne	a4, a0, .LBB5_668
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
 	// addi	a0, a0, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00950533  // add	a0, a0, s1
 	WORD $0x000015b7  // lui	a1, 1
@@ -4015,7 +4015,7 @@ LBB5_673:
 	WORD $0x00000593  // li	a1, 0
 	WORD $0xffd00893  // li	a7, -3
 	WORD $0xfff98413  // addi	s0, s3, -1
-	MOV $·p108347af5984e85_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
 	WORD $0x03989893  // slli	a7, a7, 57
 	MOV (X10), X10  // ld	a0, %lo(.LCPI5_10)(a0)
 	WORD $0xfff48493  // addi	s1, s1, -1
@@ -4048,7 +4048,7 @@ LBB5_679:
 	BLTU X29, X12, LBB5_675  // bltu	t4, a2, .LBB5_675
 	WORD $0x00a00513  // li	a0, 10
 	BLTU X14, X10, LBB5_687  // bltu	a4, a0, .LBB5_687
-	MOV $·p108347af5984e85_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI5_10)(a0)
 	WORD $0xfff78413  // addi	s0, a5, -1
 	WORD $0xff600693  // li	a3, -10
@@ -4252,7 +4252,7 @@ LBB5_730:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -4472,7 +4472,7 @@ LBB5_777:
 	WORD $0x04030913  // addi	s2, t1, 64
 	WORD $0x00068093  // mv	ra, a3
 LBB5_778:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -4630,13 +4630,13 @@ LBB5_794:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0860b823  // sd	t1, 144(ra)
 LBB5_797:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -4690,7 +4690,7 @@ LBB5_805:
 	WORD $0x04030913  // addi	s2, t1, 64
 	WORD $0x00068093  // mv	ra, a3
 LBB5_806:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -4848,13 +4848,13 @@ LBB5_822:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0860b823  // sd	t1, 144(ra)
 LBB5_825:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -4930,7 +4930,7 @@ LBB5_836:
 LBB5_838:
 	WORD $0x04088913  // addi	s2, a7, 64
 LBB5_839:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -5091,7 +5091,7 @@ LBB5_855:
 LBB5_858:
 	WORD $0x04088913  // addi	s2, a7, 64
 LBB5_859:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -5384,7 +5384,7 @@ LBB5_901:
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x01b5551b  // srliw	a0, a0, 27
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -5429,7 +5429,7 @@ LBB5_904:
 	BNEZ X10, LBB5_930  // bnez	a0, .LBB5_930
 	WORD $0x04088d93  // addi	s11, a7, 64
 LBB5_911:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -5587,13 +5587,13 @@ LBB5_927:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_930:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -5749,7 +5749,7 @@ LBB5_956:
 	WORD $0x040e0913  // addi	s2, t3, 64
 LBB5_959:
 	WORD $0x00038993  // mv	s3, t2
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -5908,13 +5908,13 @@ LBB5_975:
 	WORD $0x09c0b823  // sd	t3, 144(ra)
 	WORD $0x00098393  // mv	t2, s3
 LBB5_978:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -6081,7 +6081,7 @@ LBB5_1004:
 	BNEZ X10, LBB5_1030  // bnez	a0, .LBB5_1030
 	WORD $0x040e0913  // addi	s2, t3, 64
 LBB5_1011:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -6239,13 +6239,13 @@ LBB5_1027:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x09c0b823  // sd	t3, 144(ra)
 LBB5_1030:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -6440,7 +6440,7 @@ LBB5_1060:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02088427  // vse8.v	v8, (a7)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050b13  // mv	s6, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -6475,7 +6475,7 @@ LBB5_1064:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02060427  // vse8.v	v8, (a2)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x29010593  // addi	a1, sp, 656
@@ -6511,9 +6511,9 @@ LBB5_1068:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x27010593  // addi	a1, sp, 624
 	WORD $0x02858507  // vl1r.v	v10, (a1)
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -6535,7 +6535,7 @@ LBB5_1070:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -6690,7 +6690,7 @@ LBB5_1098:
 	BNE X12, X11, LBB5_1098  // bne	a2, a1, .LBB5_1098
 	WORD $0xfff00413  // li	s0, -1
 	WORD $0x077cb537  // lui	a0, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X30  // lui	t5, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X30  // lui	t5, %hi(.LCPI5_3)
 	// addi	t5, t5, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01000e93  // li	t4, 16
 	WORD $0x00f00e13  // li	t3, 15
@@ -7091,7 +7091,7 @@ LBB5_1185:
 	WORD $0x01700513  // li	a0, 23
 	BLTU X29, X10, LBB5_1249  // bltu	t4, a0, .LBB5_1249
 	WORD $0x003e9513  // slli	a0, t4, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0xf5053707  // fld	fa4, -176(a0)
@@ -7103,7 +7103,7 @@ LBB5_1191:
 	BLTU X29, X10, LBB5_1193  // bltu	t4, a0, .LBB5_1193
 	WORD $0x41d0053b  // negw	a0, t4
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -7117,13 +7117,13 @@ LBB5_1194:
 	WORD $0x000f8b13  // mv	s6, t6
 	WORD $0x000f0a93  // mv	s5, t5
 	WORD $0x0016d513  // srli	a0, a3, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X5  // lui	t0, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X6  // lui	t1, %hi(.LCPI5_6)
-	MOV $·p108347af5984e85_LCPI5_7(SB), X30  // lui	t5, %hi(.LCPI5_7)
-	MOV $·p108347af5984e85_LCPI5_8(SB), X31  // lui	t6, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X5  // lui	t0, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X6  // lui	t1, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X30  // lui	t5, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X31  // lui	t6, %hi(.LCPI5_8)
 	WORD $0x000359b7  // lui	s3, 53
 	WORD $0x004e9413  // slli	s0, t4, 4
-	MOV $·p108347af5984e85_POW10_M128_TAB(SB), X11  // lui	a1, %hi(POW10_M128_TAB)
+	MOV $·p348d0202098f8f91_POW10_M128_TAB(SB), X11  // lui	a1, %hi(POW10_M128_TAB)
 	// addi	a1, a1, %lo(POW10_M128_TAB) (skipped, covered by MOV address load)
 	WORD $0x008585b3  // add	a1, a1, s0
 	WORD $0x00001a37  // lui	s4, 1
@@ -7372,8 +7372,8 @@ LBB5_1237:
 	WORD $0x04000493  // li	s1, 64
 	BEQZ X8, LBB5_1240  // beqz	s0, .LBB5_1240
 	WORD $0x00145513  // srli	a0, s0, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
 	WORD $0x00a466b3  // or	a3, s0, a0
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_5)(a1)
 	MOV (X12), X12  // ld	a2, %lo(.LCPI5_6)(a2)
@@ -7390,12 +7390,12 @@ LBB5_1237:
 	WORD $0xfff54513  // not	a0, a0
 	WORD $0x00155693  // srli	a3, a0, 1
 	WORD $0x00d5f5b3  // and	a1, a1, a3
-	MOV $·p108347af5984e85_LCPI5_7(SB), X13  // lui	a3, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X13  // lui	a3, %hi(.LCPI5_7)
 	WORD $0x40b50533  // sub	a0, a0, a1
 	WORD $0x00c575b3  // and	a1, a0, a2
 	WORD $0x00255513  // srli	a0, a0, 2
 	WORD $0x00c57533  // and	a0, a0, a2
-	MOV $·p108347af5984e85_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI5_7)(a3)
 	WORD $0x00b50533  // add	a0, a0, a1
 	MOV (X12), X11  // ld	a1, %lo(.LCPI5_8)(a2)
@@ -7461,13 +7461,13 @@ LBB5_1247:
 LBB5_1249:
 	WORD $0x000e8513  // mv	a0, t4
 LBB5_1250:
-	MOV $·p108347af5984e85_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
+	MOV $·p348d0202098f8f91_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
 	MOVD (X11), F4  // fld	fa4, %lo(.LCPI5_4)(a1)
 	WORD $0x22f7a6d3  // fabs.d	fa3, fa5
 	WORD $0xa2d715d3  // flt.d	a1, fa4, fa3
 	BNEZ X11, LBB5_1194  // bnez	a1, .LBB5_1194
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -7639,9 +7639,9 @@ LBB5_1283:
 	WORD $0x00a00313  // li	t1, 10
 	WORD $0x03000a93  // li	s5, 48
 	WORD $0x00100a13  // li	s4, 1
-	MOV $·p108347af5984e85_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
 	MOV (X11), X24  // ld	s8, %lo(.LCPI5_9)(a1)
-	MOV $·p108347af5984e85_POW_TAB(SB), X17  // lui	a7, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), X17  // lui	a7, %hi(POW_TAB)
 	// addi	a7, a7, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0xfc300393  // li	t2, -61
 	WORD $0xf8800e13  // li	t3, -120
@@ -7861,15 +7861,15 @@ LBB5_1339:
 	WORD $0x00000f93  // li	t6, 0
 	WORD $0x01ee8f3b  // addw	t5, t4, t5
 LBB5_1340:
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
 	// addi	a0, a0, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
-	MOV $·p108347af5984e85_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
 	WORD $0xff600c13  // li	s8, -10
 	WORD $0x00100e13  // li	t3, 1
 	WORD $0x00a00713  // li	a4, 10
 	WORD $0x00900a13  // li	s4, 9
 	WORD $0x03000b13  // li	s6, 48
-	MOV $·p108347af5984e85_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X12  // lui	a2, %hi(.LCPI5_9)
 	MOV (X11), X21  // ld	s5, %lo(.LCPI5_10)(a1)
 	MOV (X12), X17  // ld	a7, %lo(.LCPI5_9)(a2)
 	WORD $0xf8800d93  // li	s11, -120
@@ -7889,7 +7889,7 @@ LBB5_1343:
 LBB5_1345:
 	WORD $0x41f005bb  // negw	a1, t6
 	WORD $0x00259593  // slli	a1, a1, 2
-	MOV $·p108347af5984e85_POW_TAB(SB), X12  // lui	a2, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), X12  // lui	a2, %hi(POW_TAB)
 	// addi	a2, a2, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0x00c585b3  // add	a1, a1, a2
 	WORD $0x0005a383  // lw	t2, 0(a1)
@@ -8191,7 +8191,7 @@ LBB5_1422:
 LBB5_1423:
 	WORD $0x00000493  // li	s1, 0
 LBB5_1424:
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
 	// addi	a0, a0, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 LBB5_1425:
 	WORD $0x407f0f3b  // subw	t5, t5, t2
@@ -8216,7 +8216,7 @@ LBB5_1428:
 	WORD $0x3fdf041b  // addiw	s0, t5, 1021
 	BLTU X10, X30, LBB5_1456  // bltu	a0, t5, .LBB5_1456
 	WORD $0x00a00593  // li	a1, 10
-	MOV $·p108347af5984e85_LCPI5_9(SB), X10  // lui	a0, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X10  // lui	a0, %hi(.LCPI5_9)
 	MOV (X10), X5  // ld	t0, %lo(.LCPI5_9)(a0)
 	WORD $0xf8800f13  // li	t5, -120
 	WORD $0x03000e93  // li	t4, 48
@@ -8467,7 +8467,7 @@ LBB5_1479:
 	BNEZ X11, LBB5_1501  // bnez	a1, .LBB5_1501
 	WORD $0x04088913  // addi	s2, a7, 64
 LBB5_1482:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -8626,13 +8626,13 @@ LBB5_1500:
 	WORD $0x08b0bc23  // sd	a1, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_1501:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X10  // lui	a0, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X10  // lui	a0, %hi(.LCPI5_1)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI5_1)(a0)
 	WORD $0x40b00633  // neg	a2, a1
 	WORD $0x00c5f5b3  // and	a1, a1, a2
 	WORD $0x02a58533  // mul	a0, a1, a0
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -8659,7 +8659,7 @@ LBB5_1506:
 	WORD $0x0be13423  // sd	t5, 168(sp)
 	WORD $0x4160053b  // negw	a0, s6
 	WORD $0x077cbeb7  // lui	t4, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X13  // lui	a3, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X13  // lui	a3, %hi(.LCPI5_3)
 	// addi	a3, a3, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x80808937  // lui	s2, 526344
 	WORD $0x303034b7  // lui	s1, 197379
@@ -8702,7 +8702,7 @@ LBB5_1506:
 	WORD $0x7ff5849b  // addiw	s1, a1, 2047
 	WORD $0x40050713  // addi	a4, a0, 1024
 	WORD $0x4203e5d7  // vmv.s.x	v11, t2
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
 	// addi	a2, a2, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	WORD $0x00040813  // mv	a6, s0
 	WORD $0x00040693  // mv	a3, s0
@@ -8905,7 +8905,7 @@ LBB5_1531:
 	WORD $0x07013783  // ld	a5, 112(sp)
 	WORD $0x06813483  // ld	s1, 104(sp)
 	WORD $0x06013703  // ld	a4, 96(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
 	// addi	a2, a2, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_1507  // beq	a0, a1, .LBB5_1507
 	WORD $0x0e010493  // addi	s1, sp, 224
@@ -9066,7 +9066,7 @@ LBB5_1537:
 	WORD $0x11010513  // addi	a0, sp, 272
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x10010513  // addi	a0, sp, 256
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x01000613  // li	a2, 16
 	WORD $0x00050a93  // mv	s5, a0
 	WORD $0x00000513  // li	a0, 0
@@ -9101,7 +9101,7 @@ LBB5_1541:
 	WORD $0x0f010513  // addi	a0, sp, 240
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x0e010513  // addi	a0, sp, 224
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050c93  // mv	s9, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_1543:
@@ -9224,7 +9224,7 @@ LBB5_1550:
 	WORD $0x1b010513  // addi	a0, sp, 432
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050a93  // mv	s5, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_1552:
@@ -9263,7 +9263,7 @@ LBB5_1554:
 	WORD $0x19010513  // addi	a0, sp, 400
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050c93  // mv	s9, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_1556:
@@ -9298,9 +9298,9 @@ LBB5_1558:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	JMP LBB5_1543  // j	.LBB5_1543
 LBB5_1560:
 	WORD $0x0ffc7513  // andi	a0, s8, 255
@@ -9329,7 +9329,7 @@ LBB5_1560:
 	WORD $0x07013783  // ld	a5, 112(sp)
 	WORD $0x06813483  // ld	s1, 104(sp)
 	WORD $0x06013703  // ld	a4, 96(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
 	// addi	a2, a2, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	WORD $0x08813683  // ld	a3, 136(sp)
 	BEQ X10, X11, LBB5_1507  // beq	a0, a1, .LBB5_1507
@@ -9439,7 +9439,7 @@ LBB5_1577:
 	WORD $0x07013783  // ld	a5, 112(sp)
 	WORD $0x06813483  // ld	s1, 104(sp)
 	WORD $0x06013703  // ld	a4, 96(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X12  // lui	a2, %hi(ESCAPED_TAB)
 	// addi	a2, a2, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	JMP LBB5_1507  // j	.LBB5_1507
 LBB5_1578:
@@ -9550,7 +9550,7 @@ LBB5_1600:
 	WORD $0x000d0593  // mv	a1, s10
 	WORD $0x58c6061b  // addiw	a2, a2, 1420
 	WORD $0x02075713  // srli	a4, a4, 32
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
 	// addi	a3, a3, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00d60633  // add	a2, a2, a3
 	WORD $0x02600693  // li	a3, 38
@@ -9565,7 +9565,7 @@ LBB5_1601:
 	WORD $0x00d707b3  // add	a5, a4, a3
 	WORD $0x00160613  // addi	a2, a2, 1
 	BNE X15, X10, LBB5_1601  // bne	a5, a0, .LBB5_1601
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
 	// addi	a0, a0, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x000015b7  // lui	a1, 1
@@ -9580,7 +9580,7 @@ LBB5_1606:
 	WORD $0x00000513  // li	a0, 0
 	WORD $0xffd00293  // li	t0, -3
 	WORD $0xfffe8493  // addi	s1, t4, -1
-	MOV $·p108347af5984e85_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
 	WORD $0x03929293  // slli	t0, t0, 57
 	MOV (X11), X8  // ld	s0, %lo(.LCPI5_10)(a1)
 	WORD $0xfff70713  // addi	a4, a4, -1
@@ -9613,7 +9613,7 @@ LBB5_1612:
 	BLTU X28, X12, LBB5_1608  // bltu	t3, a2, .LBB5_1608
 	WORD $0x00a00613  // li	a2, 10
 	BLTU X15, X12, LBB5_1620  // bltu	a5, a2, .LBB5_1620
-	MOV $·p108347af5984e85_LCPI5_10(SB), X12  // lui	a2, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X12  // lui	a2, %hi(.LCPI5_10)
 	MOV (X12), X13  // ld	a3, %lo(.LCPI5_10)(a2)
 	WORD $0xfff58413  // addi	s0, a1, -1
 	WORD $0xff600713  // li	a4, -10
@@ -9756,7 +9756,7 @@ LBB5_1649:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -10017,7 +10017,7 @@ LBB5_1699:
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x01b5551b  // srliw	a0, a0, 27
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054583  // lbu	a1, 0(a0)
@@ -10061,13 +10061,13 @@ LBB5_1706:
 LBB5_2752:
 	JMP LBB5_1913  // j	.LBB5_1913
 LBB5_1707:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -10258,7 +10258,7 @@ LBB5_1736:
 	WORD $0x00080d93  // mv	s11, a6
 	WORD $0x02080427  // vse8.v	v8, (a6)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050493  // mv	s1, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -10293,7 +10293,7 @@ LBB5_1740:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02060427  // vse8.v	v8, (a2)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x29010593  // addi	a1, sp, 656
@@ -10328,9 +10328,9 @@ LBB5_1744:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x27010593  // addi	a1, sp, 624
 	WORD $0x02858507  // vl1r.v	v10, (a1)
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -10352,7 +10352,7 @@ LBB5_1746:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -10394,7 +10394,7 @@ LBB5_1747:
 	BNEZ X10, LBB5_1773  // bnez	a0, .LBB5_1773
 	WORD $0x04028913  // addi	s2, t0, 64
 LBB5_1754:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -10552,13 +10552,13 @@ LBB5_1770:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0850b823  // sd	t0, 144(ra)
 LBB5_1773:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -10595,7 +10595,7 @@ LBB5_1779:
 	WORD $0x0be13423  // sd	t5, 168(sp)
 	WORD $0x4090053b  // negw	a0, s1
 	WORD $0x077cb6b7  // lui	a3, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
 	// addi	a5, a5, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x808088b7  // lui	a7, 526344
 	WORD $0x303032b7  // lui	t0, 197379
@@ -10637,7 +10637,7 @@ LBB5_1779:
 	WORD $0x7ff5861b  // addiw	a2, a1, 2047
 	WORD $0x40050713  // addi	a4, a0, 1024
 	WORD $0x420ae5d7  // vmv.s.x	v11, s5
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
 	// addi	a3, a3, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	WORD $0x00048393  // mv	t2, s1
 	WORD $0x00048a93  // mv	s5, s1
@@ -10857,7 +10857,7 @@ LBB5_1804:
 	WORD $0x06813403  // ld	s0, 104(sp)
 	WORD $0x06013603  // ld	a2, 96(sp)
 	WORD $0x05813703  // ld	a4, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
 	// addi	a3, a3, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_1780  // beq	a0, a1, .LBB5_1780
 	WORD $0x01413c23  // sd	s4, 24(sp)
@@ -11014,7 +11014,7 @@ LBB5_1810:
 	WORD $0x11010513  // addi	a0, sp, 272
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x10010513  // addi	a0, sp, 256
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x08a13c23  // sd	a0, 152(sp)
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x23010593  // addi	a1, sp, 560
@@ -11049,7 +11049,7 @@ LBB5_1814:
 	WORD $0x0f010513  // addi	a0, sp, 240
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x0e010513  // addi	a0, sp, 224
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_1816:
@@ -11172,7 +11172,7 @@ LBB5_1823:
 	WORD $0x1b010513  // addi	a0, sp, 432
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x08a13c23  // sd	a0, 152(sp)
 	WORD $0x00000513  // li	a0, 0
 LBB5_1825:
@@ -11211,7 +11211,7 @@ LBB5_1827:
 	WORD $0x19010513  // addi	a0, sp, 400
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_1829:
@@ -11246,9 +11246,9 @@ LBB5_1831:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	JMP LBB5_1816  // j	.LBB5_1816
 LBB5_1833:
 	WORD $0x0ffbf513  // andi	a0, s7, 255
@@ -11263,7 +11263,7 @@ LBB5_1833:
 	WORD $0x02858587  // vl1r.v	v11, (a1)
 	WORD $0x0b013083  // ld	ra, 176(sp)
 	WORD $0x0d813f83  // ld	t6, 216(sp)
-	MOV $·p108347af5984e85_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
 	// addi	a5, a5, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x05c00593  // li	a1, 92
 	WORD $0x05013d03  // ld	s10, 80(sp)
@@ -11279,7 +11279,7 @@ LBB5_1833:
 	WORD $0x06813403  // ld	s0, 104(sp)
 	WORD $0x06013603  // ld	a2, 96(sp)
 	WORD $0x05813703  // ld	a4, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
 	// addi	a3, a3, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_1780  // beq	a0, a1, .LBB5_1780
 LBB5_1834:
@@ -11375,7 +11375,7 @@ LBB5_1850:
 	WORD $0x02850587  // vl1r.v	v11, (a0)
 	WORD $0x0b013083  // ld	ra, 176(sp)
 	WORD $0x0d813f83  // ld	t6, 216(sp)
-	MOV $·p108347af5984e85_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X15  // lui	a5, %hi(.LCPI5_3)
 	// addi	a5, a5, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x05013d03  // ld	s10, 80(sp)
 	WORD $0x04813883  // ld	a7, 72(sp)
@@ -11390,7 +11390,7 @@ LBB5_1850:
 	WORD $0x06813403  // ld	s0, 104(sp)
 	WORD $0x06013603  // ld	a2, 96(sp)
 	WORD $0x05813703  // ld	a4, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X13  // lui	a3, %hi(ESCAPED_TAB)
 	// addi	a3, a3, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	JMP LBB5_1780  // j	.LBB5_1780
 LBB5_1851:
@@ -11446,7 +11446,7 @@ LBB5_1856:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -11580,7 +11580,7 @@ LBB5_1879:
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x01b5551b  // srliw	a0, a0, 27
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -11642,7 +11642,7 @@ LBB5_1887:
 LBB5_1889:
 	WORD $0x04088913  // addi	s2, a7, 64
 LBB5_1890:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -11874,7 +11874,7 @@ LBB5_1913:
 	BNEZ X10, LBB5_1940  // bnez	a0, .LBB5_1940
 	WORD $0x04088693  // addi	a3, a7, 64
 LBB5_1921:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -12032,13 +12032,13 @@ LBB5_1937:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_1940:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -12624,7 +12624,7 @@ LBB5_2029:
 	WORD $0x000f8f13  // mv	t5, t6
 	WORD $0x0d813f83  // ld	t6, 216(sp)
 LBB5_2032:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
@@ -12904,7 +12904,7 @@ LBB5_2077:
 	WORD $0x00080c13  // mv	s8, a6
 	WORD $0x02080427  // vse8.v	v8, (a6)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050493  // mv	s1, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x25010593  // addi	a1, sp, 592
@@ -12938,7 +12938,7 @@ LBB5_2081:
 	WORD $0x5cafb457  // vmerge.vim	v8, v10, -1, v0
 	WORD $0x02090427  // vse8.v	v8, (s2)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050413  // mv	s0, a0
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x29010593  // addi	a1, sp, 656
@@ -12974,9 +12974,9 @@ LBB5_2085:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x1f010593  // addi	a1, sp, 496
 	WORD $0x02858d87  // vl1r.v	v27, (a1)
 	WORD $0x27010593  // addi	a1, sp, 624
@@ -13004,7 +13004,7 @@ LBB5_2089:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -13157,7 +13157,7 @@ LBB5_2116:
 	BNE X12, X11, LBB5_2116  // bne	a2, a1, .LBB5_2116
 	WORD $0xfff00413  // li	s0, -1
 	WORD $0x077cb537  // lui	a0, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X29  // lui	t4, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X29  // lui	t4, %hi(.LCPI5_3)
 	// addi	t4, t4, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01000e13  // li	t3, 16
 	WORD $0x00f00293  // li	t0, 15
@@ -13565,7 +13565,7 @@ LBB5_2202:
 	WORD $0x01700513  // li	a0, 23
 	BLTU X28, X10, LBB5_2262  // bltu	t3, a0, .LBB5_2262
 	WORD $0x003e1513  // slli	a0, t3, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0xf5053707  // fld	fa4, -176(a0)
@@ -13577,7 +13577,7 @@ LBB5_2208:
 	BLTU X28, X10, LBB5_2210  // bltu	t3, a0, .LBB5_2210
 	WORD $0x41c0053b  // negw	a0, t3
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -13590,13 +13590,13 @@ LBB5_2210:
 LBB5_2211:
 	WORD $0x000f0b93  // mv	s7, t5
 	WORD $0x0016d513  // srli	a0, a3, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X5  // lui	t0, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X29  // lui	t4, %hi(.LCPI5_6)
-	MOV $·p108347af5984e85_LCPI5_7(SB), X30  // lui	t5, %hi(.LCPI5_7)
-	MOV $·p108347af5984e85_LCPI5_8(SB), X31  // lui	t6, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X5  // lui	t0, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X29  // lui	t4, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X30  // lui	t5, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X31  // lui	t6, %hi(.LCPI5_8)
 	WORD $0x00035a37  // lui	s4, 53
 	WORD $0x004e1413  // slli	s0, t3, 4
-	MOV $·p108347af5984e85_POW10_M128_TAB(SB), X11  // lui	a1, %hi(POW10_M128_TAB)
+	MOV $·p348d0202098f8f91_POW10_M128_TAB(SB), X11  // lui	a1, %hi(POW10_M128_TAB)
 	// addi	a1, a1, %lo(POW10_M128_TAB) (skipped, covered by MOV address load)
 	WORD $0x008585b3  // add	a1, a1, s0
 	WORD $0x00001b37  // lui	s6, 1
@@ -13818,8 +13818,8 @@ LBB5_2250:
 	WORD $0x04000493  // li	s1, 64
 	BEQZ X8, LBB5_2253  // beqz	s0, .LBB5_2253
 	WORD $0x00145513  // srli	a0, s0, 1
-	MOV $·p108347af5984e85_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
-	MOV $·p108347af5984e85_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
+	MOV $·p348d0202098f8f91_LCPI5_5(SB), X11  // lui	a1, %hi(.LCPI5_5)
+	MOV $·p348d0202098f8f91_LCPI5_6(SB), X12  // lui	a2, %hi(.LCPI5_6)
 	WORD $0x00a466b3  // or	a3, s0, a0
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_5)(a1)
 	MOV (X12), X12  // ld	a2, %lo(.LCPI5_6)(a2)
@@ -13836,12 +13836,12 @@ LBB5_2250:
 	WORD $0xfff54513  // not	a0, a0
 	WORD $0x00155693  // srli	a3, a0, 1
 	WORD $0x00d5f5b3  // and	a1, a1, a3
-	MOV $·p108347af5984e85_LCPI5_7(SB), X13  // lui	a3, %hi(.LCPI5_7)
+	MOV $·p348d0202098f8f91_LCPI5_7(SB), X13  // lui	a3, %hi(.LCPI5_7)
 	WORD $0x40b50533  // sub	a0, a0, a1
 	WORD $0x00c575b3  // and	a1, a0, a2
 	WORD $0x00255513  // srli	a0, a0, 2
 	WORD $0x00c57533  // and	a0, a0, a2
-	MOV $·p108347af5984e85_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
+	MOV $·p348d0202098f8f91_LCPI5_8(SB), X12  // lui	a2, %hi(.LCPI5_8)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI5_7)(a3)
 	WORD $0x00b50533  // add	a0, a0, a1
 	MOV (X12), X11  // ld	a1, %lo(.LCPI5_8)(a2)
@@ -13907,13 +13907,13 @@ LBB5_2260:
 LBB5_2262:
 	WORD $0x000e0513  // mv	a0, t3
 LBB5_2263:
-	MOV $·p108347af5984e85_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
+	MOV $·p348d0202098f8f91_LCPI5_4(SB), X11  // lui	a1, %hi(.LCPI5_4)
 	MOVD (X11), F4  // fld	fa4, %lo(.LCPI5_4)(a1)
 	WORD $0x22f7a6d3  // fabs.d	fa3, fa5
 	WORD $0xa2d715d3  // flt.d	a1, fa4, fa3
 	BNEZ X11, LBB5_2211  // bnez	a1, .LBB5_2211
 	WORD $0x00351513  // slli	a0, a0, 3
-	MOV $·p108347af5984e85_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
+	MOV $·p348d0202098f8f91_P10_TAB(SB), X11  // lui	a1, %hi(P10_TAB)
 	// addi	a1, a1, %lo(P10_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00053707  // fld	fa4, 0(a0)
@@ -14075,7 +14075,7 @@ LBB5_2293:
 	WORD $0x00800313  // li	t1, 8
 	WORD $0x00a00293  // li	t0, 10
 	WORD $0x03000a93  // li	s5, 48
-	MOV $·p108347af5984e85_LCPI5_9(SB), X10  // lui	a0, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X10  // lui	a0, %hi(.LCPI5_9)
 	MOV (X10), X24  // ld	s8, %lo(.LCPI5_9)(a0)
 	WORD $0x00100f13  // li	t5, 1
 	WORD $0xfc300393  // li	t2, -61
@@ -14089,7 +14089,7 @@ LBB5_2296:
 	JMP LBB5_2346  // j	.LBB5_2346
 LBB5_2298:
 	WORD $0x002b1513  // slli	a0, s6, 2
-	MOV $·p108347af5984e85_POW_TAB(SB), X11  // lui	a1, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), X11  // lui	a1, %hi(POW_TAB)
 	// addi	a1, a1, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00052e83  // lw	t4, 0(a0)
@@ -14300,13 +14300,13 @@ LBB5_2349:
 	WORD $0x00ce8ebb  // addw	t4, t4, a2
 LBB5_2350:
 	WORD $0x09a13c23  // sd	s10, 152(sp)
-	MOV $·p108347af5984e85_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X10  // lui	a0, %hi(.LCPI5_10)
 	WORD $0xff600c13  // li	s8, -10
 	WORD $0x00100f13  // li	t5, 1
 	WORD $0x00a00713  // li	a4, 10
 	WORD $0x00900b93  // li	s7, 9
 	WORD $0x03000d13  // li	s10, 48
-	MOV $·p108347af5984e85_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
 	MOV (X10), X21  // ld	s5, %lo(.LCPI5_10)(a0)
 	MOV (X11), X6  // ld	t1, %lo(.LCPI5_9)(a1)
 	WORD $0xf8800e13  // li	t3, -120
@@ -14326,7 +14326,7 @@ LBB5_2353:
 LBB5_2355:
 	WORD $0x4160053b  // negw	a0, s6
 	WORD $0x00251513  // slli	a0, a0, 2
-	MOV $·p108347af5984e85_POW_TAB(SB), X11  // lui	a1, %hi(POW_TAB)
+	MOV $·p348d0202098f8f91_POW_TAB(SB), X11  // lui	a1, %hi(POW_TAB)
 	// addi	a1, a1, %lo(POW_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00052383  // lw	t2, 0(a0)
@@ -14335,7 +14335,7 @@ LBB5_2356:
 	WORD $0x000e8613  // mv	a2, t4
 	WORD $0x06800513  // li	a0, 104
 	WORD $0x02a38533  // mul	a0, t2, a0
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X11  // lui	a1, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X11  // lui	a1, %hi(LSHIFT_TAB)
 	// addi	a1, a1, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00052803  // lw	a6, 0(a0)
@@ -14660,7 +14660,7 @@ LBB5_2438:
 	WORD $0x3fde841b  // addiw	s0, t4, 1021
 	BLTU X10, X29, LBB5_2466  // bltu	a0, t4, .LBB5_2466
 	WORD $0x00a00513  // li	a0, 10
-	MOV $·p108347af5984e85_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
+	MOV $·p348d0202098f8f91_LCPI5_9(SB), X11  // lui	a1, %hi(.LCPI5_9)
 	MOV (X11), X5  // ld	t0, %lo(.LCPI5_9)(a1)
 	WORD $0xf8800393  // li	t2, -120
 	WORD $0x03000813  // li	a6, 48
@@ -15066,13 +15066,13 @@ LBB5_2510:
 	WORD $0x08b0bc23  // sd	a1, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_2511:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X10  // lui	a0, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X10  // lui	a0, %hi(.LCPI5_1)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI5_1)(a0)
 	WORD $0x40b00633  // neg	a2, a1
 	WORD $0x00c5f5b3  // and	a1, a1, a2
 	WORD $0x02a58533  // mul	a0, a1, a0
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -15118,7 +15118,7 @@ LBB5_2512:
 	BNEZ X10, LBB5_2539  // bnez	a0, .LBB5_2539
 	WORD $0x04088913  // addi	s2, a7, 64
 LBB5_2520:
-	MOV $·p108347af5984e85_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X10  // lui	a0, %hi(.LCPI5_0)
 	// addi	a0, a0, %lo(.LCPI5_0) (skipped, covered by MOV address load)
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02050407  // vle8.v	v8, (a0)
@@ -15276,13 +15276,13 @@ LBB5_2536:
 	WORD $0x08a0bc23  // sd	a0, 152(ra)
 	WORD $0x0910b823  // sd	a7, 144(ra)
 LBB5_2539:
-	MOV $·p108347af5984e85_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X11  // lui	a1, %hi(.LCPI5_1)
 	MOV (X11), X11  // ld	a1, %lo(.LCPI5_1)(a1)
 	WORD $0x40a00633  // neg	a2, a0
 	WORD $0x00c57533  // and	a0, a0, a2
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p108347af5984e85_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X11  // lui	a1, %hi(.LCPI5_2)
 	// addi	a1, a1, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -15306,9 +15306,9 @@ LBB5_2542:
 	WORD $0x05d00313  // li	t1, 93
 	WORD $0x00800537  // lui	a0, 2048
 	WORD $0x03f00293  // li	t0, 63
-	MOV $·p108347af5984e85_LCPI5_0(SB), X11  // lui	a1, %hi(.LCPI5_0)
+	MOV $·p348d0202098f8f91_LCPI5_0(SB), X11  // lui	a1, %hi(.LCPI5_0)
 	// addi	a1, a1, %lo(.LCPI5_0) (skipped, covered by MOV address load)
-	MOV $·p108347af5984e85_LCPI5_1(SB), X12  // lui	a2, %hi(.LCPI5_1)
+	MOV $·p348d0202098f8f91_LCPI5_1(SB), X12  // lui	a2, %hi(.LCPI5_1)
 	WORD $0x0135051b  // addiw	a0, a0, 19
 	WORD $0xcc787057  // vsetivli	zero, 16, e8, mf2, ta, ma
 	WORD $0x02058d87  // vle8.v	v27, (a1)
@@ -15316,7 +15316,7 @@ LBB5_2542:
 	WORD $0x00951a13  // slli	s4, a0, 9
 	WORD $0xfff00413  // li	s0, -1
 	WORD $0x01000c13  // li	s8, 16
-	MOV $·p108347af5984e85_LCPI5_2(SB), X17  // lui	a7, %hi(.LCPI5_2)
+	MOV $·p348d0202098f8f91_LCPI5_2(SB), X17  // lui	a7, %hi(.LCPI5_2)
 	// addi	a7, a7, %lo(.LCPI5_2) (skipped, covered by MOV address load)
 	JMP LBB5_1943  // j	.LBB5_1943
 LBB5_2543:
@@ -15339,7 +15339,7 @@ LBB5_2547:
 	WORD $0x0be13423  // sd	t5, 168(sp)
 	WORD $0x4090053b  // negw	a0, s1
 	WORD $0x077cb837  // lui	a6, 30667
-	MOV $·p108347af5984e85_LCPI5_3(SB), X14  // lui	a4, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X14  // lui	a4, %hi(.LCPI5_3)
 	// addi	a4, a4, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x80808e37  // lui	t3, 526344
 	WORD $0x303038b7  // lui	a7, 197379
@@ -15382,7 +15382,7 @@ LBB5_2547:
 	WORD $0x7fff049b  // addiw	s1, t5, 2047
 	WORD $0x40050613  // addi	a2, a0, 1024
 	WORD $0x420b65d7  // vmv.s.x	v11, s6
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	WORD $0x00040313  // mv	t1, s0
 	WORD $0x00040b13  // mv	s6, s0
@@ -15586,7 +15586,7 @@ LBB5_2572:
 	WORD $0x06813783  // ld	a5, 104(sp)
 	WORD $0x06013483  // ld	s1, 96(sp)
 	WORD $0x05813603  // ld	a2, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_2548  // beq	a0, a1, .LBB5_2548
 	WORD $0x01113c23  // sd	a7, 24(sp)
@@ -15744,7 +15744,7 @@ LBB5_2578:
 	WORD $0x11010513  // addi	a0, sp, 272
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x10010513  // addi	a0, sp, 256
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x08a13823  // sd	a0, 144(sp)
 	WORD $0x00000513  // li	a0, 0
 	WORD $0x23010593  // addi	a1, sp, 560
@@ -15779,7 +15779,7 @@ LBB5_2582:
 	WORD $0x0f010513  // addi	a0, sp, 240
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x0e010513  // addi	a0, sp, 224
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050c93  // mv	s9, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_2584:
@@ -15902,7 +15902,7 @@ LBB5_2591:
 	WORD $0x1b010513  // addi	a0, sp, 432
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x1a010513  // addi	a0, sp, 416
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x08a13823  // sd	a0, 144(sp)
 	WORD $0x00000513  // li	a0, 0
 LBB5_2593:
@@ -15941,7 +15941,7 @@ LBB5_2595:
 	WORD $0x19010513  // addi	a0, sp, 400
 	WORD $0x02050427  // vse8.v	v8, (a0)
 	WORD $0x18010513  // addi	a0, sp, 384
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	WORD $0x00050c93  // mv	s9, a0
 	WORD $0x00000513  // li	a0, 0
 LBB5_2597:
@@ -15976,9 +15976,9 @@ LBB5_2599:
 	WORD $0x16010513  // addi	a0, sp, 352
 	WORD $0x12010593  // addi	a1, sp, 288
 	WORD $0x14010613  // addi	a2, sp, 320
-	CALL ·p108347af5984e85_v256_le(SB)  // call	v256_le
+	CALL ·p348d0202098f8f91_v256_le(SB)  // call	v256_le
 	WORD $0x16010513  // addi	a0, sp, 352
-	CALL ·p108347af5984e85_mask256_tobitmask(SB)  // call	mask256_tobitmask
+	CALL ·p348d0202098f8f91_mask256_tobitmask(SB)  // call	mask256_tobitmask
 	JMP LBB5_2584  // j	.LBB5_2584
 LBB5_2601:
 	WORD $0x0ffd7513  // andi	a0, s10, 255
@@ -16009,7 +16009,7 @@ LBB5_2601:
 	WORD $0x06813783  // ld	a5, 104(sp)
 	WORD $0x06013483  // ld	s1, 96(sp)
 	WORD $0x05813603  // ld	a2, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	BEQ X10, X11, LBB5_2548  // beq	a0, a1, .LBB5_2548
 LBB5_2602:
@@ -16120,7 +16120,7 @@ LBB5_2618:
 	WORD $0x06813783  // ld	a5, 104(sp)
 	WORD $0x06013483  // ld	s1, 96(sp)
 	WORD $0x05813603  // ld	a2, 88(sp)
-	MOV $·p108347af5984e85_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
+	MOV $·p348d0202098f8f91_ESCAPED_TAB(SB), X14  // lui	a4, %hi(ESCAPED_TAB)
 	// addi	a4, a4, %lo(ESCAPED_TAB) (skipped, covered by MOV address load)
 	JMP LBB5_2548  // j	.LBB5_2548
 LBB5_2619:
@@ -16274,7 +16274,7 @@ LBB5_2645:
 	WORD $0x000d8593  // mv	a1, s11
 	WORD $0x58c6061b  // addiw	a2, a2, 1420
 	WORD $0x02075713  // srli	a4, a4, 32
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X13  // lui	a3, %hi(LSHIFT_TAB)
 	// addi	a3, a3, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00d60633  // add	a2, a2, a3
 	WORD $0x02600693  // li	a3, 38
@@ -16289,7 +16289,7 @@ LBB5_2646:
 	WORD $0x00d707b3  // add	a5, a4, a3
 	WORD $0x00160613  // addi	a2, a2, 1
 	BNE X15, X10, LBB5_2646  // bne	a5, a0, .LBB5_2646
-	MOV $·p108347af5984e85_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
+	MOV $·p348d0202098f8f91_LSHIFT_TAB(SB), X10  // lui	a0, %hi(LSHIFT_TAB)
 	// addi	a0, a0, %lo(LSHIFT_TAB) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x000015b7  // lui	a1, 1
@@ -16304,7 +16304,7 @@ LBB5_2651:
 	WORD $0x00000513  // li	a0, 0
 	WORD $0xffd00293  // li	t0, -3
 	WORD $0xfff80493  // addi	s1, a6, -1
-	MOV $·p108347af5984e85_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X11  // lui	a1, %hi(.LCPI5_10)
 	WORD $0x03929293  // slli	t0, t0, 57
 	MOV (X11), X8  // ld	s0, %lo(.LCPI5_10)(a1)
 	WORD $0xfff70713  // addi	a4, a4, -1
@@ -16337,7 +16337,7 @@ LBB5_2657:
 	BLTU X28, X12, LBB5_2653  // bltu	t3, a2, .LBB5_2653
 	WORD $0x00a00613  // li	a2, 10
 	BLTU X15, X12, LBB5_2665  // bltu	a5, a2, .LBB5_2665
-	MOV $·p108347af5984e85_LCPI5_10(SB), X12  // lui	a2, %hi(.LCPI5_10)
+	MOV $·p348d0202098f8f91_LCPI5_10(SB), X12  // lui	a2, %hi(.LCPI5_10)
 	MOV (X12), X13  // ld	a3, %lo(.LCPI5_10)(a2)
 	WORD $0xfff58413  // addi	s0, a1, -1
 	WORD $0xff600713  // li	a4, -10
@@ -16480,7 +16480,7 @@ LBB5_2694:
 	WORD $0x077cb5b7  // lui	a1, 30667
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x01b5551b  // srliw	a0, a0, 27
 	WORD $0x00b50533  // add	a0, a0, a1
@@ -16747,7 +16747,7 @@ LBB5_2748:
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x01b5551b  // srliw	a0, a0, 27
-	MOV $·p108347af5984e85_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
+	MOV $·p348d0202098f8f91_LCPI5_3(SB), X11  // lui	a1, %hi(.LCPI5_3)
 	// addi	a1, a1, %lo(.LCPI5_3) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054583  // lbu	a1, 0(a0)
@@ -16772,7 +16772,7 @@ LBB5_2751:
 	JMP LBB5_2749  // j	.LBB5_2749
 Lfunc_end5:
 
-TEXT ·p108347af5984e85_mask256_tobitmask(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_mask256_tobitmask(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 mask256_tobitmask:
 	WORD $0x00000593  // li	a1, 0
@@ -16817,7 +16817,7 @@ LBB6_3:
 	RET  // ret
 Lfunc_end6:
 
-TEXT ·p108347af5984e85_v256_le(SB), NOSPLIT, $0
+TEXT ·p348d0202098f8f91_v256_le(SB), NOSPLIT, $0
 	NO_LOCAL_POINTERS
 v256_le:
 	WORD $0x00000693  // li	a3, 0
@@ -16883,9 +16883,9 @@ TEXT ·__parse_with_padding(SB), NOSPLIT, $0-16
 	NO_LOCAL_POINTERS
 
 _entry___parse_with_padding:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-896, SP, X30
-	BLTU X30, X31, _stack_grow___parse_with_padding
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-896, SP, X16
+	BLTU X16, X17, _stack_grow___parse_with_padding
 
 ___parse_with_padding:
 	MOV parser+0(FP), X10
@@ -16894,2298 +16894,2298 @@ ___parse_with_padding:
 	RET
 
 _stack_grow___parse_with_padding:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___parse_with_padding
 
 // Data section
-GLOBL ·p108347af5984e85_LCPI5_0(SB), RODATA, $16
-DATA ·p108347af5984e85_LCPI5_0+0(SB)/8, $0x0000000000000020
-DATA ·p108347af5984e85_LCPI5_0+8(SB)/8, $0x00000d00000a0900
-GLOBL ·p108347af5984e85_LCPI5_1(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_1+0(SB)/8, $0x0218a392cd3d5dbf
-GLOBL ·p108347af5984e85_LCPI5_4(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_4+0(SB)/8, $0x430c6bf526340000
-GLOBL ·p108347af5984e85_LCPI5_5(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_5+0(SB)/8, $0x5555555555555555
-GLOBL ·p108347af5984e85_LCPI5_6(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_6+0(SB)/8, $0x3333333333333333
-GLOBL ·p108347af5984e85_LCPI5_7(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_7+0(SB)/8, $0x0f0f0f0f0f0f0f0f
-GLOBL ·p108347af5984e85_LCPI5_8(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_8+0(SB)/8, $0x0101010101010101
-GLOBL ·p108347af5984e85_LCPI5_9(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_9+0(SB)/8, $0x019999999999999a
-GLOBL ·p108347af5984e85_LCPI5_10(SB), RODATA, $8
-DATA ·p108347af5984e85_LCPI5_10+0(SB)/8, $0xcccccccccccccccd
-GLOBL ·p108347af5984e85_LCPI5_2(SB), RODATA, $83
-DATA ·p108347af5984e85_LCPI5_2+0(SB)/8, $0x30305c3030305c22
-DATA ·p108347af5984e85_LCPI5_2+8(SB)/8, $0x30305c3230305c31
-DATA ·p108347af5984e85_LCPI5_2+16(SB)/8, $0x5c725c3330305c37
-DATA ·p108347af5984e85_LCPI5_2+24(SB)/8, $0x30305c3332305c62
-DATA ·p108347af5984e85_LCPI5_2+32(SB)/8, $0x31305c3133305c34
-DATA ·p108347af5984e85_LCPI5_2+40(SB)/8, $0x5c745c3433305c36
-DATA ·p108347af5984e85_LCPI5_2+48(SB)/8, $0x305c283432305c22
-DATA ·p108347af5984e85_LCPI5_2+56(SB)/8, $0x305c3132305c3530
-DATA ·p108347af5984e85_LCPI5_2+64(SB)/8, $0x2e3731305c263233
-DATA ·p108347af5984e85_LCPI5_2+72(SB)/8, $0x5c6e5c303533305c
-DATA ·p108347af5984e85_LCPI5_2+80(SB)/8, $0x0000000000373330
-GLOBL ·p108347af5984e85_LCPI5_3(SB), RODATA, $32
-DATA ·p108347af5984e85_LCPI5_3+0(SB)/8, $0x03180e1d021c0100
-DATA ·p108347af5984e85_LCPI5_3+8(SB)/8, $0x080411190f14161e
-DATA ·p108347af5984e85_LCPI5_3+16(SB)/8, $0x07101315170d1b1f
-DATA ·p108347af5984e85_LCPI5_3+24(SB)/8, $0x090a050b06120c1a
-GLOBL ·p108347af5984e85_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p108347af5984e85_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
-GLOBL ·p108347af5984e85_P10_TAB(SB), RODATA, $184
-DATA ·p108347af5984e85_P10_TAB+0(SB)/8, $0x3ff0000000000000
-DATA ·p108347af5984e85_P10_TAB+8(SB)/8, $0x4024000000000000
-DATA ·p108347af5984e85_P10_TAB+16(SB)/8, $0x4059000000000000
-DATA ·p108347af5984e85_P10_TAB+24(SB)/8, $0x408f400000000000
-DATA ·p108347af5984e85_P10_TAB+32(SB)/8, $0x40c3880000000000
-DATA ·p108347af5984e85_P10_TAB+40(SB)/8, $0x40f86a0000000000
-DATA ·p108347af5984e85_P10_TAB+48(SB)/8, $0x412e848000000000
-DATA ·p108347af5984e85_P10_TAB+56(SB)/8, $0x416312d000000000
-DATA ·p108347af5984e85_P10_TAB+64(SB)/8, $0x4197d78400000000
-DATA ·p108347af5984e85_P10_TAB+72(SB)/8, $0x41cdcd6500000000
-DATA ·p108347af5984e85_P10_TAB+80(SB)/8, $0x4202a05f20000000
-DATA ·p108347af5984e85_P10_TAB+88(SB)/8, $0x42374876e8000000
-DATA ·p108347af5984e85_P10_TAB+96(SB)/8, $0x426d1a94a2000000
-DATA ·p108347af5984e85_P10_TAB+104(SB)/8, $0x42a2309ce5400000
-DATA ·p108347af5984e85_P10_TAB+112(SB)/8, $0x42d6bcc41e900000
-DATA ·p108347af5984e85_P10_TAB+120(SB)/8, $0x430c6bf526340000
-DATA ·p108347af5984e85_P10_TAB+128(SB)/8, $0x4341c37937e08000
-DATA ·p108347af5984e85_P10_TAB+136(SB)/8, $0x4376345785d8a000
-DATA ·p108347af5984e85_P10_TAB+144(SB)/8, $0x43abc16d674ec800
-DATA ·p108347af5984e85_P10_TAB+152(SB)/8, $0x43e158e460913d00
-DATA ·p108347af5984e85_P10_TAB+160(SB)/8, $0x4415af1d78b58c40
-DATA ·p108347af5984e85_P10_TAB+168(SB)/8, $0x444b1ae4d6e2ef50
-DATA ·p108347af5984e85_P10_TAB+176(SB)/8, $0x4480f0cf064dd592
-GLOBL ·p108347af5984e85_POW10_M128_TAB(SB), RODATA, $11152
-DATA ·p108347af5984e85_POW10_M128_TAB+0(SB)/8, $0x1732c869cd60e453
-DATA ·p108347af5984e85_POW10_M128_TAB+8(SB)/8, $0xfa8fd5a0081c0288
-DATA ·p108347af5984e85_POW10_M128_TAB+16(SB)/8, $0x0e7fbd42205c8eb4
-DATA ·p108347af5984e85_POW10_M128_TAB+24(SB)/8, $0x9c99e58405118195
-DATA ·p108347af5984e85_POW10_M128_TAB+32(SB)/8, $0x521fac92a873b261
-DATA ·p108347af5984e85_POW10_M128_TAB+40(SB)/8, $0xc3c05ee50655e1fa
-DATA ·p108347af5984e85_POW10_M128_TAB+48(SB)/8, $0xe6a797b752909ef9
-DATA ·p108347af5984e85_POW10_M128_TAB+56(SB)/8, $0xf4b0769e47eb5a78
-DATA ·p108347af5984e85_POW10_M128_TAB+64(SB)/8, $0x9028bed2939a635c
-DATA ·p108347af5984e85_POW10_M128_TAB+72(SB)/8, $0x98ee4a22ecf3188b
-DATA ·p108347af5984e85_POW10_M128_TAB+80(SB)/8, $0x7432ee873880fc33
-DATA ·p108347af5984e85_POW10_M128_TAB+88(SB)/8, $0xbf29dcaba82fdeae
-DATA ·p108347af5984e85_POW10_M128_TAB+96(SB)/8, $0x113faa2906a13b3f
-DATA ·p108347af5984e85_POW10_M128_TAB+104(SB)/8, $0xeef453d6923bd65a
-DATA ·p108347af5984e85_POW10_M128_TAB+112(SB)/8, $0x4ac7ca59a424c507
-DATA ·p108347af5984e85_POW10_M128_TAB+120(SB)/8, $0x9558b4661b6565f8
-DATA ·p108347af5984e85_POW10_M128_TAB+128(SB)/8, $0x5d79bcf00d2df649
-DATA ·p108347af5984e85_POW10_M128_TAB+136(SB)/8, $0xbaaee17fa23ebf76
-DATA ·p108347af5984e85_POW10_M128_TAB+144(SB)/8, $0xf4d82c2c107973dc
-DATA ·p108347af5984e85_POW10_M128_TAB+152(SB)/8, $0xe95a99df8ace6f53
-DATA ·p108347af5984e85_POW10_M128_TAB+160(SB)/8, $0x79071b9b8a4be869
-DATA ·p108347af5984e85_POW10_M128_TAB+168(SB)/8, $0x91d8a02bb6c10594
-DATA ·p108347af5984e85_POW10_M128_TAB+176(SB)/8, $0x9748e2826cdee284
-DATA ·p108347af5984e85_POW10_M128_TAB+184(SB)/8, $0xb64ec836a47146f9
-DATA ·p108347af5984e85_POW10_M128_TAB+192(SB)/8, $0xfd1b1b2308169b25
-DATA ·p108347af5984e85_POW10_M128_TAB+200(SB)/8, $0xe3e27a444d8d98b7
-DATA ·p108347af5984e85_POW10_M128_TAB+208(SB)/8, $0xfe30f0f5e50e20f7
-DATA ·p108347af5984e85_POW10_M128_TAB+216(SB)/8, $0x8e6d8c6ab0787f72
-DATA ·p108347af5984e85_POW10_M128_TAB+224(SB)/8, $0xbdbd2d335e51a935
-DATA ·p108347af5984e85_POW10_M128_TAB+232(SB)/8, $0xb208ef855c969f4f
-DATA ·p108347af5984e85_POW10_M128_TAB+240(SB)/8, $0xad2c788035e61382
-DATA ·p108347af5984e85_POW10_M128_TAB+248(SB)/8, $0xde8b2b66b3bc4723
-DATA ·p108347af5984e85_POW10_M128_TAB+256(SB)/8, $0x4c3bcb5021afcc31
-DATA ·p108347af5984e85_POW10_M128_TAB+264(SB)/8, $0x8b16fb203055ac76
-DATA ·p108347af5984e85_POW10_M128_TAB+272(SB)/8, $0xdf4abe242a1bbf3d
-DATA ·p108347af5984e85_POW10_M128_TAB+280(SB)/8, $0xaddcb9e83c6b1793
-DATA ·p108347af5984e85_POW10_M128_TAB+288(SB)/8, $0xd71d6dad34a2af0d
-DATA ·p108347af5984e85_POW10_M128_TAB+296(SB)/8, $0xd953e8624b85dd78
-DATA ·p108347af5984e85_POW10_M128_TAB+304(SB)/8, $0x8672648c40e5ad68
-DATA ·p108347af5984e85_POW10_M128_TAB+312(SB)/8, $0x87d4713d6f33aa6b
-DATA ·p108347af5984e85_POW10_M128_TAB+320(SB)/8, $0x680efdaf511f18c2
-DATA ·p108347af5984e85_POW10_M128_TAB+328(SB)/8, $0xa9c98d8ccb009506
-DATA ·p108347af5984e85_POW10_M128_TAB+336(SB)/8, $0x0212bd1b2566def2
-DATA ·p108347af5984e85_POW10_M128_TAB+344(SB)/8, $0xd43bf0effdc0ba48
-DATA ·p108347af5984e85_POW10_M128_TAB+352(SB)/8, $0x014bb630f7604b57
-DATA ·p108347af5984e85_POW10_M128_TAB+360(SB)/8, $0x84a57695fe98746d
-DATA ·p108347af5984e85_POW10_M128_TAB+368(SB)/8, $0x419ea3bd35385e2d
-DATA ·p108347af5984e85_POW10_M128_TAB+376(SB)/8, $0xa5ced43b7e3e9188
-DATA ·p108347af5984e85_POW10_M128_TAB+384(SB)/8, $0x52064cac828675b9
-DATA ·p108347af5984e85_POW10_M128_TAB+392(SB)/8, $0xcf42894a5dce35ea
-DATA ·p108347af5984e85_POW10_M128_TAB+400(SB)/8, $0x7343efebd1940993
-DATA ·p108347af5984e85_POW10_M128_TAB+408(SB)/8, $0x818995ce7aa0e1b2
-DATA ·p108347af5984e85_POW10_M128_TAB+416(SB)/8, $0x1014ebe6c5f90bf8
-DATA ·p108347af5984e85_POW10_M128_TAB+424(SB)/8, $0xa1ebfb4219491a1f
-DATA ·p108347af5984e85_POW10_M128_TAB+432(SB)/8, $0xd41a26e077774ef6
-DATA ·p108347af5984e85_POW10_M128_TAB+440(SB)/8, $0xca66fa129f9b60a6
-DATA ·p108347af5984e85_POW10_M128_TAB+448(SB)/8, $0x8920b098955522b4
-DATA ·p108347af5984e85_POW10_M128_TAB+456(SB)/8, $0xfd00b897478238d0
-DATA ·p108347af5984e85_POW10_M128_TAB+464(SB)/8, $0x55b46e5f5d5535b0
-DATA ·p108347af5984e85_POW10_M128_TAB+472(SB)/8, $0x9e20735e8cb16382
-DATA ·p108347af5984e85_POW10_M128_TAB+480(SB)/8, $0xeb2189f734aa831d
-DATA ·p108347af5984e85_POW10_M128_TAB+488(SB)/8, $0xc5a890362fddbc62
-DATA ·p108347af5984e85_POW10_M128_TAB+496(SB)/8, $0xa5e9ec7501d523e4
-DATA ·p108347af5984e85_POW10_M128_TAB+504(SB)/8, $0xf712b443bbd52b7b
-DATA ·p108347af5984e85_POW10_M128_TAB+512(SB)/8, $0x47b233c92125366e
-DATA ·p108347af5984e85_POW10_M128_TAB+520(SB)/8, $0x9a6bb0aa55653b2d
-DATA ·p108347af5984e85_POW10_M128_TAB+528(SB)/8, $0x999ec0bb696e840a
-DATA ·p108347af5984e85_POW10_M128_TAB+536(SB)/8, $0xc1069cd4eabe89f8
-DATA ·p108347af5984e85_POW10_M128_TAB+544(SB)/8, $0xc00670ea43ca250d
-DATA ·p108347af5984e85_POW10_M128_TAB+552(SB)/8, $0xf148440a256e2c76
-DATA ·p108347af5984e85_POW10_M128_TAB+560(SB)/8, $0x380406926a5e5728
-DATA ·p108347af5984e85_POW10_M128_TAB+568(SB)/8, $0x96cd2a865764dbca
-DATA ·p108347af5984e85_POW10_M128_TAB+576(SB)/8, $0xc605083704f5ecf2
-DATA ·p108347af5984e85_POW10_M128_TAB+584(SB)/8, $0xbc807527ed3e12bc
-DATA ·p108347af5984e85_POW10_M128_TAB+592(SB)/8, $0xf7864a44c633682e
-DATA ·p108347af5984e85_POW10_M128_TAB+600(SB)/8, $0xeba09271e88d976b
-DATA ·p108347af5984e85_POW10_M128_TAB+608(SB)/8, $0x7ab3ee6afbe0211d
-DATA ·p108347af5984e85_POW10_M128_TAB+616(SB)/8, $0x93445b8731587ea3
-DATA ·p108347af5984e85_POW10_M128_TAB+624(SB)/8, $0x5960ea05bad82964
-DATA ·p108347af5984e85_POW10_M128_TAB+632(SB)/8, $0xb8157268fdae9e4c
-DATA ·p108347af5984e85_POW10_M128_TAB+640(SB)/8, $0x6fb92487298e33bd
-DATA ·p108347af5984e85_POW10_M128_TAB+648(SB)/8, $0xe61acf033d1a45df
-DATA ·p108347af5984e85_POW10_M128_TAB+656(SB)/8, $0xa5d3b6d479f8e056
-DATA ·p108347af5984e85_POW10_M128_TAB+664(SB)/8, $0x8fd0c16206306bab
-DATA ·p108347af5984e85_POW10_M128_TAB+672(SB)/8, $0x8f48a4899877186c
-DATA ·p108347af5984e85_POW10_M128_TAB+680(SB)/8, $0xb3c4f1ba87bc8696
-DATA ·p108347af5984e85_POW10_M128_TAB+688(SB)/8, $0x331acdabfe94de87
-DATA ·p108347af5984e85_POW10_M128_TAB+696(SB)/8, $0xe0b62e2929aba83c
-DATA ·p108347af5984e85_POW10_M128_TAB+704(SB)/8, $0x9ff0c08b7f1d0b14
-DATA ·p108347af5984e85_POW10_M128_TAB+712(SB)/8, $0x8c71dcd9ba0b4925
-DATA ·p108347af5984e85_POW10_M128_TAB+720(SB)/8, $0x07ecf0ae5ee44dd9
-DATA ·p108347af5984e85_POW10_M128_TAB+728(SB)/8, $0xaf8e5410288e1b6f
-DATA ·p108347af5984e85_POW10_M128_TAB+736(SB)/8, $0xc9e82cd9f69d6150
-DATA ·p108347af5984e85_POW10_M128_TAB+744(SB)/8, $0xdb71e91432b1a24a
-DATA ·p108347af5984e85_POW10_M128_TAB+752(SB)/8, $0xbe311c083a225cd2
-DATA ·p108347af5984e85_POW10_M128_TAB+760(SB)/8, $0x892731ac9faf056e
-DATA ·p108347af5984e85_POW10_M128_TAB+768(SB)/8, $0x6dbd630a48aaf406
-DATA ·p108347af5984e85_POW10_M128_TAB+776(SB)/8, $0xab70fe17c79ac6ca
-DATA ·p108347af5984e85_POW10_M128_TAB+784(SB)/8, $0x092cbbccdad5b108
-DATA ·p108347af5984e85_POW10_M128_TAB+792(SB)/8, $0xd64d3d9db981787d
-DATA ·p108347af5984e85_POW10_M128_TAB+800(SB)/8, $0x25bbf56008c58ea5
-DATA ·p108347af5984e85_POW10_M128_TAB+808(SB)/8, $0x85f0468293f0eb4e
-DATA ·p108347af5984e85_POW10_M128_TAB+816(SB)/8, $0xaf2af2b80af6f24e
-DATA ·p108347af5984e85_POW10_M128_TAB+824(SB)/8, $0xa76c582338ed2621
-DATA ·p108347af5984e85_POW10_M128_TAB+832(SB)/8, $0x1af5af660db4aee1
-DATA ·p108347af5984e85_POW10_M128_TAB+840(SB)/8, $0xd1476e2c07286faa
-DATA ·p108347af5984e85_POW10_M128_TAB+848(SB)/8, $0x50d98d9fc890ed4d
-DATA ·p108347af5984e85_POW10_M128_TAB+856(SB)/8, $0x82cca4db847945ca
-DATA ·p108347af5984e85_POW10_M128_TAB+864(SB)/8, $0xe50ff107bab528a0
-DATA ·p108347af5984e85_POW10_M128_TAB+872(SB)/8, $0xa37fce126597973c
-DATA ·p108347af5984e85_POW10_M128_TAB+880(SB)/8, $0x1e53ed49a96272c8
-DATA ·p108347af5984e85_POW10_M128_TAB+888(SB)/8, $0xcc5fc196fefd7d0c
-DATA ·p108347af5984e85_POW10_M128_TAB+896(SB)/8, $0x25e8e89c13bb0f7a
-DATA ·p108347af5984e85_POW10_M128_TAB+904(SB)/8, $0xff77b1fcbebcdc4f
-DATA ·p108347af5984e85_POW10_M128_TAB+912(SB)/8, $0x77b191618c54e9ac
-DATA ·p108347af5984e85_POW10_M128_TAB+920(SB)/8, $0x9faacf3df73609b1
-DATA ·p108347af5984e85_POW10_M128_TAB+928(SB)/8, $0xd59df5b9ef6a2417
-DATA ·p108347af5984e85_POW10_M128_TAB+936(SB)/8, $0xc795830d75038c1d
-DATA ·p108347af5984e85_POW10_M128_TAB+944(SB)/8, $0x4b0573286b44ad1d
-DATA ·p108347af5984e85_POW10_M128_TAB+952(SB)/8, $0xf97ae3d0d2446f25
-DATA ·p108347af5984e85_POW10_M128_TAB+960(SB)/8, $0x4ee367f9430aec32
-DATA ·p108347af5984e85_POW10_M128_TAB+968(SB)/8, $0x9becce62836ac577
-DATA ·p108347af5984e85_POW10_M128_TAB+976(SB)/8, $0x229c41f793cda73f
-DATA ·p108347af5984e85_POW10_M128_TAB+984(SB)/8, $0xc2e801fb244576d5
-DATA ·p108347af5984e85_POW10_M128_TAB+992(SB)/8, $0x6b43527578c1110f
-DATA ·p108347af5984e85_POW10_M128_TAB+1000(SB)/8, $0xf3a20279ed56d48a
-DATA ·p108347af5984e85_POW10_M128_TAB+1008(SB)/8, $0x830a13896b78aaa9
-DATA ·p108347af5984e85_POW10_M128_TAB+1016(SB)/8, $0x9845418c345644d6
-DATA ·p108347af5984e85_POW10_M128_TAB+1024(SB)/8, $0x23cc986bc656d553
-DATA ·p108347af5984e85_POW10_M128_TAB+1032(SB)/8, $0xbe5691ef416bd60c
-DATA ·p108347af5984e85_POW10_M128_TAB+1040(SB)/8, $0x2cbfbe86b7ec8aa8
-DATA ·p108347af5984e85_POW10_M128_TAB+1048(SB)/8, $0xedec366b11c6cb8f
-DATA ·p108347af5984e85_POW10_M128_TAB+1056(SB)/8, $0x7bf7d71432f3d6a9
-DATA ·p108347af5984e85_POW10_M128_TAB+1064(SB)/8, $0x94b3a202eb1c3f39
-DATA ·p108347af5984e85_POW10_M128_TAB+1072(SB)/8, $0xdaf5ccd93fb0cc53
-DATA ·p108347af5984e85_POW10_M128_TAB+1080(SB)/8, $0xb9e08a83a5e34f07
-DATA ·p108347af5984e85_POW10_M128_TAB+1088(SB)/8, $0xd1b3400f8f9cff68
-DATA ·p108347af5984e85_POW10_M128_TAB+1096(SB)/8, $0xe858ad248f5c22c9
-DATA ·p108347af5984e85_POW10_M128_TAB+1104(SB)/8, $0x23100809b9c21fa1
-DATA ·p108347af5984e85_POW10_M128_TAB+1112(SB)/8, $0x91376c36d99995be
-DATA ·p108347af5984e85_POW10_M128_TAB+1120(SB)/8, $0xabd40a0c2832a78a
-DATA ·p108347af5984e85_POW10_M128_TAB+1128(SB)/8, $0xb58547448ffffb2d
-DATA ·p108347af5984e85_POW10_M128_TAB+1136(SB)/8, $0x16c90c8f323f516c
-DATA ·p108347af5984e85_POW10_M128_TAB+1144(SB)/8, $0xe2e69915b3fff9f9
-DATA ·p108347af5984e85_POW10_M128_TAB+1152(SB)/8, $0xae3da7d97f6792e3
-DATA ·p108347af5984e85_POW10_M128_TAB+1160(SB)/8, $0x8dd01fad907ffc3b
-DATA ·p108347af5984e85_POW10_M128_TAB+1168(SB)/8, $0x99cd11cfdf41779c
-DATA ·p108347af5984e85_POW10_M128_TAB+1176(SB)/8, $0xb1442798f49ffb4a
-DATA ·p108347af5984e85_POW10_M128_TAB+1184(SB)/8, $0x40405643d711d583
-DATA ·p108347af5984e85_POW10_M128_TAB+1192(SB)/8, $0xdd95317f31c7fa1d
-DATA ·p108347af5984e85_POW10_M128_TAB+1200(SB)/8, $0x482835ea666b2572
-DATA ·p108347af5984e85_POW10_M128_TAB+1208(SB)/8, $0x8a7d3eef7f1cfc52
-DATA ·p108347af5984e85_POW10_M128_TAB+1216(SB)/8, $0xda3243650005eecf
-DATA ·p108347af5984e85_POW10_M128_TAB+1224(SB)/8, $0xad1c8eab5ee43b66
-DATA ·p108347af5984e85_POW10_M128_TAB+1232(SB)/8, $0x90bed43e40076a82
-DATA ·p108347af5984e85_POW10_M128_TAB+1240(SB)/8, $0xd863b256369d4a40
-DATA ·p108347af5984e85_POW10_M128_TAB+1248(SB)/8, $0x5a7744a6e804a291
-DATA ·p108347af5984e85_POW10_M128_TAB+1256(SB)/8, $0x873e4f75e2224e68
-DATA ·p108347af5984e85_POW10_M128_TAB+1264(SB)/8, $0x711515d0a205cb36
-DATA ·p108347af5984e85_POW10_M128_TAB+1272(SB)/8, $0xa90de3535aaae202
-DATA ·p108347af5984e85_POW10_M128_TAB+1280(SB)/8, $0x0d5a5b44ca873e03
-DATA ·p108347af5984e85_POW10_M128_TAB+1288(SB)/8, $0xd3515c2831559a83
-DATA ·p108347af5984e85_POW10_M128_TAB+1296(SB)/8, $0xe858790afe9486c2
-DATA ·p108347af5984e85_POW10_M128_TAB+1304(SB)/8, $0x8412d9991ed58091
-DATA ·p108347af5984e85_POW10_M128_TAB+1312(SB)/8, $0x626e974dbe39a872
-DATA ·p108347af5984e85_POW10_M128_TAB+1320(SB)/8, $0xa5178fff668ae0b6
-DATA ·p108347af5984e85_POW10_M128_TAB+1328(SB)/8, $0xfb0a3d212dc8128f
-DATA ·p108347af5984e85_POW10_M128_TAB+1336(SB)/8, $0xce5d73ff402d98e3
-DATA ·p108347af5984e85_POW10_M128_TAB+1344(SB)/8, $0x7ce66634bc9d0b99
-DATA ·p108347af5984e85_POW10_M128_TAB+1352(SB)/8, $0x80fa687f881c7f8e
-DATA ·p108347af5984e85_POW10_M128_TAB+1360(SB)/8, $0x1c1fffc1ebc44e80
-DATA ·p108347af5984e85_POW10_M128_TAB+1368(SB)/8, $0xa139029f6a239f72
-DATA ·p108347af5984e85_POW10_M128_TAB+1376(SB)/8, $0xa327ffb266b56220
-DATA ·p108347af5984e85_POW10_M128_TAB+1384(SB)/8, $0xc987434744ac874e
-DATA ·p108347af5984e85_POW10_M128_TAB+1392(SB)/8, $0x4bf1ff9f0062baa8
-DATA ·p108347af5984e85_POW10_M128_TAB+1400(SB)/8, $0xfbe9141915d7a922
-DATA ·p108347af5984e85_POW10_M128_TAB+1408(SB)/8, $0x6f773fc3603db4a9
-DATA ·p108347af5984e85_POW10_M128_TAB+1416(SB)/8, $0x9d71ac8fada6c9b5
-DATA ·p108347af5984e85_POW10_M128_TAB+1424(SB)/8, $0xcb550fb4384d21d3
-DATA ·p108347af5984e85_POW10_M128_TAB+1432(SB)/8, $0xc4ce17b399107c22
-DATA ·p108347af5984e85_POW10_M128_TAB+1440(SB)/8, $0x7e2a53a146606a48
-DATA ·p108347af5984e85_POW10_M128_TAB+1448(SB)/8, $0xf6019da07f549b2b
-DATA ·p108347af5984e85_POW10_M128_TAB+1456(SB)/8, $0x2eda7444cbfc426d
-DATA ·p108347af5984e85_POW10_M128_TAB+1464(SB)/8, $0x99c102844f94e0fb
-DATA ·p108347af5984e85_POW10_M128_TAB+1472(SB)/8, $0xfa911155fefb5308
-DATA ·p108347af5984e85_POW10_M128_TAB+1480(SB)/8, $0xc0314325637a1939
-DATA ·p108347af5984e85_POW10_M128_TAB+1488(SB)/8, $0x793555ab7eba27ca
-DATA ·p108347af5984e85_POW10_M128_TAB+1496(SB)/8, $0xf03d93eebc589f88
-DATA ·p108347af5984e85_POW10_M128_TAB+1504(SB)/8, $0x4bc1558b2f3458de
-DATA ·p108347af5984e85_POW10_M128_TAB+1512(SB)/8, $0x96267c7535b763b5
-DATA ·p108347af5984e85_POW10_M128_TAB+1520(SB)/8, $0x9eb1aaedfb016f16
-DATA ·p108347af5984e85_POW10_M128_TAB+1528(SB)/8, $0xbbb01b9283253ca2
-DATA ·p108347af5984e85_POW10_M128_TAB+1536(SB)/8, $0x465e15a979c1cadc
-DATA ·p108347af5984e85_POW10_M128_TAB+1544(SB)/8, $0xea9c227723ee8bcb
-DATA ·p108347af5984e85_POW10_M128_TAB+1552(SB)/8, $0x0bfacd89ec191ec9
-DATA ·p108347af5984e85_POW10_M128_TAB+1560(SB)/8, $0x92a1958a7675175f
-DATA ·p108347af5984e85_POW10_M128_TAB+1568(SB)/8, $0xcef980ec671f667b
-DATA ·p108347af5984e85_POW10_M128_TAB+1576(SB)/8, $0xb749faed14125d36
-DATA ·p108347af5984e85_POW10_M128_TAB+1584(SB)/8, $0x82b7e12780e7401a
-DATA ·p108347af5984e85_POW10_M128_TAB+1592(SB)/8, $0xe51c79a85916f484
-DATA ·p108347af5984e85_POW10_M128_TAB+1600(SB)/8, $0xd1b2ecb8b0908810
-DATA ·p108347af5984e85_POW10_M128_TAB+1608(SB)/8, $0x8f31cc0937ae58d2
-DATA ·p108347af5984e85_POW10_M128_TAB+1616(SB)/8, $0x861fa7e6dcb4aa15
-DATA ·p108347af5984e85_POW10_M128_TAB+1624(SB)/8, $0xb2fe3f0b8599ef07
-DATA ·p108347af5984e85_POW10_M128_TAB+1632(SB)/8, $0x67a791e093e1d49a
-DATA ·p108347af5984e85_POW10_M128_TAB+1640(SB)/8, $0xdfbdcece67006ac9
-DATA ·p108347af5984e85_POW10_M128_TAB+1648(SB)/8, $0xe0c8bb2c5c6d24e0
-DATA ·p108347af5984e85_POW10_M128_TAB+1656(SB)/8, $0x8bd6a141006042bd
-DATA ·p108347af5984e85_POW10_M128_TAB+1664(SB)/8, $0x58fae9f773886e18
-DATA ·p108347af5984e85_POW10_M128_TAB+1672(SB)/8, $0xaecc49914078536d
-DATA ·p108347af5984e85_POW10_M128_TAB+1680(SB)/8, $0xaf39a475506a899e
-DATA ·p108347af5984e85_POW10_M128_TAB+1688(SB)/8, $0xda7f5bf590966848
-DATA ·p108347af5984e85_POW10_M128_TAB+1696(SB)/8, $0x6d8406c952429603
-DATA ·p108347af5984e85_POW10_M128_TAB+1704(SB)/8, $0x888f99797a5e012d
-DATA ·p108347af5984e85_POW10_M128_TAB+1712(SB)/8, $0xc8e5087ba6d33b83
-DATA ·p108347af5984e85_POW10_M128_TAB+1720(SB)/8, $0xaab37fd7d8f58178
-DATA ·p108347af5984e85_POW10_M128_TAB+1728(SB)/8, $0xfb1e4a9a90880a64
-DATA ·p108347af5984e85_POW10_M128_TAB+1736(SB)/8, $0xd5605fcdcf32e1d6
-DATA ·p108347af5984e85_POW10_M128_TAB+1744(SB)/8, $0x5cf2eea09a55067f
-DATA ·p108347af5984e85_POW10_M128_TAB+1752(SB)/8, $0x855c3be0a17fcd26
-DATA ·p108347af5984e85_POW10_M128_TAB+1760(SB)/8, $0xf42faa48c0ea481e
-DATA ·p108347af5984e85_POW10_M128_TAB+1768(SB)/8, $0xa6b34ad8c9dfc06f
-DATA ·p108347af5984e85_POW10_M128_TAB+1776(SB)/8, $0xf13b94daf124da26
-DATA ·p108347af5984e85_POW10_M128_TAB+1784(SB)/8, $0xd0601d8efc57b08b
-DATA ·p108347af5984e85_POW10_M128_TAB+1792(SB)/8, $0x76c53d08d6b70858
-DATA ·p108347af5984e85_POW10_M128_TAB+1800(SB)/8, $0x823c12795db6ce57
-DATA ·p108347af5984e85_POW10_M128_TAB+1808(SB)/8, $0x54768c4b0c64ca6e
-DATA ·p108347af5984e85_POW10_M128_TAB+1816(SB)/8, $0xa2cb1717b52481ed
-DATA ·p108347af5984e85_POW10_M128_TAB+1824(SB)/8, $0xa9942f5dcf7dfd09
-DATA ·p108347af5984e85_POW10_M128_TAB+1832(SB)/8, $0xcb7ddcdda26da268
-DATA ·p108347af5984e85_POW10_M128_TAB+1840(SB)/8, $0xd3f93b35435d7c4c
-DATA ·p108347af5984e85_POW10_M128_TAB+1848(SB)/8, $0xfe5d54150b090b02
-DATA ·p108347af5984e85_POW10_M128_TAB+1856(SB)/8, $0xc47bc5014a1a6daf
-DATA ·p108347af5984e85_POW10_M128_TAB+1864(SB)/8, $0x9efa548d26e5a6e1
-DATA ·p108347af5984e85_POW10_M128_TAB+1872(SB)/8, $0x359ab6419ca1091b
-DATA ·p108347af5984e85_POW10_M128_TAB+1880(SB)/8, $0xc6b8e9b0709f109a
-DATA ·p108347af5984e85_POW10_M128_TAB+1888(SB)/8, $0xc30163d203c94b62
-DATA ·p108347af5984e85_POW10_M128_TAB+1896(SB)/8, $0xf867241c8cc6d4c0
-DATA ·p108347af5984e85_POW10_M128_TAB+1904(SB)/8, $0x79e0de63425dcf1d
-DATA ·p108347af5984e85_POW10_M128_TAB+1912(SB)/8, $0x9b407691d7fc44f8
-DATA ·p108347af5984e85_POW10_M128_TAB+1920(SB)/8, $0x985915fc12f542e4
-DATA ·p108347af5984e85_POW10_M128_TAB+1928(SB)/8, $0xc21094364dfb5636
-DATA ·p108347af5984e85_POW10_M128_TAB+1936(SB)/8, $0x3e6f5b7b17b2939d
-DATA ·p108347af5984e85_POW10_M128_TAB+1944(SB)/8, $0xf294b943e17a2bc4
-DATA ·p108347af5984e85_POW10_M128_TAB+1952(SB)/8, $0xa705992ceecf9c42
-DATA ·p108347af5984e85_POW10_M128_TAB+1960(SB)/8, $0x979cf3ca6cec5b5a
-DATA ·p108347af5984e85_POW10_M128_TAB+1968(SB)/8, $0x50c6ff782a838353
-DATA ·p108347af5984e85_POW10_M128_TAB+1976(SB)/8, $0xbd8430bd08277231
-DATA ·p108347af5984e85_POW10_M128_TAB+1984(SB)/8, $0xa4f8bf5635246428
-DATA ·p108347af5984e85_POW10_M128_TAB+1992(SB)/8, $0xece53cec4a314ebd
-DATA ·p108347af5984e85_POW10_M128_TAB+2000(SB)/8, $0x871b7795e136be99
-DATA ·p108347af5984e85_POW10_M128_TAB+2008(SB)/8, $0x940f4613ae5ed136
-DATA ·p108347af5984e85_POW10_M128_TAB+2016(SB)/8, $0x28e2557b59846e3f
-DATA ·p108347af5984e85_POW10_M128_TAB+2024(SB)/8, $0xb913179899f68584
-DATA ·p108347af5984e85_POW10_M128_TAB+2032(SB)/8, $0x331aeada2fe589cf
-DATA ·p108347af5984e85_POW10_M128_TAB+2040(SB)/8, $0xe757dd7ec07426e5
-DATA ·p108347af5984e85_POW10_M128_TAB+2048(SB)/8, $0x3ff0d2c85def7621
-DATA ·p108347af5984e85_POW10_M128_TAB+2056(SB)/8, $0x9096ea6f3848984f
-DATA ·p108347af5984e85_POW10_M128_TAB+2064(SB)/8, $0x0fed077a756b53a9
-DATA ·p108347af5984e85_POW10_M128_TAB+2072(SB)/8, $0xb4bca50b065abe63
-DATA ·p108347af5984e85_POW10_M128_TAB+2080(SB)/8, $0xd3e8495912c62894
-DATA ·p108347af5984e85_POW10_M128_TAB+2088(SB)/8, $0xe1ebce4dc7f16dfb
-DATA ·p108347af5984e85_POW10_M128_TAB+2096(SB)/8, $0x64712dd7abbbd95c
-DATA ·p108347af5984e85_POW10_M128_TAB+2104(SB)/8, $0x8d3360f09cf6e4bd
-DATA ·p108347af5984e85_POW10_M128_TAB+2112(SB)/8, $0xbd8d794d96aacfb3
-DATA ·p108347af5984e85_POW10_M128_TAB+2120(SB)/8, $0xb080392cc4349dec
-DATA ·p108347af5984e85_POW10_M128_TAB+2128(SB)/8, $0xecf0d7a0fc5583a0
-DATA ·p108347af5984e85_POW10_M128_TAB+2136(SB)/8, $0xdca04777f541c567
-DATA ·p108347af5984e85_POW10_M128_TAB+2144(SB)/8, $0xf41686c49db57244
-DATA ·p108347af5984e85_POW10_M128_TAB+2152(SB)/8, $0x89e42caaf9491b60
-DATA ·p108347af5984e85_POW10_M128_TAB+2160(SB)/8, $0x311c2875c522ced5
-DATA ·p108347af5984e85_POW10_M128_TAB+2168(SB)/8, $0xac5d37d5b79b6239
-DATA ·p108347af5984e85_POW10_M128_TAB+2176(SB)/8, $0x7d633293366b828b
-DATA ·p108347af5984e85_POW10_M128_TAB+2184(SB)/8, $0xd77485cb25823ac7
-DATA ·p108347af5984e85_POW10_M128_TAB+2192(SB)/8, $0xae5dff9c02033197
-DATA ·p108347af5984e85_POW10_M128_TAB+2200(SB)/8, $0x86a8d39ef77164bc
-DATA ·p108347af5984e85_POW10_M128_TAB+2208(SB)/8, $0xd9f57f830283fdfc
-DATA ·p108347af5984e85_POW10_M128_TAB+2216(SB)/8, $0xa8530886b54dbdeb
-DATA ·p108347af5984e85_POW10_M128_TAB+2224(SB)/8, $0xd072df63c324fd7b
-DATA ·p108347af5984e85_POW10_M128_TAB+2232(SB)/8, $0xd267caa862a12d66
-DATA ·p108347af5984e85_POW10_M128_TAB+2240(SB)/8, $0x4247cb9e59f71e6d
-DATA ·p108347af5984e85_POW10_M128_TAB+2248(SB)/8, $0x8380dea93da4bc60
-DATA ·p108347af5984e85_POW10_M128_TAB+2256(SB)/8, $0x52d9be85f074e608
-DATA ·p108347af5984e85_POW10_M128_TAB+2264(SB)/8, $0xa46116538d0deb78
-DATA ·p108347af5984e85_POW10_M128_TAB+2272(SB)/8, $0x67902e276c921f8b
-DATA ·p108347af5984e85_POW10_M128_TAB+2280(SB)/8, $0xcd795be870516656
-DATA ·p108347af5984e85_POW10_M128_TAB+2288(SB)/8, $0x00ba1cd8a3db53b6
-DATA ·p108347af5984e85_POW10_M128_TAB+2296(SB)/8, $0x806bd9714632dff6
-DATA ·p108347af5984e85_POW10_M128_TAB+2304(SB)/8, $0x80e8a40eccd228a4
-DATA ·p108347af5984e85_POW10_M128_TAB+2312(SB)/8, $0xa086cfcd97bf97f3
-DATA ·p108347af5984e85_POW10_M128_TAB+2320(SB)/8, $0x6122cd128006b2cd
-DATA ·p108347af5984e85_POW10_M128_TAB+2328(SB)/8, $0xc8a883c0fdaf7df0
-DATA ·p108347af5984e85_POW10_M128_TAB+2336(SB)/8, $0x796b805720085f81
-DATA ·p108347af5984e85_POW10_M128_TAB+2344(SB)/8, $0xfad2a4b13d1b5d6c
-DATA ·p108347af5984e85_POW10_M128_TAB+2352(SB)/8, $0xcbe3303674053bb0
-DATA ·p108347af5984e85_POW10_M128_TAB+2360(SB)/8, $0x9cc3a6eec6311a63
-DATA ·p108347af5984e85_POW10_M128_TAB+2368(SB)/8, $0xbedbfc4411068a9c
-DATA ·p108347af5984e85_POW10_M128_TAB+2376(SB)/8, $0xc3f490aa77bd60fc
-DATA ·p108347af5984e85_POW10_M128_TAB+2384(SB)/8, $0xee92fb5515482d44
-DATA ·p108347af5984e85_POW10_M128_TAB+2392(SB)/8, $0xf4f1b4d515acb93b
-DATA ·p108347af5984e85_POW10_M128_TAB+2400(SB)/8, $0x751bdd152d4d1c4a
-DATA ·p108347af5984e85_POW10_M128_TAB+2408(SB)/8, $0x991711052d8bf3c5
-DATA ·p108347af5984e85_POW10_M128_TAB+2416(SB)/8, $0xd262d45a78a0635d
-DATA ·p108347af5984e85_POW10_M128_TAB+2424(SB)/8, $0xbf5cd54678eef0b6
-DATA ·p108347af5984e85_POW10_M128_TAB+2432(SB)/8, $0x86fb897116c87c34
-DATA ·p108347af5984e85_POW10_M128_TAB+2440(SB)/8, $0xef340a98172aace4
-DATA ·p108347af5984e85_POW10_M128_TAB+2448(SB)/8, $0xd45d35e6ae3d4da0
-DATA ·p108347af5984e85_POW10_M128_TAB+2456(SB)/8, $0x9580869f0e7aac0e
-DATA ·p108347af5984e85_POW10_M128_TAB+2464(SB)/8, $0x8974836059cca109
-DATA ·p108347af5984e85_POW10_M128_TAB+2472(SB)/8, $0xbae0a846d2195712
-DATA ·p108347af5984e85_POW10_M128_TAB+2480(SB)/8, $0x2bd1a438703fc94b
-DATA ·p108347af5984e85_POW10_M128_TAB+2488(SB)/8, $0xe998d258869facd7
-DATA ·p108347af5984e85_POW10_M128_TAB+2496(SB)/8, $0x7b6306a34627ddcf
-DATA ·p108347af5984e85_POW10_M128_TAB+2504(SB)/8, $0x91ff83775423cc06
-DATA ·p108347af5984e85_POW10_M128_TAB+2512(SB)/8, $0x1a3bc84c17b1d542
-DATA ·p108347af5984e85_POW10_M128_TAB+2520(SB)/8, $0xb67f6455292cbf08
-DATA ·p108347af5984e85_POW10_M128_TAB+2528(SB)/8, $0x20caba5f1d9e4a93
-DATA ·p108347af5984e85_POW10_M128_TAB+2536(SB)/8, $0xe41f3d6a7377eeca
-DATA ·p108347af5984e85_POW10_M128_TAB+2544(SB)/8, $0x547eb47b7282ee9c
-DATA ·p108347af5984e85_POW10_M128_TAB+2552(SB)/8, $0x8e938662882af53e
-DATA ·p108347af5984e85_POW10_M128_TAB+2560(SB)/8, $0xe99e619a4f23aa43
-DATA ·p108347af5984e85_POW10_M128_TAB+2568(SB)/8, $0xb23867fb2a35b28d
-DATA ·p108347af5984e85_POW10_M128_TAB+2576(SB)/8, $0x6405fa00e2ec94d4
-DATA ·p108347af5984e85_POW10_M128_TAB+2584(SB)/8, $0xdec681f9f4c31f31
-DATA ·p108347af5984e85_POW10_M128_TAB+2592(SB)/8, $0xde83bc408dd3dd04
-DATA ·p108347af5984e85_POW10_M128_TAB+2600(SB)/8, $0x8b3c113c38f9f37e
-DATA ·p108347af5984e85_POW10_M128_TAB+2608(SB)/8, $0x9624ab50b148d445
-DATA ·p108347af5984e85_POW10_M128_TAB+2616(SB)/8, $0xae0b158b4738705e
-DATA ·p108347af5984e85_POW10_M128_TAB+2624(SB)/8, $0x3badd624dd9b0957
-DATA ·p108347af5984e85_POW10_M128_TAB+2632(SB)/8, $0xd98ddaee19068c76
-DATA ·p108347af5984e85_POW10_M128_TAB+2640(SB)/8, $0xe54ca5d70a80e5d6
-DATA ·p108347af5984e85_POW10_M128_TAB+2648(SB)/8, $0x87f8a8d4cfa417c9
-DATA ·p108347af5984e85_POW10_M128_TAB+2656(SB)/8, $0x5e9fcf4ccd211f4c
-DATA ·p108347af5984e85_POW10_M128_TAB+2664(SB)/8, $0xa9f6d30a038d1dbc
-DATA ·p108347af5984e85_POW10_M128_TAB+2672(SB)/8, $0x7647c3200069671f
-DATA ·p108347af5984e85_POW10_M128_TAB+2680(SB)/8, $0xd47487cc8470652b
-DATA ·p108347af5984e85_POW10_M128_TAB+2688(SB)/8, $0x29ecd9f40041e073
-DATA ·p108347af5984e85_POW10_M128_TAB+2696(SB)/8, $0x84c8d4dfd2c63f3b
-DATA ·p108347af5984e85_POW10_M128_TAB+2704(SB)/8, $0xf468107100525890
-DATA ·p108347af5984e85_POW10_M128_TAB+2712(SB)/8, $0xa5fb0a17c777cf09
-DATA ·p108347af5984e85_POW10_M128_TAB+2720(SB)/8, $0x7182148d4066eeb4
-DATA ·p108347af5984e85_POW10_M128_TAB+2728(SB)/8, $0xcf79cc9db955c2cc
-DATA ·p108347af5984e85_POW10_M128_TAB+2736(SB)/8, $0xc6f14cd848405530
-DATA ·p108347af5984e85_POW10_M128_TAB+2744(SB)/8, $0x81ac1fe293d599bf
-DATA ·p108347af5984e85_POW10_M128_TAB+2752(SB)/8, $0xb8ada00e5a506a7c
-DATA ·p108347af5984e85_POW10_M128_TAB+2760(SB)/8, $0xa21727db38cb002f
-DATA ·p108347af5984e85_POW10_M128_TAB+2768(SB)/8, $0xa6d90811f0e4851c
-DATA ·p108347af5984e85_POW10_M128_TAB+2776(SB)/8, $0xca9cf1d206fdc03b
-DATA ·p108347af5984e85_POW10_M128_TAB+2784(SB)/8, $0x908f4a166d1da663
-DATA ·p108347af5984e85_POW10_M128_TAB+2792(SB)/8, $0xfd442e4688bd304a
-DATA ·p108347af5984e85_POW10_M128_TAB+2800(SB)/8, $0x9a598e4e043287fe
-DATA ·p108347af5984e85_POW10_M128_TAB+2808(SB)/8, $0x9e4a9cec15763e2e
-DATA ·p108347af5984e85_POW10_M128_TAB+2816(SB)/8, $0x40eff1e1853f29fd
-DATA ·p108347af5984e85_POW10_M128_TAB+2824(SB)/8, $0xc5dd44271ad3cdba
-DATA ·p108347af5984e85_POW10_M128_TAB+2832(SB)/8, $0xd12bee59e68ef47c
-DATA ·p108347af5984e85_POW10_M128_TAB+2840(SB)/8, $0xf7549530e188c128
-DATA ·p108347af5984e85_POW10_M128_TAB+2848(SB)/8, $0x82bb74f8301958ce
-DATA ·p108347af5984e85_POW10_M128_TAB+2856(SB)/8, $0x9a94dd3e8cf578b9
-DATA ·p108347af5984e85_POW10_M128_TAB+2864(SB)/8, $0xe36a52363c1faf01
-DATA ·p108347af5984e85_POW10_M128_TAB+2872(SB)/8, $0xc13a148e3032d6e7
-DATA ·p108347af5984e85_POW10_M128_TAB+2880(SB)/8, $0xdc44e6c3cb279ac1
-DATA ·p108347af5984e85_POW10_M128_TAB+2888(SB)/8, $0xf18899b1bc3f8ca1
-DATA ·p108347af5984e85_POW10_M128_TAB+2896(SB)/8, $0x29ab103a5ef8c0b9
-DATA ·p108347af5984e85_POW10_M128_TAB+2904(SB)/8, $0x96f5600f15a7b7e5
-DATA ·p108347af5984e85_POW10_M128_TAB+2912(SB)/8, $0x7415d448f6b6f0e7
-DATA ·p108347af5984e85_POW10_M128_TAB+2920(SB)/8, $0xbcb2b812db11a5de
-DATA ·p108347af5984e85_POW10_M128_TAB+2928(SB)/8, $0x111b495b3464ad21
-DATA ·p108347af5984e85_POW10_M128_TAB+2936(SB)/8, $0xebdf661791d60f56
-DATA ·p108347af5984e85_POW10_M128_TAB+2944(SB)/8, $0xcab10dd900beec34
-DATA ·p108347af5984e85_POW10_M128_TAB+2952(SB)/8, $0x936b9fcebb25c995
-DATA ·p108347af5984e85_POW10_M128_TAB+2960(SB)/8, $0x3d5d514f40eea742
-DATA ·p108347af5984e85_POW10_M128_TAB+2968(SB)/8, $0xb84687c269ef3bfb
-DATA ·p108347af5984e85_POW10_M128_TAB+2976(SB)/8, $0x0cb4a5a3112a5112
-DATA ·p108347af5984e85_POW10_M128_TAB+2984(SB)/8, $0xe65829b3046b0afa
-DATA ·p108347af5984e85_POW10_M128_TAB+2992(SB)/8, $0x47f0e785eaba72ab
-DATA ·p108347af5984e85_POW10_M128_TAB+3000(SB)/8, $0x8ff71a0fe2c2e6dc
-DATA ·p108347af5984e85_POW10_M128_TAB+3008(SB)/8, $0x59ed216765690f56
-DATA ·p108347af5984e85_POW10_M128_TAB+3016(SB)/8, $0xb3f4e093db73a093
-DATA ·p108347af5984e85_POW10_M128_TAB+3024(SB)/8, $0x306869c13ec3532c
-DATA ·p108347af5984e85_POW10_M128_TAB+3032(SB)/8, $0xe0f218b8d25088b8
-DATA ·p108347af5984e85_POW10_M128_TAB+3040(SB)/8, $0x1e414218c73a13fb
-DATA ·p108347af5984e85_POW10_M128_TAB+3048(SB)/8, $0x8c974f7383725573
-DATA ·p108347af5984e85_POW10_M128_TAB+3056(SB)/8, $0xe5d1929ef90898fa
-DATA ·p108347af5984e85_POW10_M128_TAB+3064(SB)/8, $0xafbd2350644eeacf
-DATA ·p108347af5984e85_POW10_M128_TAB+3072(SB)/8, $0xdf45f746b74abf39
-DATA ·p108347af5984e85_POW10_M128_TAB+3080(SB)/8, $0xdbac6c247d62a583
-DATA ·p108347af5984e85_POW10_M128_TAB+3088(SB)/8, $0x6b8bba8c328eb783
-DATA ·p108347af5984e85_POW10_M128_TAB+3096(SB)/8, $0x894bc396ce5da772
-DATA ·p108347af5984e85_POW10_M128_TAB+3104(SB)/8, $0x066ea92f3f326564
-DATA ·p108347af5984e85_POW10_M128_TAB+3112(SB)/8, $0xab9eb47c81f5114f
-DATA ·p108347af5984e85_POW10_M128_TAB+3120(SB)/8, $0xc80a537b0efefebd
-DATA ·p108347af5984e85_POW10_M128_TAB+3128(SB)/8, $0xd686619ba27255a2
-DATA ·p108347af5984e85_POW10_M128_TAB+3136(SB)/8, $0xbd06742ce95f5f36
-DATA ·p108347af5984e85_POW10_M128_TAB+3144(SB)/8, $0x8613fd0145877585
-DATA ·p108347af5984e85_POW10_M128_TAB+3152(SB)/8, $0x2c48113823b73704
-DATA ·p108347af5984e85_POW10_M128_TAB+3160(SB)/8, $0xa798fc4196e952e7
-DATA ·p108347af5984e85_POW10_M128_TAB+3168(SB)/8, $0xf75a15862ca504c5
-DATA ·p108347af5984e85_POW10_M128_TAB+3176(SB)/8, $0xd17f3b51fca3a7a0
-DATA ·p108347af5984e85_POW10_M128_TAB+3184(SB)/8, $0x9a984d73dbe722fb
-DATA ·p108347af5984e85_POW10_M128_TAB+3192(SB)/8, $0x82ef85133de648c4
-DATA ·p108347af5984e85_POW10_M128_TAB+3200(SB)/8, $0xc13e60d0d2e0ebba
-DATA ·p108347af5984e85_POW10_M128_TAB+3208(SB)/8, $0xa3ab66580d5fdaf5
-DATA ·p108347af5984e85_POW10_M128_TAB+3216(SB)/8, $0x318df905079926a8
-DATA ·p108347af5984e85_POW10_M128_TAB+3224(SB)/8, $0xcc963fee10b7d1b3
-DATA ·p108347af5984e85_POW10_M128_TAB+3232(SB)/8, $0xfdf17746497f7052
-DATA ·p108347af5984e85_POW10_M128_TAB+3240(SB)/8, $0xffbbcfe994e5c61f
-DATA ·p108347af5984e85_POW10_M128_TAB+3248(SB)/8, $0xfeb6ea8bedefa633
-DATA ·p108347af5984e85_POW10_M128_TAB+3256(SB)/8, $0x9fd561f1fd0f9bd3
-DATA ·p108347af5984e85_POW10_M128_TAB+3264(SB)/8, $0xfe64a52ee96b8fc0
-DATA ·p108347af5984e85_POW10_M128_TAB+3272(SB)/8, $0xc7caba6e7c5382c8
-DATA ·p108347af5984e85_POW10_M128_TAB+3280(SB)/8, $0x3dfdce7aa3c673b0
-DATA ·p108347af5984e85_POW10_M128_TAB+3288(SB)/8, $0xf9bd690a1b68637b
-DATA ·p108347af5984e85_POW10_M128_TAB+3296(SB)/8, $0x06bea10ca65c084e
-DATA ·p108347af5984e85_POW10_M128_TAB+3304(SB)/8, $0x9c1661a651213e2d
-DATA ·p108347af5984e85_POW10_M128_TAB+3312(SB)/8, $0x486e494fcff30a62
-DATA ·p108347af5984e85_POW10_M128_TAB+3320(SB)/8, $0xc31bfa0fe5698db8
-DATA ·p108347af5984e85_POW10_M128_TAB+3328(SB)/8, $0x5a89dba3c3efccfa
-DATA ·p108347af5984e85_POW10_M128_TAB+3336(SB)/8, $0xf3e2f893dec3f126
-DATA ·p108347af5984e85_POW10_M128_TAB+3344(SB)/8, $0xf89629465a75e01c
-DATA ·p108347af5984e85_POW10_M128_TAB+3352(SB)/8, $0x986ddb5c6b3a76b7
-DATA ·p108347af5984e85_POW10_M128_TAB+3360(SB)/8, $0xf6bbb397f1135823
-DATA ·p108347af5984e85_POW10_M128_TAB+3368(SB)/8, $0xbe89523386091465
-DATA ·p108347af5984e85_POW10_M128_TAB+3376(SB)/8, $0x746aa07ded582e2c
-DATA ·p108347af5984e85_POW10_M128_TAB+3384(SB)/8, $0xee2ba6c0678b597f
-DATA ·p108347af5984e85_POW10_M128_TAB+3392(SB)/8, $0xa8c2a44eb4571cdc
-DATA ·p108347af5984e85_POW10_M128_TAB+3400(SB)/8, $0x94db483840b717ef
-DATA ·p108347af5984e85_POW10_M128_TAB+3408(SB)/8, $0x92f34d62616ce413
-DATA ·p108347af5984e85_POW10_M128_TAB+3416(SB)/8, $0xba121a4650e4ddeb
-DATA ·p108347af5984e85_POW10_M128_TAB+3424(SB)/8, $0x77b020baf9c81d17
-DATA ·p108347af5984e85_POW10_M128_TAB+3432(SB)/8, $0xe896a0d7e51e1566
-DATA ·p108347af5984e85_POW10_M128_TAB+3440(SB)/8, $0x0ace1474dc1d122e
-DATA ·p108347af5984e85_POW10_M128_TAB+3448(SB)/8, $0x915e2486ef32cd60
-DATA ·p108347af5984e85_POW10_M128_TAB+3456(SB)/8, $0x0d819992132456ba
-DATA ·p108347af5984e85_POW10_M128_TAB+3464(SB)/8, $0xb5b5ada8aaff80b8
-DATA ·p108347af5984e85_POW10_M128_TAB+3472(SB)/8, $0x10e1fff697ed6c69
-DATA ·p108347af5984e85_POW10_M128_TAB+3480(SB)/8, $0xe3231912d5bf60e6
-DATA ·p108347af5984e85_POW10_M128_TAB+3488(SB)/8, $0xca8d3ffa1ef463c1
-DATA ·p108347af5984e85_POW10_M128_TAB+3496(SB)/8, $0x8df5efabc5979c8f
-DATA ·p108347af5984e85_POW10_M128_TAB+3504(SB)/8, $0xbd308ff8a6b17cb2
-DATA ·p108347af5984e85_POW10_M128_TAB+3512(SB)/8, $0xb1736b96b6fd83b3
-DATA ·p108347af5984e85_POW10_M128_TAB+3520(SB)/8, $0xac7cb3f6d05ddbde
-DATA ·p108347af5984e85_POW10_M128_TAB+3528(SB)/8, $0xddd0467c64bce4a0
-DATA ·p108347af5984e85_POW10_M128_TAB+3536(SB)/8, $0x6bcdf07a423aa96b
-DATA ·p108347af5984e85_POW10_M128_TAB+3544(SB)/8, $0x8aa22c0dbef60ee4
-DATA ·p108347af5984e85_POW10_M128_TAB+3552(SB)/8, $0x86c16c98d2c953c6
-DATA ·p108347af5984e85_POW10_M128_TAB+3560(SB)/8, $0xad4ab7112eb3929d
-DATA ·p108347af5984e85_POW10_M128_TAB+3568(SB)/8, $0xe871c7bf077ba8b7
-DATA ·p108347af5984e85_POW10_M128_TAB+3576(SB)/8, $0xd89d64d57a607744
-DATA ·p108347af5984e85_POW10_M128_TAB+3584(SB)/8, $0x11471cd764ad4972
-DATA ·p108347af5984e85_POW10_M128_TAB+3592(SB)/8, $0x87625f056c7c4a8b
-DATA ·p108347af5984e85_POW10_M128_TAB+3600(SB)/8, $0xd598e40d3dd89bcf
-DATA ·p108347af5984e85_POW10_M128_TAB+3608(SB)/8, $0xa93af6c6c79b5d2d
-DATA ·p108347af5984e85_POW10_M128_TAB+3616(SB)/8, $0x4aff1d108d4ec2c3
-DATA ·p108347af5984e85_POW10_M128_TAB+3624(SB)/8, $0xd389b47879823479
-DATA ·p108347af5984e85_POW10_M128_TAB+3632(SB)/8, $0xcedf722a585139ba
-DATA ·p108347af5984e85_POW10_M128_TAB+3640(SB)/8, $0x843610cb4bf160cb
-DATA ·p108347af5984e85_POW10_M128_TAB+3648(SB)/8, $0xc2974eb4ee658828
-DATA ·p108347af5984e85_POW10_M128_TAB+3656(SB)/8, $0xa54394fe1eedb8fe
-DATA ·p108347af5984e85_POW10_M128_TAB+3664(SB)/8, $0x733d226229feea32
-DATA ·p108347af5984e85_POW10_M128_TAB+3672(SB)/8, $0xce947a3da6a9273e
-DATA ·p108347af5984e85_POW10_M128_TAB+3680(SB)/8, $0x0806357d5a3f525f
-DATA ·p108347af5984e85_POW10_M128_TAB+3688(SB)/8, $0x811ccc668829b887
-DATA ·p108347af5984e85_POW10_M128_TAB+3696(SB)/8, $0xca07c2dcb0cf26f7
-DATA ·p108347af5984e85_POW10_M128_TAB+3704(SB)/8, $0xa163ff802a3426a8
-DATA ·p108347af5984e85_POW10_M128_TAB+3712(SB)/8, $0xfc89b393dd02f0b5
-DATA ·p108347af5984e85_POW10_M128_TAB+3720(SB)/8, $0xc9bcff6034c13052
-DATA ·p108347af5984e85_POW10_M128_TAB+3728(SB)/8, $0xbbac2078d443ace2
-DATA ·p108347af5984e85_POW10_M128_TAB+3736(SB)/8, $0xfc2c3f3841f17c67
-DATA ·p108347af5984e85_POW10_M128_TAB+3744(SB)/8, $0xd54b944b84aa4c0d
-DATA ·p108347af5984e85_POW10_M128_TAB+3752(SB)/8, $0x9d9ba7832936edc0
-DATA ·p108347af5984e85_POW10_M128_TAB+3760(SB)/8, $0x0a9e795e65d4df11
-DATA ·p108347af5984e85_POW10_M128_TAB+3768(SB)/8, $0xc5029163f384a931
-DATA ·p108347af5984e85_POW10_M128_TAB+3776(SB)/8, $0x4d4617b5ff4a16d5
-DATA ·p108347af5984e85_POW10_M128_TAB+3784(SB)/8, $0xf64335bcf065d37d
-DATA ·p108347af5984e85_POW10_M128_TAB+3792(SB)/8, $0x504bced1bf8e4e45
-DATA ·p108347af5984e85_POW10_M128_TAB+3800(SB)/8, $0x99ea0196163fa42e
-DATA ·p108347af5984e85_POW10_M128_TAB+3808(SB)/8, $0xe45ec2862f71e1d6
-DATA ·p108347af5984e85_POW10_M128_TAB+3816(SB)/8, $0xc06481fb9bcf8d39
-DATA ·p108347af5984e85_POW10_M128_TAB+3824(SB)/8, $0x5d767327bb4e5a4c
-DATA ·p108347af5984e85_POW10_M128_TAB+3832(SB)/8, $0xf07da27a82c37088
-DATA ·p108347af5984e85_POW10_M128_TAB+3840(SB)/8, $0x3a6a07f8d510f86f
-DATA ·p108347af5984e85_POW10_M128_TAB+3848(SB)/8, $0x964e858c91ba2655
-DATA ·p108347af5984e85_POW10_M128_TAB+3856(SB)/8, $0x890489f70a55368b
-DATA ·p108347af5984e85_POW10_M128_TAB+3864(SB)/8, $0xbbe226efb628afea
-DATA ·p108347af5984e85_POW10_M128_TAB+3872(SB)/8, $0x2b45ac74ccea842e
-DATA ·p108347af5984e85_POW10_M128_TAB+3880(SB)/8, $0xeadab0aba3b2dbe5
-DATA ·p108347af5984e85_POW10_M128_TAB+3888(SB)/8, $0x3b0b8bc90012929d
-DATA ·p108347af5984e85_POW10_M128_TAB+3896(SB)/8, $0x92c8ae6b464fc96f
-DATA ·p108347af5984e85_POW10_M128_TAB+3904(SB)/8, $0x09ce6ebb40173744
-DATA ·p108347af5984e85_POW10_M128_TAB+3912(SB)/8, $0xb77ada0617e3bbcb
-DATA ·p108347af5984e85_POW10_M128_TAB+3920(SB)/8, $0xcc420a6a101d0515
-DATA ·p108347af5984e85_POW10_M128_TAB+3928(SB)/8, $0xe55990879ddcaabd
-DATA ·p108347af5984e85_POW10_M128_TAB+3936(SB)/8, $0x9fa946824a12232d
-DATA ·p108347af5984e85_POW10_M128_TAB+3944(SB)/8, $0x8f57fa54c2a9eab6
-DATA ·p108347af5984e85_POW10_M128_TAB+3952(SB)/8, $0x47939822dc96abf9
-DATA ·p108347af5984e85_POW10_M128_TAB+3960(SB)/8, $0xb32df8e9f3546564
-DATA ·p108347af5984e85_POW10_M128_TAB+3968(SB)/8, $0x59787e2b93bc56f7
-DATA ·p108347af5984e85_POW10_M128_TAB+3976(SB)/8, $0xdff9772470297ebd
-DATA ·p108347af5984e85_POW10_M128_TAB+3984(SB)/8, $0x57eb4edb3c55b65a
-DATA ·p108347af5984e85_POW10_M128_TAB+3992(SB)/8, $0x8bfbea76c619ef36
-DATA ·p108347af5984e85_POW10_M128_TAB+4000(SB)/8, $0xede622920b6b23f1
-DATA ·p108347af5984e85_POW10_M128_TAB+4008(SB)/8, $0xaefae51477a06b03
-DATA ·p108347af5984e85_POW10_M128_TAB+4016(SB)/8, $0xe95fab368e45eced
-DATA ·p108347af5984e85_POW10_M128_TAB+4024(SB)/8, $0xdab99e59958885c4
-DATA ·p108347af5984e85_POW10_M128_TAB+4032(SB)/8, $0x11dbcb0218ebb414
-DATA ·p108347af5984e85_POW10_M128_TAB+4040(SB)/8, $0x88b402f7fd75539b
-DATA ·p108347af5984e85_POW10_M128_TAB+4048(SB)/8, $0xd652bdc29f26a119
-DATA ·p108347af5984e85_POW10_M128_TAB+4056(SB)/8, $0xaae103b5fcd2a881
-DATA ·p108347af5984e85_POW10_M128_TAB+4064(SB)/8, $0x4be76d3346f0495f
-DATA ·p108347af5984e85_POW10_M128_TAB+4072(SB)/8, $0xd59944a37c0752a2
-DATA ·p108347af5984e85_POW10_M128_TAB+4080(SB)/8, $0x6f70a4400c562ddb
-DATA ·p108347af5984e85_POW10_M128_TAB+4088(SB)/8, $0x857fcae62d8493a5
-DATA ·p108347af5984e85_POW10_M128_TAB+4096(SB)/8, $0xcb4ccd500f6bb952
-DATA ·p108347af5984e85_POW10_M128_TAB+4104(SB)/8, $0xa6dfbd9fb8e5b88e
-DATA ·p108347af5984e85_POW10_M128_TAB+4112(SB)/8, $0x7e2000a41346a7a7
-DATA ·p108347af5984e85_POW10_M128_TAB+4120(SB)/8, $0xd097ad07a71f26b2
-DATA ·p108347af5984e85_POW10_M128_TAB+4128(SB)/8, $0x8ed400668c0c28c8
-DATA ·p108347af5984e85_POW10_M128_TAB+4136(SB)/8, $0x825ecc24c873782f
-DATA ·p108347af5984e85_POW10_M128_TAB+4144(SB)/8, $0x728900802f0f32fa
-DATA ·p108347af5984e85_POW10_M128_TAB+4152(SB)/8, $0xa2f67f2dfa90563b
-DATA ·p108347af5984e85_POW10_M128_TAB+4160(SB)/8, $0x4f2b40a03ad2ffb9
-DATA ·p108347af5984e85_POW10_M128_TAB+4168(SB)/8, $0xcbb41ef979346bca
-DATA ·p108347af5984e85_POW10_M128_TAB+4176(SB)/8, $0xe2f610c84987bfa8
-DATA ·p108347af5984e85_POW10_M128_TAB+4184(SB)/8, $0xfea126b7d78186bc
-DATA ·p108347af5984e85_POW10_M128_TAB+4192(SB)/8, $0x0dd9ca7d2df4d7c9
-DATA ·p108347af5984e85_POW10_M128_TAB+4200(SB)/8, $0x9f24b832e6b0f436
-DATA ·p108347af5984e85_POW10_M128_TAB+4208(SB)/8, $0x91503d1c79720dbb
-DATA ·p108347af5984e85_POW10_M128_TAB+4216(SB)/8, $0xc6ede63fa05d3143
-DATA ·p108347af5984e85_POW10_M128_TAB+4224(SB)/8, $0x75a44c6397ce912a
-DATA ·p108347af5984e85_POW10_M128_TAB+4232(SB)/8, $0xf8a95fcf88747d94
-DATA ·p108347af5984e85_POW10_M128_TAB+4240(SB)/8, $0xc986afbe3ee11aba
-DATA ·p108347af5984e85_POW10_M128_TAB+4248(SB)/8, $0x9b69dbe1b548ce7c
-DATA ·p108347af5984e85_POW10_M128_TAB+4256(SB)/8, $0xfbe85badce996168
-DATA ·p108347af5984e85_POW10_M128_TAB+4264(SB)/8, $0xc24452da229b021b
-DATA ·p108347af5984e85_POW10_M128_TAB+4272(SB)/8, $0xfae27299423fb9c3
-DATA ·p108347af5984e85_POW10_M128_TAB+4280(SB)/8, $0xf2d56790ab41c2a2
-DATA ·p108347af5984e85_POW10_M128_TAB+4288(SB)/8, $0xdccd879fc967d41a
-DATA ·p108347af5984e85_POW10_M128_TAB+4296(SB)/8, $0x97c560ba6b0919a5
-DATA ·p108347af5984e85_POW10_M128_TAB+4304(SB)/8, $0x5400e987bbc1c920
-DATA ·p108347af5984e85_POW10_M128_TAB+4312(SB)/8, $0xbdb6b8e905cb600f
-DATA ·p108347af5984e85_POW10_M128_TAB+4320(SB)/8, $0x290123e9aab23b68
-DATA ·p108347af5984e85_POW10_M128_TAB+4328(SB)/8, $0xed246723473e3813
-DATA ·p108347af5984e85_POW10_M128_TAB+4336(SB)/8, $0xf9a0b6720aaf6521
-DATA ·p108347af5984e85_POW10_M128_TAB+4344(SB)/8, $0x9436c0760c86e30b
-DATA ·p108347af5984e85_POW10_M128_TAB+4352(SB)/8, $0xf808e40e8d5b3e69
-DATA ·p108347af5984e85_POW10_M128_TAB+4360(SB)/8, $0xb94470938fa89bce
-DATA ·p108347af5984e85_POW10_M128_TAB+4368(SB)/8, $0xb60b1d1230b20e04
-DATA ·p108347af5984e85_POW10_M128_TAB+4376(SB)/8, $0xe7958cb87392c2c2
-DATA ·p108347af5984e85_POW10_M128_TAB+4384(SB)/8, $0xb1c6f22b5e6f48c2
-DATA ·p108347af5984e85_POW10_M128_TAB+4392(SB)/8, $0x90bd77f3483bb9b9
-DATA ·p108347af5984e85_POW10_M128_TAB+4400(SB)/8, $0x1e38aeb6360b1af3
-DATA ·p108347af5984e85_POW10_M128_TAB+4408(SB)/8, $0xb4ecd5f01a4aa828
-DATA ·p108347af5984e85_POW10_M128_TAB+4416(SB)/8, $0x25c6da63c38de1b0
-DATA ·p108347af5984e85_POW10_M128_TAB+4424(SB)/8, $0xe2280b6c20dd5232
-DATA ·p108347af5984e85_POW10_M128_TAB+4432(SB)/8, $0x579c487e5a38ad0e
-DATA ·p108347af5984e85_POW10_M128_TAB+4440(SB)/8, $0x8d590723948a535f
-DATA ·p108347af5984e85_POW10_M128_TAB+4448(SB)/8, $0x2d835a9df0c6d851
-DATA ·p108347af5984e85_POW10_M128_TAB+4456(SB)/8, $0xb0af48ec79ace837
-DATA ·p108347af5984e85_POW10_M128_TAB+4464(SB)/8, $0xf8e431456cf88e65
-DATA ·p108347af5984e85_POW10_M128_TAB+4472(SB)/8, $0xdcdb1b2798182244
-DATA ·p108347af5984e85_POW10_M128_TAB+4480(SB)/8, $0x1b8e9ecb641b58ff
-DATA ·p108347af5984e85_POW10_M128_TAB+4488(SB)/8, $0x8a08f0f8bf0f156b
-DATA ·p108347af5984e85_POW10_M128_TAB+4496(SB)/8, $0xe272467e3d222f3f
-DATA ·p108347af5984e85_POW10_M128_TAB+4504(SB)/8, $0xac8b2d36eed2dac5
-DATA ·p108347af5984e85_POW10_M128_TAB+4512(SB)/8, $0x5b0ed81dcc6abb0f
-DATA ·p108347af5984e85_POW10_M128_TAB+4520(SB)/8, $0xd7adf884aa879177
-DATA ·p108347af5984e85_POW10_M128_TAB+4528(SB)/8, $0x98e947129fc2b4e9
-DATA ·p108347af5984e85_POW10_M128_TAB+4536(SB)/8, $0x86ccbb52ea94baea
-DATA ·p108347af5984e85_POW10_M128_TAB+4544(SB)/8, $0x3f2398d747b36224
-DATA ·p108347af5984e85_POW10_M128_TAB+4552(SB)/8, $0xa87fea27a539e9a5
-DATA ·p108347af5984e85_POW10_M128_TAB+4560(SB)/8, $0x8eec7f0d19a03aad
-DATA ·p108347af5984e85_POW10_M128_TAB+4568(SB)/8, $0xd29fe4b18e88640e
-DATA ·p108347af5984e85_POW10_M128_TAB+4576(SB)/8, $0x1953cf68300424ac
-DATA ·p108347af5984e85_POW10_M128_TAB+4584(SB)/8, $0x83a3eeeef9153e89
-DATA ·p108347af5984e85_POW10_M128_TAB+4592(SB)/8, $0x5fa8c3423c052dd7
-DATA ·p108347af5984e85_POW10_M128_TAB+4600(SB)/8, $0xa48ceaaab75a8e2b
-DATA ·p108347af5984e85_POW10_M128_TAB+4608(SB)/8, $0x3792f412cb06794d
-DATA ·p108347af5984e85_POW10_M128_TAB+4616(SB)/8, $0xcdb02555653131b6
-DATA ·p108347af5984e85_POW10_M128_TAB+4624(SB)/8, $0xe2bbd88bbee40bd0
-DATA ·p108347af5984e85_POW10_M128_TAB+4632(SB)/8, $0x808e17555f3ebf11
-DATA ·p108347af5984e85_POW10_M128_TAB+4640(SB)/8, $0x5b6aceaeae9d0ec4
-DATA ·p108347af5984e85_POW10_M128_TAB+4648(SB)/8, $0xa0b19d2ab70e6ed6
-DATA ·p108347af5984e85_POW10_M128_TAB+4656(SB)/8, $0xf245825a5a445275
-DATA ·p108347af5984e85_POW10_M128_TAB+4664(SB)/8, $0xc8de047564d20a8b
-DATA ·p108347af5984e85_POW10_M128_TAB+4672(SB)/8, $0xeed6e2f0f0d56712
-DATA ·p108347af5984e85_POW10_M128_TAB+4680(SB)/8, $0xfb158592be068d2e
-DATA ·p108347af5984e85_POW10_M128_TAB+4688(SB)/8, $0x55464dd69685606b
-DATA ·p108347af5984e85_POW10_M128_TAB+4696(SB)/8, $0x9ced737bb6c4183d
-DATA ·p108347af5984e85_POW10_M128_TAB+4704(SB)/8, $0xaa97e14c3c26b886
-DATA ·p108347af5984e85_POW10_M128_TAB+4712(SB)/8, $0xc428d05aa4751e4c
-DATA ·p108347af5984e85_POW10_M128_TAB+4720(SB)/8, $0xd53dd99f4b3066a8
-DATA ·p108347af5984e85_POW10_M128_TAB+4728(SB)/8, $0xf53304714d9265df
-DATA ·p108347af5984e85_POW10_M128_TAB+4736(SB)/8, $0xe546a8038efe4029
-DATA ·p108347af5984e85_POW10_M128_TAB+4744(SB)/8, $0x993fe2c6d07b7fab
-DATA ·p108347af5984e85_POW10_M128_TAB+4752(SB)/8, $0xde98520472bdd033
-DATA ·p108347af5984e85_POW10_M128_TAB+4760(SB)/8, $0xbf8fdb78849a5f96
-DATA ·p108347af5984e85_POW10_M128_TAB+4768(SB)/8, $0x963e66858f6d4440
-DATA ·p108347af5984e85_POW10_M128_TAB+4776(SB)/8, $0xef73d256a5c0f77c
-DATA ·p108347af5984e85_POW10_M128_TAB+4784(SB)/8, $0xdde7001379a44aa8
-DATA ·p108347af5984e85_POW10_M128_TAB+4792(SB)/8, $0x95a8637627989aad
-DATA ·p108347af5984e85_POW10_M128_TAB+4800(SB)/8, $0x5560c018580d5d52
-DATA ·p108347af5984e85_POW10_M128_TAB+4808(SB)/8, $0xbb127c53b17ec159
-DATA ·p108347af5984e85_POW10_M128_TAB+4816(SB)/8, $0xaab8f01e6e10b4a6
-DATA ·p108347af5984e85_POW10_M128_TAB+4824(SB)/8, $0xe9d71b689dde71af
-DATA ·p108347af5984e85_POW10_M128_TAB+4832(SB)/8, $0xcab3961304ca70e8
-DATA ·p108347af5984e85_POW10_M128_TAB+4840(SB)/8, $0x9226712162ab070d
-DATA ·p108347af5984e85_POW10_M128_TAB+4848(SB)/8, $0x3d607b97c5fd0d22
-DATA ·p108347af5984e85_POW10_M128_TAB+4856(SB)/8, $0xb6b00d69bb55c8d1
-DATA ·p108347af5984e85_POW10_M128_TAB+4864(SB)/8, $0x8cb89a7db77c506a
-DATA ·p108347af5984e85_POW10_M128_TAB+4872(SB)/8, $0xe45c10c42a2b3b05
-DATA ·p108347af5984e85_POW10_M128_TAB+4880(SB)/8, $0x77f3608e92adb242
-DATA ·p108347af5984e85_POW10_M128_TAB+4888(SB)/8, $0x8eb98a7a9a5b04e3
-DATA ·p108347af5984e85_POW10_M128_TAB+4896(SB)/8, $0x55f038b237591ed3
-DATA ·p108347af5984e85_POW10_M128_TAB+4904(SB)/8, $0xb267ed1940f1c61c
-DATA ·p108347af5984e85_POW10_M128_TAB+4912(SB)/8, $0x6b6c46dec52f6688
-DATA ·p108347af5984e85_POW10_M128_TAB+4920(SB)/8, $0xdf01e85f912e37a3
-DATA ·p108347af5984e85_POW10_M128_TAB+4928(SB)/8, $0x2323ac4b3b3da015
-DATA ·p108347af5984e85_POW10_M128_TAB+4936(SB)/8, $0x8b61313bbabce2c6
-DATA ·p108347af5984e85_POW10_M128_TAB+4944(SB)/8, $0xabec975e0a0d081a
-DATA ·p108347af5984e85_POW10_M128_TAB+4952(SB)/8, $0xae397d8aa96c1b77
-DATA ·p108347af5984e85_POW10_M128_TAB+4960(SB)/8, $0x96e7bd358c904a21
-DATA ·p108347af5984e85_POW10_M128_TAB+4968(SB)/8, $0xd9c7dced53c72255
-DATA ·p108347af5984e85_POW10_M128_TAB+4976(SB)/8, $0x7e50d64177da2e54
-DATA ·p108347af5984e85_POW10_M128_TAB+4984(SB)/8, $0x881cea14545c7575
-DATA ·p108347af5984e85_POW10_M128_TAB+4992(SB)/8, $0xdde50bd1d5d0b9e9
-DATA ·p108347af5984e85_POW10_M128_TAB+5000(SB)/8, $0xaa242499697392d2
-DATA ·p108347af5984e85_POW10_M128_TAB+5008(SB)/8, $0x955e4ec64b44e864
-DATA ·p108347af5984e85_POW10_M128_TAB+5016(SB)/8, $0xd4ad2dbfc3d07787
-DATA ·p108347af5984e85_POW10_M128_TAB+5024(SB)/8, $0xbd5af13bef0b113e
-DATA ·p108347af5984e85_POW10_M128_TAB+5032(SB)/8, $0x84ec3c97da624ab4
-DATA ·p108347af5984e85_POW10_M128_TAB+5040(SB)/8, $0xecb1ad8aeacdd58e
-DATA ·p108347af5984e85_POW10_M128_TAB+5048(SB)/8, $0xa6274bbdd0fadd61
-DATA ·p108347af5984e85_POW10_M128_TAB+5056(SB)/8, $0x67de18eda5814af2
-DATA ·p108347af5984e85_POW10_M128_TAB+5064(SB)/8, $0xcfb11ead453994ba
-DATA ·p108347af5984e85_POW10_M128_TAB+5072(SB)/8, $0x80eacf948770ced7
-DATA ·p108347af5984e85_POW10_M128_TAB+5080(SB)/8, $0x81ceb32c4b43fcf4
-DATA ·p108347af5984e85_POW10_M128_TAB+5088(SB)/8, $0xa1258379a94d028d
-DATA ·p108347af5984e85_POW10_M128_TAB+5096(SB)/8, $0xa2425ff75e14fc31
-DATA ·p108347af5984e85_POW10_M128_TAB+5104(SB)/8, $0x096ee45813a04330
-DATA ·p108347af5984e85_POW10_M128_TAB+5112(SB)/8, $0xcad2f7f5359a3b3e
-DATA ·p108347af5984e85_POW10_M128_TAB+5120(SB)/8, $0x8bca9d6e188853fc
-DATA ·p108347af5984e85_POW10_M128_TAB+5128(SB)/8, $0xfd87b5f28300ca0d
-DATA ·p108347af5984e85_POW10_M128_TAB+5136(SB)/8, $0x775ea264cf55347d
-DATA ·p108347af5984e85_POW10_M128_TAB+5144(SB)/8, $0x9e74d1b791e07e48
-DATA ·p108347af5984e85_POW10_M128_TAB+5152(SB)/8, $0x95364afe032a819d
-DATA ·p108347af5984e85_POW10_M128_TAB+5160(SB)/8, $0xc612062576589dda
-DATA ·p108347af5984e85_POW10_M128_TAB+5168(SB)/8, $0x3a83ddbd83f52204
-DATA ·p108347af5984e85_POW10_M128_TAB+5176(SB)/8, $0xf79687aed3eec551
-DATA ·p108347af5984e85_POW10_M128_TAB+5184(SB)/8, $0xc4926a9672793542
-DATA ·p108347af5984e85_POW10_M128_TAB+5192(SB)/8, $0x9abe14cd44753b52
-DATA ·p108347af5984e85_POW10_M128_TAB+5200(SB)/8, $0x75b7053c0f178293
-DATA ·p108347af5984e85_POW10_M128_TAB+5208(SB)/8, $0xc16d9a0095928a27
-DATA ·p108347af5984e85_POW10_M128_TAB+5216(SB)/8, $0x5324c68b12dd6338
-DATA ·p108347af5984e85_POW10_M128_TAB+5224(SB)/8, $0xf1c90080baf72cb1
-DATA ·p108347af5984e85_POW10_M128_TAB+5232(SB)/8, $0xd3f6fc16ebca5e03
-DATA ·p108347af5984e85_POW10_M128_TAB+5240(SB)/8, $0x971da05074da7bee
-DATA ·p108347af5984e85_POW10_M128_TAB+5248(SB)/8, $0x88f4bb1ca6bcf584
-DATA ·p108347af5984e85_POW10_M128_TAB+5256(SB)/8, $0xbce5086492111aea
-DATA ·p108347af5984e85_POW10_M128_TAB+5264(SB)/8, $0x2b31e9e3d06c32e5
-DATA ·p108347af5984e85_POW10_M128_TAB+5272(SB)/8, $0xec1e4a7db69561a5
-DATA ·p108347af5984e85_POW10_M128_TAB+5280(SB)/8, $0x3aff322e62439fcf
-DATA ·p108347af5984e85_POW10_M128_TAB+5288(SB)/8, $0x9392ee8e921d5d07
-DATA ·p108347af5984e85_POW10_M128_TAB+5296(SB)/8, $0x09befeb9fad487c2
-DATA ·p108347af5984e85_POW10_M128_TAB+5304(SB)/8, $0xb877aa3236a4b449
-DATA ·p108347af5984e85_POW10_M128_TAB+5312(SB)/8, $0x4c2ebe687989a9b3
-DATA ·p108347af5984e85_POW10_M128_TAB+5320(SB)/8, $0xe69594bec44de15b
-DATA ·p108347af5984e85_POW10_M128_TAB+5328(SB)/8, $0x0f9d37014bf60a10
-DATA ·p108347af5984e85_POW10_M128_TAB+5336(SB)/8, $0x901d7cf73ab0acd9
-DATA ·p108347af5984e85_POW10_M128_TAB+5344(SB)/8, $0x538484c19ef38c94
-DATA ·p108347af5984e85_POW10_M128_TAB+5352(SB)/8, $0xb424dc35095cd80f
-DATA ·p108347af5984e85_POW10_M128_TAB+5360(SB)/8, $0x2865a5f206b06fb9
-DATA ·p108347af5984e85_POW10_M128_TAB+5368(SB)/8, $0xe12e13424bb40e13
-DATA ·p108347af5984e85_POW10_M128_TAB+5376(SB)/8, $0xf93f87b7442e45d3
-DATA ·p108347af5984e85_POW10_M128_TAB+5384(SB)/8, $0x8cbccc096f5088cb
-DATA ·p108347af5984e85_POW10_M128_TAB+5392(SB)/8, $0xf78f69a51539d748
-DATA ·p108347af5984e85_POW10_M128_TAB+5400(SB)/8, $0xafebff0bcb24aafe
-DATA ·p108347af5984e85_POW10_M128_TAB+5408(SB)/8, $0xb573440e5a884d1b
-DATA ·p108347af5984e85_POW10_M128_TAB+5416(SB)/8, $0xdbe6fecebdedd5be
-DATA ·p108347af5984e85_POW10_M128_TAB+5424(SB)/8, $0x31680a88f8953030
-DATA ·p108347af5984e85_POW10_M128_TAB+5432(SB)/8, $0x89705f4136b4a597
-DATA ·p108347af5984e85_POW10_M128_TAB+5440(SB)/8, $0xfdc20d2b36ba7c3d
-DATA ·p108347af5984e85_POW10_M128_TAB+5448(SB)/8, $0xabcc77118461cefc
-DATA ·p108347af5984e85_POW10_M128_TAB+5456(SB)/8, $0x3d32907604691b4c
-DATA ·p108347af5984e85_POW10_M128_TAB+5464(SB)/8, $0xd6bf94d5e57a42bc
-DATA ·p108347af5984e85_POW10_M128_TAB+5472(SB)/8, $0xa63f9a49c2c1b10f
-DATA ·p108347af5984e85_POW10_M128_TAB+5480(SB)/8, $0x8637bd05af6c69b5
-DATA ·p108347af5984e85_POW10_M128_TAB+5488(SB)/8, $0x0fcf80dc33721d53
-DATA ·p108347af5984e85_POW10_M128_TAB+5496(SB)/8, $0xa7c5ac471b478423
-DATA ·p108347af5984e85_POW10_M128_TAB+5504(SB)/8, $0xd3c36113404ea4a8
-DATA ·p108347af5984e85_POW10_M128_TAB+5512(SB)/8, $0xd1b71758e219652b
-DATA ·p108347af5984e85_POW10_M128_TAB+5520(SB)/8, $0x645a1cac083126e9
-DATA ·p108347af5984e85_POW10_M128_TAB+5528(SB)/8, $0x83126e978d4fdf3b
-DATA ·p108347af5984e85_POW10_M128_TAB+5536(SB)/8, $0x3d70a3d70a3d70a3
-DATA ·p108347af5984e85_POW10_M128_TAB+5544(SB)/8, $0xa3d70a3d70a3d70a
-DATA ·p108347af5984e85_POW10_M128_TAB+5552(SB)/8, $0xcccccccccccccccc
-DATA ·p108347af5984e85_POW10_M128_TAB+5560(SB)/8, $0xcccccccccccccccc
-DATA ·p108347af5984e85_POW10_M128_TAB+5568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5576(SB)/8, $0x8000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5592(SB)/8, $0xa000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5600(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5608(SB)/8, $0xc800000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5616(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5624(SB)/8, $0xfa00000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5632(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5640(SB)/8, $0x9c40000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5648(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5656(SB)/8, $0xc350000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5664(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5672(SB)/8, $0xf424000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5688(SB)/8, $0x9896800000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5704(SB)/8, $0xbebc200000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5712(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5720(SB)/8, $0xee6b280000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5728(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5736(SB)/8, $0x9502f90000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5744(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5752(SB)/8, $0xba43b74000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5760(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5768(SB)/8, $0xe8d4a51000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5784(SB)/8, $0x9184e72a00000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5800(SB)/8, $0xb5e620f480000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5808(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5816(SB)/8, $0xe35fa931a0000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5824(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5832(SB)/8, $0x8e1bc9bf04000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5840(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5848(SB)/8, $0xb1a2bc2ec5000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5856(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5864(SB)/8, $0xde0b6b3a76400000
-DATA ·p108347af5984e85_POW10_M128_TAB+5872(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5880(SB)/8, $0x8ac7230489e80000
-DATA ·p108347af5984e85_POW10_M128_TAB+5888(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5896(SB)/8, $0xad78ebc5ac620000
-DATA ·p108347af5984e85_POW10_M128_TAB+5904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5912(SB)/8, $0xd8d726b7177a8000
-DATA ·p108347af5984e85_POW10_M128_TAB+5920(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5928(SB)/8, $0x878678326eac9000
-DATA ·p108347af5984e85_POW10_M128_TAB+5936(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5944(SB)/8, $0xa968163f0a57b400
-DATA ·p108347af5984e85_POW10_M128_TAB+5952(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5960(SB)/8, $0xd3c21bcecceda100
-DATA ·p108347af5984e85_POW10_M128_TAB+5968(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5976(SB)/8, $0x84595161401484a0
-DATA ·p108347af5984e85_POW10_M128_TAB+5984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+5992(SB)/8, $0xa56fa5b99019a5c8
-DATA ·p108347af5984e85_POW10_M128_TAB+6000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6008(SB)/8, $0xcecb8f27f4200f3a
-DATA ·p108347af5984e85_POW10_M128_TAB+6016(SB)/8, $0x4000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6024(SB)/8, $0x813f3978f8940984
-DATA ·p108347af5984e85_POW10_M128_TAB+6032(SB)/8, $0x5000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6040(SB)/8, $0xa18f07d736b90be5
-DATA ·p108347af5984e85_POW10_M128_TAB+6048(SB)/8, $0xa400000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6056(SB)/8, $0xc9f2c9cd04674ede
-DATA ·p108347af5984e85_POW10_M128_TAB+6064(SB)/8, $0x4d00000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6072(SB)/8, $0xfc6f7c4045812296
-DATA ·p108347af5984e85_POW10_M128_TAB+6080(SB)/8, $0xf020000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6088(SB)/8, $0x9dc5ada82b70b59d
-DATA ·p108347af5984e85_POW10_M128_TAB+6096(SB)/8, $0x6c28000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6104(SB)/8, $0xc5371912364ce305
-DATA ·p108347af5984e85_POW10_M128_TAB+6112(SB)/8, $0xc732000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6120(SB)/8, $0xf684df56c3e01bc6
-DATA ·p108347af5984e85_POW10_M128_TAB+6128(SB)/8, $0x3c7f400000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6136(SB)/8, $0x9a130b963a6c115c
-DATA ·p108347af5984e85_POW10_M128_TAB+6144(SB)/8, $0x4b9f100000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6152(SB)/8, $0xc097ce7bc90715b3
-DATA ·p108347af5984e85_POW10_M128_TAB+6160(SB)/8, $0x1e86d40000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6168(SB)/8, $0xf0bdc21abb48db20
-DATA ·p108347af5984e85_POW10_M128_TAB+6176(SB)/8, $0x1314448000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6184(SB)/8, $0x96769950b50d88f4
-DATA ·p108347af5984e85_POW10_M128_TAB+6192(SB)/8, $0x17d955a000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6200(SB)/8, $0xbc143fa4e250eb31
-DATA ·p108347af5984e85_POW10_M128_TAB+6208(SB)/8, $0x5dcfab0800000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6216(SB)/8, $0xeb194f8e1ae525fd
-DATA ·p108347af5984e85_POW10_M128_TAB+6224(SB)/8, $0x5aa1cae500000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6232(SB)/8, $0x92efd1b8d0cf37be
-DATA ·p108347af5984e85_POW10_M128_TAB+6240(SB)/8, $0xf14a3d9e40000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6248(SB)/8, $0xb7abc627050305ad
-DATA ·p108347af5984e85_POW10_M128_TAB+6256(SB)/8, $0x6d9ccd05d0000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6264(SB)/8, $0xe596b7b0c643c719
-DATA ·p108347af5984e85_POW10_M128_TAB+6272(SB)/8, $0xe4820023a2000000
-DATA ·p108347af5984e85_POW10_M128_TAB+6280(SB)/8, $0x8f7e32ce7bea5c6f
-DATA ·p108347af5984e85_POW10_M128_TAB+6288(SB)/8, $0xdda2802c8a800000
-DATA ·p108347af5984e85_POW10_M128_TAB+6296(SB)/8, $0xb35dbf821ae4f38b
-DATA ·p108347af5984e85_POW10_M128_TAB+6304(SB)/8, $0xd50b2037ad200000
-DATA ·p108347af5984e85_POW10_M128_TAB+6312(SB)/8, $0xe0352f62a19e306e
-DATA ·p108347af5984e85_POW10_M128_TAB+6320(SB)/8, $0x4526f422cc340000
-DATA ·p108347af5984e85_POW10_M128_TAB+6328(SB)/8, $0x8c213d9da502de45
-DATA ·p108347af5984e85_POW10_M128_TAB+6336(SB)/8, $0x9670b12b7f410000
-DATA ·p108347af5984e85_POW10_M128_TAB+6344(SB)/8, $0xaf298d050e4395d6
-DATA ·p108347af5984e85_POW10_M128_TAB+6352(SB)/8, $0x3c0cdd765f114000
-DATA ·p108347af5984e85_POW10_M128_TAB+6360(SB)/8, $0xdaf3f04651d47b4c
-DATA ·p108347af5984e85_POW10_M128_TAB+6368(SB)/8, $0xa5880a69fb6ac800
-DATA ·p108347af5984e85_POW10_M128_TAB+6376(SB)/8, $0x88d8762bf324cd0f
-DATA ·p108347af5984e85_POW10_M128_TAB+6384(SB)/8, $0x8eea0d047a457a00
-DATA ·p108347af5984e85_POW10_M128_TAB+6392(SB)/8, $0xab0e93b6efee0053
-DATA ·p108347af5984e85_POW10_M128_TAB+6400(SB)/8, $0x72a4904598d6d880
-DATA ·p108347af5984e85_POW10_M128_TAB+6408(SB)/8, $0xd5d238a4abe98068
-DATA ·p108347af5984e85_POW10_M128_TAB+6416(SB)/8, $0x47a6da2b7f864750
-DATA ·p108347af5984e85_POW10_M128_TAB+6424(SB)/8, $0x85a36366eb71f041
-DATA ·p108347af5984e85_POW10_M128_TAB+6432(SB)/8, $0x999090b65f67d924
-DATA ·p108347af5984e85_POW10_M128_TAB+6440(SB)/8, $0xa70c3c40a64e6c51
-DATA ·p108347af5984e85_POW10_M128_TAB+6448(SB)/8, $0xfff4b4e3f741cf6d
-DATA ·p108347af5984e85_POW10_M128_TAB+6456(SB)/8, $0xd0cf4b50cfe20765
-DATA ·p108347af5984e85_POW10_M128_TAB+6464(SB)/8, $0xbff8f10e7a8921a4
-DATA ·p108347af5984e85_POW10_M128_TAB+6472(SB)/8, $0x82818f1281ed449f
-DATA ·p108347af5984e85_POW10_M128_TAB+6480(SB)/8, $0xaff72d52192b6a0d
-DATA ·p108347af5984e85_POW10_M128_TAB+6488(SB)/8, $0xa321f2d7226895c7
-DATA ·p108347af5984e85_POW10_M128_TAB+6496(SB)/8, $0x9bf4f8a69f764490
-DATA ·p108347af5984e85_POW10_M128_TAB+6504(SB)/8, $0xcbea6f8ceb02bb39
-DATA ·p108347af5984e85_POW10_M128_TAB+6512(SB)/8, $0x02f236d04753d5b4
-DATA ·p108347af5984e85_POW10_M128_TAB+6520(SB)/8, $0xfee50b7025c36a08
-DATA ·p108347af5984e85_POW10_M128_TAB+6528(SB)/8, $0x01d762422c946590
-DATA ·p108347af5984e85_POW10_M128_TAB+6536(SB)/8, $0x9f4f2726179a2245
-DATA ·p108347af5984e85_POW10_M128_TAB+6544(SB)/8, $0x424d3ad2b7b97ef5
-DATA ·p108347af5984e85_POW10_M128_TAB+6552(SB)/8, $0xc722f0ef9d80aad6
-DATA ·p108347af5984e85_POW10_M128_TAB+6560(SB)/8, $0xd2e0898765a7deb2
-DATA ·p108347af5984e85_POW10_M128_TAB+6568(SB)/8, $0xf8ebad2b84e0d58b
-DATA ·p108347af5984e85_POW10_M128_TAB+6576(SB)/8, $0x63cc55f49f88eb2f
-DATA ·p108347af5984e85_POW10_M128_TAB+6584(SB)/8, $0x9b934c3b330c8577
-DATA ·p108347af5984e85_POW10_M128_TAB+6592(SB)/8, $0x3cbf6b71c76b25fb
-DATA ·p108347af5984e85_POW10_M128_TAB+6600(SB)/8, $0xc2781f49ffcfa6d5
-DATA ·p108347af5984e85_POW10_M128_TAB+6608(SB)/8, $0x8bef464e3945ef7a
-DATA ·p108347af5984e85_POW10_M128_TAB+6616(SB)/8, $0xf316271c7fc3908a
-DATA ·p108347af5984e85_POW10_M128_TAB+6624(SB)/8, $0x97758bf0e3cbb5ac
-DATA ·p108347af5984e85_POW10_M128_TAB+6632(SB)/8, $0x97edd871cfda3a56
-DATA ·p108347af5984e85_POW10_M128_TAB+6640(SB)/8, $0x3d52eeed1cbea317
-DATA ·p108347af5984e85_POW10_M128_TAB+6648(SB)/8, $0xbde94e8e43d0c8ec
-DATA ·p108347af5984e85_POW10_M128_TAB+6656(SB)/8, $0x4ca7aaa863ee4bdd
-DATA ·p108347af5984e85_POW10_M128_TAB+6664(SB)/8, $0xed63a231d4c4fb27
-DATA ·p108347af5984e85_POW10_M128_TAB+6672(SB)/8, $0x8fe8caa93e74ef6a
-DATA ·p108347af5984e85_POW10_M128_TAB+6680(SB)/8, $0x945e455f24fb1cf8
-DATA ·p108347af5984e85_POW10_M128_TAB+6688(SB)/8, $0xb3e2fd538e122b44
-DATA ·p108347af5984e85_POW10_M128_TAB+6696(SB)/8, $0xb975d6b6ee39e436
-DATA ·p108347af5984e85_POW10_M128_TAB+6704(SB)/8, $0x60dbbca87196b616
-DATA ·p108347af5984e85_POW10_M128_TAB+6712(SB)/8, $0xe7d34c64a9c85d44
-DATA ·p108347af5984e85_POW10_M128_TAB+6720(SB)/8, $0xbc8955e946fe31cd
-DATA ·p108347af5984e85_POW10_M128_TAB+6728(SB)/8, $0x90e40fbeea1d3a4a
-DATA ·p108347af5984e85_POW10_M128_TAB+6736(SB)/8, $0x6babab6398bdbe41
-DATA ·p108347af5984e85_POW10_M128_TAB+6744(SB)/8, $0xb51d13aea4a488dd
-DATA ·p108347af5984e85_POW10_M128_TAB+6752(SB)/8, $0xc696963c7eed2dd1
-DATA ·p108347af5984e85_POW10_M128_TAB+6760(SB)/8, $0xe264589a4dcdab14
-DATA ·p108347af5984e85_POW10_M128_TAB+6768(SB)/8, $0xfc1e1de5cf543ca2
-DATA ·p108347af5984e85_POW10_M128_TAB+6776(SB)/8, $0x8d7eb76070a08aec
-DATA ·p108347af5984e85_POW10_M128_TAB+6784(SB)/8, $0x3b25a55f43294bcb
-DATA ·p108347af5984e85_POW10_M128_TAB+6792(SB)/8, $0xb0de65388cc8ada8
-DATA ·p108347af5984e85_POW10_M128_TAB+6800(SB)/8, $0x49ef0eb713f39ebe
-DATA ·p108347af5984e85_POW10_M128_TAB+6808(SB)/8, $0xdd15fe86affad912
-DATA ·p108347af5984e85_POW10_M128_TAB+6816(SB)/8, $0x6e3569326c784337
-DATA ·p108347af5984e85_POW10_M128_TAB+6824(SB)/8, $0x8a2dbf142dfcc7ab
-DATA ·p108347af5984e85_POW10_M128_TAB+6832(SB)/8, $0x49c2c37f07965404
-DATA ·p108347af5984e85_POW10_M128_TAB+6840(SB)/8, $0xacb92ed9397bf996
-DATA ·p108347af5984e85_POW10_M128_TAB+6848(SB)/8, $0xdc33745ec97be906
-DATA ·p108347af5984e85_POW10_M128_TAB+6856(SB)/8, $0xd7e77a8f87daf7fb
-DATA ·p108347af5984e85_POW10_M128_TAB+6864(SB)/8, $0x69a028bb3ded71a3
-DATA ·p108347af5984e85_POW10_M128_TAB+6872(SB)/8, $0x86f0ac99b4e8dafd
-DATA ·p108347af5984e85_POW10_M128_TAB+6880(SB)/8, $0xc40832ea0d68ce0c
-DATA ·p108347af5984e85_POW10_M128_TAB+6888(SB)/8, $0xa8acd7c0222311bc
-DATA ·p108347af5984e85_POW10_M128_TAB+6896(SB)/8, $0xf50a3fa490c30190
-DATA ·p108347af5984e85_POW10_M128_TAB+6904(SB)/8, $0xd2d80db02aabd62b
-DATA ·p108347af5984e85_POW10_M128_TAB+6912(SB)/8, $0x792667c6da79e0fa
-DATA ·p108347af5984e85_POW10_M128_TAB+6920(SB)/8, $0x83c7088e1aab65db
-DATA ·p108347af5984e85_POW10_M128_TAB+6928(SB)/8, $0x577001b891185938
-DATA ·p108347af5984e85_POW10_M128_TAB+6936(SB)/8, $0xa4b8cab1a1563f52
-DATA ·p108347af5984e85_POW10_M128_TAB+6944(SB)/8, $0xed4c0226b55e6f86
-DATA ·p108347af5984e85_POW10_M128_TAB+6952(SB)/8, $0xcde6fd5e09abcf26
-DATA ·p108347af5984e85_POW10_M128_TAB+6960(SB)/8, $0x544f8158315b05b4
-DATA ·p108347af5984e85_POW10_M128_TAB+6968(SB)/8, $0x80b05e5ac60b6178
-DATA ·p108347af5984e85_POW10_M128_TAB+6976(SB)/8, $0x696361ae3db1c721
-DATA ·p108347af5984e85_POW10_M128_TAB+6984(SB)/8, $0xa0dc75f1778e39d6
-DATA ·p108347af5984e85_POW10_M128_TAB+6992(SB)/8, $0x03bc3a19cd1e38e9
-DATA ·p108347af5984e85_POW10_M128_TAB+7000(SB)/8, $0xc913936dd571c84c
-DATA ·p108347af5984e85_POW10_M128_TAB+7008(SB)/8, $0x04ab48a04065c723
-DATA ·p108347af5984e85_POW10_M128_TAB+7016(SB)/8, $0xfb5878494ace3a5f
-DATA ·p108347af5984e85_POW10_M128_TAB+7024(SB)/8, $0x62eb0d64283f9c76
-DATA ·p108347af5984e85_POW10_M128_TAB+7032(SB)/8, $0x9d174b2dcec0e47b
-DATA ·p108347af5984e85_POW10_M128_TAB+7040(SB)/8, $0x3ba5d0bd324f8394
-DATA ·p108347af5984e85_POW10_M128_TAB+7048(SB)/8, $0xc45d1df942711d9a
-DATA ·p108347af5984e85_POW10_M128_TAB+7056(SB)/8, $0xca8f44ec7ee36479
-DATA ·p108347af5984e85_POW10_M128_TAB+7064(SB)/8, $0xf5746577930d6500
-DATA ·p108347af5984e85_POW10_M128_TAB+7072(SB)/8, $0x7e998b13cf4e1ecb
-DATA ·p108347af5984e85_POW10_M128_TAB+7080(SB)/8, $0x9968bf6abbe85f20
-DATA ·p108347af5984e85_POW10_M128_TAB+7088(SB)/8, $0x9e3fedd8c321a67e
-DATA ·p108347af5984e85_POW10_M128_TAB+7096(SB)/8, $0xbfc2ef456ae276e8
-DATA ·p108347af5984e85_POW10_M128_TAB+7104(SB)/8, $0xc5cfe94ef3ea101e
-DATA ·p108347af5984e85_POW10_M128_TAB+7112(SB)/8, $0xefb3ab16c59b14a2
-DATA ·p108347af5984e85_POW10_M128_TAB+7120(SB)/8, $0xbba1f1d158724a12
-DATA ·p108347af5984e85_POW10_M128_TAB+7128(SB)/8, $0x95d04aee3b80ece5
-DATA ·p108347af5984e85_POW10_M128_TAB+7136(SB)/8, $0x2a8a6e45ae8edc97
-DATA ·p108347af5984e85_POW10_M128_TAB+7144(SB)/8, $0xbb445da9ca61281f
-DATA ·p108347af5984e85_POW10_M128_TAB+7152(SB)/8, $0xf52d09d71a3293bd
-DATA ·p108347af5984e85_POW10_M128_TAB+7160(SB)/8, $0xea1575143cf97226
-DATA ·p108347af5984e85_POW10_M128_TAB+7168(SB)/8, $0x593c2626705f9c56
-DATA ·p108347af5984e85_POW10_M128_TAB+7176(SB)/8, $0x924d692ca61be758
-DATA ·p108347af5984e85_POW10_M128_TAB+7184(SB)/8, $0x6f8b2fb00c77836c
-DATA ·p108347af5984e85_POW10_M128_TAB+7192(SB)/8, $0xb6e0c377cfa2e12e
-DATA ·p108347af5984e85_POW10_M128_TAB+7200(SB)/8, $0x0b6dfb9c0f956447
-DATA ·p108347af5984e85_POW10_M128_TAB+7208(SB)/8, $0xe498f455c38b997a
-DATA ·p108347af5984e85_POW10_M128_TAB+7216(SB)/8, $0x4724bd4189bd5eac
-DATA ·p108347af5984e85_POW10_M128_TAB+7224(SB)/8, $0x8edf98b59a373fec
-DATA ·p108347af5984e85_POW10_M128_TAB+7232(SB)/8, $0x58edec91ec2cb657
-DATA ·p108347af5984e85_POW10_M128_TAB+7240(SB)/8, $0xb2977ee300c50fe7
-DATA ·p108347af5984e85_POW10_M128_TAB+7248(SB)/8, $0x2f2967b66737e3ed
-DATA ·p108347af5984e85_POW10_M128_TAB+7256(SB)/8, $0xdf3d5e9bc0f653e1
-DATA ·p108347af5984e85_POW10_M128_TAB+7264(SB)/8, $0xbd79e0d20082ee74
-DATA ·p108347af5984e85_POW10_M128_TAB+7272(SB)/8, $0x8b865b215899f46c
-DATA ·p108347af5984e85_POW10_M128_TAB+7280(SB)/8, $0xecd8590680a3aa11
-DATA ·p108347af5984e85_POW10_M128_TAB+7288(SB)/8, $0xae67f1e9aec07187
-DATA ·p108347af5984e85_POW10_M128_TAB+7296(SB)/8, $0xe80e6f4820cc9495
-DATA ·p108347af5984e85_POW10_M128_TAB+7304(SB)/8, $0xda01ee641a708de9
-DATA ·p108347af5984e85_POW10_M128_TAB+7312(SB)/8, $0x3109058d147fdcdd
-DATA ·p108347af5984e85_POW10_M128_TAB+7320(SB)/8, $0x884134fe908658b2
-DATA ·p108347af5984e85_POW10_M128_TAB+7328(SB)/8, $0xbd4b46f0599fd415
-DATA ·p108347af5984e85_POW10_M128_TAB+7336(SB)/8, $0xaa51823e34a7eede
-DATA ·p108347af5984e85_POW10_M128_TAB+7344(SB)/8, $0x6c9e18ac7007c91a
-DATA ·p108347af5984e85_POW10_M128_TAB+7352(SB)/8, $0xd4e5e2cdc1d1ea96
-DATA ·p108347af5984e85_POW10_M128_TAB+7360(SB)/8, $0x03e2cf6bc604ddb0
-DATA ·p108347af5984e85_POW10_M128_TAB+7368(SB)/8, $0x850fadc09923329e
-DATA ·p108347af5984e85_POW10_M128_TAB+7376(SB)/8, $0x84db8346b786151c
-DATA ·p108347af5984e85_POW10_M128_TAB+7384(SB)/8, $0xa6539930bf6bff45
-DATA ·p108347af5984e85_POW10_M128_TAB+7392(SB)/8, $0xe612641865679a63
-DATA ·p108347af5984e85_POW10_M128_TAB+7400(SB)/8, $0xcfe87f7cef46ff16
-DATA ·p108347af5984e85_POW10_M128_TAB+7408(SB)/8, $0x4fcb7e8f3f60c07e
-DATA ·p108347af5984e85_POW10_M128_TAB+7416(SB)/8, $0x81f14fae158c5f6e
-DATA ·p108347af5984e85_POW10_M128_TAB+7424(SB)/8, $0xe3be5e330f38f09d
-DATA ·p108347af5984e85_POW10_M128_TAB+7432(SB)/8, $0xa26da3999aef7749
-DATA ·p108347af5984e85_POW10_M128_TAB+7440(SB)/8, $0x5cadf5bfd3072cc5
-DATA ·p108347af5984e85_POW10_M128_TAB+7448(SB)/8, $0xcb090c8001ab551c
-DATA ·p108347af5984e85_POW10_M128_TAB+7456(SB)/8, $0x73d9732fc7c8f7f6
-DATA ·p108347af5984e85_POW10_M128_TAB+7464(SB)/8, $0xfdcb4fa002162a63
-DATA ·p108347af5984e85_POW10_M128_TAB+7472(SB)/8, $0x2867e7fddcdd9afa
-DATA ·p108347af5984e85_POW10_M128_TAB+7480(SB)/8, $0x9e9f11c4014dda7e
-DATA ·p108347af5984e85_POW10_M128_TAB+7488(SB)/8, $0xb281e1fd541501b8
-DATA ·p108347af5984e85_POW10_M128_TAB+7496(SB)/8, $0xc646d63501a1511d
-DATA ·p108347af5984e85_POW10_M128_TAB+7504(SB)/8, $0x1f225a7ca91a4226
-DATA ·p108347af5984e85_POW10_M128_TAB+7512(SB)/8, $0xf7d88bc24209a565
-DATA ·p108347af5984e85_POW10_M128_TAB+7520(SB)/8, $0x3375788de9b06958
-DATA ·p108347af5984e85_POW10_M128_TAB+7528(SB)/8, $0x9ae757596946075f
-DATA ·p108347af5984e85_POW10_M128_TAB+7536(SB)/8, $0x0052d6b1641c83ae
-DATA ·p108347af5984e85_POW10_M128_TAB+7544(SB)/8, $0xc1a12d2fc3978937
-DATA ·p108347af5984e85_POW10_M128_TAB+7552(SB)/8, $0xc0678c5dbd23a49a
-DATA ·p108347af5984e85_POW10_M128_TAB+7560(SB)/8, $0xf209787bb47d6b84
-DATA ·p108347af5984e85_POW10_M128_TAB+7568(SB)/8, $0xf840b7ba963646e0
-DATA ·p108347af5984e85_POW10_M128_TAB+7576(SB)/8, $0x9745eb4d50ce6332
-DATA ·p108347af5984e85_POW10_M128_TAB+7584(SB)/8, $0xb650e5a93bc3d898
-DATA ·p108347af5984e85_POW10_M128_TAB+7592(SB)/8, $0xbd176620a501fbff
-DATA ·p108347af5984e85_POW10_M128_TAB+7600(SB)/8, $0xa3e51f138ab4cebe
-DATA ·p108347af5984e85_POW10_M128_TAB+7608(SB)/8, $0xec5d3fa8ce427aff
-DATA ·p108347af5984e85_POW10_M128_TAB+7616(SB)/8, $0xc66f336c36b10137
-DATA ·p108347af5984e85_POW10_M128_TAB+7624(SB)/8, $0x93ba47c980e98cdf
-DATA ·p108347af5984e85_POW10_M128_TAB+7632(SB)/8, $0xb80b0047445d4184
-DATA ·p108347af5984e85_POW10_M128_TAB+7640(SB)/8, $0xb8a8d9bbe123f017
-DATA ·p108347af5984e85_POW10_M128_TAB+7648(SB)/8, $0xa60dc059157491e5
-DATA ·p108347af5984e85_POW10_M128_TAB+7656(SB)/8, $0xe6d3102ad96cec1d
-DATA ·p108347af5984e85_POW10_M128_TAB+7664(SB)/8, $0x87c89837ad68db2f
-DATA ·p108347af5984e85_POW10_M128_TAB+7672(SB)/8, $0x9043ea1ac7e41392
-DATA ·p108347af5984e85_POW10_M128_TAB+7680(SB)/8, $0x29babe4598c311fb
-DATA ·p108347af5984e85_POW10_M128_TAB+7688(SB)/8, $0xb454e4a179dd1877
-DATA ·p108347af5984e85_POW10_M128_TAB+7696(SB)/8, $0xf4296dd6fef3d67a
-DATA ·p108347af5984e85_POW10_M128_TAB+7704(SB)/8, $0xe16a1dc9d8545e94
-DATA ·p108347af5984e85_POW10_M128_TAB+7712(SB)/8, $0x1899e4a65f58660c
-DATA ·p108347af5984e85_POW10_M128_TAB+7720(SB)/8, $0x8ce2529e2734bb1d
-DATA ·p108347af5984e85_POW10_M128_TAB+7728(SB)/8, $0x5ec05dcff72e7f8f
-DATA ·p108347af5984e85_POW10_M128_TAB+7736(SB)/8, $0xb01ae745b101e9e4
-DATA ·p108347af5984e85_POW10_M128_TAB+7744(SB)/8, $0x76707543f4fa1f73
-DATA ·p108347af5984e85_POW10_M128_TAB+7752(SB)/8, $0xdc21a1171d42645d
-DATA ·p108347af5984e85_POW10_M128_TAB+7760(SB)/8, $0x6a06494a791c53a8
-DATA ·p108347af5984e85_POW10_M128_TAB+7768(SB)/8, $0x899504ae72497eba
-DATA ·p108347af5984e85_POW10_M128_TAB+7776(SB)/8, $0x0487db9d17636892
-DATA ·p108347af5984e85_POW10_M128_TAB+7784(SB)/8, $0xabfa45da0edbde69
-DATA ·p108347af5984e85_POW10_M128_TAB+7792(SB)/8, $0x45a9d2845d3c42b6
-DATA ·p108347af5984e85_POW10_M128_TAB+7800(SB)/8, $0xd6f8d7509292d603
-DATA ·p108347af5984e85_POW10_M128_TAB+7808(SB)/8, $0x0b8a2392ba45a9b2
-DATA ·p108347af5984e85_POW10_M128_TAB+7816(SB)/8, $0x865b86925b9bc5c2
-DATA ·p108347af5984e85_POW10_M128_TAB+7824(SB)/8, $0x8e6cac7768d7141e
-DATA ·p108347af5984e85_POW10_M128_TAB+7832(SB)/8, $0xa7f26836f282b732
-DATA ·p108347af5984e85_POW10_M128_TAB+7840(SB)/8, $0x3207d795430cd926
-DATA ·p108347af5984e85_POW10_M128_TAB+7848(SB)/8, $0xd1ef0244af2364ff
-DATA ·p108347af5984e85_POW10_M128_TAB+7856(SB)/8, $0x7f44e6bd49e807b8
-DATA ·p108347af5984e85_POW10_M128_TAB+7864(SB)/8, $0x8335616aed761f1f
-DATA ·p108347af5984e85_POW10_M128_TAB+7872(SB)/8, $0x5f16206c9c6209a6
-DATA ·p108347af5984e85_POW10_M128_TAB+7880(SB)/8, $0xa402b9c5a8d3a6e7
-DATA ·p108347af5984e85_POW10_M128_TAB+7888(SB)/8, $0x36dba887c37a8c0f
-DATA ·p108347af5984e85_POW10_M128_TAB+7896(SB)/8, $0xcd036837130890a1
-DATA ·p108347af5984e85_POW10_M128_TAB+7904(SB)/8, $0xc2494954da2c9789
-DATA ·p108347af5984e85_POW10_M128_TAB+7912(SB)/8, $0x802221226be55a64
-DATA ·p108347af5984e85_POW10_M128_TAB+7920(SB)/8, $0xf2db9baa10b7bd6c
-DATA ·p108347af5984e85_POW10_M128_TAB+7928(SB)/8, $0xa02aa96b06deb0fd
-DATA ·p108347af5984e85_POW10_M128_TAB+7936(SB)/8, $0x6f92829494e5acc7
-DATA ·p108347af5984e85_POW10_M128_TAB+7944(SB)/8, $0xc83553c5c8965d3d
-DATA ·p108347af5984e85_POW10_M128_TAB+7952(SB)/8, $0xcb772339ba1f17f9
-DATA ·p108347af5984e85_POW10_M128_TAB+7960(SB)/8, $0xfa42a8b73abbf48c
-DATA ·p108347af5984e85_POW10_M128_TAB+7968(SB)/8, $0xff2a760414536efb
-DATA ·p108347af5984e85_POW10_M128_TAB+7976(SB)/8, $0x9c69a97284b578d7
-DATA ·p108347af5984e85_POW10_M128_TAB+7984(SB)/8, $0xfef5138519684aba
-DATA ·p108347af5984e85_POW10_M128_TAB+7992(SB)/8, $0xc38413cf25e2d70d
-DATA ·p108347af5984e85_POW10_M128_TAB+8000(SB)/8, $0x7eb258665fc25d69
-DATA ·p108347af5984e85_POW10_M128_TAB+8008(SB)/8, $0xf46518c2ef5b8cd1
-DATA ·p108347af5984e85_POW10_M128_TAB+8016(SB)/8, $0xef2f773ffbd97a61
-DATA ·p108347af5984e85_POW10_M128_TAB+8024(SB)/8, $0x98bf2f79d5993802
-DATA ·p108347af5984e85_POW10_M128_TAB+8032(SB)/8, $0xaafb550ffacfd8fa
-DATA ·p108347af5984e85_POW10_M128_TAB+8040(SB)/8, $0xbeeefb584aff8603
-DATA ·p108347af5984e85_POW10_M128_TAB+8048(SB)/8, $0x95ba2a53f983cf38
-DATA ·p108347af5984e85_POW10_M128_TAB+8056(SB)/8, $0xeeaaba2e5dbf6784
-DATA ·p108347af5984e85_POW10_M128_TAB+8064(SB)/8, $0xdd945a747bf26183
-DATA ·p108347af5984e85_POW10_M128_TAB+8072(SB)/8, $0x952ab45cfa97a0b2
-DATA ·p108347af5984e85_POW10_M128_TAB+8080(SB)/8, $0x94f971119aeef9e4
-DATA ·p108347af5984e85_POW10_M128_TAB+8088(SB)/8, $0xba756174393d88df
-DATA ·p108347af5984e85_POW10_M128_TAB+8096(SB)/8, $0x7a37cd5601aab85d
-DATA ·p108347af5984e85_POW10_M128_TAB+8104(SB)/8, $0xe912b9d1478ceb17
-DATA ·p108347af5984e85_POW10_M128_TAB+8112(SB)/8, $0xac62e055c10ab33a
-DATA ·p108347af5984e85_POW10_M128_TAB+8120(SB)/8, $0x91abb422ccb812ee
-DATA ·p108347af5984e85_POW10_M128_TAB+8128(SB)/8, $0x577b986b314d6009
-DATA ·p108347af5984e85_POW10_M128_TAB+8136(SB)/8, $0xb616a12b7fe617aa
-DATA ·p108347af5984e85_POW10_M128_TAB+8144(SB)/8, $0xed5a7e85fda0b80b
-DATA ·p108347af5984e85_POW10_M128_TAB+8152(SB)/8, $0xe39c49765fdf9d94
-DATA ·p108347af5984e85_POW10_M128_TAB+8160(SB)/8, $0x14588f13be847307
-DATA ·p108347af5984e85_POW10_M128_TAB+8168(SB)/8, $0x8e41ade9fbebc27d
-DATA ·p108347af5984e85_POW10_M128_TAB+8176(SB)/8, $0x596eb2d8ae258fc8
-DATA ·p108347af5984e85_POW10_M128_TAB+8184(SB)/8, $0xb1d219647ae6b31c
-DATA ·p108347af5984e85_POW10_M128_TAB+8192(SB)/8, $0x6fca5f8ed9aef3bb
-DATA ·p108347af5984e85_POW10_M128_TAB+8200(SB)/8, $0xde469fbd99a05fe3
-DATA ·p108347af5984e85_POW10_M128_TAB+8208(SB)/8, $0x25de7bb9480d5854
-DATA ·p108347af5984e85_POW10_M128_TAB+8216(SB)/8, $0x8aec23d680043bee
-DATA ·p108347af5984e85_POW10_M128_TAB+8224(SB)/8, $0xaf561aa79a10ae6a
-DATA ·p108347af5984e85_POW10_M128_TAB+8232(SB)/8, $0xada72ccc20054ae9
-DATA ·p108347af5984e85_POW10_M128_TAB+8240(SB)/8, $0x1b2ba1518094da04
-DATA ·p108347af5984e85_POW10_M128_TAB+8248(SB)/8, $0xd910f7ff28069da4
-DATA ·p108347af5984e85_POW10_M128_TAB+8256(SB)/8, $0x90fb44d2f05d0842
-DATA ·p108347af5984e85_POW10_M128_TAB+8264(SB)/8, $0x87aa9aff79042286
-DATA ·p108347af5984e85_POW10_M128_TAB+8272(SB)/8, $0x353a1607ac744a53
-DATA ·p108347af5984e85_POW10_M128_TAB+8280(SB)/8, $0xa99541bf57452b28
-DATA ·p108347af5984e85_POW10_M128_TAB+8288(SB)/8, $0x42889b8997915ce8
-DATA ·p108347af5984e85_POW10_M128_TAB+8296(SB)/8, $0xd3fa922f2d1675f2
-DATA ·p108347af5984e85_POW10_M128_TAB+8304(SB)/8, $0x69956135febada11
-DATA ·p108347af5984e85_POW10_M128_TAB+8312(SB)/8, $0x847c9b5d7c2e09b7
-DATA ·p108347af5984e85_POW10_M128_TAB+8320(SB)/8, $0x43fab9837e699095
-DATA ·p108347af5984e85_POW10_M128_TAB+8328(SB)/8, $0xa59bc234db398c25
-DATA ·p108347af5984e85_POW10_M128_TAB+8336(SB)/8, $0x94f967e45e03f4bb
-DATA ·p108347af5984e85_POW10_M128_TAB+8344(SB)/8, $0xcf02b2c21207ef2e
-DATA ·p108347af5984e85_POW10_M128_TAB+8352(SB)/8, $0x1d1be0eebac278f5
-DATA ·p108347af5984e85_POW10_M128_TAB+8360(SB)/8, $0x8161afb94b44f57d
-DATA ·p108347af5984e85_POW10_M128_TAB+8368(SB)/8, $0x6462d92a69731732
-DATA ·p108347af5984e85_POW10_M128_TAB+8376(SB)/8, $0xa1ba1ba79e1632dc
-DATA ·p108347af5984e85_POW10_M128_TAB+8384(SB)/8, $0x7d7b8f7503cfdcfe
-DATA ·p108347af5984e85_POW10_M128_TAB+8392(SB)/8, $0xca28a291859bbf93
-DATA ·p108347af5984e85_POW10_M128_TAB+8400(SB)/8, $0x5cda735244c3d43e
-DATA ·p108347af5984e85_POW10_M128_TAB+8408(SB)/8, $0xfcb2cb35e702af78
-DATA ·p108347af5984e85_POW10_M128_TAB+8416(SB)/8, $0x3a0888136afa64a7
-DATA ·p108347af5984e85_POW10_M128_TAB+8424(SB)/8, $0x9defbf01b061adab
-DATA ·p108347af5984e85_POW10_M128_TAB+8432(SB)/8, $0x088aaa1845b8fdd0
-DATA ·p108347af5984e85_POW10_M128_TAB+8440(SB)/8, $0xc56baec21c7a1916
-DATA ·p108347af5984e85_POW10_M128_TAB+8448(SB)/8, $0x8aad549e57273d45
-DATA ·p108347af5984e85_POW10_M128_TAB+8456(SB)/8, $0xf6c69a72a3989f5b
-DATA ·p108347af5984e85_POW10_M128_TAB+8464(SB)/8, $0x36ac54e2f678864b
-DATA ·p108347af5984e85_POW10_M128_TAB+8472(SB)/8, $0x9a3c2087a63f6399
-DATA ·p108347af5984e85_POW10_M128_TAB+8480(SB)/8, $0x84576a1bb416a7dd
-DATA ·p108347af5984e85_POW10_M128_TAB+8488(SB)/8, $0xc0cb28a98fcf3c7f
-DATA ·p108347af5984e85_POW10_M128_TAB+8496(SB)/8, $0x656d44a2a11c51d5
-DATA ·p108347af5984e85_POW10_M128_TAB+8504(SB)/8, $0xf0fdf2d3f3c30b9f
-DATA ·p108347af5984e85_POW10_M128_TAB+8512(SB)/8, $0x9f644ae5a4b1b325
-DATA ·p108347af5984e85_POW10_M128_TAB+8520(SB)/8, $0x969eb7c47859e743
-DATA ·p108347af5984e85_POW10_M128_TAB+8528(SB)/8, $0x873d5d9f0dde1fee
-DATA ·p108347af5984e85_POW10_M128_TAB+8536(SB)/8, $0xbc4665b596706114
-DATA ·p108347af5984e85_POW10_M128_TAB+8544(SB)/8, $0xa90cb506d155a7ea
-DATA ·p108347af5984e85_POW10_M128_TAB+8552(SB)/8, $0xeb57ff22fc0c7959
-DATA ·p108347af5984e85_POW10_M128_TAB+8560(SB)/8, $0x09a7f12442d588f2
-DATA ·p108347af5984e85_POW10_M128_TAB+8568(SB)/8, $0x9316ff75dd87cbd8
-DATA ·p108347af5984e85_POW10_M128_TAB+8576(SB)/8, $0x0c11ed6d538aeb2f
-DATA ·p108347af5984e85_POW10_M128_TAB+8584(SB)/8, $0xb7dcbf5354e9bece
-DATA ·p108347af5984e85_POW10_M128_TAB+8592(SB)/8, $0x8f1668c8a86da5fa
-DATA ·p108347af5984e85_POW10_M128_TAB+8600(SB)/8, $0xe5d3ef282a242e81
-DATA ·p108347af5984e85_POW10_M128_TAB+8608(SB)/8, $0xf96e017d694487bc
-DATA ·p108347af5984e85_POW10_M128_TAB+8616(SB)/8, $0x8fa475791a569d10
-DATA ·p108347af5984e85_POW10_M128_TAB+8624(SB)/8, $0x37c981dcc395a9ac
-DATA ·p108347af5984e85_POW10_M128_TAB+8632(SB)/8, $0xb38d92d760ec4455
-DATA ·p108347af5984e85_POW10_M128_TAB+8640(SB)/8, $0x85bbe253f47b1417
-DATA ·p108347af5984e85_POW10_M128_TAB+8648(SB)/8, $0xe070f78d3927556a
-DATA ·p108347af5984e85_POW10_M128_TAB+8656(SB)/8, $0x93956d7478ccec8e
-DATA ·p108347af5984e85_POW10_M128_TAB+8664(SB)/8, $0x8c469ab843b89562
-DATA ·p108347af5984e85_POW10_M128_TAB+8672(SB)/8, $0x387ac8d1970027b2
-DATA ·p108347af5984e85_POW10_M128_TAB+8680(SB)/8, $0xaf58416654a6babb
-DATA ·p108347af5984e85_POW10_M128_TAB+8688(SB)/8, $0x06997b05fcc0319e
-DATA ·p108347af5984e85_POW10_M128_TAB+8696(SB)/8, $0xdb2e51bfe9d0696a
-DATA ·p108347af5984e85_POW10_M128_TAB+8704(SB)/8, $0x441fece3bdf81f03
-DATA ·p108347af5984e85_POW10_M128_TAB+8712(SB)/8, $0x88fcf317f22241e2
-DATA ·p108347af5984e85_POW10_M128_TAB+8720(SB)/8, $0xd527e81cad7626c3
-DATA ·p108347af5984e85_POW10_M128_TAB+8728(SB)/8, $0xab3c2fddeeaad25a
-DATA ·p108347af5984e85_POW10_M128_TAB+8736(SB)/8, $0x8a71e223d8d3b074
-DATA ·p108347af5984e85_POW10_M128_TAB+8744(SB)/8, $0xd60b3bd56a5586f1
-DATA ·p108347af5984e85_POW10_M128_TAB+8752(SB)/8, $0xf6872d5667844e49
-DATA ·p108347af5984e85_POW10_M128_TAB+8760(SB)/8, $0x85c7056562757456
-DATA ·p108347af5984e85_POW10_M128_TAB+8768(SB)/8, $0xb428f8ac016561db
-DATA ·p108347af5984e85_POW10_M128_TAB+8776(SB)/8, $0xa738c6bebb12d16c
-DATA ·p108347af5984e85_POW10_M128_TAB+8784(SB)/8, $0xe13336d701beba52
-DATA ·p108347af5984e85_POW10_M128_TAB+8792(SB)/8, $0xd106f86e69d785c7
-DATA ·p108347af5984e85_POW10_M128_TAB+8800(SB)/8, $0xecc0024661173473
-DATA ·p108347af5984e85_POW10_M128_TAB+8808(SB)/8, $0x82a45b450226b39c
-DATA ·p108347af5984e85_POW10_M128_TAB+8816(SB)/8, $0x27f002d7f95d0190
-DATA ·p108347af5984e85_POW10_M128_TAB+8824(SB)/8, $0xa34d721642b06084
-DATA ·p108347af5984e85_POW10_M128_TAB+8832(SB)/8, $0x31ec038df7b441f4
-DATA ·p108347af5984e85_POW10_M128_TAB+8840(SB)/8, $0xcc20ce9bd35c78a5
-DATA ·p108347af5984e85_POW10_M128_TAB+8848(SB)/8, $0x7e67047175a15271
-DATA ·p108347af5984e85_POW10_M128_TAB+8856(SB)/8, $0xff290242c83396ce
-DATA ·p108347af5984e85_POW10_M128_TAB+8864(SB)/8, $0x0f0062c6e984d386
-DATA ·p108347af5984e85_POW10_M128_TAB+8872(SB)/8, $0x9f79a169bd203e41
-DATA ·p108347af5984e85_POW10_M128_TAB+8880(SB)/8, $0x52c07b78a3e60868
-DATA ·p108347af5984e85_POW10_M128_TAB+8888(SB)/8, $0xc75809c42c684dd1
-DATA ·p108347af5984e85_POW10_M128_TAB+8896(SB)/8, $0xa7709a56ccdf8a82
-DATA ·p108347af5984e85_POW10_M128_TAB+8904(SB)/8, $0xf92e0c3537826145
-DATA ·p108347af5984e85_POW10_M128_TAB+8912(SB)/8, $0x88a66076400bb691
-DATA ·p108347af5984e85_POW10_M128_TAB+8920(SB)/8, $0x9bbcc7a142b17ccb
-DATA ·p108347af5984e85_POW10_M128_TAB+8928(SB)/8, $0x6acff893d00ea435
-DATA ·p108347af5984e85_POW10_M128_TAB+8936(SB)/8, $0xc2abf989935ddbfe
-DATA ·p108347af5984e85_POW10_M128_TAB+8944(SB)/8, $0x0583f6b8c4124d43
-DATA ·p108347af5984e85_POW10_M128_TAB+8952(SB)/8, $0xf356f7ebf83552fe
-DATA ·p108347af5984e85_POW10_M128_TAB+8960(SB)/8, $0xc3727a337a8b704a
-DATA ·p108347af5984e85_POW10_M128_TAB+8968(SB)/8, $0x98165af37b2153de
-DATA ·p108347af5984e85_POW10_M128_TAB+8976(SB)/8, $0x744f18c0592e4c5c
-DATA ·p108347af5984e85_POW10_M128_TAB+8984(SB)/8, $0xbe1bf1b059e9a8d6
-DATA ·p108347af5984e85_POW10_M128_TAB+8992(SB)/8, $0x1162def06f79df73
-DATA ·p108347af5984e85_POW10_M128_TAB+9000(SB)/8, $0xeda2ee1c7064130c
-DATA ·p108347af5984e85_POW10_M128_TAB+9008(SB)/8, $0x8addcb5645ac2ba8
-DATA ·p108347af5984e85_POW10_M128_TAB+9016(SB)/8, $0x9485d4d1c63e8be7
-DATA ·p108347af5984e85_POW10_M128_TAB+9024(SB)/8, $0x6d953e2bd7173692
-DATA ·p108347af5984e85_POW10_M128_TAB+9032(SB)/8, $0xb9a74a0637ce2ee1
-DATA ·p108347af5984e85_POW10_M128_TAB+9040(SB)/8, $0xc8fa8db6ccdd0437
-DATA ·p108347af5984e85_POW10_M128_TAB+9048(SB)/8, $0xe8111c87c5c1ba99
-DATA ·p108347af5984e85_POW10_M128_TAB+9056(SB)/8, $0x1d9c9892400a22a2
-DATA ·p108347af5984e85_POW10_M128_TAB+9064(SB)/8, $0x910ab1d4db9914a0
-DATA ·p108347af5984e85_POW10_M128_TAB+9072(SB)/8, $0x2503beb6d00cab4b
-DATA ·p108347af5984e85_POW10_M128_TAB+9080(SB)/8, $0xb54d5e4a127f59c8
-DATA ·p108347af5984e85_POW10_M128_TAB+9088(SB)/8, $0x2e44ae64840fd61d
-DATA ·p108347af5984e85_POW10_M128_TAB+9096(SB)/8, $0xe2a0b5dc971f303a
-DATA ·p108347af5984e85_POW10_M128_TAB+9104(SB)/8, $0x5ceaecfed289e5d2
-DATA ·p108347af5984e85_POW10_M128_TAB+9112(SB)/8, $0x8da471a9de737e24
-DATA ·p108347af5984e85_POW10_M128_TAB+9120(SB)/8, $0x7425a83e872c5f47
-DATA ·p108347af5984e85_POW10_M128_TAB+9128(SB)/8, $0xb10d8e1456105dad
-DATA ·p108347af5984e85_POW10_M128_TAB+9136(SB)/8, $0xd12f124e28f77719
-DATA ·p108347af5984e85_POW10_M128_TAB+9144(SB)/8, $0xdd50f1996b947518
-DATA ·p108347af5984e85_POW10_M128_TAB+9152(SB)/8, $0x82bd6b70d99aaa6f
-DATA ·p108347af5984e85_POW10_M128_TAB+9160(SB)/8, $0x8a5296ffe33cc92f
-DATA ·p108347af5984e85_POW10_M128_TAB+9168(SB)/8, $0x636cc64d1001550b
-DATA ·p108347af5984e85_POW10_M128_TAB+9176(SB)/8, $0xace73cbfdc0bfb7b
-DATA ·p108347af5984e85_POW10_M128_TAB+9184(SB)/8, $0x3c47f7e05401aa4e
-DATA ·p108347af5984e85_POW10_M128_TAB+9192(SB)/8, $0xd8210befd30efa5a
-DATA ·p108347af5984e85_POW10_M128_TAB+9200(SB)/8, $0x65acfaec34810a71
-DATA ·p108347af5984e85_POW10_M128_TAB+9208(SB)/8, $0x8714a775e3e95c78
-DATA ·p108347af5984e85_POW10_M128_TAB+9216(SB)/8, $0x7f1839a741a14d0d
-DATA ·p108347af5984e85_POW10_M128_TAB+9224(SB)/8, $0xa8d9d1535ce3b396
-DATA ·p108347af5984e85_POW10_M128_TAB+9232(SB)/8, $0x1ede48111209a050
-DATA ·p108347af5984e85_POW10_M128_TAB+9240(SB)/8, $0xd31045a8341ca07c
-DATA ·p108347af5984e85_POW10_M128_TAB+9248(SB)/8, $0x934aed0aab460432
-DATA ·p108347af5984e85_POW10_M128_TAB+9256(SB)/8, $0x83ea2b892091e44d
-DATA ·p108347af5984e85_POW10_M128_TAB+9264(SB)/8, $0xf81da84d5617853f
-DATA ·p108347af5984e85_POW10_M128_TAB+9272(SB)/8, $0xa4e4b66b68b65d60
-DATA ·p108347af5984e85_POW10_M128_TAB+9280(SB)/8, $0x36251260ab9d668e
-DATA ·p108347af5984e85_POW10_M128_TAB+9288(SB)/8, $0xce1de40642e3f4b9
-DATA ·p108347af5984e85_POW10_M128_TAB+9296(SB)/8, $0xc1d72b7c6b426019
-DATA ·p108347af5984e85_POW10_M128_TAB+9304(SB)/8, $0x80d2ae83e9ce78f3
-DATA ·p108347af5984e85_POW10_M128_TAB+9312(SB)/8, $0xb24cf65b8612f81f
-DATA ·p108347af5984e85_POW10_M128_TAB+9320(SB)/8, $0xa1075a24e4421730
-DATA ·p108347af5984e85_POW10_M128_TAB+9328(SB)/8, $0xdee033f26797b627
-DATA ·p108347af5984e85_POW10_M128_TAB+9336(SB)/8, $0xc94930ae1d529cfc
-DATA ·p108347af5984e85_POW10_M128_TAB+9344(SB)/8, $0x169840ef017da3b1
-DATA ·p108347af5984e85_POW10_M128_TAB+9352(SB)/8, $0xfb9b7cd9a4a7443c
-DATA ·p108347af5984e85_POW10_M128_TAB+9360(SB)/8, $0x8e1f289560ee864e
-DATA ·p108347af5984e85_POW10_M128_TAB+9368(SB)/8, $0x9d412e0806e88aa5
-DATA ·p108347af5984e85_POW10_M128_TAB+9376(SB)/8, $0xf1a6f2bab92a27e2
-DATA ·p108347af5984e85_POW10_M128_TAB+9384(SB)/8, $0xc491798a08a2ad4e
-DATA ·p108347af5984e85_POW10_M128_TAB+9392(SB)/8, $0xae10af696774b1db
-DATA ·p108347af5984e85_POW10_M128_TAB+9400(SB)/8, $0xf5b5d7ec8acb58a2
-DATA ·p108347af5984e85_POW10_M128_TAB+9408(SB)/8, $0xacca6da1e0a8ef29
-DATA ·p108347af5984e85_POW10_M128_TAB+9416(SB)/8, $0x9991a6f3d6bf1765
-DATA ·p108347af5984e85_POW10_M128_TAB+9424(SB)/8, $0x17fd090a58d32af3
-DATA ·p108347af5984e85_POW10_M128_TAB+9432(SB)/8, $0xbff610b0cc6edd3f
-DATA ·p108347af5984e85_POW10_M128_TAB+9440(SB)/8, $0xddfc4b4cef07f5b0
-DATA ·p108347af5984e85_POW10_M128_TAB+9448(SB)/8, $0xeff394dcff8a948e
-DATA ·p108347af5984e85_POW10_M128_TAB+9456(SB)/8, $0x4abdaf101564f98e
-DATA ·p108347af5984e85_POW10_M128_TAB+9464(SB)/8, $0x95f83d0a1fb69cd9
-DATA ·p108347af5984e85_POW10_M128_TAB+9472(SB)/8, $0x9d6d1ad41abe37f1
-DATA ·p108347af5984e85_POW10_M128_TAB+9480(SB)/8, $0xbb764c4ca7a4440f
-DATA ·p108347af5984e85_POW10_M128_TAB+9488(SB)/8, $0x84c86189216dc5ed
-DATA ·p108347af5984e85_POW10_M128_TAB+9496(SB)/8, $0xea53df5fd18d5513
-DATA ·p108347af5984e85_POW10_M128_TAB+9504(SB)/8, $0x32fd3cf5b4e49bb4
-DATA ·p108347af5984e85_POW10_M128_TAB+9512(SB)/8, $0x92746b9be2f8552c
-DATA ·p108347af5984e85_POW10_M128_TAB+9520(SB)/8, $0x3fbc8c33221dc2a1
-DATA ·p108347af5984e85_POW10_M128_TAB+9528(SB)/8, $0xb7118682dbb66a77
-DATA ·p108347af5984e85_POW10_M128_TAB+9536(SB)/8, $0x0fabaf3feaa5334a
-DATA ·p108347af5984e85_POW10_M128_TAB+9544(SB)/8, $0xe4d5e82392a40515
-DATA ·p108347af5984e85_POW10_M128_TAB+9552(SB)/8, $0x29cb4d87f2a7400e
-DATA ·p108347af5984e85_POW10_M128_TAB+9560(SB)/8, $0x8f05b1163ba6832d
-DATA ·p108347af5984e85_POW10_M128_TAB+9568(SB)/8, $0x743e20e9ef511012
-DATA ·p108347af5984e85_POW10_M128_TAB+9576(SB)/8, $0xb2c71d5bca9023f8
-DATA ·p108347af5984e85_POW10_M128_TAB+9584(SB)/8, $0x914da9246b255416
-DATA ·p108347af5984e85_POW10_M128_TAB+9592(SB)/8, $0xdf78e4b2bd342cf6
-DATA ·p108347af5984e85_POW10_M128_TAB+9600(SB)/8, $0x1ad089b6c2f7548e
-DATA ·p108347af5984e85_POW10_M128_TAB+9608(SB)/8, $0x8bab8eefb6409c1a
-DATA ·p108347af5984e85_POW10_M128_TAB+9616(SB)/8, $0xa184ac2473b529b1
-DATA ·p108347af5984e85_POW10_M128_TAB+9624(SB)/8, $0xae9672aba3d0c320
-DATA ·p108347af5984e85_POW10_M128_TAB+9632(SB)/8, $0xc9e5d72d90a2741e
-DATA ·p108347af5984e85_POW10_M128_TAB+9640(SB)/8, $0xda3c0f568cc4f3e8
-DATA ·p108347af5984e85_POW10_M128_TAB+9648(SB)/8, $0x7e2fa67c7a658892
-DATA ·p108347af5984e85_POW10_M128_TAB+9656(SB)/8, $0x8865899617fb1871
-DATA ·p108347af5984e85_POW10_M128_TAB+9664(SB)/8, $0xddbb901b98feeab7
-DATA ·p108347af5984e85_POW10_M128_TAB+9672(SB)/8, $0xaa7eebfb9df9de8d
-DATA ·p108347af5984e85_POW10_M128_TAB+9680(SB)/8, $0x552a74227f3ea565
-DATA ·p108347af5984e85_POW10_M128_TAB+9688(SB)/8, $0xd51ea6fa85785631
-DATA ·p108347af5984e85_POW10_M128_TAB+9696(SB)/8, $0xd53a88958f87275f
-DATA ·p108347af5984e85_POW10_M128_TAB+9704(SB)/8, $0x8533285c936b35de
-DATA ·p108347af5984e85_POW10_M128_TAB+9712(SB)/8, $0x8a892abaf368f137
-DATA ·p108347af5984e85_POW10_M128_TAB+9720(SB)/8, $0xa67ff273b8460356
-DATA ·p108347af5984e85_POW10_M128_TAB+9728(SB)/8, $0x2d2b7569b0432d85
-DATA ·p108347af5984e85_POW10_M128_TAB+9736(SB)/8, $0xd01fef10a657842c
-DATA ·p108347af5984e85_POW10_M128_TAB+9744(SB)/8, $0x9c3b29620e29fc73
-DATA ·p108347af5984e85_POW10_M128_TAB+9752(SB)/8, $0x8213f56a67f6b29b
-DATA ·p108347af5984e85_POW10_M128_TAB+9760(SB)/8, $0x8349f3ba91b47b8f
-DATA ·p108347af5984e85_POW10_M128_TAB+9768(SB)/8, $0xa298f2c501f45f42
-DATA ·p108347af5984e85_POW10_M128_TAB+9776(SB)/8, $0x241c70a936219a73
-DATA ·p108347af5984e85_POW10_M128_TAB+9784(SB)/8, $0xcb3f2f7642717713
-DATA ·p108347af5984e85_POW10_M128_TAB+9792(SB)/8, $0xed238cd383aa0110
-DATA ·p108347af5984e85_POW10_M128_TAB+9800(SB)/8, $0xfe0efb53d30dd4d7
-DATA ·p108347af5984e85_POW10_M128_TAB+9808(SB)/8, $0xf4363804324a40aa
-DATA ·p108347af5984e85_POW10_M128_TAB+9816(SB)/8, $0x9ec95d1463e8a506
-DATA ·p108347af5984e85_POW10_M128_TAB+9824(SB)/8, $0xb143c6053edcd0d5
-DATA ·p108347af5984e85_POW10_M128_TAB+9832(SB)/8, $0xc67bb4597ce2ce48
-DATA ·p108347af5984e85_POW10_M128_TAB+9840(SB)/8, $0xdd94b7868e94050a
-DATA ·p108347af5984e85_POW10_M128_TAB+9848(SB)/8, $0xf81aa16fdc1b81da
-DATA ·p108347af5984e85_POW10_M128_TAB+9856(SB)/8, $0xca7cf2b4191c8326
-DATA ·p108347af5984e85_POW10_M128_TAB+9864(SB)/8, $0x9b10a4e5e9913128
-DATA ·p108347af5984e85_POW10_M128_TAB+9872(SB)/8, $0xfd1c2f611f63a3f0
-DATA ·p108347af5984e85_POW10_M128_TAB+9880(SB)/8, $0xc1d4ce1f63f57d72
-DATA ·p108347af5984e85_POW10_M128_TAB+9888(SB)/8, $0xbc633b39673c8cec
-DATA ·p108347af5984e85_POW10_M128_TAB+9896(SB)/8, $0xf24a01a73cf2dccf
-DATA ·p108347af5984e85_POW10_M128_TAB+9904(SB)/8, $0xd5be0503e085d813
-DATA ·p108347af5984e85_POW10_M128_TAB+9912(SB)/8, $0x976e41088617ca01
-DATA ·p108347af5984e85_POW10_M128_TAB+9920(SB)/8, $0x4b2d8644d8a74e18
-DATA ·p108347af5984e85_POW10_M128_TAB+9928(SB)/8, $0xbd49d14aa79dbc82
-DATA ·p108347af5984e85_POW10_M128_TAB+9936(SB)/8, $0xddf8e7d60ed1219e
-DATA ·p108347af5984e85_POW10_M128_TAB+9944(SB)/8, $0xec9c459d51852ba2
-DATA ·p108347af5984e85_POW10_M128_TAB+9952(SB)/8, $0xcabb90e5c942b503
-DATA ·p108347af5984e85_POW10_M128_TAB+9960(SB)/8, $0x93e1ab8252f33b45
-DATA ·p108347af5984e85_POW10_M128_TAB+9968(SB)/8, $0x3d6a751f3b936243
-DATA ·p108347af5984e85_POW10_M128_TAB+9976(SB)/8, $0xb8da1662e7b00a17
-DATA ·p108347af5984e85_POW10_M128_TAB+9984(SB)/8, $0x0cc512670a783ad4
-DATA ·p108347af5984e85_POW10_M128_TAB+9992(SB)/8, $0xe7109bfba19c0c9d
-DATA ·p108347af5984e85_POW10_M128_TAB+10000(SB)/8, $0x27fb2b80668b24c5
-DATA ·p108347af5984e85_POW10_M128_TAB+10008(SB)/8, $0x906a617d450187e2
-DATA ·p108347af5984e85_POW10_M128_TAB+10016(SB)/8, $0xb1f9f660802dedf6
-DATA ·p108347af5984e85_POW10_M128_TAB+10024(SB)/8, $0xb484f9dc9641e9da
-DATA ·p108347af5984e85_POW10_M128_TAB+10032(SB)/8, $0x5e7873f8a0396973
-DATA ·p108347af5984e85_POW10_M128_TAB+10040(SB)/8, $0xe1a63853bbd26451
-DATA ·p108347af5984e85_POW10_M128_TAB+10048(SB)/8, $0xdb0b487b6423e1e8
-DATA ·p108347af5984e85_POW10_M128_TAB+10056(SB)/8, $0x8d07e33455637eb2
-DATA ·p108347af5984e85_POW10_M128_TAB+10064(SB)/8, $0x91ce1a9a3d2cda62
-DATA ·p108347af5984e85_POW10_M128_TAB+10072(SB)/8, $0xb049dc016abc5e5f
-DATA ·p108347af5984e85_POW10_M128_TAB+10080(SB)/8, $0x7641a140cc7810fb
-DATA ·p108347af5984e85_POW10_M128_TAB+10088(SB)/8, $0xdc5c5301c56b75f7
-DATA ·p108347af5984e85_POW10_M128_TAB+10096(SB)/8, $0xa9e904c87fcb0a9d
-DATA ·p108347af5984e85_POW10_M128_TAB+10104(SB)/8, $0x89b9b3e11b6329ba
-DATA ·p108347af5984e85_POW10_M128_TAB+10112(SB)/8, $0x546345fa9fbdcd44
-DATA ·p108347af5984e85_POW10_M128_TAB+10120(SB)/8, $0xac2820d9623bf429
-DATA ·p108347af5984e85_POW10_M128_TAB+10128(SB)/8, $0xa97c177947ad4095
-DATA ·p108347af5984e85_POW10_M128_TAB+10136(SB)/8, $0xd732290fbacaf133
-DATA ·p108347af5984e85_POW10_M128_TAB+10144(SB)/8, $0x49ed8eabcccc485d
-DATA ·p108347af5984e85_POW10_M128_TAB+10152(SB)/8, $0x867f59a9d4bed6c0
-DATA ·p108347af5984e85_POW10_M128_TAB+10160(SB)/8, $0x5c68f256bfff5a74
-DATA ·p108347af5984e85_POW10_M128_TAB+10168(SB)/8, $0xa81f301449ee8c70
-DATA ·p108347af5984e85_POW10_M128_TAB+10176(SB)/8, $0x73832eec6fff3111
-DATA ·p108347af5984e85_POW10_M128_TAB+10184(SB)/8, $0xd226fc195c6a2f8c
-DATA ·p108347af5984e85_POW10_M128_TAB+10192(SB)/8, $0xc831fd53c5ff7eab
-DATA ·p108347af5984e85_POW10_M128_TAB+10200(SB)/8, $0x83585d8fd9c25db7
-DATA ·p108347af5984e85_POW10_M128_TAB+10208(SB)/8, $0xba3e7ca8b77f5e55
-DATA ·p108347af5984e85_POW10_M128_TAB+10216(SB)/8, $0xa42e74f3d032f525
-DATA ·p108347af5984e85_POW10_M128_TAB+10224(SB)/8, $0x28ce1bd2e55f35eb
-DATA ·p108347af5984e85_POW10_M128_TAB+10232(SB)/8, $0xcd3a1230c43fb26f
-DATA ·p108347af5984e85_POW10_M128_TAB+10240(SB)/8, $0x7980d163cf5b81b3
-DATA ·p108347af5984e85_POW10_M128_TAB+10248(SB)/8, $0x80444b5e7aa7cf85
-DATA ·p108347af5984e85_POW10_M128_TAB+10256(SB)/8, $0xd7e105bcc332621f
-DATA ·p108347af5984e85_POW10_M128_TAB+10264(SB)/8, $0xa0555e361951c366
-DATA ·p108347af5984e85_POW10_M128_TAB+10272(SB)/8, $0x8dd9472bf3fefaa7
-DATA ·p108347af5984e85_POW10_M128_TAB+10280(SB)/8, $0xc86ab5c39fa63440
-DATA ·p108347af5984e85_POW10_M128_TAB+10288(SB)/8, $0xb14f98f6f0feb951
-DATA ·p108347af5984e85_POW10_M128_TAB+10296(SB)/8, $0xfa856334878fc150
-DATA ·p108347af5984e85_POW10_M128_TAB+10304(SB)/8, $0x6ed1bf9a569f33d3
-DATA ·p108347af5984e85_POW10_M128_TAB+10312(SB)/8, $0x9c935e00d4b9d8d2
-DATA ·p108347af5984e85_POW10_M128_TAB+10320(SB)/8, $0x0a862f80ec4700c8
-DATA ·p108347af5984e85_POW10_M128_TAB+10328(SB)/8, $0xc3b8358109e84f07
-DATA ·p108347af5984e85_POW10_M128_TAB+10336(SB)/8, $0xcd27bb612758c0fa
-DATA ·p108347af5984e85_POW10_M128_TAB+10344(SB)/8, $0xf4a642e14c6262c8
-DATA ·p108347af5984e85_POW10_M128_TAB+10352(SB)/8, $0x8038d51cb897789c
-DATA ·p108347af5984e85_POW10_M128_TAB+10360(SB)/8, $0x98e7e9cccfbd7dbd
-DATA ·p108347af5984e85_POW10_M128_TAB+10368(SB)/8, $0xe0470a63e6bd56c3
-DATA ·p108347af5984e85_POW10_M128_TAB+10376(SB)/8, $0xbf21e44003acdd2c
-DATA ·p108347af5984e85_POW10_M128_TAB+10384(SB)/8, $0x1858ccfce06cac74
-DATA ·p108347af5984e85_POW10_M128_TAB+10392(SB)/8, $0xeeea5d5004981478
-DATA ·p108347af5984e85_POW10_M128_TAB+10400(SB)/8, $0x0f37801e0c43ebc8
-DATA ·p108347af5984e85_POW10_M128_TAB+10408(SB)/8, $0x95527a5202df0ccb
-DATA ·p108347af5984e85_POW10_M128_TAB+10416(SB)/8, $0xd30560258f54e6ba
-DATA ·p108347af5984e85_POW10_M128_TAB+10424(SB)/8, $0xbaa718e68396cffd
-DATA ·p108347af5984e85_POW10_M128_TAB+10432(SB)/8, $0x47c6b82ef32a2069
-DATA ·p108347af5984e85_POW10_M128_TAB+10440(SB)/8, $0xe950df20247c83fd
-DATA ·p108347af5984e85_POW10_M128_TAB+10448(SB)/8, $0x4cdc331d57fa5441
-DATA ·p108347af5984e85_POW10_M128_TAB+10456(SB)/8, $0x91d28b7416cdd27e
-DATA ·p108347af5984e85_POW10_M128_TAB+10464(SB)/8, $0xe0133fe4adf8e952
-DATA ·p108347af5984e85_POW10_M128_TAB+10472(SB)/8, $0xb6472e511c81471d
-DATA ·p108347af5984e85_POW10_M128_TAB+10480(SB)/8, $0x58180fddd97723a6
-DATA ·p108347af5984e85_POW10_M128_TAB+10488(SB)/8, $0xe3d8f9e563a198e5
-DATA ·p108347af5984e85_POW10_M128_TAB+10496(SB)/8, $0x570f09eaa7ea7648
-DATA ·p108347af5984e85_POW10_M128_TAB+10504(SB)/8, $0x8e679c2f5e44ff8f
-DATA ·p108347af5984e85_POW10_M128_TAB+10512(SB)/8, $0x2cd2cc6551e513da
-DATA ·p108347af5984e85_POW10_M128_TAB+10520(SB)/8, $0xb201833b35d63f73
-DATA ·p108347af5984e85_POW10_M128_TAB+10528(SB)/8, $0xf8077f7ea65e58d1
-DATA ·p108347af5984e85_POW10_M128_TAB+10536(SB)/8, $0xde81e40a034bcf4f
-DATA ·p108347af5984e85_POW10_M128_TAB+10544(SB)/8, $0xfb04afaf27faf782
-DATA ·p108347af5984e85_POW10_M128_TAB+10552(SB)/8, $0x8b112e86420f6191
-DATA ·p108347af5984e85_POW10_M128_TAB+10560(SB)/8, $0x79c5db9af1f9b563
-DATA ·p108347af5984e85_POW10_M128_TAB+10568(SB)/8, $0xadd57a27d29339f6
-DATA ·p108347af5984e85_POW10_M128_TAB+10576(SB)/8, $0x18375281ae7822bc
-DATA ·p108347af5984e85_POW10_M128_TAB+10584(SB)/8, $0xd94ad8b1c7380874
-DATA ·p108347af5984e85_POW10_M128_TAB+10592(SB)/8, $0x8f2293910d0b15b5
-DATA ·p108347af5984e85_POW10_M128_TAB+10600(SB)/8, $0x87cec76f1c830548
-DATA ·p108347af5984e85_POW10_M128_TAB+10608(SB)/8, $0xb2eb3875504ddb22
-DATA ·p108347af5984e85_POW10_M128_TAB+10616(SB)/8, $0xa9c2794ae3a3c69a
-DATA ·p108347af5984e85_POW10_M128_TAB+10624(SB)/8, $0x5fa60692a46151eb
-DATA ·p108347af5984e85_POW10_M128_TAB+10632(SB)/8, $0xd433179d9c8cb841
-DATA ·p108347af5984e85_POW10_M128_TAB+10640(SB)/8, $0xdbc7c41ba6bcd333
-DATA ·p108347af5984e85_POW10_M128_TAB+10648(SB)/8, $0x849feec281d7f328
-DATA ·p108347af5984e85_POW10_M128_TAB+10656(SB)/8, $0x12b9b522906c0800
-DATA ·p108347af5984e85_POW10_M128_TAB+10664(SB)/8, $0xa5c7ea73224deff3
-DATA ·p108347af5984e85_POW10_M128_TAB+10672(SB)/8, $0xd768226b34870a00
-DATA ·p108347af5984e85_POW10_M128_TAB+10680(SB)/8, $0xcf39e50feae16bef
-DATA ·p108347af5984e85_POW10_M128_TAB+10688(SB)/8, $0xe6a1158300d46640
-DATA ·p108347af5984e85_POW10_M128_TAB+10696(SB)/8, $0x81842f29f2cce375
-DATA ·p108347af5984e85_POW10_M128_TAB+10704(SB)/8, $0x60495ae3c1097fd0
-DATA ·p108347af5984e85_POW10_M128_TAB+10712(SB)/8, $0xa1e53af46f801c53
-DATA ·p108347af5984e85_POW10_M128_TAB+10720(SB)/8, $0x385bb19cb14bdfc4
-DATA ·p108347af5984e85_POW10_M128_TAB+10728(SB)/8, $0xca5e89b18b602368
-DATA ·p108347af5984e85_POW10_M128_TAB+10736(SB)/8, $0x46729e03dd9ed7b5
-DATA ·p108347af5984e85_POW10_M128_TAB+10744(SB)/8, $0xfcf62c1dee382c42
-DATA ·p108347af5984e85_POW10_M128_TAB+10752(SB)/8, $0x6c07a2c26a8346d1
-DATA ·p108347af5984e85_POW10_M128_TAB+10760(SB)/8, $0x9e19db92b4e31ba9
-DATA ·p108347af5984e85_POW10_M128_TAB+10768(SB)/8, $0xc7098b7305241885
-DATA ·p108347af5984e85_POW10_M128_TAB+10776(SB)/8, $0xc5a05277621be293
-DATA ·p108347af5984e85_POW10_M128_TAB+10784(SB)/8, $0xb8cbee4fc66d1ea7
-DATA ·p108347af5984e85_POW10_M128_TAB+10792(SB)/8, $0xf70867153aa2db38
-DATA ·p108347af5984e85_POW10_M128_TAB+10800(SB)/8, $0x737f74f1dc043328
-DATA ·p108347af5984e85_POW10_M128_TAB+10808(SB)/8, $0x9a65406d44a5c903
-DATA ·p108347af5984e85_POW10_M128_TAB+10816(SB)/8, $0x505f522e53053ff2
-DATA ·p108347af5984e85_POW10_M128_TAB+10824(SB)/8, $0xc0fe908895cf3b44
-DATA ·p108347af5984e85_POW10_M128_TAB+10832(SB)/8, $0x647726b9e7c68fef
-DATA ·p108347af5984e85_POW10_M128_TAB+10840(SB)/8, $0xf13e34aabb430a15
-DATA ·p108347af5984e85_POW10_M128_TAB+10848(SB)/8, $0x5eca783430dc19f5
-DATA ·p108347af5984e85_POW10_M128_TAB+10856(SB)/8, $0x96c6e0eab509e64d
-DATA ·p108347af5984e85_POW10_M128_TAB+10864(SB)/8, $0xb67d16413d132072
-DATA ·p108347af5984e85_POW10_M128_TAB+10872(SB)/8, $0xbc789925624c5fe0
-DATA ·p108347af5984e85_POW10_M128_TAB+10880(SB)/8, $0xe41c5bd18c57e88f
-DATA ·p108347af5984e85_POW10_M128_TAB+10888(SB)/8, $0xeb96bf6ebadf77d8
-DATA ·p108347af5984e85_POW10_M128_TAB+10896(SB)/8, $0x8e91b962f7b6f159
-DATA ·p108347af5984e85_POW10_M128_TAB+10904(SB)/8, $0x933e37a534cbaae7
-DATA ·p108347af5984e85_POW10_M128_TAB+10912(SB)/8, $0x723627bbb5a4adb0
-DATA ·p108347af5984e85_POW10_M128_TAB+10920(SB)/8, $0xb80dc58e81fe95a1
-DATA ·p108347af5984e85_POW10_M128_TAB+10928(SB)/8, $0xcec3b1aaa30dd91c
-DATA ·p108347af5984e85_POW10_M128_TAB+10936(SB)/8, $0xe61136f2227e3b09
-DATA ·p108347af5984e85_POW10_M128_TAB+10944(SB)/8, $0x213a4f0aa5e8a7b1
-DATA ·p108347af5984e85_POW10_M128_TAB+10952(SB)/8, $0x8fcac257558ee4e6
-DATA ·p108347af5984e85_POW10_M128_TAB+10960(SB)/8, $0xa988e2cd4f62d19d
-DATA ·p108347af5984e85_POW10_M128_TAB+10968(SB)/8, $0xb3bd72ed2af29e1f
-DATA ·p108347af5984e85_POW10_M128_TAB+10976(SB)/8, $0x93eb1b80a33b8605
-DATA ·p108347af5984e85_POW10_M128_TAB+10984(SB)/8, $0xe0accfa875af45a7
-DATA ·p108347af5984e85_POW10_M128_TAB+10992(SB)/8, $0xbc72f130660533c3
-DATA ·p108347af5984e85_POW10_M128_TAB+11000(SB)/8, $0x8c6c01c9498d8b88
-DATA ·p108347af5984e85_POW10_M128_TAB+11008(SB)/8, $0xeb8fad7c7f8680b4
-DATA ·p108347af5984e85_POW10_M128_TAB+11016(SB)/8, $0xaf87023b9bf0ee6a
-DATA ·p108347af5984e85_POW10_M128_TAB+11024(SB)/8, $0xa67398db9f6820e1
-DATA ·p108347af5984e85_POW10_M128_TAB+11032(SB)/8, $0xdb68c2ca82ed2a05
-DATA ·p108347af5984e85_POW10_M128_TAB+11040(SB)/8, $0x88083f8943a1148c
-DATA ·p108347af5984e85_POW10_M128_TAB+11048(SB)/8, $0x892179be91d43a43
-DATA ·p108347af5984e85_POW10_M128_TAB+11056(SB)/8, $0x6a0a4f6b948959b0
-DATA ·p108347af5984e85_POW10_M128_TAB+11064(SB)/8, $0xab69d82e364948d4
-DATA ·p108347af5984e85_POW10_M128_TAB+11072(SB)/8, $0x848ce34679abb01c
-DATA ·p108347af5984e85_POW10_M128_TAB+11080(SB)/8, $0xd6444e39c3db9b09
-DATA ·p108347af5984e85_POW10_M128_TAB+11088(SB)/8, $0xf2d80e0c0c0b4e11
-DATA ·p108347af5984e85_POW10_M128_TAB+11096(SB)/8, $0x85eab0e41a6940e5
-DATA ·p108347af5984e85_POW10_M128_TAB+11104(SB)/8, $0x6f8e118f0f0e2195
-DATA ·p108347af5984e85_POW10_M128_TAB+11112(SB)/8, $0xa7655d1d2103911f
-DATA ·p108347af5984e85_POW10_M128_TAB+11120(SB)/8, $0x4b7195f2d2d1a9fb
-DATA ·p108347af5984e85_POW10_M128_TAB+11128(SB)/8, $0xd13eb46469447567
-DATA ·p108347af5984e85_POW10_M128_TAB+11136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_POW10_M128_TAB+11144(SB)/8, $0x0000000000000000
-GLOBL ·p108347af5984e85_POW_TAB(SB), RODATA, $36
-DATA ·p108347af5984e85_POW_TAB+0(SB)/8, $0x0000000300000001
-DATA ·p108347af5984e85_POW_TAB+8(SB)/8, $0x0000000900000006
-DATA ·p108347af5984e85_POW_TAB+16(SB)/8, $0x000000100000000d
-DATA ·p108347af5984e85_POW_TAB+24(SB)/8, $0x0000001700000013
-DATA ·p108347af5984e85_POW_TAB+32(SB)/8, $0x000000000000001a
-GLOBL ·p108347af5984e85_LSHIFT_TAB(SB), RODATA, $6344
-DATA ·p108347af5984e85_LSHIFT_TAB+0(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+8(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+16(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+24(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+32(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+40(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+48(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+56(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+64(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+72(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+80(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+88(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+96(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+104(SB)/8, $0x0000003500000001
-DATA ·p108347af5984e85_LSHIFT_TAB+112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+144(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+208(SB)/8, $0x0000353200000001
-DATA ·p108347af5984e85_LSHIFT_TAB+216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+248(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+256(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+264(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+272(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+280(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+288(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+296(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+304(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+312(SB)/8, $0x0035323100000001
-DATA ·p108347af5984e85_LSHIFT_TAB+320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+328(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+336(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+344(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+352(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+360(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+368(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+376(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+384(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+392(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+400(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+408(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+416(SB)/8, $0x0035323600000002
-DATA ·p108347af5984e85_LSHIFT_TAB+424(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+432(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+440(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+448(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+456(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+464(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+472(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+480(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+488(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+496(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+504(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+512(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+520(SB)/8, $0x3532313300000002
-DATA ·p108347af5984e85_LSHIFT_TAB+528(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+536(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+544(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+552(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+560(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+576(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+592(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+600(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+608(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+616(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+624(SB)/8, $0x3236353100000002
-DATA ·p108347af5984e85_LSHIFT_TAB+632(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+640(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+648(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+656(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+664(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+672(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+688(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+704(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+712(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+720(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+728(SB)/8, $0x3231383700000003
-DATA ·p108347af5984e85_LSHIFT_TAB+736(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+744(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+752(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+760(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+768(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+784(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+800(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+808(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+816(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+824(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+832(SB)/8, $0x3630393300000003
-DATA ·p108347af5984e85_LSHIFT_TAB+840(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+848(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+856(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+864(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+872(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+880(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+888(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+896(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+912(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+920(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+928(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+936(SB)/8, $0x3335393100000003
-DATA ·p108347af5984e85_LSHIFT_TAB+944(SB)/8, $0x0000000000353231
-DATA ·p108347af5984e85_LSHIFT_TAB+952(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+960(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+968(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+976(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+992(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1008(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1016(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1024(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1032(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1040(SB)/8, $0x3536373900000004
-DATA ·p108347af5984e85_LSHIFT_TAB+1048(SB)/8, $0x0000000000353236
-DATA ·p108347af5984e85_LSHIFT_TAB+1056(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1064(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1072(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1080(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1088(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1096(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1104(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1144(SB)/8, $0x3238383400000004
-DATA ·p108347af5984e85_LSHIFT_TAB+1152(SB)/8, $0x0000000035323138
-DATA ·p108347af5984e85_LSHIFT_TAB+1160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1248(SB)/8, $0x3134343200000004
-DATA ·p108347af5984e85_LSHIFT_TAB+1256(SB)/8, $0x0000003532363034
-DATA ·p108347af5984e85_LSHIFT_TAB+1264(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1272(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1280(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1288(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1296(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1304(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1312(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1328(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1336(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1344(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1352(SB)/8, $0x3032323100000004
-DATA ·p108347af5984e85_LSHIFT_TAB+1360(SB)/8, $0x0000353231333037
-DATA ·p108347af5984e85_LSHIFT_TAB+1368(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1376(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1384(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1392(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1400(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1408(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1416(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1424(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1432(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1440(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1448(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1456(SB)/8, $0x3330313600000005
-DATA ·p108347af5984e85_LSHIFT_TAB+1464(SB)/8, $0x0000353236353135
-DATA ·p108347af5984e85_LSHIFT_TAB+1472(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1480(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1488(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1496(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1504(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1512(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1520(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1528(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1536(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1544(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1552(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1560(SB)/8, $0x3135303300000005
-DATA ·p108347af5984e85_LSHIFT_TAB+1568(SB)/8, $0x0035323138373537
-DATA ·p108347af5984e85_LSHIFT_TAB+1576(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1592(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1600(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1608(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1616(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1624(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1632(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1640(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1648(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1656(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1664(SB)/8, $0x3532353100000005
-DATA ·p108347af5984e85_LSHIFT_TAB+1672(SB)/8, $0x3532363039383738
-DATA ·p108347af5984e85_LSHIFT_TAB+1680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1688(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1704(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1712(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1720(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1728(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1736(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1744(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1752(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1760(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1768(SB)/8, $0x3932363700000006
-DATA ·p108347af5984e85_LSHIFT_TAB+1776(SB)/8, $0x3532313335343933
-DATA ·p108347af5984e85_LSHIFT_TAB+1784(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1800(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1808(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1816(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1824(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1832(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1840(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1848(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1856(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1864(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1872(SB)/8, $0x3431383300000006
-DATA ·p108347af5984e85_LSHIFT_TAB+1880(SB)/8, $0x3236353632373936
-DATA ·p108347af5984e85_LSHIFT_TAB+1888(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+1896(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1912(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1920(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1928(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1936(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1944(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1952(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1960(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1968(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+1976(SB)/8, $0x3730393100000006
-DATA ·p108347af5984e85_LSHIFT_TAB+1984(SB)/8, $0x3138323336383433
-DATA ·p108347af5984e85_LSHIFT_TAB+1992(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+2000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2008(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2016(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2024(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2032(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2040(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2048(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2056(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2064(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2072(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2080(SB)/8, $0x3633353900000007
-DATA ·p108347af5984e85_LSHIFT_TAB+2088(SB)/8, $0x3630343631333437
-DATA ·p108347af5984e85_LSHIFT_TAB+2096(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+2104(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2144(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2184(SB)/8, $0x3836373400000007
-DATA ·p108347af5984e85_LSHIFT_TAB+2192(SB)/8, $0x3330323835313733
-DATA ·p108347af5984e85_LSHIFT_TAB+2200(SB)/8, $0x0000000000353231
-DATA ·p108347af5984e85_LSHIFT_TAB+2208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2248(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2256(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2264(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2272(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2280(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2288(SB)/8, $0x3438333200000007
-DATA ·p108347af5984e85_LSHIFT_TAB+2296(SB)/8, $0x3130313937353831
-DATA ·p108347af5984e85_LSHIFT_TAB+2304(SB)/8, $0x0000000035323635
-DATA ·p108347af5984e85_LSHIFT_TAB+2312(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2328(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2336(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2344(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2352(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2360(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2368(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2376(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2384(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2392(SB)/8, $0x3239313100000007
-DATA ·p108347af5984e85_LSHIFT_TAB+2400(SB)/8, $0x3035353938323930
-DATA ·p108347af5984e85_LSHIFT_TAB+2408(SB)/8, $0x0000003532313837
-DATA ·p108347af5984e85_LSHIFT_TAB+2416(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2424(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2432(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2440(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2448(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2456(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2464(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2472(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2480(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2488(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2496(SB)/8, $0x3036393500000008
-DATA ·p108347af5984e85_LSHIFT_TAB+2504(SB)/8, $0x3335373734343634
-DATA ·p108347af5984e85_LSHIFT_TAB+2512(SB)/8, $0x0000003532363039
-DATA ·p108347af5984e85_LSHIFT_TAB+2520(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2528(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2536(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2544(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2552(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2560(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2576(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2592(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2600(SB)/8, $0x3038393200000008
-DATA ·p108347af5984e85_LSHIFT_TAB+2608(SB)/8, $0x3637383332323332
-DATA ·p108347af5984e85_LSHIFT_TAB+2616(SB)/8, $0x0000353231333539
-DATA ·p108347af5984e85_LSHIFT_TAB+2624(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2632(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2640(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2648(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2656(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2664(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2672(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2688(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2704(SB)/8, $0x3039343100000008
-DATA ·p108347af5984e85_LSHIFT_TAB+2712(SB)/8, $0x3833393131363131
-DATA ·p108347af5984e85_LSHIFT_TAB+2720(SB)/8, $0x0035323635363734
-DATA ·p108347af5984e85_LSHIFT_TAB+2728(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2736(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2744(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2752(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2760(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2768(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2784(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2800(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2808(SB)/8, $0x3035343700000009
-DATA ·p108347af5984e85_LSHIFT_TAB+2816(SB)/8, $0x3239363935303835
-DATA ·p108347af5984e85_LSHIFT_TAB+2824(SB)/8, $0x0035323138323833
-DATA ·p108347af5984e85_LSHIFT_TAB+2832(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2840(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2848(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2856(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2864(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2872(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2880(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2888(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2896(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2912(SB)/8, $0x3532373300000009
-DATA ·p108347af5984e85_LSHIFT_TAB+2920(SB)/8, $0x3634383932303932
-DATA ·p108347af5984e85_LSHIFT_TAB+2928(SB)/8, $0x3532363034313931
-DATA ·p108347af5984e85_LSHIFT_TAB+2936(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2944(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2952(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2960(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2968(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2976(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+2992(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3008(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3016(SB)/8, $0x3236383100000009
-DATA ·p108347af5984e85_LSHIFT_TAB+3024(SB)/8, $0x3332393431353436
-DATA ·p108347af5984e85_LSHIFT_TAB+3032(SB)/8, $0x3231333037353930
-DATA ·p108347af5984e85_LSHIFT_TAB+3040(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+3048(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3056(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3064(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3072(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3080(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3088(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3096(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3104(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3120(SB)/8, $0x333133390000000a
-DATA ·p108347af5984e85_LSHIFT_TAB+3128(SB)/8, $0x3531363437353232
-DATA ·p108347af5984e85_LSHIFT_TAB+3136(SB)/8, $0x3236353135383734
-DATA ·p108347af5984e85_LSHIFT_TAB+3144(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+3152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3224(SB)/8, $0x363536340000000a
-DATA ·p108347af5984e85_LSHIFT_TAB+3232(SB)/8, $0x3730333738323136
-DATA ·p108347af5984e85_LSHIFT_TAB+3240(SB)/8, $0x3138373532393337
-DATA ·p108347af5984e85_LSHIFT_TAB+3248(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+3256(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3264(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3272(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3280(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3288(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3296(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3304(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3312(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3328(SB)/8, $0x383233320000000a
-DATA ·p108347af5984e85_LSHIFT_TAB+3336(SB)/8, $0x3335363334363033
-DATA ·p108347af5984e85_LSHIFT_TAB+3344(SB)/8, $0x3039383236393638
-DATA ·p108347af5984e85_LSHIFT_TAB+3352(SB)/8, $0x0000000000353236
-DATA ·p108347af5984e85_LSHIFT_TAB+3360(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3368(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3376(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3384(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3392(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3400(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3408(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3416(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3424(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3432(SB)/8, $0x343631310000000a
-DATA ·p108347af5984e85_LSHIFT_TAB+3440(SB)/8, $0x3632383132333531
-DATA ·p108347af5984e85_LSHIFT_TAB+3448(SB)/8, $0x3534343138343339
-DATA ·p108347af5984e85_LSHIFT_TAB+3456(SB)/8, $0x0000000035323133
-DATA ·p108347af5984e85_LSHIFT_TAB+3464(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3472(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3480(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3488(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3496(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3504(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3512(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3520(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3528(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3536(SB)/8, $0x303238350000000b
-DATA ·p108347af5984e85_LSHIFT_TAB+3544(SB)/8, $0x3433313930363637
-DATA ·p108347af5984e85_LSHIFT_TAB+3552(SB)/8, $0x3632323730343736
-DATA ·p108347af5984e85_LSHIFT_TAB+3560(SB)/8, $0x0000000035323635
-DATA ·p108347af5984e85_LSHIFT_TAB+3568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3576(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3592(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3600(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3608(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3616(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3624(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3632(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3640(SB)/8, $0x303139320000000b
-DATA ·p108347af5984e85_LSHIFT_TAB+3648(SB)/8, $0x3736353430333833
-DATA ·p108347af5984e85_LSHIFT_TAB+3656(SB)/8, $0x3331363330373333
-DATA ·p108347af5984e85_LSHIFT_TAB+3664(SB)/8, $0x0000003532313832
-DATA ·p108347af5984e85_LSHIFT_TAB+3672(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3688(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3704(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3712(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3720(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3728(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3736(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3744(SB)/8, $0x353534310000000b
-DATA ·p108347af5984e85_LSHIFT_TAB+3752(SB)/8, $0x3338323235313931
-DATA ·p108347af5984e85_LSHIFT_TAB+3760(SB)/8, $0x3630383135383636
-DATA ·p108347af5984e85_LSHIFT_TAB+3768(SB)/8, $0x0000353236303436
-DATA ·p108347af5984e85_LSHIFT_TAB+3776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3784(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3800(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3808(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3816(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3824(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3832(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3840(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3848(SB)/8, $0x353732370000000c
-DATA ·p108347af5984e85_LSHIFT_TAB+3856(SB)/8, $0x3831343136373539
-DATA ·p108347af5984e85_LSHIFT_TAB+3864(SB)/8, $0x3333303935323433
-DATA ·p108347af5984e85_LSHIFT_TAB+3872(SB)/8, $0x0000353231333032
-DATA ·p108347af5984e85_LSHIFT_TAB+3880(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3888(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3896(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3912(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3920(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3928(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3936(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3944(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3952(SB)/8, $0x373336330000000c
-DATA ·p108347af5984e85_LSHIFT_TAB+3960(SB)/8, $0x3930373038383739
-DATA ·p108347af5984e85_LSHIFT_TAB+3968(SB)/8, $0x3631353932313731
-DATA ·p108347af5984e85_LSHIFT_TAB+3976(SB)/8, $0x0035323635313036
-DATA ·p108347af5984e85_LSHIFT_TAB+3984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+3992(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4008(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4016(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4024(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4032(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4040(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4048(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4056(SB)/8, $0x383138310000000c
-DATA ·p108347af5984e85_LSHIFT_TAB+4064(SB)/8, $0x3435333034393839
-DATA ·p108347af5984e85_LSHIFT_TAB+4072(SB)/8, $0x3835373436353835
-DATA ·p108347af5984e85_LSHIFT_TAB+4080(SB)/8, $0x3532313837303033
-DATA ·p108347af5984e85_LSHIFT_TAB+4088(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4096(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4104(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4144(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4160(SB)/8, $0x343930390000000d
-DATA ·p108347af5984e85_LSHIFT_TAB+4168(SB)/8, $0x3237373130373439
-DATA ·p108347af5984e85_LSHIFT_TAB+4176(SB)/8, $0x3139373332383239
-DATA ·p108347af5984e85_LSHIFT_TAB+4184(SB)/8, $0x3532363039333035
-DATA ·p108347af5984e85_LSHIFT_TAB+4192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4248(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4256(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4264(SB)/8, $0x373435340000000d
-DATA ·p108347af5984e85_LSHIFT_TAB+4272(SB)/8, $0x3638383035333734
-DATA ·p108347af5984e85_LSHIFT_TAB+4280(SB)/8, $0x3539383131343634
-DATA ·p108347af5984e85_LSHIFT_TAB+4288(SB)/8, $0x3231333539313537
-DATA ·p108347af5984e85_LSHIFT_TAB+4296(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+4304(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4312(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4328(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4336(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4344(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4352(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4360(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4368(SB)/8, $0x333732320000000d
-DATA ·p108347af5984e85_LSHIFT_TAB+4376(SB)/8, $0x3334343537363337
-DATA ·p108347af5984e85_LSHIFT_TAB+4384(SB)/8, $0x3734393530323332
-DATA ·p108347af5984e85_LSHIFT_TAB+4392(SB)/8, $0x3635363739353738
-DATA ·p108347af5984e85_LSHIFT_TAB+4400(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+4408(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4416(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4424(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4432(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4440(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4448(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4456(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4464(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4472(SB)/8, $0x363331310000000d
-DATA ·p108347af5984e85_LSHIFT_TAB+4480(SB)/8, $0x3132373733383638
-DATA ·p108347af5984e85_LSHIFT_TAB+4488(SB)/8, $0x3337393230363136
-DATA ·p108347af5984e85_LSHIFT_TAB+4496(SB)/8, $0x3832383839373339
-DATA ·p108347af5984e85_LSHIFT_TAB+4504(SB)/8, $0x0000000000353231
-DATA ·p108347af5984e85_LSHIFT_TAB+4512(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4520(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4528(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4536(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4544(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4552(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4560(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4576(SB)/8, $0x343836350000000e
-DATA ·p108347af5984e85_LSHIFT_TAB+4584(SB)/8, $0x3830363838313433
-DATA ·p108347af5984e85_LSHIFT_TAB+4592(SB)/8, $0x3936383431303830
-DATA ·p108347af5984e85_LSHIFT_TAB+4600(SB)/8, $0x3034313439393836
-DATA ·p108347af5984e85_LSHIFT_TAB+4608(SB)/8, $0x0000000000353236
-DATA ·p108347af5984e85_LSHIFT_TAB+4616(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4624(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4632(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4640(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4648(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4656(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4664(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4672(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4680(SB)/8, $0x323438320000000e
-DATA ·p108347af5984e85_LSHIFT_TAB+4688(SB)/8, $0x3430333439303731
-DATA ·p108347af5984e85_LSHIFT_TAB+4696(SB)/8, $0x3433343730303430
-DATA ·p108347af5984e85_LSHIFT_TAB+4704(SB)/8, $0x3037303739343438
-DATA ·p108347af5984e85_LSHIFT_TAB+4712(SB)/8, $0x0000000035323133
-DATA ·p108347af5984e85_LSHIFT_TAB+4720(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4728(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4736(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4744(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4752(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4760(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4768(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4784(SB)/8, $0x313234310000000e
-DATA ·p108347af5984e85_LSHIFT_TAB+4792(SB)/8, $0x3235313734353830
-DATA ·p108347af5984e85_LSHIFT_TAB+4800(SB)/8, $0x3731373330303230
-DATA ·p108347af5984e85_LSHIFT_TAB+4808(SB)/8, $0x3533353834323234
-DATA ·p108347af5984e85_LSHIFT_TAB+4816(SB)/8, $0x0000003532363531
-DATA ·p108347af5984e85_LSHIFT_TAB+4824(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4832(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4840(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4848(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4856(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4864(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4872(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4880(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4888(SB)/8, $0x353031370000000f
-DATA ·p108347af5984e85_LSHIFT_TAB+4896(SB)/8, $0x3036373533373234
-DATA ·p108347af5984e85_LSHIFT_TAB+4904(SB)/8, $0x3738353831303031
-DATA ·p108347af5984e85_LSHIFT_TAB+4912(SB)/8, $0x3537363234323131
-DATA ·p108347af5984e85_LSHIFT_TAB+4920(SB)/8, $0x0000003532313837
-DATA ·p108347af5984e85_LSHIFT_TAB+4928(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4936(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4944(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4952(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4960(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4968(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4976(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+4992(SB)/8, $0x323535330000000f
-DATA ·p108347af5984e85_LSHIFT_TAB+5000(SB)/8, $0x3038383736333137
-DATA ·p108347af5984e85_LSHIFT_TAB+5008(SB)/8, $0x3339323930303530
-DATA ·p108347af5984e85_LSHIFT_TAB+5016(SB)/8, $0x3733333132363535
-DATA ·p108347af5984e85_LSHIFT_TAB+5024(SB)/8, $0x0000353236303938
-DATA ·p108347af5984e85_LSHIFT_TAB+5032(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5040(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5048(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5056(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5064(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5072(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5080(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5088(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5096(SB)/8, $0x363737310000000f
-DATA ·p108347af5984e85_LSHIFT_TAB+5104(SB)/8, $0x3034393338363533
-DATA ·p108347af5984e85_LSHIFT_TAB+5112(SB)/8, $0x3634363430353230
-DATA ·p108347af5984e85_LSHIFT_TAB+5120(SB)/8, $0x3836363031383737
-DATA ·p108347af5984e85_LSHIFT_TAB+5128(SB)/8, $0x0035323133353439
-DATA ·p108347af5984e85_LSHIFT_TAB+5136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5144(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5200(SB)/8, $0x3138383800000010
-DATA ·p108347af5984e85_LSHIFT_TAB+5208(SB)/8, $0x3030373931343837
-DATA ·p108347af5984e85_LSHIFT_TAB+5216(SB)/8, $0x3333323332353231
-DATA ·p108347af5984e85_LSHIFT_TAB+5224(SB)/8, $0x3434333335303938
-DATA ·p108347af5984e85_LSHIFT_TAB+5232(SB)/8, $0x0035323635363237
-DATA ·p108347af5984e85_LSHIFT_TAB+5240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5248(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5256(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5264(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5272(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5280(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5288(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5296(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5304(SB)/8, $0x3034343400000010
-DATA ·p108347af5984e85_LSHIFT_TAB+5312(SB)/8, $0x3035383930323938
-DATA ·p108347af5984e85_LSHIFT_TAB+5320(SB)/8, $0x3631363136323630
-DATA ·p108347af5984e85_LSHIFT_TAB+5328(SB)/8, $0x3237363632353439
-DATA ·p108347af5984e85_LSHIFT_TAB+5336(SB)/8, $0x3532313832333633
-DATA ·p108347af5984e85_LSHIFT_TAB+5344(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5352(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5360(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5368(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5376(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5384(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5392(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5400(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5408(SB)/8, $0x3032323200000010
-DATA ·p108347af5984e85_LSHIFT_TAB+5416(SB)/8, $0x3532393430363434
-DATA ·p108347af5984e85_LSHIFT_TAB+5424(SB)/8, $0x3830383033313330
-DATA ·p108347af5984e85_LSHIFT_TAB+5432(SB)/8, $0x3633333336323734
-DATA ·p108347af5984e85_LSHIFT_TAB+5440(SB)/8, $0x3236303436313831
-DATA ·p108347af5984e85_LSHIFT_TAB+5448(SB)/8, $0x0000000000000035
-DATA ·p108347af5984e85_LSHIFT_TAB+5456(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5464(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5472(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5480(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5488(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5496(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5504(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5512(SB)/8, $0x3031313100000010
-DATA ·p108347af5984e85_LSHIFT_TAB+5520(SB)/8, $0x3236343230333232
-DATA ·p108347af5984e85_LSHIFT_TAB+5528(SB)/8, $0x3430343536353135
-DATA ·p108347af5984e85_LSHIFT_TAB+5536(SB)/8, $0x3836363133363332
-DATA ·p108347af5984e85_LSHIFT_TAB+5544(SB)/8, $0x3133303238303930
-DATA ·p108347af5984e85_LSHIFT_TAB+5552(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+5560(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5568(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5576(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5584(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5592(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5600(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5608(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5616(SB)/8, $0x3135353500000011
-DATA ·p108347af5984e85_LSHIFT_TAB+5624(SB)/8, $0x3231333231353131
-DATA ·p108347af5984e85_LSHIFT_TAB+5632(SB)/8, $0x3132303732383735
-DATA ·p108347af5984e85_LSHIFT_TAB+5640(SB)/8, $0x3034333835313831
-DATA ·p108347af5984e85_LSHIFT_TAB+5648(SB)/8, $0x3635313031343534
-DATA ·p108347af5984e85_LSHIFT_TAB+5656(SB)/8, $0x0000000000003532
-DATA ·p108347af5984e85_LSHIFT_TAB+5664(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5672(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5680(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5688(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5696(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5704(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5712(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5720(SB)/8, $0x3537373200000011
-DATA ·p108347af5984e85_LSHIFT_TAB+5728(SB)/8, $0x3635313635373535
-DATA ·p108347af5984e85_LSHIFT_TAB+5736(SB)/8, $0x3031353331393832
-DATA ·p108347af5984e85_LSHIFT_TAB+5744(SB)/8, $0x3037313937303935
-DATA ·p108347af5984e85_LSHIFT_TAB+5752(SB)/8, $0x3837303530373232
-DATA ·p108347af5984e85_LSHIFT_TAB+5760(SB)/8, $0x0000000000353231
-DATA ·p108347af5984e85_LSHIFT_TAB+5768(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5776(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5784(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5792(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5800(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5808(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5816(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5824(SB)/8, $0x3738333100000011
-DATA ·p108347af5984e85_LSHIFT_TAB+5832(SB)/8, $0x3837303837383737
-DATA ·p108347af5984e85_LSHIFT_TAB+5840(SB)/8, $0x3535373635343431
-DATA ·p108347af5984e85_LSHIFT_TAB+5848(SB)/8, $0x3538353933353932
-DATA ·p108347af5984e85_LSHIFT_TAB+5856(SB)/8, $0x3933353235333131
-DATA ·p108347af5984e85_LSHIFT_TAB+5864(SB)/8, $0x0000000035323630
-DATA ·p108347af5984e85_LSHIFT_TAB+5872(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5880(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5888(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5896(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5904(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5912(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5920(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5928(SB)/8, $0x3833393600000012
-DATA ·p108347af5984e85_LSHIFT_TAB+5936(SB)/8, $0x3039333039333938
-DATA ·p108347af5984e85_LSHIFT_TAB+5944(SB)/8, $0x3637373338323237
-DATA ·p108347af5984e85_LSHIFT_TAB+5952(SB)/8, $0x3532393739363734
-DATA ·p108347af5984e85_LSHIFT_TAB+5960(SB)/8, $0x3539363236373635
-DATA ·p108347af5984e85_LSHIFT_TAB+5968(SB)/8, $0x0000000035323133
-DATA ·p108347af5984e85_LSHIFT_TAB+5976(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5984(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+5992(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6000(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6008(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6016(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6024(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6032(SB)/8, $0x3936343300000012
-DATA ·p108347af5984e85_LSHIFT_TAB+6040(SB)/8, $0x3539313539363434
-DATA ·p108347af5984e85_LSHIFT_TAB+6048(SB)/8, $0x3838383134313633
-DATA ·p108347af5984e85_LSHIFT_TAB+6056(SB)/8, $0x3236393834383332
-DATA ·p108347af5984e85_LSHIFT_TAB+6064(SB)/8, $0x3734333138333837
-DATA ·p108347af5984e85_LSHIFT_TAB+6072(SB)/8, $0x0000003532363536
-DATA ·p108347af5984e85_LSHIFT_TAB+6080(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6088(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6096(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6104(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6112(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6136(SB)/8, $0x3433373100000012
-DATA ·p108347af5984e85_LSHIFT_TAB+6144(SB)/8, $0x3739353734333237
-DATA ·p108347af5984e85_LSHIFT_TAB+6152(SB)/8, $0x3434393037303836
-DATA ·p108347af5984e85_LSHIFT_TAB+6160(SB)/8, $0x3138343432393131
-DATA ·p108347af5984e85_LSHIFT_TAB+6168(SB)/8, $0x3337363039313933
-DATA ·p108347af5984e85_LSHIFT_TAB+6176(SB)/8, $0x0000353231383238
-DATA ·p108347af5984e85_LSHIFT_TAB+6184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6240(SB)/8, $0x3337363800000013
-DATA ·p108347af5984e85_LSHIFT_TAB+6248(SB)/8, $0x3838393733373136
-DATA ·p108347af5984e85_LSHIFT_TAB+6256(SB)/8, $0x3032373435333034
-DATA ·p108347af5984e85_LSHIFT_TAB+6264(SB)/8, $0x3630343232363935
-DATA ·p108347af5984e85_LSHIFT_TAB+6272(SB)/8, $0x3936333335393539
-DATA ·p108347af5984e85_LSHIFT_TAB+6280(SB)/8, $0x0000353236303431
-DATA ·p108347af5984e85_LSHIFT_TAB+6288(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6296(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6304(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6312(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6320(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6328(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_LSHIFT_TAB+6336(SB)/8, $0x0000000000000000
-GLOBL ·p108347af5984e85_ESCAPED_TAB(SB), RODATA, $256
-DATA ·p108347af5984e85_ESCAPED_TAB+0(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+8(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+16(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+24(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+32(SB)/8, $0x0000000000220000
-DATA ·p108347af5984e85_ESCAPED_TAB+40(SB)/8, $0x2f00000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+48(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+56(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+64(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+72(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+80(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+88(SB)/8, $0x0000005c00000000
-DATA ·p108347af5984e85_ESCAPED_TAB+96(SB)/8, $0x000c000000080000
-DATA ·p108347af5984e85_ESCAPED_TAB+104(SB)/8, $0x000a000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+112(SB)/8, $0x00000009000d0000
-DATA ·p108347af5984e85_ESCAPED_TAB+120(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+128(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+136(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+144(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+152(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+160(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+168(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+176(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+184(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+192(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+200(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+208(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+216(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+224(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+232(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+240(SB)/8, $0x0000000000000000
-DATA ·p108347af5984e85_ESCAPED_TAB+248(SB)/8, $0x0000000000000000
+GLOBL ·p348d0202098f8f91_LCPI5_0(SB), RODATA, $16
+DATA ·p348d0202098f8f91_LCPI5_0+0(SB)/8, $0x0000000000000020
+DATA ·p348d0202098f8f91_LCPI5_0+8(SB)/8, $0x00000d00000a0900
+GLOBL ·p348d0202098f8f91_LCPI5_1(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_1+0(SB)/8, $0x0218a392cd3d5dbf
+GLOBL ·p348d0202098f8f91_LCPI5_4(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_4+0(SB)/8, $0x430c6bf526340000
+GLOBL ·p348d0202098f8f91_LCPI5_5(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_5+0(SB)/8, $0x5555555555555555
+GLOBL ·p348d0202098f8f91_LCPI5_6(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_6+0(SB)/8, $0x3333333333333333
+GLOBL ·p348d0202098f8f91_LCPI5_7(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_7+0(SB)/8, $0x0f0f0f0f0f0f0f0f
+GLOBL ·p348d0202098f8f91_LCPI5_8(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_8+0(SB)/8, $0x0101010101010101
+GLOBL ·p348d0202098f8f91_LCPI5_9(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_9+0(SB)/8, $0x019999999999999a
+GLOBL ·p348d0202098f8f91_LCPI5_10(SB), RODATA, $8
+DATA ·p348d0202098f8f91_LCPI5_10+0(SB)/8, $0xcccccccccccccccd
+GLOBL ·p348d0202098f8f91_LCPI5_2(SB), RODATA, $83
+DATA ·p348d0202098f8f91_LCPI5_2+0(SB)/8, $0x30305c3030305c22
+DATA ·p348d0202098f8f91_LCPI5_2+8(SB)/8, $0x30305c3230305c31
+DATA ·p348d0202098f8f91_LCPI5_2+16(SB)/8, $0x5c725c3330305c37
+DATA ·p348d0202098f8f91_LCPI5_2+24(SB)/8, $0x30305c3332305c62
+DATA ·p348d0202098f8f91_LCPI5_2+32(SB)/8, $0x31305c3133305c34
+DATA ·p348d0202098f8f91_LCPI5_2+40(SB)/8, $0x5c745c3433305c36
+DATA ·p348d0202098f8f91_LCPI5_2+48(SB)/8, $0x305c283432305c22
+DATA ·p348d0202098f8f91_LCPI5_2+56(SB)/8, $0x305c3132305c3530
+DATA ·p348d0202098f8f91_LCPI5_2+64(SB)/8, $0x2e3731305c263233
+DATA ·p348d0202098f8f91_LCPI5_2+72(SB)/8, $0x5c6e5c303533305c
+DATA ·p348d0202098f8f91_LCPI5_2+80(SB)/8, $0x0000000000373330
+GLOBL ·p348d0202098f8f91_LCPI5_3(SB), RODATA, $32
+DATA ·p348d0202098f8f91_LCPI5_3+0(SB)/8, $0x03180e1d021c0100
+DATA ·p348d0202098f8f91_LCPI5_3+8(SB)/8, $0x080411190f14161e
+DATA ·p348d0202098f8f91_LCPI5_3+16(SB)/8, $0x07101315170d1b1f
+DATA ·p348d0202098f8f91_LCPI5_3+24(SB)/8, $0x090a050b06120c1a
+GLOBL ·p348d0202098f8f91_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p348d0202098f8f91_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p348d0202098f8f91_P10_TAB(SB), RODATA, $184
+DATA ·p348d0202098f8f91_P10_TAB+0(SB)/8, $0x3ff0000000000000
+DATA ·p348d0202098f8f91_P10_TAB+8(SB)/8, $0x4024000000000000
+DATA ·p348d0202098f8f91_P10_TAB+16(SB)/8, $0x4059000000000000
+DATA ·p348d0202098f8f91_P10_TAB+24(SB)/8, $0x408f400000000000
+DATA ·p348d0202098f8f91_P10_TAB+32(SB)/8, $0x40c3880000000000
+DATA ·p348d0202098f8f91_P10_TAB+40(SB)/8, $0x40f86a0000000000
+DATA ·p348d0202098f8f91_P10_TAB+48(SB)/8, $0x412e848000000000
+DATA ·p348d0202098f8f91_P10_TAB+56(SB)/8, $0x416312d000000000
+DATA ·p348d0202098f8f91_P10_TAB+64(SB)/8, $0x4197d78400000000
+DATA ·p348d0202098f8f91_P10_TAB+72(SB)/8, $0x41cdcd6500000000
+DATA ·p348d0202098f8f91_P10_TAB+80(SB)/8, $0x4202a05f20000000
+DATA ·p348d0202098f8f91_P10_TAB+88(SB)/8, $0x42374876e8000000
+DATA ·p348d0202098f8f91_P10_TAB+96(SB)/8, $0x426d1a94a2000000
+DATA ·p348d0202098f8f91_P10_TAB+104(SB)/8, $0x42a2309ce5400000
+DATA ·p348d0202098f8f91_P10_TAB+112(SB)/8, $0x42d6bcc41e900000
+DATA ·p348d0202098f8f91_P10_TAB+120(SB)/8, $0x430c6bf526340000
+DATA ·p348d0202098f8f91_P10_TAB+128(SB)/8, $0x4341c37937e08000
+DATA ·p348d0202098f8f91_P10_TAB+136(SB)/8, $0x4376345785d8a000
+DATA ·p348d0202098f8f91_P10_TAB+144(SB)/8, $0x43abc16d674ec800
+DATA ·p348d0202098f8f91_P10_TAB+152(SB)/8, $0x43e158e460913d00
+DATA ·p348d0202098f8f91_P10_TAB+160(SB)/8, $0x4415af1d78b58c40
+DATA ·p348d0202098f8f91_P10_TAB+168(SB)/8, $0x444b1ae4d6e2ef50
+DATA ·p348d0202098f8f91_P10_TAB+176(SB)/8, $0x4480f0cf064dd592
+GLOBL ·p348d0202098f8f91_POW10_M128_TAB(SB), RODATA, $11152
+DATA ·p348d0202098f8f91_POW10_M128_TAB+0(SB)/8, $0x1732c869cd60e453
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8(SB)/8, $0xfa8fd5a0081c0288
+DATA ·p348d0202098f8f91_POW10_M128_TAB+16(SB)/8, $0x0e7fbd42205c8eb4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+24(SB)/8, $0x9c99e58405118195
+DATA ·p348d0202098f8f91_POW10_M128_TAB+32(SB)/8, $0x521fac92a873b261
+DATA ·p348d0202098f8f91_POW10_M128_TAB+40(SB)/8, $0xc3c05ee50655e1fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+48(SB)/8, $0xe6a797b752909ef9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+56(SB)/8, $0xf4b0769e47eb5a78
+DATA ·p348d0202098f8f91_POW10_M128_TAB+64(SB)/8, $0x9028bed2939a635c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+72(SB)/8, $0x98ee4a22ecf3188b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+80(SB)/8, $0x7432ee873880fc33
+DATA ·p348d0202098f8f91_POW10_M128_TAB+88(SB)/8, $0xbf29dcaba82fdeae
+DATA ·p348d0202098f8f91_POW10_M128_TAB+96(SB)/8, $0x113faa2906a13b3f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+104(SB)/8, $0xeef453d6923bd65a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+112(SB)/8, $0x4ac7ca59a424c507
+DATA ·p348d0202098f8f91_POW10_M128_TAB+120(SB)/8, $0x9558b4661b6565f8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+128(SB)/8, $0x5d79bcf00d2df649
+DATA ·p348d0202098f8f91_POW10_M128_TAB+136(SB)/8, $0xbaaee17fa23ebf76
+DATA ·p348d0202098f8f91_POW10_M128_TAB+144(SB)/8, $0xf4d82c2c107973dc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+152(SB)/8, $0xe95a99df8ace6f53
+DATA ·p348d0202098f8f91_POW10_M128_TAB+160(SB)/8, $0x79071b9b8a4be869
+DATA ·p348d0202098f8f91_POW10_M128_TAB+168(SB)/8, $0x91d8a02bb6c10594
+DATA ·p348d0202098f8f91_POW10_M128_TAB+176(SB)/8, $0x9748e2826cdee284
+DATA ·p348d0202098f8f91_POW10_M128_TAB+184(SB)/8, $0xb64ec836a47146f9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+192(SB)/8, $0xfd1b1b2308169b25
+DATA ·p348d0202098f8f91_POW10_M128_TAB+200(SB)/8, $0xe3e27a444d8d98b7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+208(SB)/8, $0xfe30f0f5e50e20f7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+216(SB)/8, $0x8e6d8c6ab0787f72
+DATA ·p348d0202098f8f91_POW10_M128_TAB+224(SB)/8, $0xbdbd2d335e51a935
+DATA ·p348d0202098f8f91_POW10_M128_TAB+232(SB)/8, $0xb208ef855c969f4f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+240(SB)/8, $0xad2c788035e61382
+DATA ·p348d0202098f8f91_POW10_M128_TAB+248(SB)/8, $0xde8b2b66b3bc4723
+DATA ·p348d0202098f8f91_POW10_M128_TAB+256(SB)/8, $0x4c3bcb5021afcc31
+DATA ·p348d0202098f8f91_POW10_M128_TAB+264(SB)/8, $0x8b16fb203055ac76
+DATA ·p348d0202098f8f91_POW10_M128_TAB+272(SB)/8, $0xdf4abe242a1bbf3d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+280(SB)/8, $0xaddcb9e83c6b1793
+DATA ·p348d0202098f8f91_POW10_M128_TAB+288(SB)/8, $0xd71d6dad34a2af0d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+296(SB)/8, $0xd953e8624b85dd78
+DATA ·p348d0202098f8f91_POW10_M128_TAB+304(SB)/8, $0x8672648c40e5ad68
+DATA ·p348d0202098f8f91_POW10_M128_TAB+312(SB)/8, $0x87d4713d6f33aa6b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+320(SB)/8, $0x680efdaf511f18c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+328(SB)/8, $0xa9c98d8ccb009506
+DATA ·p348d0202098f8f91_POW10_M128_TAB+336(SB)/8, $0x0212bd1b2566def2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+344(SB)/8, $0xd43bf0effdc0ba48
+DATA ·p348d0202098f8f91_POW10_M128_TAB+352(SB)/8, $0x014bb630f7604b57
+DATA ·p348d0202098f8f91_POW10_M128_TAB+360(SB)/8, $0x84a57695fe98746d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+368(SB)/8, $0x419ea3bd35385e2d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+376(SB)/8, $0xa5ced43b7e3e9188
+DATA ·p348d0202098f8f91_POW10_M128_TAB+384(SB)/8, $0x52064cac828675b9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+392(SB)/8, $0xcf42894a5dce35ea
+DATA ·p348d0202098f8f91_POW10_M128_TAB+400(SB)/8, $0x7343efebd1940993
+DATA ·p348d0202098f8f91_POW10_M128_TAB+408(SB)/8, $0x818995ce7aa0e1b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+416(SB)/8, $0x1014ebe6c5f90bf8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+424(SB)/8, $0xa1ebfb4219491a1f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+432(SB)/8, $0xd41a26e077774ef6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+440(SB)/8, $0xca66fa129f9b60a6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+448(SB)/8, $0x8920b098955522b4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+456(SB)/8, $0xfd00b897478238d0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+464(SB)/8, $0x55b46e5f5d5535b0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+472(SB)/8, $0x9e20735e8cb16382
+DATA ·p348d0202098f8f91_POW10_M128_TAB+480(SB)/8, $0xeb2189f734aa831d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+488(SB)/8, $0xc5a890362fddbc62
+DATA ·p348d0202098f8f91_POW10_M128_TAB+496(SB)/8, $0xa5e9ec7501d523e4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+504(SB)/8, $0xf712b443bbd52b7b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+512(SB)/8, $0x47b233c92125366e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+520(SB)/8, $0x9a6bb0aa55653b2d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+528(SB)/8, $0x999ec0bb696e840a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+536(SB)/8, $0xc1069cd4eabe89f8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+544(SB)/8, $0xc00670ea43ca250d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+552(SB)/8, $0xf148440a256e2c76
+DATA ·p348d0202098f8f91_POW10_M128_TAB+560(SB)/8, $0x380406926a5e5728
+DATA ·p348d0202098f8f91_POW10_M128_TAB+568(SB)/8, $0x96cd2a865764dbca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+576(SB)/8, $0xc605083704f5ecf2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+584(SB)/8, $0xbc807527ed3e12bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+592(SB)/8, $0xf7864a44c633682e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+600(SB)/8, $0xeba09271e88d976b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+608(SB)/8, $0x7ab3ee6afbe0211d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+616(SB)/8, $0x93445b8731587ea3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+624(SB)/8, $0x5960ea05bad82964
+DATA ·p348d0202098f8f91_POW10_M128_TAB+632(SB)/8, $0xb8157268fdae9e4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+640(SB)/8, $0x6fb92487298e33bd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+648(SB)/8, $0xe61acf033d1a45df
+DATA ·p348d0202098f8f91_POW10_M128_TAB+656(SB)/8, $0xa5d3b6d479f8e056
+DATA ·p348d0202098f8f91_POW10_M128_TAB+664(SB)/8, $0x8fd0c16206306bab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+672(SB)/8, $0x8f48a4899877186c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+680(SB)/8, $0xb3c4f1ba87bc8696
+DATA ·p348d0202098f8f91_POW10_M128_TAB+688(SB)/8, $0x331acdabfe94de87
+DATA ·p348d0202098f8f91_POW10_M128_TAB+696(SB)/8, $0xe0b62e2929aba83c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+704(SB)/8, $0x9ff0c08b7f1d0b14
+DATA ·p348d0202098f8f91_POW10_M128_TAB+712(SB)/8, $0x8c71dcd9ba0b4925
+DATA ·p348d0202098f8f91_POW10_M128_TAB+720(SB)/8, $0x07ecf0ae5ee44dd9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+728(SB)/8, $0xaf8e5410288e1b6f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+736(SB)/8, $0xc9e82cd9f69d6150
+DATA ·p348d0202098f8f91_POW10_M128_TAB+744(SB)/8, $0xdb71e91432b1a24a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+752(SB)/8, $0xbe311c083a225cd2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+760(SB)/8, $0x892731ac9faf056e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+768(SB)/8, $0x6dbd630a48aaf406
+DATA ·p348d0202098f8f91_POW10_M128_TAB+776(SB)/8, $0xab70fe17c79ac6ca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+784(SB)/8, $0x092cbbccdad5b108
+DATA ·p348d0202098f8f91_POW10_M128_TAB+792(SB)/8, $0xd64d3d9db981787d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+800(SB)/8, $0x25bbf56008c58ea5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+808(SB)/8, $0x85f0468293f0eb4e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+816(SB)/8, $0xaf2af2b80af6f24e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+824(SB)/8, $0xa76c582338ed2621
+DATA ·p348d0202098f8f91_POW10_M128_TAB+832(SB)/8, $0x1af5af660db4aee1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+840(SB)/8, $0xd1476e2c07286faa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+848(SB)/8, $0x50d98d9fc890ed4d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+856(SB)/8, $0x82cca4db847945ca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+864(SB)/8, $0xe50ff107bab528a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+872(SB)/8, $0xa37fce126597973c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+880(SB)/8, $0x1e53ed49a96272c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+888(SB)/8, $0xcc5fc196fefd7d0c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+896(SB)/8, $0x25e8e89c13bb0f7a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+904(SB)/8, $0xff77b1fcbebcdc4f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+912(SB)/8, $0x77b191618c54e9ac
+DATA ·p348d0202098f8f91_POW10_M128_TAB+920(SB)/8, $0x9faacf3df73609b1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+928(SB)/8, $0xd59df5b9ef6a2417
+DATA ·p348d0202098f8f91_POW10_M128_TAB+936(SB)/8, $0xc795830d75038c1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+944(SB)/8, $0x4b0573286b44ad1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+952(SB)/8, $0xf97ae3d0d2446f25
+DATA ·p348d0202098f8f91_POW10_M128_TAB+960(SB)/8, $0x4ee367f9430aec32
+DATA ·p348d0202098f8f91_POW10_M128_TAB+968(SB)/8, $0x9becce62836ac577
+DATA ·p348d0202098f8f91_POW10_M128_TAB+976(SB)/8, $0x229c41f793cda73f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+984(SB)/8, $0xc2e801fb244576d5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+992(SB)/8, $0x6b43527578c1110f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1000(SB)/8, $0xf3a20279ed56d48a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1008(SB)/8, $0x830a13896b78aaa9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1016(SB)/8, $0x9845418c345644d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1024(SB)/8, $0x23cc986bc656d553
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1032(SB)/8, $0xbe5691ef416bd60c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1040(SB)/8, $0x2cbfbe86b7ec8aa8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1048(SB)/8, $0xedec366b11c6cb8f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1056(SB)/8, $0x7bf7d71432f3d6a9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1064(SB)/8, $0x94b3a202eb1c3f39
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1072(SB)/8, $0xdaf5ccd93fb0cc53
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1080(SB)/8, $0xb9e08a83a5e34f07
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1088(SB)/8, $0xd1b3400f8f9cff68
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1096(SB)/8, $0xe858ad248f5c22c9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1104(SB)/8, $0x23100809b9c21fa1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1112(SB)/8, $0x91376c36d99995be
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1120(SB)/8, $0xabd40a0c2832a78a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1128(SB)/8, $0xb58547448ffffb2d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1136(SB)/8, $0x16c90c8f323f516c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1144(SB)/8, $0xe2e69915b3fff9f9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1152(SB)/8, $0xae3da7d97f6792e3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1160(SB)/8, $0x8dd01fad907ffc3b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1168(SB)/8, $0x99cd11cfdf41779c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1176(SB)/8, $0xb1442798f49ffb4a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1184(SB)/8, $0x40405643d711d583
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1192(SB)/8, $0xdd95317f31c7fa1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1200(SB)/8, $0x482835ea666b2572
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1208(SB)/8, $0x8a7d3eef7f1cfc52
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1216(SB)/8, $0xda3243650005eecf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1224(SB)/8, $0xad1c8eab5ee43b66
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1232(SB)/8, $0x90bed43e40076a82
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1240(SB)/8, $0xd863b256369d4a40
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1248(SB)/8, $0x5a7744a6e804a291
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1256(SB)/8, $0x873e4f75e2224e68
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1264(SB)/8, $0x711515d0a205cb36
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1272(SB)/8, $0xa90de3535aaae202
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1280(SB)/8, $0x0d5a5b44ca873e03
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1288(SB)/8, $0xd3515c2831559a83
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1296(SB)/8, $0xe858790afe9486c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1304(SB)/8, $0x8412d9991ed58091
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1312(SB)/8, $0x626e974dbe39a872
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1320(SB)/8, $0xa5178fff668ae0b6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1328(SB)/8, $0xfb0a3d212dc8128f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1336(SB)/8, $0xce5d73ff402d98e3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1344(SB)/8, $0x7ce66634bc9d0b99
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1352(SB)/8, $0x80fa687f881c7f8e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1360(SB)/8, $0x1c1fffc1ebc44e80
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1368(SB)/8, $0xa139029f6a239f72
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1376(SB)/8, $0xa327ffb266b56220
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1384(SB)/8, $0xc987434744ac874e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1392(SB)/8, $0x4bf1ff9f0062baa8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1400(SB)/8, $0xfbe9141915d7a922
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1408(SB)/8, $0x6f773fc3603db4a9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1416(SB)/8, $0x9d71ac8fada6c9b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1424(SB)/8, $0xcb550fb4384d21d3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1432(SB)/8, $0xc4ce17b399107c22
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1440(SB)/8, $0x7e2a53a146606a48
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1448(SB)/8, $0xf6019da07f549b2b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1456(SB)/8, $0x2eda7444cbfc426d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1464(SB)/8, $0x99c102844f94e0fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1472(SB)/8, $0xfa911155fefb5308
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1480(SB)/8, $0xc0314325637a1939
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1488(SB)/8, $0x793555ab7eba27ca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1496(SB)/8, $0xf03d93eebc589f88
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1504(SB)/8, $0x4bc1558b2f3458de
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1512(SB)/8, $0x96267c7535b763b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1520(SB)/8, $0x9eb1aaedfb016f16
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1528(SB)/8, $0xbbb01b9283253ca2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1536(SB)/8, $0x465e15a979c1cadc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1544(SB)/8, $0xea9c227723ee8bcb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1552(SB)/8, $0x0bfacd89ec191ec9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1560(SB)/8, $0x92a1958a7675175f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1568(SB)/8, $0xcef980ec671f667b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1576(SB)/8, $0xb749faed14125d36
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1584(SB)/8, $0x82b7e12780e7401a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1592(SB)/8, $0xe51c79a85916f484
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1600(SB)/8, $0xd1b2ecb8b0908810
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1608(SB)/8, $0x8f31cc0937ae58d2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1616(SB)/8, $0x861fa7e6dcb4aa15
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1624(SB)/8, $0xb2fe3f0b8599ef07
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1632(SB)/8, $0x67a791e093e1d49a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1640(SB)/8, $0xdfbdcece67006ac9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1648(SB)/8, $0xe0c8bb2c5c6d24e0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1656(SB)/8, $0x8bd6a141006042bd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1664(SB)/8, $0x58fae9f773886e18
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1672(SB)/8, $0xaecc49914078536d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1680(SB)/8, $0xaf39a475506a899e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1688(SB)/8, $0xda7f5bf590966848
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1696(SB)/8, $0x6d8406c952429603
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1704(SB)/8, $0x888f99797a5e012d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1712(SB)/8, $0xc8e5087ba6d33b83
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1720(SB)/8, $0xaab37fd7d8f58178
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1728(SB)/8, $0xfb1e4a9a90880a64
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1736(SB)/8, $0xd5605fcdcf32e1d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1744(SB)/8, $0x5cf2eea09a55067f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1752(SB)/8, $0x855c3be0a17fcd26
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1760(SB)/8, $0xf42faa48c0ea481e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1768(SB)/8, $0xa6b34ad8c9dfc06f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1776(SB)/8, $0xf13b94daf124da26
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1784(SB)/8, $0xd0601d8efc57b08b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1792(SB)/8, $0x76c53d08d6b70858
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1800(SB)/8, $0x823c12795db6ce57
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1808(SB)/8, $0x54768c4b0c64ca6e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1816(SB)/8, $0xa2cb1717b52481ed
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1824(SB)/8, $0xa9942f5dcf7dfd09
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1832(SB)/8, $0xcb7ddcdda26da268
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1840(SB)/8, $0xd3f93b35435d7c4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1848(SB)/8, $0xfe5d54150b090b02
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1856(SB)/8, $0xc47bc5014a1a6daf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1864(SB)/8, $0x9efa548d26e5a6e1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1872(SB)/8, $0x359ab6419ca1091b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1880(SB)/8, $0xc6b8e9b0709f109a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1888(SB)/8, $0xc30163d203c94b62
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1896(SB)/8, $0xf867241c8cc6d4c0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1904(SB)/8, $0x79e0de63425dcf1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1912(SB)/8, $0x9b407691d7fc44f8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1920(SB)/8, $0x985915fc12f542e4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1928(SB)/8, $0xc21094364dfb5636
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1936(SB)/8, $0x3e6f5b7b17b2939d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1944(SB)/8, $0xf294b943e17a2bc4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1952(SB)/8, $0xa705992ceecf9c42
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1960(SB)/8, $0x979cf3ca6cec5b5a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1968(SB)/8, $0x50c6ff782a838353
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1976(SB)/8, $0xbd8430bd08277231
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1984(SB)/8, $0xa4f8bf5635246428
+DATA ·p348d0202098f8f91_POW10_M128_TAB+1992(SB)/8, $0xece53cec4a314ebd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2000(SB)/8, $0x871b7795e136be99
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2008(SB)/8, $0x940f4613ae5ed136
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2016(SB)/8, $0x28e2557b59846e3f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2024(SB)/8, $0xb913179899f68584
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2032(SB)/8, $0x331aeada2fe589cf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2040(SB)/8, $0xe757dd7ec07426e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2048(SB)/8, $0x3ff0d2c85def7621
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2056(SB)/8, $0x9096ea6f3848984f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2064(SB)/8, $0x0fed077a756b53a9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2072(SB)/8, $0xb4bca50b065abe63
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2080(SB)/8, $0xd3e8495912c62894
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2088(SB)/8, $0xe1ebce4dc7f16dfb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2096(SB)/8, $0x64712dd7abbbd95c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2104(SB)/8, $0x8d3360f09cf6e4bd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2112(SB)/8, $0xbd8d794d96aacfb3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2120(SB)/8, $0xb080392cc4349dec
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2128(SB)/8, $0xecf0d7a0fc5583a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2136(SB)/8, $0xdca04777f541c567
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2144(SB)/8, $0xf41686c49db57244
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2152(SB)/8, $0x89e42caaf9491b60
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2160(SB)/8, $0x311c2875c522ced5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2168(SB)/8, $0xac5d37d5b79b6239
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2176(SB)/8, $0x7d633293366b828b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2184(SB)/8, $0xd77485cb25823ac7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2192(SB)/8, $0xae5dff9c02033197
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2200(SB)/8, $0x86a8d39ef77164bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2208(SB)/8, $0xd9f57f830283fdfc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2216(SB)/8, $0xa8530886b54dbdeb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2224(SB)/8, $0xd072df63c324fd7b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2232(SB)/8, $0xd267caa862a12d66
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2240(SB)/8, $0x4247cb9e59f71e6d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2248(SB)/8, $0x8380dea93da4bc60
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2256(SB)/8, $0x52d9be85f074e608
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2264(SB)/8, $0xa46116538d0deb78
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2272(SB)/8, $0x67902e276c921f8b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2280(SB)/8, $0xcd795be870516656
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2288(SB)/8, $0x00ba1cd8a3db53b6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2296(SB)/8, $0x806bd9714632dff6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2304(SB)/8, $0x80e8a40eccd228a4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2312(SB)/8, $0xa086cfcd97bf97f3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2320(SB)/8, $0x6122cd128006b2cd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2328(SB)/8, $0xc8a883c0fdaf7df0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2336(SB)/8, $0x796b805720085f81
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2344(SB)/8, $0xfad2a4b13d1b5d6c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2352(SB)/8, $0xcbe3303674053bb0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2360(SB)/8, $0x9cc3a6eec6311a63
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2368(SB)/8, $0xbedbfc4411068a9c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2376(SB)/8, $0xc3f490aa77bd60fc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2384(SB)/8, $0xee92fb5515482d44
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2392(SB)/8, $0xf4f1b4d515acb93b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2400(SB)/8, $0x751bdd152d4d1c4a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2408(SB)/8, $0x991711052d8bf3c5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2416(SB)/8, $0xd262d45a78a0635d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2424(SB)/8, $0xbf5cd54678eef0b6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2432(SB)/8, $0x86fb897116c87c34
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2440(SB)/8, $0xef340a98172aace4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2448(SB)/8, $0xd45d35e6ae3d4da0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2456(SB)/8, $0x9580869f0e7aac0e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2464(SB)/8, $0x8974836059cca109
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2472(SB)/8, $0xbae0a846d2195712
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2480(SB)/8, $0x2bd1a438703fc94b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2488(SB)/8, $0xe998d258869facd7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2496(SB)/8, $0x7b6306a34627ddcf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2504(SB)/8, $0x91ff83775423cc06
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2512(SB)/8, $0x1a3bc84c17b1d542
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2520(SB)/8, $0xb67f6455292cbf08
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2528(SB)/8, $0x20caba5f1d9e4a93
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2536(SB)/8, $0xe41f3d6a7377eeca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2544(SB)/8, $0x547eb47b7282ee9c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2552(SB)/8, $0x8e938662882af53e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2560(SB)/8, $0xe99e619a4f23aa43
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2568(SB)/8, $0xb23867fb2a35b28d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2576(SB)/8, $0x6405fa00e2ec94d4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2584(SB)/8, $0xdec681f9f4c31f31
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2592(SB)/8, $0xde83bc408dd3dd04
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2600(SB)/8, $0x8b3c113c38f9f37e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2608(SB)/8, $0x9624ab50b148d445
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2616(SB)/8, $0xae0b158b4738705e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2624(SB)/8, $0x3badd624dd9b0957
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2632(SB)/8, $0xd98ddaee19068c76
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2640(SB)/8, $0xe54ca5d70a80e5d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2648(SB)/8, $0x87f8a8d4cfa417c9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2656(SB)/8, $0x5e9fcf4ccd211f4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2664(SB)/8, $0xa9f6d30a038d1dbc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2672(SB)/8, $0x7647c3200069671f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2680(SB)/8, $0xd47487cc8470652b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2688(SB)/8, $0x29ecd9f40041e073
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2696(SB)/8, $0x84c8d4dfd2c63f3b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2704(SB)/8, $0xf468107100525890
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2712(SB)/8, $0xa5fb0a17c777cf09
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2720(SB)/8, $0x7182148d4066eeb4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2728(SB)/8, $0xcf79cc9db955c2cc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2736(SB)/8, $0xc6f14cd848405530
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2744(SB)/8, $0x81ac1fe293d599bf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2752(SB)/8, $0xb8ada00e5a506a7c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2760(SB)/8, $0xa21727db38cb002f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2768(SB)/8, $0xa6d90811f0e4851c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2776(SB)/8, $0xca9cf1d206fdc03b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2784(SB)/8, $0x908f4a166d1da663
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2792(SB)/8, $0xfd442e4688bd304a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2800(SB)/8, $0x9a598e4e043287fe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2808(SB)/8, $0x9e4a9cec15763e2e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2816(SB)/8, $0x40eff1e1853f29fd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2824(SB)/8, $0xc5dd44271ad3cdba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2832(SB)/8, $0xd12bee59e68ef47c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2840(SB)/8, $0xf7549530e188c128
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2848(SB)/8, $0x82bb74f8301958ce
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2856(SB)/8, $0x9a94dd3e8cf578b9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2864(SB)/8, $0xe36a52363c1faf01
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2872(SB)/8, $0xc13a148e3032d6e7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2880(SB)/8, $0xdc44e6c3cb279ac1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2888(SB)/8, $0xf18899b1bc3f8ca1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2896(SB)/8, $0x29ab103a5ef8c0b9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2904(SB)/8, $0x96f5600f15a7b7e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2912(SB)/8, $0x7415d448f6b6f0e7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2920(SB)/8, $0xbcb2b812db11a5de
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2928(SB)/8, $0x111b495b3464ad21
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2936(SB)/8, $0xebdf661791d60f56
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2944(SB)/8, $0xcab10dd900beec34
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2952(SB)/8, $0x936b9fcebb25c995
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2960(SB)/8, $0x3d5d514f40eea742
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2968(SB)/8, $0xb84687c269ef3bfb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2976(SB)/8, $0x0cb4a5a3112a5112
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2984(SB)/8, $0xe65829b3046b0afa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+2992(SB)/8, $0x47f0e785eaba72ab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3000(SB)/8, $0x8ff71a0fe2c2e6dc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3008(SB)/8, $0x59ed216765690f56
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3016(SB)/8, $0xb3f4e093db73a093
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3024(SB)/8, $0x306869c13ec3532c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3032(SB)/8, $0xe0f218b8d25088b8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3040(SB)/8, $0x1e414218c73a13fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3048(SB)/8, $0x8c974f7383725573
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3056(SB)/8, $0xe5d1929ef90898fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3064(SB)/8, $0xafbd2350644eeacf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3072(SB)/8, $0xdf45f746b74abf39
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3080(SB)/8, $0xdbac6c247d62a583
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3088(SB)/8, $0x6b8bba8c328eb783
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3096(SB)/8, $0x894bc396ce5da772
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3104(SB)/8, $0x066ea92f3f326564
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3112(SB)/8, $0xab9eb47c81f5114f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3120(SB)/8, $0xc80a537b0efefebd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3128(SB)/8, $0xd686619ba27255a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3136(SB)/8, $0xbd06742ce95f5f36
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3144(SB)/8, $0x8613fd0145877585
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3152(SB)/8, $0x2c48113823b73704
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3160(SB)/8, $0xa798fc4196e952e7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3168(SB)/8, $0xf75a15862ca504c5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3176(SB)/8, $0xd17f3b51fca3a7a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3184(SB)/8, $0x9a984d73dbe722fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3192(SB)/8, $0x82ef85133de648c4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3200(SB)/8, $0xc13e60d0d2e0ebba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3208(SB)/8, $0xa3ab66580d5fdaf5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3216(SB)/8, $0x318df905079926a8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3224(SB)/8, $0xcc963fee10b7d1b3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3232(SB)/8, $0xfdf17746497f7052
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3240(SB)/8, $0xffbbcfe994e5c61f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3248(SB)/8, $0xfeb6ea8bedefa633
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3256(SB)/8, $0x9fd561f1fd0f9bd3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3264(SB)/8, $0xfe64a52ee96b8fc0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3272(SB)/8, $0xc7caba6e7c5382c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3280(SB)/8, $0x3dfdce7aa3c673b0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3288(SB)/8, $0xf9bd690a1b68637b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3296(SB)/8, $0x06bea10ca65c084e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3304(SB)/8, $0x9c1661a651213e2d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3312(SB)/8, $0x486e494fcff30a62
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3320(SB)/8, $0xc31bfa0fe5698db8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3328(SB)/8, $0x5a89dba3c3efccfa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3336(SB)/8, $0xf3e2f893dec3f126
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3344(SB)/8, $0xf89629465a75e01c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3352(SB)/8, $0x986ddb5c6b3a76b7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3360(SB)/8, $0xf6bbb397f1135823
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3368(SB)/8, $0xbe89523386091465
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3376(SB)/8, $0x746aa07ded582e2c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3384(SB)/8, $0xee2ba6c0678b597f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3392(SB)/8, $0xa8c2a44eb4571cdc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3400(SB)/8, $0x94db483840b717ef
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3408(SB)/8, $0x92f34d62616ce413
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3416(SB)/8, $0xba121a4650e4ddeb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3424(SB)/8, $0x77b020baf9c81d17
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3432(SB)/8, $0xe896a0d7e51e1566
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3440(SB)/8, $0x0ace1474dc1d122e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3448(SB)/8, $0x915e2486ef32cd60
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3456(SB)/8, $0x0d819992132456ba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3464(SB)/8, $0xb5b5ada8aaff80b8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3472(SB)/8, $0x10e1fff697ed6c69
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3480(SB)/8, $0xe3231912d5bf60e6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3488(SB)/8, $0xca8d3ffa1ef463c1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3496(SB)/8, $0x8df5efabc5979c8f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3504(SB)/8, $0xbd308ff8a6b17cb2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3512(SB)/8, $0xb1736b96b6fd83b3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3520(SB)/8, $0xac7cb3f6d05ddbde
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3528(SB)/8, $0xddd0467c64bce4a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3536(SB)/8, $0x6bcdf07a423aa96b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3544(SB)/8, $0x8aa22c0dbef60ee4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3552(SB)/8, $0x86c16c98d2c953c6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3560(SB)/8, $0xad4ab7112eb3929d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3568(SB)/8, $0xe871c7bf077ba8b7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3576(SB)/8, $0xd89d64d57a607744
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3584(SB)/8, $0x11471cd764ad4972
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3592(SB)/8, $0x87625f056c7c4a8b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3600(SB)/8, $0xd598e40d3dd89bcf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3608(SB)/8, $0xa93af6c6c79b5d2d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3616(SB)/8, $0x4aff1d108d4ec2c3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3624(SB)/8, $0xd389b47879823479
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3632(SB)/8, $0xcedf722a585139ba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3640(SB)/8, $0x843610cb4bf160cb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3648(SB)/8, $0xc2974eb4ee658828
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3656(SB)/8, $0xa54394fe1eedb8fe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3664(SB)/8, $0x733d226229feea32
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3672(SB)/8, $0xce947a3da6a9273e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3680(SB)/8, $0x0806357d5a3f525f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3688(SB)/8, $0x811ccc668829b887
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3696(SB)/8, $0xca07c2dcb0cf26f7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3704(SB)/8, $0xa163ff802a3426a8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3712(SB)/8, $0xfc89b393dd02f0b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3720(SB)/8, $0xc9bcff6034c13052
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3728(SB)/8, $0xbbac2078d443ace2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3736(SB)/8, $0xfc2c3f3841f17c67
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3744(SB)/8, $0xd54b944b84aa4c0d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3752(SB)/8, $0x9d9ba7832936edc0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3760(SB)/8, $0x0a9e795e65d4df11
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3768(SB)/8, $0xc5029163f384a931
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3776(SB)/8, $0x4d4617b5ff4a16d5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3784(SB)/8, $0xf64335bcf065d37d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3792(SB)/8, $0x504bced1bf8e4e45
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3800(SB)/8, $0x99ea0196163fa42e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3808(SB)/8, $0xe45ec2862f71e1d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3816(SB)/8, $0xc06481fb9bcf8d39
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3824(SB)/8, $0x5d767327bb4e5a4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3832(SB)/8, $0xf07da27a82c37088
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3840(SB)/8, $0x3a6a07f8d510f86f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3848(SB)/8, $0x964e858c91ba2655
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3856(SB)/8, $0x890489f70a55368b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3864(SB)/8, $0xbbe226efb628afea
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3872(SB)/8, $0x2b45ac74ccea842e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3880(SB)/8, $0xeadab0aba3b2dbe5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3888(SB)/8, $0x3b0b8bc90012929d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3896(SB)/8, $0x92c8ae6b464fc96f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3904(SB)/8, $0x09ce6ebb40173744
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3912(SB)/8, $0xb77ada0617e3bbcb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3920(SB)/8, $0xcc420a6a101d0515
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3928(SB)/8, $0xe55990879ddcaabd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3936(SB)/8, $0x9fa946824a12232d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3944(SB)/8, $0x8f57fa54c2a9eab6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3952(SB)/8, $0x47939822dc96abf9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3960(SB)/8, $0xb32df8e9f3546564
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3968(SB)/8, $0x59787e2b93bc56f7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3976(SB)/8, $0xdff9772470297ebd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3984(SB)/8, $0x57eb4edb3c55b65a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+3992(SB)/8, $0x8bfbea76c619ef36
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4000(SB)/8, $0xede622920b6b23f1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4008(SB)/8, $0xaefae51477a06b03
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4016(SB)/8, $0xe95fab368e45eced
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4024(SB)/8, $0xdab99e59958885c4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4032(SB)/8, $0x11dbcb0218ebb414
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4040(SB)/8, $0x88b402f7fd75539b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4048(SB)/8, $0xd652bdc29f26a119
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4056(SB)/8, $0xaae103b5fcd2a881
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4064(SB)/8, $0x4be76d3346f0495f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4072(SB)/8, $0xd59944a37c0752a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4080(SB)/8, $0x6f70a4400c562ddb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4088(SB)/8, $0x857fcae62d8493a5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4096(SB)/8, $0xcb4ccd500f6bb952
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4104(SB)/8, $0xa6dfbd9fb8e5b88e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4112(SB)/8, $0x7e2000a41346a7a7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4120(SB)/8, $0xd097ad07a71f26b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4128(SB)/8, $0x8ed400668c0c28c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4136(SB)/8, $0x825ecc24c873782f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4144(SB)/8, $0x728900802f0f32fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4152(SB)/8, $0xa2f67f2dfa90563b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4160(SB)/8, $0x4f2b40a03ad2ffb9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4168(SB)/8, $0xcbb41ef979346bca
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4176(SB)/8, $0xe2f610c84987bfa8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4184(SB)/8, $0xfea126b7d78186bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4192(SB)/8, $0x0dd9ca7d2df4d7c9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4200(SB)/8, $0x9f24b832e6b0f436
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4208(SB)/8, $0x91503d1c79720dbb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4216(SB)/8, $0xc6ede63fa05d3143
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4224(SB)/8, $0x75a44c6397ce912a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4232(SB)/8, $0xf8a95fcf88747d94
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4240(SB)/8, $0xc986afbe3ee11aba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4248(SB)/8, $0x9b69dbe1b548ce7c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4256(SB)/8, $0xfbe85badce996168
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4264(SB)/8, $0xc24452da229b021b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4272(SB)/8, $0xfae27299423fb9c3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4280(SB)/8, $0xf2d56790ab41c2a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4288(SB)/8, $0xdccd879fc967d41a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4296(SB)/8, $0x97c560ba6b0919a5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4304(SB)/8, $0x5400e987bbc1c920
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4312(SB)/8, $0xbdb6b8e905cb600f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4320(SB)/8, $0x290123e9aab23b68
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4328(SB)/8, $0xed246723473e3813
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4336(SB)/8, $0xf9a0b6720aaf6521
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4344(SB)/8, $0x9436c0760c86e30b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4352(SB)/8, $0xf808e40e8d5b3e69
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4360(SB)/8, $0xb94470938fa89bce
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4368(SB)/8, $0xb60b1d1230b20e04
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4376(SB)/8, $0xe7958cb87392c2c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4384(SB)/8, $0xb1c6f22b5e6f48c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4392(SB)/8, $0x90bd77f3483bb9b9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4400(SB)/8, $0x1e38aeb6360b1af3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4408(SB)/8, $0xb4ecd5f01a4aa828
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4416(SB)/8, $0x25c6da63c38de1b0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4424(SB)/8, $0xe2280b6c20dd5232
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4432(SB)/8, $0x579c487e5a38ad0e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4440(SB)/8, $0x8d590723948a535f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4448(SB)/8, $0x2d835a9df0c6d851
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4456(SB)/8, $0xb0af48ec79ace837
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4464(SB)/8, $0xf8e431456cf88e65
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4472(SB)/8, $0xdcdb1b2798182244
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4480(SB)/8, $0x1b8e9ecb641b58ff
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4488(SB)/8, $0x8a08f0f8bf0f156b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4496(SB)/8, $0xe272467e3d222f3f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4504(SB)/8, $0xac8b2d36eed2dac5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4512(SB)/8, $0x5b0ed81dcc6abb0f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4520(SB)/8, $0xd7adf884aa879177
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4528(SB)/8, $0x98e947129fc2b4e9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4536(SB)/8, $0x86ccbb52ea94baea
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4544(SB)/8, $0x3f2398d747b36224
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4552(SB)/8, $0xa87fea27a539e9a5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4560(SB)/8, $0x8eec7f0d19a03aad
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4568(SB)/8, $0xd29fe4b18e88640e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4576(SB)/8, $0x1953cf68300424ac
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4584(SB)/8, $0x83a3eeeef9153e89
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4592(SB)/8, $0x5fa8c3423c052dd7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4600(SB)/8, $0xa48ceaaab75a8e2b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4608(SB)/8, $0x3792f412cb06794d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4616(SB)/8, $0xcdb02555653131b6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4624(SB)/8, $0xe2bbd88bbee40bd0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4632(SB)/8, $0x808e17555f3ebf11
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4640(SB)/8, $0x5b6aceaeae9d0ec4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4648(SB)/8, $0xa0b19d2ab70e6ed6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4656(SB)/8, $0xf245825a5a445275
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4664(SB)/8, $0xc8de047564d20a8b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4672(SB)/8, $0xeed6e2f0f0d56712
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4680(SB)/8, $0xfb158592be068d2e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4688(SB)/8, $0x55464dd69685606b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4696(SB)/8, $0x9ced737bb6c4183d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4704(SB)/8, $0xaa97e14c3c26b886
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4712(SB)/8, $0xc428d05aa4751e4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4720(SB)/8, $0xd53dd99f4b3066a8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4728(SB)/8, $0xf53304714d9265df
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4736(SB)/8, $0xe546a8038efe4029
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4744(SB)/8, $0x993fe2c6d07b7fab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4752(SB)/8, $0xde98520472bdd033
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4760(SB)/8, $0xbf8fdb78849a5f96
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4768(SB)/8, $0x963e66858f6d4440
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4776(SB)/8, $0xef73d256a5c0f77c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4784(SB)/8, $0xdde7001379a44aa8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4792(SB)/8, $0x95a8637627989aad
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4800(SB)/8, $0x5560c018580d5d52
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4808(SB)/8, $0xbb127c53b17ec159
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4816(SB)/8, $0xaab8f01e6e10b4a6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4824(SB)/8, $0xe9d71b689dde71af
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4832(SB)/8, $0xcab3961304ca70e8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4840(SB)/8, $0x9226712162ab070d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4848(SB)/8, $0x3d607b97c5fd0d22
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4856(SB)/8, $0xb6b00d69bb55c8d1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4864(SB)/8, $0x8cb89a7db77c506a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4872(SB)/8, $0xe45c10c42a2b3b05
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4880(SB)/8, $0x77f3608e92adb242
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4888(SB)/8, $0x8eb98a7a9a5b04e3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4896(SB)/8, $0x55f038b237591ed3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4904(SB)/8, $0xb267ed1940f1c61c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4912(SB)/8, $0x6b6c46dec52f6688
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4920(SB)/8, $0xdf01e85f912e37a3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4928(SB)/8, $0x2323ac4b3b3da015
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4936(SB)/8, $0x8b61313bbabce2c6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4944(SB)/8, $0xabec975e0a0d081a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4952(SB)/8, $0xae397d8aa96c1b77
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4960(SB)/8, $0x96e7bd358c904a21
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4968(SB)/8, $0xd9c7dced53c72255
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4976(SB)/8, $0x7e50d64177da2e54
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4984(SB)/8, $0x881cea14545c7575
+DATA ·p348d0202098f8f91_POW10_M128_TAB+4992(SB)/8, $0xdde50bd1d5d0b9e9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5000(SB)/8, $0xaa242499697392d2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5008(SB)/8, $0x955e4ec64b44e864
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5016(SB)/8, $0xd4ad2dbfc3d07787
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5024(SB)/8, $0xbd5af13bef0b113e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5032(SB)/8, $0x84ec3c97da624ab4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5040(SB)/8, $0xecb1ad8aeacdd58e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5048(SB)/8, $0xa6274bbdd0fadd61
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5056(SB)/8, $0x67de18eda5814af2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5064(SB)/8, $0xcfb11ead453994ba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5072(SB)/8, $0x80eacf948770ced7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5080(SB)/8, $0x81ceb32c4b43fcf4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5088(SB)/8, $0xa1258379a94d028d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5096(SB)/8, $0xa2425ff75e14fc31
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5104(SB)/8, $0x096ee45813a04330
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5112(SB)/8, $0xcad2f7f5359a3b3e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5120(SB)/8, $0x8bca9d6e188853fc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5128(SB)/8, $0xfd87b5f28300ca0d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5136(SB)/8, $0x775ea264cf55347d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5144(SB)/8, $0x9e74d1b791e07e48
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5152(SB)/8, $0x95364afe032a819d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5160(SB)/8, $0xc612062576589dda
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5168(SB)/8, $0x3a83ddbd83f52204
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5176(SB)/8, $0xf79687aed3eec551
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5184(SB)/8, $0xc4926a9672793542
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5192(SB)/8, $0x9abe14cd44753b52
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5200(SB)/8, $0x75b7053c0f178293
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5208(SB)/8, $0xc16d9a0095928a27
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5216(SB)/8, $0x5324c68b12dd6338
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5224(SB)/8, $0xf1c90080baf72cb1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5232(SB)/8, $0xd3f6fc16ebca5e03
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5240(SB)/8, $0x971da05074da7bee
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5248(SB)/8, $0x88f4bb1ca6bcf584
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5256(SB)/8, $0xbce5086492111aea
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5264(SB)/8, $0x2b31e9e3d06c32e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5272(SB)/8, $0xec1e4a7db69561a5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5280(SB)/8, $0x3aff322e62439fcf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5288(SB)/8, $0x9392ee8e921d5d07
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5296(SB)/8, $0x09befeb9fad487c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5304(SB)/8, $0xb877aa3236a4b449
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5312(SB)/8, $0x4c2ebe687989a9b3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5320(SB)/8, $0xe69594bec44de15b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5328(SB)/8, $0x0f9d37014bf60a10
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5336(SB)/8, $0x901d7cf73ab0acd9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5344(SB)/8, $0x538484c19ef38c94
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5352(SB)/8, $0xb424dc35095cd80f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5360(SB)/8, $0x2865a5f206b06fb9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5368(SB)/8, $0xe12e13424bb40e13
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5376(SB)/8, $0xf93f87b7442e45d3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5384(SB)/8, $0x8cbccc096f5088cb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5392(SB)/8, $0xf78f69a51539d748
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5400(SB)/8, $0xafebff0bcb24aafe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5408(SB)/8, $0xb573440e5a884d1b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5416(SB)/8, $0xdbe6fecebdedd5be
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5424(SB)/8, $0x31680a88f8953030
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5432(SB)/8, $0x89705f4136b4a597
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5440(SB)/8, $0xfdc20d2b36ba7c3d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5448(SB)/8, $0xabcc77118461cefc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5456(SB)/8, $0x3d32907604691b4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5464(SB)/8, $0xd6bf94d5e57a42bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5472(SB)/8, $0xa63f9a49c2c1b10f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5480(SB)/8, $0x8637bd05af6c69b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5488(SB)/8, $0x0fcf80dc33721d53
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5496(SB)/8, $0xa7c5ac471b478423
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5504(SB)/8, $0xd3c36113404ea4a8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5512(SB)/8, $0xd1b71758e219652b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5520(SB)/8, $0x645a1cac083126e9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5528(SB)/8, $0x83126e978d4fdf3b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5536(SB)/8, $0x3d70a3d70a3d70a3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5544(SB)/8, $0xa3d70a3d70a3d70a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5552(SB)/8, $0xcccccccccccccccc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5560(SB)/8, $0xcccccccccccccccc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5576(SB)/8, $0x8000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5592(SB)/8, $0xa000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5600(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5608(SB)/8, $0xc800000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5616(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5624(SB)/8, $0xfa00000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5632(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5640(SB)/8, $0x9c40000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5648(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5656(SB)/8, $0xc350000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5664(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5672(SB)/8, $0xf424000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5688(SB)/8, $0x9896800000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5704(SB)/8, $0xbebc200000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5712(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5720(SB)/8, $0xee6b280000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5728(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5736(SB)/8, $0x9502f90000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5744(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5752(SB)/8, $0xba43b74000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5760(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5768(SB)/8, $0xe8d4a51000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5784(SB)/8, $0x9184e72a00000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5800(SB)/8, $0xb5e620f480000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5808(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5816(SB)/8, $0xe35fa931a0000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5824(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5832(SB)/8, $0x8e1bc9bf04000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5840(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5848(SB)/8, $0xb1a2bc2ec5000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5856(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5864(SB)/8, $0xde0b6b3a76400000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5872(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5880(SB)/8, $0x8ac7230489e80000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5888(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5896(SB)/8, $0xad78ebc5ac620000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5912(SB)/8, $0xd8d726b7177a8000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5920(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5928(SB)/8, $0x878678326eac9000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5936(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5944(SB)/8, $0xa968163f0a57b400
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5952(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5960(SB)/8, $0xd3c21bcecceda100
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5968(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5976(SB)/8, $0x84595161401484a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+5992(SB)/8, $0xa56fa5b99019a5c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6008(SB)/8, $0xcecb8f27f4200f3a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6016(SB)/8, $0x4000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6024(SB)/8, $0x813f3978f8940984
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6032(SB)/8, $0x5000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6040(SB)/8, $0xa18f07d736b90be5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6048(SB)/8, $0xa400000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6056(SB)/8, $0xc9f2c9cd04674ede
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6064(SB)/8, $0x4d00000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6072(SB)/8, $0xfc6f7c4045812296
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6080(SB)/8, $0xf020000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6088(SB)/8, $0x9dc5ada82b70b59d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6096(SB)/8, $0x6c28000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6104(SB)/8, $0xc5371912364ce305
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6112(SB)/8, $0xc732000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6120(SB)/8, $0xf684df56c3e01bc6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6128(SB)/8, $0x3c7f400000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6136(SB)/8, $0x9a130b963a6c115c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6144(SB)/8, $0x4b9f100000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6152(SB)/8, $0xc097ce7bc90715b3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6160(SB)/8, $0x1e86d40000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6168(SB)/8, $0xf0bdc21abb48db20
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6176(SB)/8, $0x1314448000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6184(SB)/8, $0x96769950b50d88f4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6192(SB)/8, $0x17d955a000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6200(SB)/8, $0xbc143fa4e250eb31
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6208(SB)/8, $0x5dcfab0800000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6216(SB)/8, $0xeb194f8e1ae525fd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6224(SB)/8, $0x5aa1cae500000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6232(SB)/8, $0x92efd1b8d0cf37be
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6240(SB)/8, $0xf14a3d9e40000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6248(SB)/8, $0xb7abc627050305ad
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6256(SB)/8, $0x6d9ccd05d0000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6264(SB)/8, $0xe596b7b0c643c719
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6272(SB)/8, $0xe4820023a2000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6280(SB)/8, $0x8f7e32ce7bea5c6f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6288(SB)/8, $0xdda2802c8a800000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6296(SB)/8, $0xb35dbf821ae4f38b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6304(SB)/8, $0xd50b2037ad200000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6312(SB)/8, $0xe0352f62a19e306e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6320(SB)/8, $0x4526f422cc340000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6328(SB)/8, $0x8c213d9da502de45
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6336(SB)/8, $0x9670b12b7f410000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6344(SB)/8, $0xaf298d050e4395d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6352(SB)/8, $0x3c0cdd765f114000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6360(SB)/8, $0xdaf3f04651d47b4c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6368(SB)/8, $0xa5880a69fb6ac800
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6376(SB)/8, $0x88d8762bf324cd0f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6384(SB)/8, $0x8eea0d047a457a00
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6392(SB)/8, $0xab0e93b6efee0053
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6400(SB)/8, $0x72a4904598d6d880
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6408(SB)/8, $0xd5d238a4abe98068
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6416(SB)/8, $0x47a6da2b7f864750
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6424(SB)/8, $0x85a36366eb71f041
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6432(SB)/8, $0x999090b65f67d924
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6440(SB)/8, $0xa70c3c40a64e6c51
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6448(SB)/8, $0xfff4b4e3f741cf6d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6456(SB)/8, $0xd0cf4b50cfe20765
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6464(SB)/8, $0xbff8f10e7a8921a4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6472(SB)/8, $0x82818f1281ed449f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6480(SB)/8, $0xaff72d52192b6a0d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6488(SB)/8, $0xa321f2d7226895c7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6496(SB)/8, $0x9bf4f8a69f764490
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6504(SB)/8, $0xcbea6f8ceb02bb39
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6512(SB)/8, $0x02f236d04753d5b4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6520(SB)/8, $0xfee50b7025c36a08
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6528(SB)/8, $0x01d762422c946590
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6536(SB)/8, $0x9f4f2726179a2245
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6544(SB)/8, $0x424d3ad2b7b97ef5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6552(SB)/8, $0xc722f0ef9d80aad6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6560(SB)/8, $0xd2e0898765a7deb2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6568(SB)/8, $0xf8ebad2b84e0d58b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6576(SB)/8, $0x63cc55f49f88eb2f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6584(SB)/8, $0x9b934c3b330c8577
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6592(SB)/8, $0x3cbf6b71c76b25fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6600(SB)/8, $0xc2781f49ffcfa6d5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6608(SB)/8, $0x8bef464e3945ef7a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6616(SB)/8, $0xf316271c7fc3908a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6624(SB)/8, $0x97758bf0e3cbb5ac
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6632(SB)/8, $0x97edd871cfda3a56
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6640(SB)/8, $0x3d52eeed1cbea317
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6648(SB)/8, $0xbde94e8e43d0c8ec
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6656(SB)/8, $0x4ca7aaa863ee4bdd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6664(SB)/8, $0xed63a231d4c4fb27
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6672(SB)/8, $0x8fe8caa93e74ef6a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6680(SB)/8, $0x945e455f24fb1cf8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6688(SB)/8, $0xb3e2fd538e122b44
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6696(SB)/8, $0xb975d6b6ee39e436
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6704(SB)/8, $0x60dbbca87196b616
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6712(SB)/8, $0xe7d34c64a9c85d44
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6720(SB)/8, $0xbc8955e946fe31cd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6728(SB)/8, $0x90e40fbeea1d3a4a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6736(SB)/8, $0x6babab6398bdbe41
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6744(SB)/8, $0xb51d13aea4a488dd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6752(SB)/8, $0xc696963c7eed2dd1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6760(SB)/8, $0xe264589a4dcdab14
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6768(SB)/8, $0xfc1e1de5cf543ca2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6776(SB)/8, $0x8d7eb76070a08aec
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6784(SB)/8, $0x3b25a55f43294bcb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6792(SB)/8, $0xb0de65388cc8ada8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6800(SB)/8, $0x49ef0eb713f39ebe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6808(SB)/8, $0xdd15fe86affad912
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6816(SB)/8, $0x6e3569326c784337
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6824(SB)/8, $0x8a2dbf142dfcc7ab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6832(SB)/8, $0x49c2c37f07965404
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6840(SB)/8, $0xacb92ed9397bf996
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6848(SB)/8, $0xdc33745ec97be906
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6856(SB)/8, $0xd7e77a8f87daf7fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6864(SB)/8, $0x69a028bb3ded71a3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6872(SB)/8, $0x86f0ac99b4e8dafd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6880(SB)/8, $0xc40832ea0d68ce0c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6888(SB)/8, $0xa8acd7c0222311bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6896(SB)/8, $0xf50a3fa490c30190
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6904(SB)/8, $0xd2d80db02aabd62b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6912(SB)/8, $0x792667c6da79e0fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6920(SB)/8, $0x83c7088e1aab65db
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6928(SB)/8, $0x577001b891185938
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6936(SB)/8, $0xa4b8cab1a1563f52
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6944(SB)/8, $0xed4c0226b55e6f86
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6952(SB)/8, $0xcde6fd5e09abcf26
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6960(SB)/8, $0x544f8158315b05b4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6968(SB)/8, $0x80b05e5ac60b6178
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6976(SB)/8, $0x696361ae3db1c721
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6984(SB)/8, $0xa0dc75f1778e39d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+6992(SB)/8, $0x03bc3a19cd1e38e9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7000(SB)/8, $0xc913936dd571c84c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7008(SB)/8, $0x04ab48a04065c723
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7016(SB)/8, $0xfb5878494ace3a5f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7024(SB)/8, $0x62eb0d64283f9c76
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7032(SB)/8, $0x9d174b2dcec0e47b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7040(SB)/8, $0x3ba5d0bd324f8394
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7048(SB)/8, $0xc45d1df942711d9a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7056(SB)/8, $0xca8f44ec7ee36479
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7064(SB)/8, $0xf5746577930d6500
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7072(SB)/8, $0x7e998b13cf4e1ecb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7080(SB)/8, $0x9968bf6abbe85f20
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7088(SB)/8, $0x9e3fedd8c321a67e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7096(SB)/8, $0xbfc2ef456ae276e8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7104(SB)/8, $0xc5cfe94ef3ea101e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7112(SB)/8, $0xefb3ab16c59b14a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7120(SB)/8, $0xbba1f1d158724a12
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7128(SB)/8, $0x95d04aee3b80ece5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7136(SB)/8, $0x2a8a6e45ae8edc97
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7144(SB)/8, $0xbb445da9ca61281f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7152(SB)/8, $0xf52d09d71a3293bd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7160(SB)/8, $0xea1575143cf97226
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7168(SB)/8, $0x593c2626705f9c56
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7176(SB)/8, $0x924d692ca61be758
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7184(SB)/8, $0x6f8b2fb00c77836c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7192(SB)/8, $0xb6e0c377cfa2e12e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7200(SB)/8, $0x0b6dfb9c0f956447
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7208(SB)/8, $0xe498f455c38b997a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7216(SB)/8, $0x4724bd4189bd5eac
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7224(SB)/8, $0x8edf98b59a373fec
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7232(SB)/8, $0x58edec91ec2cb657
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7240(SB)/8, $0xb2977ee300c50fe7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7248(SB)/8, $0x2f2967b66737e3ed
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7256(SB)/8, $0xdf3d5e9bc0f653e1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7264(SB)/8, $0xbd79e0d20082ee74
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7272(SB)/8, $0x8b865b215899f46c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7280(SB)/8, $0xecd8590680a3aa11
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7288(SB)/8, $0xae67f1e9aec07187
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7296(SB)/8, $0xe80e6f4820cc9495
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7304(SB)/8, $0xda01ee641a708de9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7312(SB)/8, $0x3109058d147fdcdd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7320(SB)/8, $0x884134fe908658b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7328(SB)/8, $0xbd4b46f0599fd415
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7336(SB)/8, $0xaa51823e34a7eede
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7344(SB)/8, $0x6c9e18ac7007c91a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7352(SB)/8, $0xd4e5e2cdc1d1ea96
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7360(SB)/8, $0x03e2cf6bc604ddb0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7368(SB)/8, $0x850fadc09923329e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7376(SB)/8, $0x84db8346b786151c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7384(SB)/8, $0xa6539930bf6bff45
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7392(SB)/8, $0xe612641865679a63
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7400(SB)/8, $0xcfe87f7cef46ff16
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7408(SB)/8, $0x4fcb7e8f3f60c07e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7416(SB)/8, $0x81f14fae158c5f6e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7424(SB)/8, $0xe3be5e330f38f09d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7432(SB)/8, $0xa26da3999aef7749
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7440(SB)/8, $0x5cadf5bfd3072cc5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7448(SB)/8, $0xcb090c8001ab551c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7456(SB)/8, $0x73d9732fc7c8f7f6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7464(SB)/8, $0xfdcb4fa002162a63
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7472(SB)/8, $0x2867e7fddcdd9afa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7480(SB)/8, $0x9e9f11c4014dda7e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7488(SB)/8, $0xb281e1fd541501b8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7496(SB)/8, $0xc646d63501a1511d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7504(SB)/8, $0x1f225a7ca91a4226
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7512(SB)/8, $0xf7d88bc24209a565
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7520(SB)/8, $0x3375788de9b06958
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7528(SB)/8, $0x9ae757596946075f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7536(SB)/8, $0x0052d6b1641c83ae
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7544(SB)/8, $0xc1a12d2fc3978937
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7552(SB)/8, $0xc0678c5dbd23a49a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7560(SB)/8, $0xf209787bb47d6b84
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7568(SB)/8, $0xf840b7ba963646e0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7576(SB)/8, $0x9745eb4d50ce6332
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7584(SB)/8, $0xb650e5a93bc3d898
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7592(SB)/8, $0xbd176620a501fbff
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7600(SB)/8, $0xa3e51f138ab4cebe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7608(SB)/8, $0xec5d3fa8ce427aff
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7616(SB)/8, $0xc66f336c36b10137
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7624(SB)/8, $0x93ba47c980e98cdf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7632(SB)/8, $0xb80b0047445d4184
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7640(SB)/8, $0xb8a8d9bbe123f017
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7648(SB)/8, $0xa60dc059157491e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7656(SB)/8, $0xe6d3102ad96cec1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7664(SB)/8, $0x87c89837ad68db2f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7672(SB)/8, $0x9043ea1ac7e41392
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7680(SB)/8, $0x29babe4598c311fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7688(SB)/8, $0xb454e4a179dd1877
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7696(SB)/8, $0xf4296dd6fef3d67a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7704(SB)/8, $0xe16a1dc9d8545e94
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7712(SB)/8, $0x1899e4a65f58660c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7720(SB)/8, $0x8ce2529e2734bb1d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7728(SB)/8, $0x5ec05dcff72e7f8f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7736(SB)/8, $0xb01ae745b101e9e4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7744(SB)/8, $0x76707543f4fa1f73
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7752(SB)/8, $0xdc21a1171d42645d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7760(SB)/8, $0x6a06494a791c53a8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7768(SB)/8, $0x899504ae72497eba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7776(SB)/8, $0x0487db9d17636892
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7784(SB)/8, $0xabfa45da0edbde69
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7792(SB)/8, $0x45a9d2845d3c42b6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7800(SB)/8, $0xd6f8d7509292d603
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7808(SB)/8, $0x0b8a2392ba45a9b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7816(SB)/8, $0x865b86925b9bc5c2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7824(SB)/8, $0x8e6cac7768d7141e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7832(SB)/8, $0xa7f26836f282b732
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7840(SB)/8, $0x3207d795430cd926
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7848(SB)/8, $0xd1ef0244af2364ff
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7856(SB)/8, $0x7f44e6bd49e807b8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7864(SB)/8, $0x8335616aed761f1f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7872(SB)/8, $0x5f16206c9c6209a6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7880(SB)/8, $0xa402b9c5a8d3a6e7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7888(SB)/8, $0x36dba887c37a8c0f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7896(SB)/8, $0xcd036837130890a1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7904(SB)/8, $0xc2494954da2c9789
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7912(SB)/8, $0x802221226be55a64
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7920(SB)/8, $0xf2db9baa10b7bd6c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7928(SB)/8, $0xa02aa96b06deb0fd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7936(SB)/8, $0x6f92829494e5acc7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7944(SB)/8, $0xc83553c5c8965d3d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7952(SB)/8, $0xcb772339ba1f17f9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7960(SB)/8, $0xfa42a8b73abbf48c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7968(SB)/8, $0xff2a760414536efb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7976(SB)/8, $0x9c69a97284b578d7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7984(SB)/8, $0xfef5138519684aba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+7992(SB)/8, $0xc38413cf25e2d70d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8000(SB)/8, $0x7eb258665fc25d69
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8008(SB)/8, $0xf46518c2ef5b8cd1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8016(SB)/8, $0xef2f773ffbd97a61
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8024(SB)/8, $0x98bf2f79d5993802
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8032(SB)/8, $0xaafb550ffacfd8fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8040(SB)/8, $0xbeeefb584aff8603
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8048(SB)/8, $0x95ba2a53f983cf38
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8056(SB)/8, $0xeeaaba2e5dbf6784
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8064(SB)/8, $0xdd945a747bf26183
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8072(SB)/8, $0x952ab45cfa97a0b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8080(SB)/8, $0x94f971119aeef9e4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8088(SB)/8, $0xba756174393d88df
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8096(SB)/8, $0x7a37cd5601aab85d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8104(SB)/8, $0xe912b9d1478ceb17
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8112(SB)/8, $0xac62e055c10ab33a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8120(SB)/8, $0x91abb422ccb812ee
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8128(SB)/8, $0x577b986b314d6009
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8136(SB)/8, $0xb616a12b7fe617aa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8144(SB)/8, $0xed5a7e85fda0b80b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8152(SB)/8, $0xe39c49765fdf9d94
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8160(SB)/8, $0x14588f13be847307
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8168(SB)/8, $0x8e41ade9fbebc27d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8176(SB)/8, $0x596eb2d8ae258fc8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8184(SB)/8, $0xb1d219647ae6b31c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8192(SB)/8, $0x6fca5f8ed9aef3bb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8200(SB)/8, $0xde469fbd99a05fe3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8208(SB)/8, $0x25de7bb9480d5854
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8216(SB)/8, $0x8aec23d680043bee
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8224(SB)/8, $0xaf561aa79a10ae6a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8232(SB)/8, $0xada72ccc20054ae9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8240(SB)/8, $0x1b2ba1518094da04
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8248(SB)/8, $0xd910f7ff28069da4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8256(SB)/8, $0x90fb44d2f05d0842
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8264(SB)/8, $0x87aa9aff79042286
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8272(SB)/8, $0x353a1607ac744a53
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8280(SB)/8, $0xa99541bf57452b28
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8288(SB)/8, $0x42889b8997915ce8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8296(SB)/8, $0xd3fa922f2d1675f2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8304(SB)/8, $0x69956135febada11
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8312(SB)/8, $0x847c9b5d7c2e09b7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8320(SB)/8, $0x43fab9837e699095
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8328(SB)/8, $0xa59bc234db398c25
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8336(SB)/8, $0x94f967e45e03f4bb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8344(SB)/8, $0xcf02b2c21207ef2e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8352(SB)/8, $0x1d1be0eebac278f5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8360(SB)/8, $0x8161afb94b44f57d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8368(SB)/8, $0x6462d92a69731732
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8376(SB)/8, $0xa1ba1ba79e1632dc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8384(SB)/8, $0x7d7b8f7503cfdcfe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8392(SB)/8, $0xca28a291859bbf93
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8400(SB)/8, $0x5cda735244c3d43e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8408(SB)/8, $0xfcb2cb35e702af78
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8416(SB)/8, $0x3a0888136afa64a7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8424(SB)/8, $0x9defbf01b061adab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8432(SB)/8, $0x088aaa1845b8fdd0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8440(SB)/8, $0xc56baec21c7a1916
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8448(SB)/8, $0x8aad549e57273d45
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8456(SB)/8, $0xf6c69a72a3989f5b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8464(SB)/8, $0x36ac54e2f678864b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8472(SB)/8, $0x9a3c2087a63f6399
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8480(SB)/8, $0x84576a1bb416a7dd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8488(SB)/8, $0xc0cb28a98fcf3c7f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8496(SB)/8, $0x656d44a2a11c51d5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8504(SB)/8, $0xf0fdf2d3f3c30b9f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8512(SB)/8, $0x9f644ae5a4b1b325
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8520(SB)/8, $0x969eb7c47859e743
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8528(SB)/8, $0x873d5d9f0dde1fee
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8536(SB)/8, $0xbc4665b596706114
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8544(SB)/8, $0xa90cb506d155a7ea
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8552(SB)/8, $0xeb57ff22fc0c7959
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8560(SB)/8, $0x09a7f12442d588f2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8568(SB)/8, $0x9316ff75dd87cbd8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8576(SB)/8, $0x0c11ed6d538aeb2f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8584(SB)/8, $0xb7dcbf5354e9bece
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8592(SB)/8, $0x8f1668c8a86da5fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8600(SB)/8, $0xe5d3ef282a242e81
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8608(SB)/8, $0xf96e017d694487bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8616(SB)/8, $0x8fa475791a569d10
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8624(SB)/8, $0x37c981dcc395a9ac
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8632(SB)/8, $0xb38d92d760ec4455
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8640(SB)/8, $0x85bbe253f47b1417
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8648(SB)/8, $0xe070f78d3927556a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8656(SB)/8, $0x93956d7478ccec8e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8664(SB)/8, $0x8c469ab843b89562
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8672(SB)/8, $0x387ac8d1970027b2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8680(SB)/8, $0xaf58416654a6babb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8688(SB)/8, $0x06997b05fcc0319e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8696(SB)/8, $0xdb2e51bfe9d0696a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8704(SB)/8, $0x441fece3bdf81f03
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8712(SB)/8, $0x88fcf317f22241e2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8720(SB)/8, $0xd527e81cad7626c3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8728(SB)/8, $0xab3c2fddeeaad25a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8736(SB)/8, $0x8a71e223d8d3b074
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8744(SB)/8, $0xd60b3bd56a5586f1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8752(SB)/8, $0xf6872d5667844e49
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8760(SB)/8, $0x85c7056562757456
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8768(SB)/8, $0xb428f8ac016561db
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8776(SB)/8, $0xa738c6bebb12d16c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8784(SB)/8, $0xe13336d701beba52
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8792(SB)/8, $0xd106f86e69d785c7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8800(SB)/8, $0xecc0024661173473
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8808(SB)/8, $0x82a45b450226b39c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8816(SB)/8, $0x27f002d7f95d0190
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8824(SB)/8, $0xa34d721642b06084
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8832(SB)/8, $0x31ec038df7b441f4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8840(SB)/8, $0xcc20ce9bd35c78a5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8848(SB)/8, $0x7e67047175a15271
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8856(SB)/8, $0xff290242c83396ce
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8864(SB)/8, $0x0f0062c6e984d386
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8872(SB)/8, $0x9f79a169bd203e41
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8880(SB)/8, $0x52c07b78a3e60868
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8888(SB)/8, $0xc75809c42c684dd1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8896(SB)/8, $0xa7709a56ccdf8a82
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8904(SB)/8, $0xf92e0c3537826145
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8912(SB)/8, $0x88a66076400bb691
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8920(SB)/8, $0x9bbcc7a142b17ccb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8928(SB)/8, $0x6acff893d00ea435
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8936(SB)/8, $0xc2abf989935ddbfe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8944(SB)/8, $0x0583f6b8c4124d43
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8952(SB)/8, $0xf356f7ebf83552fe
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8960(SB)/8, $0xc3727a337a8b704a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8968(SB)/8, $0x98165af37b2153de
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8976(SB)/8, $0x744f18c0592e4c5c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8984(SB)/8, $0xbe1bf1b059e9a8d6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+8992(SB)/8, $0x1162def06f79df73
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9000(SB)/8, $0xeda2ee1c7064130c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9008(SB)/8, $0x8addcb5645ac2ba8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9016(SB)/8, $0x9485d4d1c63e8be7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9024(SB)/8, $0x6d953e2bd7173692
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9032(SB)/8, $0xb9a74a0637ce2ee1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9040(SB)/8, $0xc8fa8db6ccdd0437
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9048(SB)/8, $0xe8111c87c5c1ba99
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9056(SB)/8, $0x1d9c9892400a22a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9064(SB)/8, $0x910ab1d4db9914a0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9072(SB)/8, $0x2503beb6d00cab4b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9080(SB)/8, $0xb54d5e4a127f59c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9088(SB)/8, $0x2e44ae64840fd61d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9096(SB)/8, $0xe2a0b5dc971f303a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9104(SB)/8, $0x5ceaecfed289e5d2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9112(SB)/8, $0x8da471a9de737e24
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9120(SB)/8, $0x7425a83e872c5f47
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9128(SB)/8, $0xb10d8e1456105dad
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9136(SB)/8, $0xd12f124e28f77719
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9144(SB)/8, $0xdd50f1996b947518
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9152(SB)/8, $0x82bd6b70d99aaa6f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9160(SB)/8, $0x8a5296ffe33cc92f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9168(SB)/8, $0x636cc64d1001550b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9176(SB)/8, $0xace73cbfdc0bfb7b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9184(SB)/8, $0x3c47f7e05401aa4e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9192(SB)/8, $0xd8210befd30efa5a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9200(SB)/8, $0x65acfaec34810a71
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9208(SB)/8, $0x8714a775e3e95c78
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9216(SB)/8, $0x7f1839a741a14d0d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9224(SB)/8, $0xa8d9d1535ce3b396
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9232(SB)/8, $0x1ede48111209a050
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9240(SB)/8, $0xd31045a8341ca07c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9248(SB)/8, $0x934aed0aab460432
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9256(SB)/8, $0x83ea2b892091e44d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9264(SB)/8, $0xf81da84d5617853f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9272(SB)/8, $0xa4e4b66b68b65d60
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9280(SB)/8, $0x36251260ab9d668e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9288(SB)/8, $0xce1de40642e3f4b9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9296(SB)/8, $0xc1d72b7c6b426019
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9304(SB)/8, $0x80d2ae83e9ce78f3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9312(SB)/8, $0xb24cf65b8612f81f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9320(SB)/8, $0xa1075a24e4421730
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9328(SB)/8, $0xdee033f26797b627
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9336(SB)/8, $0xc94930ae1d529cfc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9344(SB)/8, $0x169840ef017da3b1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9352(SB)/8, $0xfb9b7cd9a4a7443c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9360(SB)/8, $0x8e1f289560ee864e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9368(SB)/8, $0x9d412e0806e88aa5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9376(SB)/8, $0xf1a6f2bab92a27e2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9384(SB)/8, $0xc491798a08a2ad4e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9392(SB)/8, $0xae10af696774b1db
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9400(SB)/8, $0xf5b5d7ec8acb58a2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9408(SB)/8, $0xacca6da1e0a8ef29
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9416(SB)/8, $0x9991a6f3d6bf1765
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9424(SB)/8, $0x17fd090a58d32af3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9432(SB)/8, $0xbff610b0cc6edd3f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9440(SB)/8, $0xddfc4b4cef07f5b0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9448(SB)/8, $0xeff394dcff8a948e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9456(SB)/8, $0x4abdaf101564f98e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9464(SB)/8, $0x95f83d0a1fb69cd9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9472(SB)/8, $0x9d6d1ad41abe37f1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9480(SB)/8, $0xbb764c4ca7a4440f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9488(SB)/8, $0x84c86189216dc5ed
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9496(SB)/8, $0xea53df5fd18d5513
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9504(SB)/8, $0x32fd3cf5b4e49bb4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9512(SB)/8, $0x92746b9be2f8552c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9520(SB)/8, $0x3fbc8c33221dc2a1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9528(SB)/8, $0xb7118682dbb66a77
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9536(SB)/8, $0x0fabaf3feaa5334a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9544(SB)/8, $0xe4d5e82392a40515
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9552(SB)/8, $0x29cb4d87f2a7400e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9560(SB)/8, $0x8f05b1163ba6832d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9568(SB)/8, $0x743e20e9ef511012
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9576(SB)/8, $0xb2c71d5bca9023f8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9584(SB)/8, $0x914da9246b255416
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9592(SB)/8, $0xdf78e4b2bd342cf6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9600(SB)/8, $0x1ad089b6c2f7548e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9608(SB)/8, $0x8bab8eefb6409c1a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9616(SB)/8, $0xa184ac2473b529b1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9624(SB)/8, $0xae9672aba3d0c320
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9632(SB)/8, $0xc9e5d72d90a2741e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9640(SB)/8, $0xda3c0f568cc4f3e8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9648(SB)/8, $0x7e2fa67c7a658892
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9656(SB)/8, $0x8865899617fb1871
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9664(SB)/8, $0xddbb901b98feeab7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9672(SB)/8, $0xaa7eebfb9df9de8d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9680(SB)/8, $0x552a74227f3ea565
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9688(SB)/8, $0xd51ea6fa85785631
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9696(SB)/8, $0xd53a88958f87275f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9704(SB)/8, $0x8533285c936b35de
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9712(SB)/8, $0x8a892abaf368f137
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9720(SB)/8, $0xa67ff273b8460356
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9728(SB)/8, $0x2d2b7569b0432d85
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9736(SB)/8, $0xd01fef10a657842c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9744(SB)/8, $0x9c3b29620e29fc73
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9752(SB)/8, $0x8213f56a67f6b29b
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9760(SB)/8, $0x8349f3ba91b47b8f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9768(SB)/8, $0xa298f2c501f45f42
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9776(SB)/8, $0x241c70a936219a73
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9784(SB)/8, $0xcb3f2f7642717713
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9792(SB)/8, $0xed238cd383aa0110
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9800(SB)/8, $0xfe0efb53d30dd4d7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9808(SB)/8, $0xf4363804324a40aa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9816(SB)/8, $0x9ec95d1463e8a506
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9824(SB)/8, $0xb143c6053edcd0d5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9832(SB)/8, $0xc67bb4597ce2ce48
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9840(SB)/8, $0xdd94b7868e94050a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9848(SB)/8, $0xf81aa16fdc1b81da
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9856(SB)/8, $0xca7cf2b4191c8326
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9864(SB)/8, $0x9b10a4e5e9913128
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9872(SB)/8, $0xfd1c2f611f63a3f0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9880(SB)/8, $0xc1d4ce1f63f57d72
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9888(SB)/8, $0xbc633b39673c8cec
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9896(SB)/8, $0xf24a01a73cf2dccf
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9904(SB)/8, $0xd5be0503e085d813
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9912(SB)/8, $0x976e41088617ca01
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9920(SB)/8, $0x4b2d8644d8a74e18
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9928(SB)/8, $0xbd49d14aa79dbc82
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9936(SB)/8, $0xddf8e7d60ed1219e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9944(SB)/8, $0xec9c459d51852ba2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9952(SB)/8, $0xcabb90e5c942b503
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9960(SB)/8, $0x93e1ab8252f33b45
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9968(SB)/8, $0x3d6a751f3b936243
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9976(SB)/8, $0xb8da1662e7b00a17
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9984(SB)/8, $0x0cc512670a783ad4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+9992(SB)/8, $0xe7109bfba19c0c9d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10000(SB)/8, $0x27fb2b80668b24c5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10008(SB)/8, $0x906a617d450187e2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10016(SB)/8, $0xb1f9f660802dedf6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10024(SB)/8, $0xb484f9dc9641e9da
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10032(SB)/8, $0x5e7873f8a0396973
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10040(SB)/8, $0xe1a63853bbd26451
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10048(SB)/8, $0xdb0b487b6423e1e8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10056(SB)/8, $0x8d07e33455637eb2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10064(SB)/8, $0x91ce1a9a3d2cda62
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10072(SB)/8, $0xb049dc016abc5e5f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10080(SB)/8, $0x7641a140cc7810fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10088(SB)/8, $0xdc5c5301c56b75f7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10096(SB)/8, $0xa9e904c87fcb0a9d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10104(SB)/8, $0x89b9b3e11b6329ba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10112(SB)/8, $0x546345fa9fbdcd44
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10120(SB)/8, $0xac2820d9623bf429
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10128(SB)/8, $0xa97c177947ad4095
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10136(SB)/8, $0xd732290fbacaf133
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10144(SB)/8, $0x49ed8eabcccc485d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10152(SB)/8, $0x867f59a9d4bed6c0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10160(SB)/8, $0x5c68f256bfff5a74
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10168(SB)/8, $0xa81f301449ee8c70
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10176(SB)/8, $0x73832eec6fff3111
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10184(SB)/8, $0xd226fc195c6a2f8c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10192(SB)/8, $0xc831fd53c5ff7eab
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10200(SB)/8, $0x83585d8fd9c25db7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10208(SB)/8, $0xba3e7ca8b77f5e55
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10216(SB)/8, $0xa42e74f3d032f525
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10224(SB)/8, $0x28ce1bd2e55f35eb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10232(SB)/8, $0xcd3a1230c43fb26f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10240(SB)/8, $0x7980d163cf5b81b3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10248(SB)/8, $0x80444b5e7aa7cf85
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10256(SB)/8, $0xd7e105bcc332621f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10264(SB)/8, $0xa0555e361951c366
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10272(SB)/8, $0x8dd9472bf3fefaa7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10280(SB)/8, $0xc86ab5c39fa63440
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10288(SB)/8, $0xb14f98f6f0feb951
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10296(SB)/8, $0xfa856334878fc150
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10304(SB)/8, $0x6ed1bf9a569f33d3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10312(SB)/8, $0x9c935e00d4b9d8d2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10320(SB)/8, $0x0a862f80ec4700c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10328(SB)/8, $0xc3b8358109e84f07
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10336(SB)/8, $0xcd27bb612758c0fa
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10344(SB)/8, $0xf4a642e14c6262c8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10352(SB)/8, $0x8038d51cb897789c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10360(SB)/8, $0x98e7e9cccfbd7dbd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10368(SB)/8, $0xe0470a63e6bd56c3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10376(SB)/8, $0xbf21e44003acdd2c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10384(SB)/8, $0x1858ccfce06cac74
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10392(SB)/8, $0xeeea5d5004981478
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10400(SB)/8, $0x0f37801e0c43ebc8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10408(SB)/8, $0x95527a5202df0ccb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10416(SB)/8, $0xd30560258f54e6ba
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10424(SB)/8, $0xbaa718e68396cffd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10432(SB)/8, $0x47c6b82ef32a2069
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10440(SB)/8, $0xe950df20247c83fd
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10448(SB)/8, $0x4cdc331d57fa5441
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10456(SB)/8, $0x91d28b7416cdd27e
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10464(SB)/8, $0xe0133fe4adf8e952
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10472(SB)/8, $0xb6472e511c81471d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10480(SB)/8, $0x58180fddd97723a6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10488(SB)/8, $0xe3d8f9e563a198e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10496(SB)/8, $0x570f09eaa7ea7648
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10504(SB)/8, $0x8e679c2f5e44ff8f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10512(SB)/8, $0x2cd2cc6551e513da
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10520(SB)/8, $0xb201833b35d63f73
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10528(SB)/8, $0xf8077f7ea65e58d1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10536(SB)/8, $0xde81e40a034bcf4f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10544(SB)/8, $0xfb04afaf27faf782
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10552(SB)/8, $0x8b112e86420f6191
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10560(SB)/8, $0x79c5db9af1f9b563
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10568(SB)/8, $0xadd57a27d29339f6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10576(SB)/8, $0x18375281ae7822bc
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10584(SB)/8, $0xd94ad8b1c7380874
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10592(SB)/8, $0x8f2293910d0b15b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10600(SB)/8, $0x87cec76f1c830548
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10608(SB)/8, $0xb2eb3875504ddb22
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10616(SB)/8, $0xa9c2794ae3a3c69a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10624(SB)/8, $0x5fa60692a46151eb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10632(SB)/8, $0xd433179d9c8cb841
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10640(SB)/8, $0xdbc7c41ba6bcd333
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10648(SB)/8, $0x849feec281d7f328
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10656(SB)/8, $0x12b9b522906c0800
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10664(SB)/8, $0xa5c7ea73224deff3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10672(SB)/8, $0xd768226b34870a00
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10680(SB)/8, $0xcf39e50feae16bef
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10688(SB)/8, $0xe6a1158300d46640
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10696(SB)/8, $0x81842f29f2cce375
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10704(SB)/8, $0x60495ae3c1097fd0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10712(SB)/8, $0xa1e53af46f801c53
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10720(SB)/8, $0x385bb19cb14bdfc4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10728(SB)/8, $0xca5e89b18b602368
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10736(SB)/8, $0x46729e03dd9ed7b5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10744(SB)/8, $0xfcf62c1dee382c42
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10752(SB)/8, $0x6c07a2c26a8346d1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10760(SB)/8, $0x9e19db92b4e31ba9
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10768(SB)/8, $0xc7098b7305241885
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10776(SB)/8, $0xc5a05277621be293
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10784(SB)/8, $0xb8cbee4fc66d1ea7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10792(SB)/8, $0xf70867153aa2db38
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10800(SB)/8, $0x737f74f1dc043328
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10808(SB)/8, $0x9a65406d44a5c903
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10816(SB)/8, $0x505f522e53053ff2
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10824(SB)/8, $0xc0fe908895cf3b44
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10832(SB)/8, $0x647726b9e7c68fef
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10840(SB)/8, $0xf13e34aabb430a15
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10848(SB)/8, $0x5eca783430dc19f5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10856(SB)/8, $0x96c6e0eab509e64d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10864(SB)/8, $0xb67d16413d132072
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10872(SB)/8, $0xbc789925624c5fe0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10880(SB)/8, $0xe41c5bd18c57e88f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10888(SB)/8, $0xeb96bf6ebadf77d8
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10896(SB)/8, $0x8e91b962f7b6f159
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10904(SB)/8, $0x933e37a534cbaae7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10912(SB)/8, $0x723627bbb5a4adb0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10920(SB)/8, $0xb80dc58e81fe95a1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10928(SB)/8, $0xcec3b1aaa30dd91c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10936(SB)/8, $0xe61136f2227e3b09
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10944(SB)/8, $0x213a4f0aa5e8a7b1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10952(SB)/8, $0x8fcac257558ee4e6
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10960(SB)/8, $0xa988e2cd4f62d19d
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10968(SB)/8, $0xb3bd72ed2af29e1f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10976(SB)/8, $0x93eb1b80a33b8605
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10984(SB)/8, $0xe0accfa875af45a7
+DATA ·p348d0202098f8f91_POW10_M128_TAB+10992(SB)/8, $0xbc72f130660533c3
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11000(SB)/8, $0x8c6c01c9498d8b88
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11008(SB)/8, $0xeb8fad7c7f8680b4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11016(SB)/8, $0xaf87023b9bf0ee6a
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11024(SB)/8, $0xa67398db9f6820e1
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11032(SB)/8, $0xdb68c2ca82ed2a05
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11040(SB)/8, $0x88083f8943a1148c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11048(SB)/8, $0x892179be91d43a43
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11056(SB)/8, $0x6a0a4f6b948959b0
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11064(SB)/8, $0xab69d82e364948d4
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11072(SB)/8, $0x848ce34679abb01c
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11080(SB)/8, $0xd6444e39c3db9b09
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11088(SB)/8, $0xf2d80e0c0c0b4e11
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11096(SB)/8, $0x85eab0e41a6940e5
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11104(SB)/8, $0x6f8e118f0f0e2195
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11112(SB)/8, $0xa7655d1d2103911f
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11120(SB)/8, $0x4b7195f2d2d1a9fb
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11128(SB)/8, $0xd13eb46469447567
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_POW10_M128_TAB+11144(SB)/8, $0x0000000000000000
+GLOBL ·p348d0202098f8f91_POW_TAB(SB), RODATA, $36
+DATA ·p348d0202098f8f91_POW_TAB+0(SB)/8, $0x0000000300000001
+DATA ·p348d0202098f8f91_POW_TAB+8(SB)/8, $0x0000000900000006
+DATA ·p348d0202098f8f91_POW_TAB+16(SB)/8, $0x000000100000000d
+DATA ·p348d0202098f8f91_POW_TAB+24(SB)/8, $0x0000001700000013
+DATA ·p348d0202098f8f91_POW_TAB+32(SB)/8, $0x000000000000001a
+GLOBL ·p348d0202098f8f91_LSHIFT_TAB(SB), RODATA, $6344
+DATA ·p348d0202098f8f91_LSHIFT_TAB+0(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+8(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+16(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+24(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+32(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+40(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+48(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+56(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+64(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+72(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+80(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+88(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+96(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+104(SB)/8, $0x0000003500000001
+DATA ·p348d0202098f8f91_LSHIFT_TAB+112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+144(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+208(SB)/8, $0x0000353200000001
+DATA ·p348d0202098f8f91_LSHIFT_TAB+216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+248(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+256(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+264(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+272(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+280(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+288(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+296(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+304(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+312(SB)/8, $0x0035323100000001
+DATA ·p348d0202098f8f91_LSHIFT_TAB+320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+328(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+336(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+344(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+352(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+360(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+368(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+376(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+384(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+392(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+400(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+408(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+416(SB)/8, $0x0035323600000002
+DATA ·p348d0202098f8f91_LSHIFT_TAB+424(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+432(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+440(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+448(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+456(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+464(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+472(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+480(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+488(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+496(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+504(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+512(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+520(SB)/8, $0x3532313300000002
+DATA ·p348d0202098f8f91_LSHIFT_TAB+528(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+536(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+544(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+552(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+560(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+576(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+592(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+600(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+608(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+616(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+624(SB)/8, $0x3236353100000002
+DATA ·p348d0202098f8f91_LSHIFT_TAB+632(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+640(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+648(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+656(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+664(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+672(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+688(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+704(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+712(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+720(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+728(SB)/8, $0x3231383700000003
+DATA ·p348d0202098f8f91_LSHIFT_TAB+736(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+744(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+752(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+760(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+768(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+784(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+800(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+808(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+816(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+824(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+832(SB)/8, $0x3630393300000003
+DATA ·p348d0202098f8f91_LSHIFT_TAB+840(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+848(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+856(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+864(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+872(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+880(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+888(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+896(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+912(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+920(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+928(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+936(SB)/8, $0x3335393100000003
+DATA ·p348d0202098f8f91_LSHIFT_TAB+944(SB)/8, $0x0000000000353231
+DATA ·p348d0202098f8f91_LSHIFT_TAB+952(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+960(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+968(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+976(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+992(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1008(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1016(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1024(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1032(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1040(SB)/8, $0x3536373900000004
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1048(SB)/8, $0x0000000000353236
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1056(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1064(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1072(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1080(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1088(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1096(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1104(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1144(SB)/8, $0x3238383400000004
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1152(SB)/8, $0x0000000035323138
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1248(SB)/8, $0x3134343200000004
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1256(SB)/8, $0x0000003532363034
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1264(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1272(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1280(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1288(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1296(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1304(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1312(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1328(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1336(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1344(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1352(SB)/8, $0x3032323100000004
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1360(SB)/8, $0x0000353231333037
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1368(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1376(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1384(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1392(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1400(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1408(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1416(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1424(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1432(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1440(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1448(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1456(SB)/8, $0x3330313600000005
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1464(SB)/8, $0x0000353236353135
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1472(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1480(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1488(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1496(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1504(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1512(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1520(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1528(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1536(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1544(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1552(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1560(SB)/8, $0x3135303300000005
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1568(SB)/8, $0x0035323138373537
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1576(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1592(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1600(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1608(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1616(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1624(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1632(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1640(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1648(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1656(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1664(SB)/8, $0x3532353100000005
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1672(SB)/8, $0x3532363039383738
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1688(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1704(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1712(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1720(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1728(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1736(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1744(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1752(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1760(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1768(SB)/8, $0x3932363700000006
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1776(SB)/8, $0x3532313335343933
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1784(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1800(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1808(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1816(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1824(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1832(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1840(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1848(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1856(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1864(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1872(SB)/8, $0x3431383300000006
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1880(SB)/8, $0x3236353632373936
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1888(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1896(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1912(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1920(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1928(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1936(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1944(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1952(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1960(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1968(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1976(SB)/8, $0x3730393100000006
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1984(SB)/8, $0x3138323336383433
+DATA ·p348d0202098f8f91_LSHIFT_TAB+1992(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2008(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2016(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2024(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2032(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2040(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2048(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2056(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2064(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2072(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2080(SB)/8, $0x3633353900000007
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2088(SB)/8, $0x3630343631333437
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2096(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2104(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2144(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2184(SB)/8, $0x3836373400000007
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2192(SB)/8, $0x3330323835313733
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2200(SB)/8, $0x0000000000353231
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2248(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2256(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2264(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2272(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2280(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2288(SB)/8, $0x3438333200000007
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2296(SB)/8, $0x3130313937353831
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2304(SB)/8, $0x0000000035323635
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2312(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2328(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2336(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2344(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2352(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2360(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2368(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2376(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2384(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2392(SB)/8, $0x3239313100000007
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2400(SB)/8, $0x3035353938323930
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2408(SB)/8, $0x0000003532313837
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2416(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2424(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2432(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2440(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2448(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2456(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2464(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2472(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2480(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2488(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2496(SB)/8, $0x3036393500000008
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2504(SB)/8, $0x3335373734343634
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2512(SB)/8, $0x0000003532363039
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2520(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2528(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2536(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2544(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2552(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2560(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2576(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2592(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2600(SB)/8, $0x3038393200000008
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2608(SB)/8, $0x3637383332323332
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2616(SB)/8, $0x0000353231333539
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2624(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2632(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2640(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2648(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2656(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2664(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2672(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2688(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2704(SB)/8, $0x3039343100000008
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2712(SB)/8, $0x3833393131363131
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2720(SB)/8, $0x0035323635363734
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2728(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2736(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2744(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2752(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2760(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2768(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2784(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2800(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2808(SB)/8, $0x3035343700000009
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2816(SB)/8, $0x3239363935303835
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2824(SB)/8, $0x0035323138323833
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2832(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2840(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2848(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2856(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2864(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2872(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2880(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2888(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2896(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2912(SB)/8, $0x3532373300000009
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2920(SB)/8, $0x3634383932303932
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2928(SB)/8, $0x3532363034313931
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2936(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2944(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2952(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2960(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2968(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2976(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+2992(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3008(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3016(SB)/8, $0x3236383100000009
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3024(SB)/8, $0x3332393431353436
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3032(SB)/8, $0x3231333037353930
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3040(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3048(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3056(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3064(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3072(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3080(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3088(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3096(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3104(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3120(SB)/8, $0x333133390000000a
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3128(SB)/8, $0x3531363437353232
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3136(SB)/8, $0x3236353135383734
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3144(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3224(SB)/8, $0x363536340000000a
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3232(SB)/8, $0x3730333738323136
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3240(SB)/8, $0x3138373532393337
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3248(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3256(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3264(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3272(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3280(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3288(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3296(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3304(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3312(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3328(SB)/8, $0x383233320000000a
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3336(SB)/8, $0x3335363334363033
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3344(SB)/8, $0x3039383236393638
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3352(SB)/8, $0x0000000000353236
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3360(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3368(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3376(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3384(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3392(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3400(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3408(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3416(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3424(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3432(SB)/8, $0x343631310000000a
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3440(SB)/8, $0x3632383132333531
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3448(SB)/8, $0x3534343138343339
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3456(SB)/8, $0x0000000035323133
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3464(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3472(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3480(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3488(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3496(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3504(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3512(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3520(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3528(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3536(SB)/8, $0x303238350000000b
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3544(SB)/8, $0x3433313930363637
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3552(SB)/8, $0x3632323730343736
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3560(SB)/8, $0x0000000035323635
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3576(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3592(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3600(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3608(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3616(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3624(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3632(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3640(SB)/8, $0x303139320000000b
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3648(SB)/8, $0x3736353430333833
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3656(SB)/8, $0x3331363330373333
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3664(SB)/8, $0x0000003532313832
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3672(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3688(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3704(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3712(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3720(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3728(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3736(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3744(SB)/8, $0x353534310000000b
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3752(SB)/8, $0x3338323235313931
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3760(SB)/8, $0x3630383135383636
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3768(SB)/8, $0x0000353236303436
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3784(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3800(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3808(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3816(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3824(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3832(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3840(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3848(SB)/8, $0x353732370000000c
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3856(SB)/8, $0x3831343136373539
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3864(SB)/8, $0x3333303935323433
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3872(SB)/8, $0x0000353231333032
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3880(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3888(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3896(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3912(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3920(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3928(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3936(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3944(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3952(SB)/8, $0x373336330000000c
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3960(SB)/8, $0x3930373038383739
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3968(SB)/8, $0x3631353932313731
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3976(SB)/8, $0x0035323635313036
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+3992(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4008(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4016(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4024(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4032(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4040(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4048(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4056(SB)/8, $0x383138310000000c
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4064(SB)/8, $0x3435333034393839
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4072(SB)/8, $0x3835373436353835
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4080(SB)/8, $0x3532313837303033
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4088(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4096(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4104(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4144(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4160(SB)/8, $0x343930390000000d
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4168(SB)/8, $0x3237373130373439
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4176(SB)/8, $0x3139373332383239
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4184(SB)/8, $0x3532363039333035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4248(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4256(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4264(SB)/8, $0x373435340000000d
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4272(SB)/8, $0x3638383035333734
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4280(SB)/8, $0x3539383131343634
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4288(SB)/8, $0x3231333539313537
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4296(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4304(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4312(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4328(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4336(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4344(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4352(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4360(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4368(SB)/8, $0x333732320000000d
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4376(SB)/8, $0x3334343537363337
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4384(SB)/8, $0x3734393530323332
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4392(SB)/8, $0x3635363739353738
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4400(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4408(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4416(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4424(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4432(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4440(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4448(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4456(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4464(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4472(SB)/8, $0x363331310000000d
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4480(SB)/8, $0x3132373733383638
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4488(SB)/8, $0x3337393230363136
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4496(SB)/8, $0x3832383839373339
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4504(SB)/8, $0x0000000000353231
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4512(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4520(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4528(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4536(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4544(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4552(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4560(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4576(SB)/8, $0x343836350000000e
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4584(SB)/8, $0x3830363838313433
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4592(SB)/8, $0x3936383431303830
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4600(SB)/8, $0x3034313439393836
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4608(SB)/8, $0x0000000000353236
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4616(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4624(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4632(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4640(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4648(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4656(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4664(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4672(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4680(SB)/8, $0x323438320000000e
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4688(SB)/8, $0x3430333439303731
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4696(SB)/8, $0x3433343730303430
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4704(SB)/8, $0x3037303739343438
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4712(SB)/8, $0x0000000035323133
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4720(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4728(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4736(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4744(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4752(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4760(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4768(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4784(SB)/8, $0x313234310000000e
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4792(SB)/8, $0x3235313734353830
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4800(SB)/8, $0x3731373330303230
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4808(SB)/8, $0x3533353834323234
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4816(SB)/8, $0x0000003532363531
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4824(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4832(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4840(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4848(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4856(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4864(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4872(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4880(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4888(SB)/8, $0x353031370000000f
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4896(SB)/8, $0x3036373533373234
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4904(SB)/8, $0x3738353831303031
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4912(SB)/8, $0x3537363234323131
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4920(SB)/8, $0x0000003532313837
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4928(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4936(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4944(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4952(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4960(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4968(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4976(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+4992(SB)/8, $0x323535330000000f
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5000(SB)/8, $0x3038383736333137
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5008(SB)/8, $0x3339323930303530
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5016(SB)/8, $0x3733333132363535
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5024(SB)/8, $0x0000353236303938
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5032(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5040(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5048(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5056(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5064(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5072(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5080(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5088(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5096(SB)/8, $0x363737310000000f
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5104(SB)/8, $0x3034393338363533
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5112(SB)/8, $0x3634363430353230
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5120(SB)/8, $0x3836363031383737
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5128(SB)/8, $0x0035323133353439
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5144(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5200(SB)/8, $0x3138383800000010
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5208(SB)/8, $0x3030373931343837
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5216(SB)/8, $0x3333323332353231
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5224(SB)/8, $0x3434333335303938
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5232(SB)/8, $0x0035323635363237
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5248(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5256(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5264(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5272(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5280(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5288(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5296(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5304(SB)/8, $0x3034343400000010
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5312(SB)/8, $0x3035383930323938
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5320(SB)/8, $0x3631363136323630
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5328(SB)/8, $0x3237363632353439
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5336(SB)/8, $0x3532313832333633
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5344(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5352(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5360(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5368(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5376(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5384(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5392(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5400(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5408(SB)/8, $0x3032323200000010
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5416(SB)/8, $0x3532393430363434
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5424(SB)/8, $0x3830383033313330
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5432(SB)/8, $0x3633333336323734
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5440(SB)/8, $0x3236303436313831
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5448(SB)/8, $0x0000000000000035
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5456(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5464(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5472(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5480(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5488(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5496(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5504(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5512(SB)/8, $0x3031313100000010
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5520(SB)/8, $0x3236343230333232
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5528(SB)/8, $0x3430343536353135
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5536(SB)/8, $0x3836363133363332
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5544(SB)/8, $0x3133303238303930
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5552(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5560(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5568(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5576(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5584(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5592(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5600(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5608(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5616(SB)/8, $0x3135353500000011
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5624(SB)/8, $0x3231333231353131
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5632(SB)/8, $0x3132303732383735
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5640(SB)/8, $0x3034333835313831
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5648(SB)/8, $0x3635313031343534
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5656(SB)/8, $0x0000000000003532
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5664(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5672(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5680(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5688(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5696(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5704(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5712(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5720(SB)/8, $0x3537373200000011
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5728(SB)/8, $0x3635313635373535
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5736(SB)/8, $0x3031353331393832
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5744(SB)/8, $0x3037313937303935
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5752(SB)/8, $0x3837303530373232
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5760(SB)/8, $0x0000000000353231
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5768(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5776(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5784(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5792(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5800(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5808(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5816(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5824(SB)/8, $0x3738333100000011
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5832(SB)/8, $0x3837303837383737
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5840(SB)/8, $0x3535373635343431
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5848(SB)/8, $0x3538353933353932
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5856(SB)/8, $0x3933353235333131
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5864(SB)/8, $0x0000000035323630
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5872(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5880(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5888(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5896(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5904(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5912(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5920(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5928(SB)/8, $0x3833393600000012
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5936(SB)/8, $0x3039333039333938
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5944(SB)/8, $0x3637373338323237
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5952(SB)/8, $0x3532393739363734
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5960(SB)/8, $0x3539363236373635
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5968(SB)/8, $0x0000000035323133
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5976(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5984(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+5992(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6000(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6008(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6016(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6024(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6032(SB)/8, $0x3936343300000012
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6040(SB)/8, $0x3539313539363434
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6048(SB)/8, $0x3838383134313633
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6056(SB)/8, $0x3236393834383332
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6064(SB)/8, $0x3734333138333837
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6072(SB)/8, $0x0000003532363536
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6080(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6088(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6096(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6104(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6112(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6136(SB)/8, $0x3433373100000012
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6144(SB)/8, $0x3739353734333237
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6152(SB)/8, $0x3434393037303836
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6160(SB)/8, $0x3138343432393131
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6168(SB)/8, $0x3337363039313933
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6176(SB)/8, $0x0000353231383238
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6240(SB)/8, $0x3337363800000013
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6248(SB)/8, $0x3838393733373136
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6256(SB)/8, $0x3032373435333034
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6264(SB)/8, $0x3630343232363935
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6272(SB)/8, $0x3936333335393539
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6280(SB)/8, $0x0000353236303431
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6288(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6296(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6304(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6312(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6320(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6328(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_LSHIFT_TAB+6336(SB)/8, $0x0000000000000000
+GLOBL ·p348d0202098f8f91_ESCAPED_TAB(SB), RODATA, $256
+DATA ·p348d0202098f8f91_ESCAPED_TAB+0(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+8(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+16(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+24(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+32(SB)/8, $0x0000000000220000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+40(SB)/8, $0x2f00000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+48(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+56(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+64(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+72(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+80(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+88(SB)/8, $0x0000005c00000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+96(SB)/8, $0x000c000000080000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+104(SB)/8, $0x000a000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+112(SB)/8, $0x00000009000d0000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+120(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+128(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+136(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+144(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+152(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+160(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+168(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+176(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+184(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+192(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+200(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+208(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+216(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+224(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+232(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+240(SB)/8, $0x0000000000000000
+DATA ·p348d0202098f8f91_ESCAPED_TAB+248(SB)/8, $0x0000000000000000

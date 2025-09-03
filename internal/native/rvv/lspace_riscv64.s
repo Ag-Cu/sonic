@@ -45,9 +45,9 @@ TEXT ·__lspace(SB), NOSPLIT, $0-32
 	NO_LOCAL_POINTERS
 
 _entry___lspace:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-64, SP, X30
-	BLTU X30, X31, _stack_grow___lspace
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-64, SP, X16
+	BLTU X16, X17, _stack_grow___lspace
 
 ___lspace:
 	MOV sp+0(FP), X10
@@ -58,6 +58,6 @@ ___lspace:
 	RET
 
 _stack_grow___lspace:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___lspace

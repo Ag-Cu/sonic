@@ -156,9 +156,9 @@ TEXT ·__validate_utf8_fast(SB), NOSPLIT, $0-16
 	NO_LOCAL_POINTERS
 
 _entry___validate_utf8_fast:
-	MOV 16(g), X31      // g.stack.hi
-	ADD $-96, SP, X30
-	BLTU X30, X31, _stack_grow___validate_utf8_fast
+	MOV 16(g), X17      // g.stack.hi
+	ADD $-96, SP, X16
+	BLTU X16, X17, _stack_grow___validate_utf8_fast
 
 ___validate_utf8_fast:
 	MOV s+0(FP), X10
@@ -167,10 +167,10 @@ ___validate_utf8_fast:
 	RET
 
 _stack_grow___validate_utf8_fast:
-	MOV X1, X3      // Save return address (RA)
+	MOV X1, X5
 	CALL runtime·morestack_noctxt(SB)
 	JMP _entry___validate_utf8_fast
 
 // Data section
-GLOBL ·p333b72de054db605_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p333b72de054db605_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p71ece2afb26072ac_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p71ece2afb26072ac_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
