@@ -23,12 +23,12 @@ import (
 	// `github.com/bytedance/sonic/internal/native/types`
 )
 
-//go:nosplit
+
 func unquote(sp unsafe.Pointer, nb int, dp unsafe.Pointer, ep *int, flags uint64) (ret int) {
     return __unquote(sp, nb, dp, ep, flags)
 }
 
-//go:nosplit
+
 //go:noescape
 //goland:noinspection GoUnusedParameter
 func __unquote(sp unsafe.Pointer, nb int, dp unsafe.Pointer, ep *int, flags uint64) (ret int)

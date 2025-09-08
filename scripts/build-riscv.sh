@@ -93,7 +93,7 @@ for src_file in "$SRC_DIR"/*.c; do
 
         # Convert assembly to Go assembly
         echo "Converting $asm_file to Go assembly for ${base_name}"
-        python3 ${TOOL_DIR}/asm2riscv/asm2riscv_v3.py ${OUT_DIR}/${base_name}_riscv64.go $asm_file
+        python3 ${TOOL_DIR}/asm2riscv/asm2riscv_split.py ${OUT_DIR}/${base_name}_riscv64.go $asm_file
 
     ) & # <-- The '&' runs the entire subshell (...) in the background.
 

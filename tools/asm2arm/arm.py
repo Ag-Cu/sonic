@@ -2070,7 +2070,7 @@ class Assembler:
         if m_size != 0:
             self.out.append('')
             self.out.append('_entry:')
-            self.out.append('\tMOVD 16(g), R16')
+            self.out.append('\tMOV 16(g), R16')
             if size > 0:
              if size < (0x1 << 12) - 1:
                  self.out.append('\tSUB $%d, RSP, R17' % (m_size))

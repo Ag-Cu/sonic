@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__skip_number_entry__(SB), NOSPLIT, $0-8
+TEXT ·__skip_number_entry__(SB), $0-8
 	MOV $·__skip_number_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__skip_number_riscv64_entry__(SB), NOSPLIT, $64
+TEXT ·__skip_number_riscv64_entry__(SB), $64
 	NO_LOCAL_POINTERS
 skip_number:
 	WORD $0xfb010113  // addi	sp, sp, -80
@@ -137,7 +137,7 @@ LBB0_20:
 	BNE X14, X13, LBB0_20  // bne	a4, a3, .LBB0_20
 	WORD $0xfff00a93  // li	s5, -1
 	WORD $0x077cb637  // lui	a2, 30667
-	MOV $·p4be13e1c5ee730fb_LCPI0_0(SB), X28  // lui	t3, %hi(.LCPI0_0)
+	MOV $·p3869c9ca53d9b32f_LCPI0_0(SB), X28  // lui	t3, %hi(.LCPI0_0)
 	// addi	t3, t3, %lo(.LCPI0_0) (skipped, covered by MOV address load)
 	WORD $0x01000f13  // li	t5, 16
 	WORD $0x00f00f93  // li	t6, 15
@@ -428,14 +428,8 @@ LBB0_85:
 Lfunc_end0:
 
 
-TEXT ·__skip_number(SB), NOSPLIT, $0-24
+TEXT ·__skip_number(SB), $0-24
 	NO_LOCAL_POINTERS
-
-_entry___skip_number:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-144, SP, X16
-	BLTU X16, X17, _stack_grow___skip_number
-
 ___skip_number:
 	MOV s+0(FP), X10
 	MOV p+8(FP), X11
@@ -443,16 +437,11 @@ ___skip_number:
 	MOV X10, ret+16(FP)
 	RET
 
-_stack_grow___skip_number:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___skip_number
-
 // Data section
-GLOBL ·p4be13e1c5ee730fb_LCPI0_0(SB), RODATA, $32
-DATA ·p4be13e1c5ee730fb_LCPI0_0+0(SB)/8, $0x03180e1d021c0100
-DATA ·p4be13e1c5ee730fb_LCPI0_0+8(SB)/8, $0x080411190f14161e
-DATA ·p4be13e1c5ee730fb_LCPI0_0+16(SB)/8, $0x07101315170d1b1f
-DATA ·p4be13e1c5ee730fb_LCPI0_0+24(SB)/8, $0x090a050b06120c1a
-GLOBL ·p4be13e1c5ee730fb_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p4be13e1c5ee730fb_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p3869c9ca53d9b32f_LCPI0_0(SB), RODATA, $32
+DATA ·p3869c9ca53d9b32f_LCPI0_0+0(SB)/8, $0x03180e1d021c0100
+DATA ·p3869c9ca53d9b32f_LCPI0_0+8(SB)/8, $0x080411190f14161e
+DATA ·p3869c9ca53d9b32f_LCPI0_0+16(SB)/8, $0x07101315170d1b1f
+DATA ·p3869c9ca53d9b32f_LCPI0_0+24(SB)/8, $0x090a050b06120c1a
+GLOBL ·p3869c9ca53d9b32f_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p3869c9ca53d9b32f_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002

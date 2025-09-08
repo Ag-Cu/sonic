@@ -1565,19 +1565,19 @@ class Assembler:
         self.out.append(f"TEXT ·{name}(SB), $0-{proto.argspace}")
         self.out.append("\tNO_LOCAL_POINTERS")
         
-        self.out.append(f"")
-        self.out.append(f"_entry_{name}:")
-        # self.out.append("\tMOV 16(g), X31      // g.stack.hi")
+        # self.out.append(f"")
+        # self.out.append(f"_entry_{name}:")
+        # self.out.append("\tMOVD 16(g), X17      // g.stack.hi")
         
         # if wrapper_stack_size < 2048:
-        #     self.out.append(f"\tADD $-{wrapper_stack_size}, SP, X30")
+        #     self.out.append(f"\tADD $-{wrapper_stack_size}, SP, X16")
         # else:
-        #     self.out.append(f"\tMOV $-{wrapper_stack_size}, X30")
-        #     self.out.append("\tADD SP, X30, X30")
+        #     self.out.append(f"\tMOV $-{wrapper_stack_size}, X16")
+        #     self.out.append("\tADD SP, X16, X16")
             
-        # self.out.append(f"\tBLTU X30, X31, _stack_grow_{name}")
+        # self.out.append(f"\tBLTU X16, X17, _stack_grow_{name}")
 
-        self.out.append(f"")
+        # self.out.append(f"")
         self.out.append(f"_{name}:")
 
         offs = 0
@@ -1597,7 +1597,7 @@ class Assembler:
         
         # self.out.append(f"")
         # self.out.append(f"_stack_grow_{name}:")
-        # self.out.append("\tMOV X1, X3      // Save return address (RA)")
+        # self.out.append("\tMOV X1, X5")
         # self.out.append("\tCALL runtime·morestack_noctxt(SB)")
         # self.out.append(f"\tJMP _entry_{name}")
 

@@ -1567,7 +1567,7 @@ class Assembler:
         
         self.out.append(f"")
         self.out.append(f"_entry_{name}:")
-        self.out.append("\tMOV 16(g), X17      // g.stack.hi")
+        self.out.append("\tMOVD 16(g), X17      // g.stack.hi")
         
         if wrapper_stack_size < 2048:
             self.out.append(f"\tADD $-{wrapper_stack_size}, SP, X16")

@@ -20,12 +20,12 @@ import (
 	"github.com/bytedance/sonic/internal/native/types"
 )
 
-//go:nosplit
+
 func vstring(s *string, p *int, v *types.JsonState, flags uint64) {
     __vstring(s, p, v, flags)
 }
 
-//go:nosplit
+
 //go:noescape
 //goland:noinspection GoUnusedParameter
 func __vstring(s *string, p *int, v *types.JsonState, flags uint64)

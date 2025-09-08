@@ -18,12 +18,12 @@
 
 package rvv
 
-//go:nosplit
+
 func i64toa(out *byte, val int64) (ret int) {
     return __i64toa(out, val)
 }
 
-//go:nosplit
+
 //go:noescape
 //goland:noinspection GoUnusedParameter
 func __i64toa(out *byte, val int64) (ret int)

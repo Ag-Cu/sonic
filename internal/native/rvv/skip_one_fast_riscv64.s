@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__skip_one_fast_entry__(SB), NOSPLIT, $0-8
+TEXT ·__skip_one_fast_entry__(SB), $0-8
 	MOV $·__skip_one_fast_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__skip_one_fast_riscv64_entry__(SB), NOSPLIT, $272
+TEXT ·__skip_one_fast_riscv64_entry__(SB), $272
 	NO_LOCAL_POINTERS
 skip_one_fast:
 	WORD $0xee010113  // addi	sp, sp, -288
@@ -232,7 +232,7 @@ LBB0_48:
 	WORD $0x53158593  // addi	a1, a1, 1329
 	WORD $0x02b50533  // mul	a0, a0, a1
 	WORD $0x01b5551b  // srliw	a0, a0, 27
-	MOV $·p7e291b5cc51a3691_LCPI0_0(SB), X11  // lui	a1, %hi(.LCPI0_0)
+	MOV $·p7c48db41412b1d2_LCPI0_0(SB), X11  // lui	a1, %hi(.LCPI0_0)
 	// addi	a1, a1, %lo(.LCPI0_0) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -283,12 +283,12 @@ LBB0_57:
 	WORD $0x00000393  // li	t2, 0
 	WORD $0x00000313  // li	t1, 0
 	WORD $0x04013c23  // sd	zero, 88(sp)
-	MOV $·p7e291b5cc51a3691_LCPI0_3(SB), X17  // lui	a7, %hi(.LCPI0_3)
-	MOV $·p7e291b5cc51a3691_LCPI0_4(SB), X28  // lui	t3, %hi(.LCPI0_4)
-	MOV $·p7e291b5cc51a3691_LCPI0_5(SB), X31  // lui	t6, %hi(.LCPI0_5)
-	MOV $·p7e291b5cc51a3691_LCPI0_6(SB), X19  // lui	s3, %hi(.LCPI0_6)
-	MOV $·p7e291b5cc51a3691_LCPI0_7(SB), X20  // lui	s4, %hi(.LCPI0_7)
-	MOV $·p7e291b5cc51a3691_LCPI0_8(SB), X23  // lui	s7, %hi(.LCPI0_8)
+	MOV $·p7c48db41412b1d2_LCPI0_3(SB), X17  // lui	a7, %hi(.LCPI0_3)
+	MOV $·p7c48db41412b1d2_LCPI0_4(SB), X28  // lui	t3, %hi(.LCPI0_4)
+	MOV $·p7c48db41412b1d2_LCPI0_5(SB), X31  // lui	t6, %hi(.LCPI0_5)
+	MOV $·p7c48db41412b1d2_LCPI0_6(SB), X19  // lui	s3, %hi(.LCPI0_6)
+	MOV $·p7c48db41412b1d2_LCPI0_7(SB), X20  // lui	s4, %hi(.LCPI0_7)
+	MOV $·p7c48db41412b1d2_LCPI0_8(SB), X23  // lui	s7, %hi(.LCPI0_8)
 	WORD $0x02a13023  // sd	a0, 32(sp)
 	WORD $0x00853503  // ld	a0, 8(a0)
 	WORD $0x00ee8eb3  // add	t4, t4, a4
@@ -300,12 +300,12 @@ LBB0_57:
 	WORD $0x5e0fb457  // vmv.v.i	v8, -1
 	WORD $0x00ff0ab7  // lui	s5, 4080
 	WORD $0x00010c37  // lui	s8, 16
-	MOV $·p7e291b5cc51a3691_LCPI0_9(SB), X9  // lui	s1, %hi(.LCPI0_9)
-	MOV $·p7e291b5cc51a3691_LCPI0_10(SB), X8  // lui	s0, %hi(.LCPI0_10)
+	MOV $·p7c48db41412b1d2_LCPI0_9(SB), X9  // lui	s1, %hi(.LCPI0_9)
+	MOV $·p7c48db41412b1d2_LCPI0_10(SB), X8  // lui	s0, %hi(.LCPI0_10)
 	WORD $0x5e00b057  // vmv.v.i	v0, 1
 	WORD $0x4206e4d7  // vmv.s.x	v9, a3
 	WORD $0x07d00693  // li	a3, 125
-	MOV $·p7e291b5cc51a3691_LCPI0_11(SB), X15  // lui	a5, %hi(.LCPI0_11)
+	MOV $·p7c48db41412b1d2_LCPI0_11(SB), X15  // lui	a5, %hi(.LCPI0_11)
 	WORD $0xcd827057  // vsetivli	zero, 4, e64, m1, ta, ma
 	WORD $0x5e003557  // vmv.v.i	v10, 0
 	WORD $0x00001837  // lui	a6, 1
@@ -1323,12 +1323,12 @@ LBB0_193:
 	WORD $0x00000593  // li	a1, 0
 	WORD $0x00000313  // li	t1, 0
 	WORD $0x06013023  // sd	zero, 96(sp)
-	MOV $·p7e291b5cc51a3691_LCPI0_3(SB), X17  // lui	a7, %hi(.LCPI0_3)
-	MOV $·p7e291b5cc51a3691_LCPI0_4(SB), X18  // lui	s2, %hi(.LCPI0_4)
-	MOV $·p7e291b5cc51a3691_LCPI0_5(SB), X31  // lui	t6, %hi(.LCPI0_5)
-	MOV $·p7e291b5cc51a3691_LCPI0_6(SB), X19  // lui	s3, %hi(.LCPI0_6)
-	MOV $·p7e291b5cc51a3691_LCPI0_7(SB), X23  // lui	s7, %hi(.LCPI0_7)
-	MOV $·p7e291b5cc51a3691_LCPI0_8(SB), X24  // lui	s8, %hi(.LCPI0_8)
+	MOV $·p7c48db41412b1d2_LCPI0_3(SB), X17  // lui	a7, %hi(.LCPI0_3)
+	MOV $·p7c48db41412b1d2_LCPI0_4(SB), X18  // lui	s2, %hi(.LCPI0_4)
+	MOV $·p7c48db41412b1d2_LCPI0_5(SB), X31  // lui	t6, %hi(.LCPI0_5)
+	MOV $·p7c48db41412b1d2_LCPI0_6(SB), X19  // lui	s3, %hi(.LCPI0_6)
+	MOV $·p7c48db41412b1d2_LCPI0_7(SB), X23  // lui	s7, %hi(.LCPI0_7)
+	MOV $·p7c48db41412b1d2_LCPI0_8(SB), X24  // lui	s8, %hi(.LCPI0_8)
 	WORD $0x02a13023  // sd	a0, 32(sp)
 	WORD $0x00853483  // ld	s1, 8(a0)
 	WORD $0x00ee8eb3  // add	t4, t4, a4
@@ -1340,12 +1340,12 @@ LBB0_193:
 	WORD $0x5e0fb457  // vmv.v.i	v8, -1
 	WORD $0x00ff03b7  // lui	t2, 4080
 	WORD $0x00010cb7  // lui	s9, 16
-	MOV $·p7e291b5cc51a3691_LCPI0_9(SB), X26  // lui	s10, %hi(.LCPI0_9)
-	MOV $·p7e291b5cc51a3691_LCPI0_10(SB), X15  // lui	a5, %hi(.LCPI0_10)
+	MOV $·p7c48db41412b1d2_LCPI0_9(SB), X26  // lui	s10, %hi(.LCPI0_9)
+	MOV $·p7c48db41412b1d2_LCPI0_10(SB), X15  // lui	a5, %hi(.LCPI0_10)
 	WORD $0x5e00b057  // vmv.v.i	v0, 1
 	WORD $0x4206e4d7  // vmv.s.x	v9, a3
 	WORD $0x05d00693  // li	a3, 93
-	MOV $·p7e291b5cc51a3691_LCPI0_11(SB), X16  // lui	a6, %hi(.LCPI0_11)
+	MOV $·p7c48db41412b1d2_LCPI0_11(SB), X16  // lui	a6, %hi(.LCPI0_11)
 	WORD $0xcd827057  // vsetivli	zero, 4, e64, m1, ta, ma
 	WORD $0x5e003557  // vmv.v.i	v10, 0
 	WORD $0x00001e37  // lui	t3, 1
@@ -2173,7 +2173,7 @@ LBB0_291:
 	WORD $0xffe00393  // li	t2, -2
 	JMP LBB0_301  // j	.LBB0_301
 LBB0_292:
-	MOV $·p7e291b5cc51a3691_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
+	MOV $·p7c48db41412b1d2_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI0_1)(a0)
 	WORD $0x40e005b3  // neg	a1, a4
 	WORD $0x00e5f5b3  // and	a1, a1, a4
@@ -2181,14 +2181,14 @@ LBB0_292:
 	WORD $0x0086b603  // ld	a2, 8(a3)
 	WORD $0x02a58533  // mul	a0, a1, a0
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p7e291b5cc51a3691_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
+	MOV $·p7c48db41412b1d2_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
 	// addi	a1, a1, %lo(.LCPI0_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
 	WORD $0x06013583  // ld	a1, 96(sp)
 	JMP LBB0_294  // j	.LBB0_294
 LBB0_293:
-	MOV $·p7e291b5cc51a3691_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
+	MOV $·p7c48db41412b1d2_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI0_1)(a0)
 	WORD $0x40e005b3  // neg	a1, a4
 	WORD $0x00e5f5b3  // and	a1, a1, a4
@@ -2196,7 +2196,7 @@ LBB0_293:
 	WORD $0x0086b603  // ld	a2, 8(a3)
 	WORD $0x02a58533  // mul	a0, a1, a0
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p7e291b5cc51a3691_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
+	MOV $·p7c48db41412b1d2_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
 	// addi	a1, a1, %lo(.LCPI0_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -2218,13 +2218,13 @@ LBB0_296:
 	WORD $0x00b563b3  // or	t2, a0, a1
 	JMP LBB0_301  // j	.LBB0_301
 LBB0_297:
-	MOV $·p7e291b5cc51a3691_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
+	MOV $·p7c48db41412b1d2_LCPI0_1(SB), X10  // lui	a0, %hi(.LCPI0_1)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI0_1)(a0)
 	WORD $0x40c005b3  // neg	a1, a2
 	WORD $0x00c5f5b3  // and	a1, a1, a2
 	WORD $0x02a58533  // mul	a0, a1, a0
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p7e291b5cc51a3691_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
+	MOV $·p7c48db41412b1d2_LCPI0_2(SB), X11  // lui	a1, %hi(.LCPI0_2)
 	// addi	a1, a1, %lo(.LCPI0_2) (skipped, covered by MOV address load)
 	WORD $0x00b50533  // add	a0, a0, a1
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -2282,14 +2282,8 @@ LBB0_308:
 Lfunc_end0:
 
 
-TEXT ·__skip_one_fast(SB), NOSPLIT, $0-24
+TEXT ·__skip_one_fast(SB), $0-24
 	NO_LOCAL_POINTERS
-
-_entry___skip_one_fast:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-352, SP, X16
-	BLTU X16, X17, _stack_grow___skip_one_fast
-
 ___skip_one_fast:
 	MOV s+0(FP), X10
 	MOV p+8(FP), X11
@@ -2297,48 +2291,43 @@ ___skip_one_fast:
 	MOV X10, ret+16(FP)
 	RET
 
-_stack_grow___skip_one_fast:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___skip_one_fast
-
 // Data section
-GLOBL ·p7e291b5cc51a3691_LCPI0_0(SB), RODATA, $32
-DATA ·p7e291b5cc51a3691_LCPI0_0+0(SB)/8, $0x03180e1d021c0100
-DATA ·p7e291b5cc51a3691_LCPI0_0+8(SB)/8, $0x080411190f14161e
-DATA ·p7e291b5cc51a3691_LCPI0_0+16(SB)/8, $0x07101315170d1b1f
-DATA ·p7e291b5cc51a3691_LCPI0_0+24(SB)/8, $0x090a050b06120c1a
-GLOBL ·p7e291b5cc51a3691_LCPI0_1(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_1+0(SB)/8, $0x0218a392cd3d5dbf
-GLOBL ·p7e291b5cc51a3691_LCPI0_3(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_3+0(SB)/8, $0xaaaaaaaaaaaaaaaa
-GLOBL ·p7e291b5cc51a3691_LCPI0_4(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_4+0(SB)/8, $0x8888888888888888
-GLOBL ·p7e291b5cc51a3691_LCPI0_5(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_5+0(SB)/8, $0x5555555555555555
-GLOBL ·p7e291b5cc51a3691_LCPI0_6(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_6+0(SB)/8, $0x4444444444444444
-GLOBL ·p7e291b5cc51a3691_LCPI0_7(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_7+0(SB)/8, $0x2222222222222222
-GLOBL ·p7e291b5cc51a3691_LCPI0_8(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_8+0(SB)/8, $0x1111111111111111
-GLOBL ·p7e291b5cc51a3691_LCPI0_9(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_9+0(SB)/8, $0x0f0f0f0f0f0f0f0f
-GLOBL ·p7e291b5cc51a3691_LCPI0_10(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_10+0(SB)/8, $0x3333333333333333
-GLOBL ·p7e291b5cc51a3691_LCPI0_11(SB), RODATA, $8
-DATA ·p7e291b5cc51a3691_LCPI0_11+0(SB)/8, $0x0101010101010101
-GLOBL ·p7e291b5cc51a3691_LCPI0_2(SB), RODATA, $83
-DATA ·p7e291b5cc51a3691_LCPI0_2+0(SB)/8, $0x30305c3030305c22
-DATA ·p7e291b5cc51a3691_LCPI0_2+8(SB)/8, $0x30305c3230305c31
-DATA ·p7e291b5cc51a3691_LCPI0_2+16(SB)/8, $0x5c725c3330305c37
-DATA ·p7e291b5cc51a3691_LCPI0_2+24(SB)/8, $0x30305c3332305c62
-DATA ·p7e291b5cc51a3691_LCPI0_2+32(SB)/8, $0x31305c3133305c34
-DATA ·p7e291b5cc51a3691_LCPI0_2+40(SB)/8, $0x5c745c3433305c36
-DATA ·p7e291b5cc51a3691_LCPI0_2+48(SB)/8, $0x305c283432305c22
-DATA ·p7e291b5cc51a3691_LCPI0_2+56(SB)/8, $0x305c3132305c3530
-DATA ·p7e291b5cc51a3691_LCPI0_2+64(SB)/8, $0x2e3731305c263233
-DATA ·p7e291b5cc51a3691_LCPI0_2+72(SB)/8, $0x5c6e5c303533305c
-DATA ·p7e291b5cc51a3691_LCPI0_2+80(SB)/8, $0x0000000000373330
-GLOBL ·p7e291b5cc51a3691_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p7e291b5cc51a3691_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p7c48db41412b1d2_LCPI0_0(SB), RODATA, $32
+DATA ·p7c48db41412b1d2_LCPI0_0+0(SB)/8, $0x03180e1d021c0100
+DATA ·p7c48db41412b1d2_LCPI0_0+8(SB)/8, $0x080411190f14161e
+DATA ·p7c48db41412b1d2_LCPI0_0+16(SB)/8, $0x07101315170d1b1f
+DATA ·p7c48db41412b1d2_LCPI0_0+24(SB)/8, $0x090a050b06120c1a
+GLOBL ·p7c48db41412b1d2_LCPI0_1(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_1+0(SB)/8, $0x0218a392cd3d5dbf
+GLOBL ·p7c48db41412b1d2_LCPI0_3(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_3+0(SB)/8, $0xaaaaaaaaaaaaaaaa
+GLOBL ·p7c48db41412b1d2_LCPI0_4(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_4+0(SB)/8, $0x8888888888888888
+GLOBL ·p7c48db41412b1d2_LCPI0_5(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_5+0(SB)/8, $0x5555555555555555
+GLOBL ·p7c48db41412b1d2_LCPI0_6(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_6+0(SB)/8, $0x4444444444444444
+GLOBL ·p7c48db41412b1d2_LCPI0_7(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_7+0(SB)/8, $0x2222222222222222
+GLOBL ·p7c48db41412b1d2_LCPI0_8(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_8+0(SB)/8, $0x1111111111111111
+GLOBL ·p7c48db41412b1d2_LCPI0_9(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_9+0(SB)/8, $0x0f0f0f0f0f0f0f0f
+GLOBL ·p7c48db41412b1d2_LCPI0_10(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_10+0(SB)/8, $0x3333333333333333
+GLOBL ·p7c48db41412b1d2_LCPI0_11(SB), RODATA, $8
+DATA ·p7c48db41412b1d2_LCPI0_11+0(SB)/8, $0x0101010101010101
+GLOBL ·p7c48db41412b1d2_LCPI0_2(SB), RODATA, $83
+DATA ·p7c48db41412b1d2_LCPI0_2+0(SB)/8, $0x30305c3030305c22
+DATA ·p7c48db41412b1d2_LCPI0_2+8(SB)/8, $0x30305c3230305c31
+DATA ·p7c48db41412b1d2_LCPI0_2+16(SB)/8, $0x5c725c3330305c37
+DATA ·p7c48db41412b1d2_LCPI0_2+24(SB)/8, $0x30305c3332305c62
+DATA ·p7c48db41412b1d2_LCPI0_2+32(SB)/8, $0x31305c3133305c34
+DATA ·p7c48db41412b1d2_LCPI0_2+40(SB)/8, $0x5c745c3433305c36
+DATA ·p7c48db41412b1d2_LCPI0_2+48(SB)/8, $0x305c283432305c22
+DATA ·p7c48db41412b1d2_LCPI0_2+56(SB)/8, $0x305c3132305c3530
+DATA ·p7c48db41412b1d2_LCPI0_2+64(SB)/8, $0x2e3731305c263233
+DATA ·p7c48db41412b1d2_LCPI0_2+72(SB)/8, $0x5c6e5c303533305c
+DATA ·p7c48db41412b1d2_LCPI0_2+80(SB)/8, $0x0000000000373330
+GLOBL ·p7c48db41412b1d2_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p7c48db41412b1d2_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002

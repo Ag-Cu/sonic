@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__lookup_small_key_entry__(SB), NOSPLIT, $0-8
+TEXT ·__lookup_small_key_entry__(SB), $0-8
 	MOV $·__lookup_small_key_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__lookup_small_key_riscv64_entry__(SB), NOSPLIT, $48
+TEXT ·__lookup_small_key_riscv64_entry__(SB), $48
 	NO_LOCAL_POINTERS
 lookup_small_key:
 	WORD $0xfc010113  // addi	sp, sp, -64
@@ -276,14 +276,8 @@ LBB0_44:
 Lfunc_end0:
 
 
-TEXT ·__lookup_small_key(SB), NOSPLIT, $0-32
+TEXT ·__lookup_small_key(SB), $0-32
 	NO_LOCAL_POINTERS
-
-_entry___lookup_small_key:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-128, SP, X16
-	BLTU X16, X17, _stack_grow___lookup_small_key
-
 ___lookup_small_key:
 	MOV key+0(FP), X10
 	MOV table+8(FP), X11
@@ -291,8 +285,3 @@ ___lookup_small_key:
 	CALL ·__lookup_small_key_riscv64_entry__(SB)
 	MOV X10, ret+24(FP)
 	RET
-
-_stack_grow___lookup_small_key:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___lookup_small_key

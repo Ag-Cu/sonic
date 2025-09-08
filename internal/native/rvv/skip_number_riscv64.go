@@ -18,12 +18,12 @@
 
 package rvv
 
-//go:nosplit
+
 func skip_number(s *string, p *int) (ret int) {
     return __skip_number(s, p)
 }
 
-//go:nosplit
+
 //go:noescape
 //goland:noinspection GoUnusedParameter
 func __skip_number(s *string, p *int) (ret int)

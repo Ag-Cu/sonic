@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__validate_utf8_fast_entry__(SB), NOSPLIT, $0-8
+TEXT ·__validate_utf8_fast_entry__(SB), $0-8
 	MOV $·__validate_utf8_fast_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__validate_utf8_fast_riscv64_entry__(SB), NOSPLIT, $16
+TEXT ·__validate_utf8_fast_riscv64_entry__(SB), $16
 	NO_LOCAL_POINTERS
 validate_utf8_fast:
 	WORD $0xfe010113  // addi	sp, sp, -32
@@ -152,25 +152,14 @@ LBB0_30:
 Lfunc_end0:
 
 
-TEXT ·__validate_utf8_fast(SB), NOSPLIT, $0-16
+TEXT ·__validate_utf8_fast(SB), $0-16
 	NO_LOCAL_POINTERS
-
-_entry___validate_utf8_fast:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-96, SP, X16
-	BLTU X16, X17, _stack_grow___validate_utf8_fast
-
 ___validate_utf8_fast:
 	MOV s+0(FP), X10
 	CALL ·__validate_utf8_fast_riscv64_entry__(SB)
 	MOV X10, ret+8(FP)
 	RET
 
-_stack_grow___validate_utf8_fast:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___validate_utf8_fast
-
 // Data section
-GLOBL ·p71ece2afb26072ac_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p71ece2afb26072ac_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p26007bfd8ae08b5f_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p26007bfd8ae08b5f_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002

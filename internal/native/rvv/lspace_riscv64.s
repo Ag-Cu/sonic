@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__lspace_entry__(SB), NOSPLIT, $0-8
+TEXT ·__lspace_entry__(SB), $0-8
 	MOV $·__lspace_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__lspace_riscv64_entry__(SB), NOSPLIT, $0
+TEXT ·__lspace_riscv64_entry__(SB), $0
 	NO_LOCAL_POINTERS
 lspace:
 	WORD $0x00c506b3  // add	a3, a0, a2
@@ -41,14 +41,8 @@ LBB0_7:
 Lfunc_end0:
 
 
-TEXT ·__lspace(SB), NOSPLIT, $0-32
+TEXT ·__lspace(SB), $0-32
 	NO_LOCAL_POINTERS
-
-_entry___lspace:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-64, SP, X16
-	BLTU X16, X17, _stack_grow___lspace
-
 ___lspace:
 	MOV sp+0(FP), X10
 	MOV nb+8(FP), X11
@@ -56,8 +50,3 @@ ___lspace:
 	CALL ·__lspace_riscv64_entry__(SB)
 	MOV X10, ret+24(FP)
 	RET
-
-_stack_grow___lspace:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___lspace

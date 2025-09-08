@@ -22,12 +22,12 @@ import (
 	"github.com/bytedance/sonic/internal/native/types"
 )
 
-//go:nosplit
+
 func get_by_path(s *string, p *int, path *[]interface{}, m *types.StateMachine) (ret int) {
     return __get_by_path(s, p, path, m)
 }
 
-//go:nosplit
+
 //go:noescape
 //goland:noinspection GoUnusedParameter
 func __get_by_path(s *string, p *int, path *[]interface{}, m *types.StateMachine) (ret int)

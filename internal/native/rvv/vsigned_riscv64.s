@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__vsigned_entry__(SB), NOSPLIT, $0-8
+TEXT ·__vsigned_entry__(SB), $0-8
 	MOV $·__vsigned_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__vsigned_riscv64_entry__(SB), NOSPLIT, $0
+TEXT ·__vsigned_riscv64_entry__(SB), $0
 	NO_LOCAL_POINTERS
 vsigned:
 	WORD $0x0005be03  // ld	t3, 0(a1)
@@ -113,14 +113,8 @@ LBB0_24:
 Lfunc_end0:
 
 
-TEXT ·__vsigned(SB), NOSPLIT, $0-24
+TEXT ·__vsigned(SB), $0-24
 	NO_LOCAL_POINTERS
-
-_entry___vsigned:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-64, SP, X16
-	BLTU X16, X17, _stack_grow___vsigned
-
 ___vsigned:
 	MOV s+0(FP), X10
 	MOV p+8(FP), X11
@@ -128,11 +122,6 @@ ___vsigned:
 	CALL ·__vsigned_riscv64_entry__(SB)
 	RET
 
-_stack_grow___vsigned:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___vsigned
-
 // Data section
-GLOBL ·p816d936deb221da_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p816d936deb221da_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p7c74becfb9770c45_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p7c74becfb9770c45_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002

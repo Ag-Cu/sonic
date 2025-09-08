@@ -5,12 +5,12 @@
 #include "funcdata.h"
 #include "textflag.h"
 
-TEXT ·__vstring_entry__(SB), NOSPLIT, $0-8
+TEXT ·__vstring_entry__(SB), $0-8
 	MOV $·__vstring_riscv64_entry__(SB), A0
 	MOV A0, ret+0(FP)
 	RET
 
-TEXT ·__vstring_riscv64_entry__(SB), NOSPLIT, $112
+TEXT ·__vstring_riscv64_entry__(SB), $112
 	NO_LOCAL_POINTERS
 vstring:
 	WORD $0xf8010113  // addi	sp, sp, -128
@@ -61,14 +61,14 @@ LBB0_5:
 	WORD $0x00000913  // li	s2, 0
 	BLTU X20, X10, LBB0_91  // bltu	s4, a0, .LBB0_91
 	WORD $0xfff00b13  // li	s6, -1
-	MOV $·p64497cb99b34a08_LCPI0_2(SB), X10  // lui	a0, %hi(.LCPI0_2)
-	MOV $·p64497cb99b34a08_LCPI0_3(SB), X13  // lui	a3, %hi(.LCPI0_3)
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_2(SB), X10  // lui	a0, %hi(.LCPI0_2)
+	MOV $·p5f6a1f9280687903_LCPI0_3(SB), X13  // lui	a3, %hi(.LCPI0_3)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
 	MOV (X10), X6  // ld	t1, %lo(.LCPI0_2)(a0)
 	MOV (X13), X29  // ld	t4, %lo(.LCPI0_3)(a3)
 	MOV (X14), X28  // ld	t3, %lo(.LCPI0_0)(a4)
 	WORD $0x03f00f93  // li	t6, 63
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X5  // lui	t0, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X5  // lui	t0, %hi(.LCPI0_1)
 	// addi	t0, t0, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0xfff00813  // li	a6, -1
 LBB0_8:
@@ -248,7 +248,7 @@ LBB0_30:
 	WORD $0x00abfbb3  // and	s7, s7, a0
 	BEQZ X23, LBB0_27  // beqz	s7, .LBB0_27
 LBB0_31:
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X10  // lui	a0, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X10  // lui	a0, %hi(.LCPI0_0)
 	MOV (X10), X10  // ld	a0, %lo(.LCPI0_0)(a0)
 	WORD $0x417006b3  // neg	a3, s7
 	WORD $0x00dbf6b3  // and	a3, s7, a3
@@ -294,9 +294,9 @@ LBB0_37:
 	WORD $0x5e0fb557  // vmv.v.i	v10, -1
 	WORD $0x01000b13  // li	s6, 16
 	WORD $0x01f00513  // li	a0, 31
-	MOV $·p64497cb99b34a08_LCPI0_2(SB), X13  // lui	a3, %hi(.LCPI0_2)
-	MOV $·p64497cb99b34a08_LCPI0_3(SB), X14  // lui	a4, %hi(.LCPI0_3)
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X15  // lui	a5, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_2(SB), X13  // lui	a3, %hi(.LCPI0_2)
+	MOV $·p5f6a1f9280687903_LCPI0_3(SB), X14  // lui	a4, %hi(.LCPI0_3)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X15  // lui	a5, %hi(.LCPI0_0)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_2)(a3)
 	WORD $0x00d13823  // sd	a3, 16(sp)
 	MOV (X14), X13  // ld	a3, %lo(.LCPI0_3)(a4)
@@ -595,7 +595,7 @@ LBB0_85:
 	WORD $0x00013703  // ld	a4, 0(sp)
 	WORD $0x02e50533  // mul	a0, a0, a4
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X14  // lui	a4, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X14  // lui	a4, %hi(.LCPI0_1)
 	// addi	a4, a4, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x00054803  // lbu	a6, 0(a0)
@@ -620,13 +620,13 @@ LBB0_87:
 	WORD $0x00ac7c33  // and	s8, s8, a0
 	JMP LBB0_82  // j	.LBB0_82
 LBB0_88:
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X10  // lui	a0, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X10  // lui	a0, %hi(.LCPI0_0)
 	MOV (X10), X13  // ld	a3, %lo(.LCPI0_0)(a0)
 	WORD $0x41800533  // neg	a0, s8
 	WORD $0x00ac7533  // and	a0, s8, a0
 	WORD $0x02d50533  // mul	a0, a0, a3
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X15  // lui	a5, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X15  // lui	a5, %hi(.LCPI0_1)
 	// addi	a5, a5, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x00f50533  // add	a0, a0, a5
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -724,13 +724,13 @@ LBB0_100:
 	BNEZ X18, LBB0_160  // bnez	s2, .LBB0_160
 	BEQZ X10, LBB0_161  // beqz	a0, .LBB0_161
 LBB0_104:
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X13  // lui	a3, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X13  // lui	a3, %hi(.LCPI0_0)
 	MOV (X13), X13  // ld	a3, %lo(.LCPI0_0)(a3)
 	WORD $0x40a00733  // neg	a4, a0
 	WORD $0x00e57533  // and	a0, a0, a4
 	WORD $0x02d50533  // mul	a0, a0, a3
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X13  // lui	a3, %hi(.LCPI0_1)
 	// addi	a3, a3, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x00d50533  // add	a0, a0, a3
 	JMP LBB0_32  // j	.LBB0_32
@@ -896,13 +896,13 @@ LBB0_126:
 LBB0_129:
 	WORD $0x00f686bb  // addw	a3, a3, a5
 	BEQZ X10, LBB0_136  // beqz	a0, .LBB0_136
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X14  // lui	a4, %hi(.LCPI0_0)
 	MOV (X14), X14  // ld	a4, %lo(.LCPI0_0)(a4)
 	WORD $0x40a007b3  // neg	a5, a0
 	WORD $0x00f57533  // and	a0, a0, a5
 	WORD $0x02e50533  // mul	a0, a0, a4
 	WORD $0x03a55513  // srli	a0, a0, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X14  // lui	a4, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X14  // lui	a4, %hi(.LCPI0_1)
 	// addi	a4, a4, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x00e50533  // add	a0, a0, a4
 	WORD $0x00054503  // lbu	a0, 0(a0)
@@ -997,7 +997,7 @@ LBB0_156:
 	WORD $0x53170713  // addi	a4, a4, 1329
 	WORD $0x02e686b3  // mul	a3, a3, a4
 	WORD $0x01b6d69b  // srliw	a3, a3, 27
-	MOV $·p64497cb99b34a08_LCPI0_4(SB), X14  // lui	a4, %hi(.LCPI0_4)
+	MOV $·p5f6a1f9280687903_LCPI0_4(SB), X14  // lui	a4, %hi(.LCPI0_4)
 	// addi	a4, a4, %lo(.LCPI0_4) (skipped, covered by MOV address load)
 	WORD $0x00e686b3  // add	a3, a3, a4
 	JMP LBB0_90  // j	.LBB0_90
@@ -1008,13 +1008,13 @@ LBB0_157:
 LBB0_158:
 	WORD $0xfff00793  // li	a5, -1
 	BNE X16, X15, LBB0_160  // bne	a6, a5, .LBB0_160
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X15  // lui	a5, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X15  // lui	a5, %hi(.LCPI0_0)
 	MOV (X15), X15  // ld	a5, %lo(.LCPI0_0)(a5)
 	WORD $0x40e004b3  // neg	s1, a4
 	WORD $0x00e4f4b3  // and	s1, s1, a4
 	WORD $0x02f487b3  // mul	a5, s1, a5
 	WORD $0x03a7d793  // srli	a5, a5, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X9  // lui	s1, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X9  // lui	s1, %hi(.LCPI0_1)
 	// addi	s1, s1, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x009787b3  // add	a5, a5, s1
 	WORD $0x0007c803  // lbu	a6, 0(a5)
@@ -1090,13 +1090,13 @@ LBB0_175:
 LBB0_177:
 	WORD $0xfff00413  // li	s0, -1
 	BNE X16, X8, LBB0_179  // bne	a6, s0, .LBB0_179
-	MOV $·p64497cb99b34a08_LCPI0_0(SB), X8  // lui	s0, %hi(.LCPI0_0)
+	MOV $·p5f6a1f9280687903_LCPI0_0(SB), X8  // lui	s0, %hi(.LCPI0_0)
 	MOV (X8), X16  // ld	a6, %lo(.LCPI0_0)(s0)
 	WORD $0x41d00433  // neg	s0, t4
 	WORD $0x008ef433  // and	s0, t4, s0
 	WORD $0x03040433  // mul	s0, s0, a6
 	WORD $0x03a45413  // srli	s0, s0, 58
-	MOV $·p64497cb99b34a08_LCPI0_1(SB), X9  // lui	s1, %hi(.LCPI0_1)
+	MOV $·p5f6a1f9280687903_LCPI0_1(SB), X9  // lui	s1, %hi(.LCPI0_1)
 	// addi	s1, s1, %lo(.LCPI0_1) (skipped, covered by MOV address load)
 	WORD $0x00940433  // add	s0, s0, s1
 	WORD $0x00044803  // lbu	a6, 0(s0)
@@ -1151,14 +1151,8 @@ LBB0_188:
 Lfunc_end0:
 
 
-TEXT ·__vstring(SB), NOSPLIT, $0-32
+TEXT ·__vstring(SB), $0-32
 	NO_LOCAL_POINTERS
-
-_entry___vstring:
-	MOV 16(g), X17      // g.stack.hi
-	ADD $-192, SP, X16
-	BLTU X16, X17, _stack_grow___vstring
-
 ___vstring:
 	MOV s+0(FP), X10
 	MOV p+8(FP), X11
@@ -1167,34 +1161,29 @@ ___vstring:
 	CALL ·__vstring_riscv64_entry__(SB)
 	RET
 
-_stack_grow___vstring:
-	MOV X1, X5
-	CALL runtime·morestack_noctxt(SB)
-	JMP _entry___vstring
-
 // Data section
-GLOBL ·p64497cb99b34a08_LCPI0_0(SB), RODATA, $8
-DATA ·p64497cb99b34a08_LCPI0_0+0(SB)/8, $0x0218a392cd3d5dbf
-GLOBL ·p64497cb99b34a08_LCPI0_2(SB), RODATA, $8
-DATA ·p64497cb99b34a08_LCPI0_2+0(SB)/8, $0xaaaaaaaaaaaaaaaa
-GLOBL ·p64497cb99b34a08_LCPI0_3(SB), RODATA, $8
-DATA ·p64497cb99b34a08_LCPI0_3+0(SB)/8, $0x5555555555555555
-GLOBL ·p64497cb99b34a08_LCPI0_1(SB), RODATA, $83
-DATA ·p64497cb99b34a08_LCPI0_1+0(SB)/8, $0x30305c3030305c22
-DATA ·p64497cb99b34a08_LCPI0_1+8(SB)/8, $0x30305c3230305c31
-DATA ·p64497cb99b34a08_LCPI0_1+16(SB)/8, $0x5c725c3330305c37
-DATA ·p64497cb99b34a08_LCPI0_1+24(SB)/8, $0x30305c3332305c62
-DATA ·p64497cb99b34a08_LCPI0_1+32(SB)/8, $0x31305c3133305c34
-DATA ·p64497cb99b34a08_LCPI0_1+40(SB)/8, $0x5c745c3433305c36
-DATA ·p64497cb99b34a08_LCPI0_1+48(SB)/8, $0x305c283432305c22
-DATA ·p64497cb99b34a08_LCPI0_1+56(SB)/8, $0x305c3132305c3530
-DATA ·p64497cb99b34a08_LCPI0_1+64(SB)/8, $0x2e3731305c263233
-DATA ·p64497cb99b34a08_LCPI0_1+72(SB)/8, $0x5c6e5c303533305c
-DATA ·p64497cb99b34a08_LCPI0_1+80(SB)/8, $0x0000000000373330
-GLOBL ·p64497cb99b34a08_LCPI0_4(SB), RODATA, $32
-DATA ·p64497cb99b34a08_LCPI0_4+0(SB)/8, $0x03180e1d021c0100
-DATA ·p64497cb99b34a08_LCPI0_4+8(SB)/8, $0x080411190f14161e
-DATA ·p64497cb99b34a08_LCPI0_4+16(SB)/8, $0x07101315170d1b1f
-DATA ·p64497cb99b34a08_LCPI0_4+24(SB)/8, $0x090a050b06120c1a
-GLOBL ·p64497cb99b34a08_MASK_USE_NUMBER(SB), RODATA, $4
-DATA ·p64497cb99b34a08_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
+GLOBL ·p5f6a1f9280687903_LCPI0_0(SB), RODATA, $8
+DATA ·p5f6a1f9280687903_LCPI0_0+0(SB)/8, $0x0218a392cd3d5dbf
+GLOBL ·p5f6a1f9280687903_LCPI0_2(SB), RODATA, $8
+DATA ·p5f6a1f9280687903_LCPI0_2+0(SB)/8, $0xaaaaaaaaaaaaaaaa
+GLOBL ·p5f6a1f9280687903_LCPI0_3(SB), RODATA, $8
+DATA ·p5f6a1f9280687903_LCPI0_3+0(SB)/8, $0x5555555555555555
+GLOBL ·p5f6a1f9280687903_LCPI0_1(SB), RODATA, $83
+DATA ·p5f6a1f9280687903_LCPI0_1+0(SB)/8, $0x30305c3030305c22
+DATA ·p5f6a1f9280687903_LCPI0_1+8(SB)/8, $0x30305c3230305c31
+DATA ·p5f6a1f9280687903_LCPI0_1+16(SB)/8, $0x5c725c3330305c37
+DATA ·p5f6a1f9280687903_LCPI0_1+24(SB)/8, $0x30305c3332305c62
+DATA ·p5f6a1f9280687903_LCPI0_1+32(SB)/8, $0x31305c3133305c34
+DATA ·p5f6a1f9280687903_LCPI0_1+40(SB)/8, $0x5c745c3433305c36
+DATA ·p5f6a1f9280687903_LCPI0_1+48(SB)/8, $0x305c283432305c22
+DATA ·p5f6a1f9280687903_LCPI0_1+56(SB)/8, $0x305c3132305c3530
+DATA ·p5f6a1f9280687903_LCPI0_1+64(SB)/8, $0x2e3731305c263233
+DATA ·p5f6a1f9280687903_LCPI0_1+72(SB)/8, $0x5c6e5c303533305c
+DATA ·p5f6a1f9280687903_LCPI0_1+80(SB)/8, $0x0000000000373330
+GLOBL ·p5f6a1f9280687903_LCPI0_4(SB), RODATA, $32
+DATA ·p5f6a1f9280687903_LCPI0_4+0(SB)/8, $0x03180e1d021c0100
+DATA ·p5f6a1f9280687903_LCPI0_4+8(SB)/8, $0x080411190f14161e
+DATA ·p5f6a1f9280687903_LCPI0_4+16(SB)/8, $0x07101315170d1b1f
+DATA ·p5f6a1f9280687903_LCPI0_4+24(SB)/8, $0x090a050b06120c1a
+GLOBL ·p5f6a1f9280687903_MASK_USE_NUMBER(SB), RODATA, $4
+DATA ·p5f6a1f9280687903_MASK_USE_NUMBER+0(SB)/8, $0x0000000000000002
